@@ -1,0 +1,17 @@
+server:
+  port: 5555
+  
+#datasource configuration
+spring:
+  datasource:
+    url: jdbc:mysql://rm-bp14287qevv04t883o.mysql.rds.aliyuncs.com:3306/pay?autoReconnect=true&useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: cqstest
+    password: Qkkj87688695
+    driver-class-name: com.mysql.jdbc.Driver
+    max-active: 10
+    max-idle: 5
+    min-idle: 0 
+  jpa:
+    hibernate:
+      ddl-auto: update  
+    show-sql: false    
