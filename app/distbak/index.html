@@ -1,0 +1,42 @@
+<!doctype html>
+<html  ng-app="zx" lang="zh-cn">
+<head>
+	<meta charset="UTF-8" />
+	<title data-ng-bind="$state.current.data.pageTitle"></title>
+	<meta name="viewport" id="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+	<link rel="stylesheet" href="public/font_cy69o9uctklw61or/iconfont.css"/>
+	<link rel="stylesheet" href="lib/ionic/css/ionic.css">
+	<link rel="stylesheet" href="./lib/swiper-3.3.1.min.css"/>
+	<link rel="stylesheet" href="./main.css"/>
+	<style type="text/css">
+		.spinner{position:relative;top:50%;margin:0 auto;width:60px;height:60px;transform:translateY(-50%)}.double-bounce1,.double-bounce2{position:absolute;top:0;left:0;width:100%;height:100%;border-radius:50%;background-color:#49aced;opacity:.6;-webkit-animation:bounce 2s infinite ease-in-out;animation:bounce 2s infinite ease-in-out}.double-bounce2{-webkit-animation-delay:-1s;animation-delay:-1s}@-webkit-keyframes bounce{0%,100%{-webkit-transform:scale(0)}50%{-webkit-transform:scale(1)}}@keyframes bounce{0%,100%{-webkit-transform:scale(0);transform:scale(0)}50%{-webkit-transform:scale(1);transform:scale(1)}}
+	</style>
+</head>
+<body>
+
+	<div id="loading_spinner" style="width:100%;height:100%;position: absolute;z-index: 200;">
+		<div class="spinner">
+			<div class="double-bounce1"></div>
+			<div class="double-bounce2"></div>
+		</div>
+	</div>
+
+    <ion-nav-view></ion-nav-view>
+    
+</body>
+<script src="lib/ionic/js/ionic.bundle.min.js"></script>
+<script src="./lib/jquery-1.9.1.min.js"></script>
+<script src="./lib/swiper-3.4.1.jquery.min.js"></script>
+<script src="public/js/scale.js"></script>
+<script src="public/js/LocalResizeIMG.js"></script>
+<script src="public/js/mobileBUGFix.mini.js"></script>
+<script src="public/js/md5.js"></script>
+<script src="./lib/angular-websocket.min.js"></script>
+<script src="./lib/echarts.min.js"></script>
+<script src="./lib/angular-echarts.min.js"></script>
+<script src="./main.bundle.js" type="text/javascript" charset="utf-8"></script>
+</html>

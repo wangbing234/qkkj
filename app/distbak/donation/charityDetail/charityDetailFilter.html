@@ -1,0 +1,21 @@
+<ion-modal-view>
+    <ion-header-bar class="bar bar-header bar-blue">
+        <a ng-click="closeModal();" class="button icon-left ion-close-round button-clear"></a>
+        <h2 class="title">公益钱包查询</h2>
+    </ion-header-bar>
+    <ion-content style="background: #e4f5ff;">
+        <div id="gongyiSelectWrap">
+            <div class="selectWrap">
+                <span style="background:#e86547;" ng-click="filter('Entry');"><i style="color:#e86547;">开</i><b>开单</b></span>
+                <span style="background:#8393de;" ng-click="filter('Unfreeze');"><i style="color:#8393de;">收</i><b>订单到期</b></span>
+                <span style="background:#ffab0a;" ng-click="filter('Exit');"><i style="color:#ffab0a;">提</i><b>提现</b></span>
+                <span style="background:#fe8c8c;" ng-click="filter('Entry2');"><i style="color:#fe8c8c;">推</i><b>推广钱包</b></span>
+                <!-- <span style="background:#fe8c8c;" ng-click="filter('Point');"><i style="color:#fe8c8c;">积</i><b>购买积分</b></span> -->
+                <span style="background:#b487ca;" ng-click="filter('Other');"><i style="color:#b487ca;">其</i><b>其他</b></span>
+            </div>
+            <div class="subbit">
+                <button>显示全部</button>
+            </div>
+        </div>
+    </ion-content>
+</ion-modal-view>

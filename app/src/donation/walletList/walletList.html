@@ -1,0 +1,84 @@
+<ion-view view-title="钱包" class="walletList">
+    <div class="bar bar-header bar-blue">
+        <a ng-back class="button icon-left ion-chevron-left button-clear"></a>
+        <h2 class="title">钱包</h2>
+    </div>
+
+    <ion-content>
+        <div class="mg5"></div>
+        <!--取款方式推广钱包公益钱包部分-->
+        <div class="wrap">
+            <div class="gongyi qbs tgx">
+                <div class="left">
+                    <span class="tuPic tu1"></span>
+                    <span class="wenzi">公益钱包</span>
+                </div>
+                <div class="right">
+                    <span><i class="yqr">已确认金额</i><strong class="yqrpri d22" id="g3" ng-bind="baseFree">加载慢...</strong></span>
+                    <span><i class="dj">未到期金额</i><strong class="djpri"  id="g2" ng-bind="baseFreeze"></strong></span>
+                    <span><i class="wqr">未确认金额</i><strong class="wqrpri" id="g1" ng-bind="baseTrading"></strong></span>
+                <b class="youjiantou youjiantou1" ui-sref="walletDetail({walletId:1})"></b>
+                </div>
+                <div class="clr"></div>
+            </div>
+            <!--<div class="tuiguang qbs tx">
+                <div class="left">
+                    <span class="tuPic tu2"></span>
+                    <span class="wenzi">推广钱包</span>
+                </div>
+                <div class="right">
+                    <span><i class="yqr">已确认金额</i><strong class="yqrpri d22" id="t2" ng-bind="growFree">加载慢...</strong></span>
+                    <span><i class="wqr">未确认金额</i><strong class="wqrpri" id="t1" ng-bind="growTrading"></strong></span>
+                    <b class="youjiantou youjiantou2" ui-sref="walletDetail({walletId:2})"></b>
+                </div>
+                <div class="clr"></div>
+            </div>-->
+            <!--<div class="xiaofei qbs tgx">
+                <div class="left">
+                    <span class="tuPic tu3"></span>
+                    <span class="wenzi">消费钱包</span>
+                </div>
+                <div class="right">
+                    <span><i class="yqr">已确认金额</i><strong class="yqrpri d22" id="x2" ng-bind="shopFree">加载慢...</strong></span>
+                    <span><i class="dj">未到期金额</i><strong class="djpri" id="x3" ng-bind="shopFreeze"></strong></span>
+                    <span><i class="wqr">未确认金额</i><strong class="wqrpri" id="x1" ng-bind="shopTrading"></strong></span>
+                    <b class="youjiantou youjiantou3" ui-sref="walletDetail({walletId:3})"></b>
+                
+                </div>
+                <div class="clr"></div>
+            </div>-->
+                <!--<div class="tuijian qbs tj">
+                <div class="left">
+                    <span class="tuPic tu4"></span>
+                    <span class="wenzi">推荐钱包</span>
+                </div>
+                <div class="right">
+                    <span><i class="yqr">可&nbsp;用&nbsp;金&nbsp;额</i><strong class="yqrpri d22" id="j2" ng-bind="rewardFree">加载慢...</strong></span>
+                </div>
+                <div class="clr"></div>
+            </div>-->
+                    <!--<div class="jiaoyi qbs tx">
+                <div class="left">
+                    <span class="tuPic tu5"></span>
+                    <span class="wenzi">交易积分</span>
+                </div>
+                <div class="right">
+                    <span><i class="yqr">可&nbsp;用&nbsp;积&nbsp;分</i><strong class="yqrpri d22" id="f2" ng-bind="pointFree">加载慢...</strong></span>
+                    <span><i class="gwz">未激活积分</i><strong class="wqrpri" id="f1" ng-bind="pointInactive"></strong></span>
+                    
+                </div>
+                <div class="clr"></div>
+            </div>-->
+                    <!--<div class="tuijian qbs tj">
+                <div class="left">
+                    <span class="tuPic tu6"></span>
+                    <span class="wenzi">消费积分</span>
+                </div>
+                <div class="right">
+                    <span><i class="yqr">可&nbsp;用&nbsp;积&nbsp;分</i><strong class="yqrpri d22" id="fx2" ng-bind="point2Free">加载慢...</strong></span>
+                </div>
+                <div class="clr"></div>
+            </div>-->
+        </div>
+    </ion-content>
+</ion-view>

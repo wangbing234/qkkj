@@ -1,0 +1,18 @@
+<ion-view view-title="消费券账单">
+
+    <ion-header-bar class="bar bar-header bar-blue">
+        <a ng-back class="button icon-left ion-chevron-left button-clear"></a>
+        <h2 class="title">消费券账单</h2>  
+        <a class="button button-clear" ng-click="showFilter();"><img src="public/images/qb11.png" alt="" style="width:32px;height:32px;"/></a>
+    </ion-header-bar>
+
+    <ion-content style="background: #e4f5ff;">
+        <div id="couponWrap">
+            <div ng-repeat="item in list" class="date">
+                <span><i ng-bind="item.createTime | date:'MM-dd'"></i></span><span class="dayc2"><i id="dayc2"></i></span>
+                <span><i ng-bind="item.changeAmount + '点'"></i><i ng-bind="item.changeReason"></i></span>
+            </div>
+        </div>
+    </ion-content>
+ 	
+</ion-view>

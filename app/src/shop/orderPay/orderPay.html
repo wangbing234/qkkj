@@ -1,0 +1,169 @@
+<ion-view view-title="订单支付" class="orderSubmit">
+    <!-- 捐赠商品 -->
+    <div ng-show="paystatus!=='y' && currentScene === 'donation'" class="orderSteps_donation">
+        <ion-header-bar class="bar bar-header bar-blue">
+            <a class="button icon-left ion-chevron-left button-clear" ng-click="sceneBack();"></a>
+            <h2 class="title">钱包支付</h2>
+            <a class="button icon-right ion-chevron-right button-clear" ng-if="sceneList.length" ng-click="nextScene();"></a>
+        </ion-header-bar>
+        <ion-content has-bouncing="false">
+            <div class="pay-info" >
+                <div class="pay-info-number">
+                    <span>重销商品</span><span class="font-color" ng-bind="donation_buyNumber"></span><span>件</span>
+                </div>
+                <div class="pay-info-money">
+                    <span>共消费</span><span class="font-color" ng-bind="donation_amount | currency:'￥'"></span>
+                </div>
+                <div class="clear-fix"></div>
+            </div>
+            <div class="commodity-list">
+                <div class="wait-pay-order">
+                    <div class="order-box">
+                        <div class="shangpinDd" ng-repeat="product in donation_product">
+                            <div class="jiLeft">
+                                <img ng-src="{{host}}{{product.picurl160}}"/>
+                                <span class="hj">重销商品</span>
+                            </div>
+                            <div class="jifenRight">
+                                <span><i></i><b ng-bind="product.productName"></b></span>
+                                <span><i></i><b class="font-color" ng-bind="product.price | currency:'￥'"></b></span>
+                                <span><i>×</i><b class="font-color" ng-bind="product.productNumber"></b></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="deduct-detail">
+                <div class="deduct-detail-title">
+                    扣除明细
+                </div>
+                <div class="deduct-detail-data">
+                    <ul>
+                        <li>
+                            <ul>
+                                <li><img src="public/images/xiaofeiquanicon.png" alt=""/></li>
+                                <li><span>消费钱包</span></li>
+                                <li><span>扣除</span><span class="font-color" ng-bind="userWalletShopLost | currency:'￥'"></span></li>
+                                <li><span>剩余</span><span class="font-color" ng-bind="userWalletShopLeft | currency:'￥'"></span></li>
+                                <li class="clear-fix"></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li><img src="public/images/tuijian.png" alt=""/></li>
+                                <li><span>推荐钱包</span></li>
+                                <li><span>扣除</span><span class="font-color" ng-bind="userWalletRewardLost | currency:'￥'"></span></li>
+                                <li><span>剩余</span><span class="font-color" ng-bind="userWalletRewardLeft | currency:'￥'"></span></li>
+                                <li class="clear-fix"></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ddtjiao" ng-if="!sceneList.length">
+                <button ng-click="pay();">提交订单</button>
+            </div>
+        </ion-content>
+    </div>
+        
+    <!-- 积分商品 -->
+    <div ng-show="paystatus!=='y' && currentScene === 'point'" class="orderSteps_point">
+        <ion-header-bar class="bar bar-header bar-blue">
+            <a class="button icon-left ion-chevron-left button-clear" ng-click="sceneBack();"></a>
+            <h2 class="title">积分消费券选择</h2>
+            <a class="button icon-right ion-chevron-right button-clear" ng-if="sceneList.length" ng-click="nextScene();"></a>
+        </ion-header-bar>
+        <ion-content has-bouncing="false">
+            <div class="diZhiLan">
+                <span class="d1"><i>积分商品:&nbsp;&nbsp;</i><b ng-bind="point_buyNumber"></b><b>件</b></span><span class="d2"><i>共消费:&nbsp;&nbsp;</i><b ng-bind="point_cost"></b><b>点</b></span>
+            </div>
+            <div class="dianDanWrap">
+                <div class="shangpinDd" ng-repeat="product in point_product">
+                    <div class="jiLeft">
+                        <img ng-src="{{host}}{{product.picurl160}}"/>
+                        <span class="jf">积分商品</span>
+                    </div>
+                    <div class="jifenRight">
+                        <span><b ng-bind="product.productName"></b></span>
+                        <span><b class="font-color" ng-bind="product.price | currency:'￥'"></b></span>
+                        <span><i>×</i><b class="font-color" ng-bind="product.productNumber"></b></span>
+                    </div>
+                </div>
+                <div class="jeXx">
+                    <div class="je3">
+                        <span class="jifen"><i>我的积分:</i><b ng-bind="userScore"></b></span>
+                        <span class="xfjuan"><i>我的消费券:</i><b ng-bind="userScoreTicket"></b></span>
+                    </div>
+                </div>
+                <div class="choice">
+                    <span><i>积分支付</i><input type="text" number-input="useScoreChanged" ng-model="vm.useScore"/><b ng-click="max('useScore');">最大</b></span>
+                    <span><i>消费券支付</i><input type="text" number-input="useScoreTicketChanged" ng-model="vm.useScoreTicket"/><b ng-click="max('useScoreTicket');">最大</b></span>
+                </div>
+            </div>
+            <div class="ddtjiao" ng-if="!sceneList.length">
+                <button ng-click="pay();">提交订单</button>
+            </div>
+        </ion-content>
+    </div>
+
+    <div ng-show="paystatus!=='y' && currentScene === 'billing'" class="orderSteps_billing">
+        <ion-header-bar class="bar bar-header bar-blue">
+            <a class="button icon-left ion-chevron-left button-clear" ng-click="sceneBack();"></a>
+            <h2 class="title">开单商品支付</h2>
+        </ion-header-bar>
+        <ion-content has-bouncing="false">
+            <div class="consume-info consume-info-change white">
+                <p><span>开单商品</span><span class="cLan" ng-bind="billing_buyNumber"></span><span>件,共消费</span><span class="cLan" ng-bind="billing_amount | currency:'￥'"></span></p>
+            </div>
+            <div class="height-box1"></div>
+            <div class="consume-info consume-info-change infoBold">
+                <p style="margin-bottom:5px;"><span style="color:#9c0b0b;">温馨提示</span></p>
+                <p><span>您本次获得开单额度</span><span class="cLan" ng-bind="totalMoneyReurnScore"></span><span>点。</span></p>
+                <p><span>累计开单额度为</span><span class="cLan" ng-bind="afterBuyScore"></span><span>点。</p>
+            </div>
+            <div class="height-box1"></div>
+            <div class="ifRetain white">
+                <p>将产生<i ng-bind="totalMoneyReurnScore" class="Jpoint"></i>等值积分，是否保留积分？</p>
+                <div>
+                    <button ng-style="vm.keepPoint?{background:'#b3b3b3'}:{background:'#49aced'}" ng-click="keepPoint(false);">
+                        <i ng-class="{true:'ion-android-checkbox-outline-blank',false:'ion-android-checkbox-outline'}[vm.keepPoint]" class="icon"></i>	否
+                    </button>
+                    <button ng-style="vm.keepPoint?{background:'#49aced'}:{background:'#b3b3b3'}" ng-click="keepPoint(true);">
+                        <i ng-class="{true:'ion-android-checkbox-outline',false:'ion-android-checkbox-outline-blank'}[vm.keepPoint]" class="icon"></i>	是
+                    </button>
+                </div>
+            </div>
+            <div class="height-box1"></div>
+            <div class="orderList white">
+                <div class="order-box">
+                    <div class="shangpinDd" ng-repeat="product in billing_product">
+                        <div class="jiLeft">
+                            <img ng-src="{{host}}{{product.picurl160}}"/>
+                            <span class="kd">开单商品</span>
+                        </div>
+                        <div class="jifenRight">
+                            <span><b ng-bind="product.productName"></b></span>
+                            <span><b class="font-color" ng-bind="product.price | currency:'￥'"></b></span>
+                            <span><i>×</i><b class="font-color" ng-bind="product.productNumber"></b></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="payBtns white">
+                <button style="background: #8aab13;filter: grayscale(100%);-webkit-filter: grayscale(100%);" ng-click="pay('weixin');">
+                    <span class="btn-icon1"><img src="public/images/weixin.png" alt=""/></span>
+                    <span>微信支付</span>
+                </button>
+                <button style="background: #49aced;filter: grayscale(100%);-webkit-filter: grayscale(100%);" ng-click="pay('alipayescow');">
+                    <span class="btn-icon2"><img src="public/images/zhifubao.png" alt=""/></span>
+                    <span>支付宝</span>
+                </button>
+                <button style="background: #fc7b5e" ng-click="pay('afterpay');">
+                    <span class="btn-icon3"><img src="public/images/dakuan.png" alt=""/></span>
+                    <span>打款</span>
+                </button>
+            </div>
+        </ion-content>
+    </div>
+
+</ion-view>

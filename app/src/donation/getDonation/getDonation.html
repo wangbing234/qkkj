@@ -1,0 +1,31 @@
+<ion-view view-title="得到捐助" style="background:#eee;">
+    <ion-header-bar class="bar bar-header bar-blue">
+        <a ng-back class="button icon-left ion-chevron-left button-clear"></a>
+		<h2 class="title">得到捐助</h2>
+	</ion-header-bar>
+
+    <ion-content>
+        <div class="qianWrap">
+            <div class="tuiG">
+                <img src="public/images/1.png" alt="这是一张图片" />
+                <div class="tuiC">
+                    <span class="hz1"><strong>公益钱包</strong></span>
+                    <span class="hz2">您的公益钱包有<b class="countsAx">￥{{baseFree}}</b>元</span>
+                    <div class="ck1" ng-click="chooseWalletType(0);" ng-class="{true:'actii',false:''}[walletType===0]"/></div>
+                </div>
+            </div>
+            <div class="tuiG">
+                <img src="public/images/2.png" alt="这是一张图片" />
+                <div class="tuiC">
+                    <span class="hz1"><strong>推广钱包</strong></span>
+                    <span class="hz2">您的推广钱包有<b class="countsAxs">￥{{growFree}}</b>元</span>
+                    <div class="ck1" ng-click="chooseWalletType(1);" ng-class="{true:'actii',false:''}[walletType===1]"/></div>
+                </div>
+            </div>
+        </div>
+        <div class="sure">
+            <button id="tijiao" class="highlight" ng-click="submit();">确&nbsp;定&nbsp;提&nbsp;交</button>
+        </div>
+    </ion-content>
+    
+</ion-view>

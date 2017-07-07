@@ -1,0 +1,42 @@
+<ion-modal-view>
+    <ion-header-bar class="bar-balanced">
+        <div class="buttons" ng-show="showBackBtn">
+            <button ng-click="goBackSlide()" class="button button-clear">返回</button>
+        </div>
+        <h1 class="title">选择地址</h1>
+        <div class="buttons">
+            <button ng-click="PCTModal.hide();" class="button button-clear">取消</button>
+        </div>
+    </ion-header-bar>
+    <ion-content overflow-scroll="true" style="overflow: hidden">
+        <ion-slide-box show-pager="false" style="height: 100%;" does-continue="false" delegate-handle="PCTSelectDelegate" ng-init="lockSlide()">
+            <ion-slide>
+                <ion-scroll style="height: 100%;" scrollbar-y="false" delegate-handle="PCTSelectProvince">
+                    <ion-item class="item-icon-right" ng-click="chooseProvince($index);" ng-repeat="item in provincesData">
+                        <span>{{item.name}}</span>
+                        <i class="icon ion-ios-arrow-right icon-item"></i>
+                    </ion-item>
+                </ion-scroll>
+            </ion-slide>
+
+            <ion-slide>
+                <ion-scroll style="height: 100%;" scrollbar-y="false" delegate-handle="PCTSelectCity">
+                    <ion-item class="item-icon-right" ng-click="chooseCity($index);" ng-repeat="item in citiesData">
+                        <span>{{item.name}}</span>
+                        <i class="icon ion-ios-arrow-right icon-item"></i>
+                    </ion-item>
+                </ion-scroll>
+            </ion-slide>
+
+            <ion-slide>
+                <ion-scroll style="height: 100%;" scrollbar-y="false" delegate-handle="PCTSelectTown">
+                    <ion-item class="item-icon-right" ng-click="chooseTown($index);" ng-repeat="item in townData">
+                        <span>{{item.name}}</span>
+                        <i class="icon ion-ios-arrow-right icon-item"></i>
+                    </ion-item>
+                </ion-scroll>
+            </ion-slide>
+        </ion-slide-box>
+
+    </ion-content>
+</ion-modal-view>

@@ -1,0 +1,96 @@
+<ion-view view-title="鼎烨--我的">
+	<ion-header-bar class="bar bar-header bar-blue">
+        <h2 class="title">我  的</h2>
+		<a class="button button-clear" ng-click="logout();">退出</a>
+    </ion-header-bar>
+
+	<ion-content>
+		<div class="wodeWrap">
+			<!--会员信息部分-->
+			<div class="toper" >
+				<div class="poc" >
+					<img src="" ng-src="{{host}}{{user.levelImg}}"/>
+					<div id="dengji" ng-bind="user.level"></div>
+				</div>
+				<div class="toRight" >
+					<table >
+						<tr>
+							<td ng-bind="user.name"></td>
+							<td class="right_td" ng-bind="user.userState" ng-style="user.userStateStyle" ng-if="showAll"></td>
+						</tr>
+						<tr>
+							<td>手机</td>
+							<td class="right_td" ng-bind="user.phone"></td>
+						</tr>
+						<tr>
+							<td>推荐人</td>
+							<td class="right_td" ng-bind="user.refereePhone"></td>
+						</tr>
+						<tr>
+							<td>加入时间</td>
+							<td class="right_td" ng-bind="user.regdate"></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<!--钱包推广,积分部分-->
+			<div class="sua">
+				<div class="gundong" ui-sref="setting">
+					<img src="public/images/shezhi.png" alt=""/ >
+					<p>设置</p>
+				</div>
+				<div class="gundong" ui-sref="signin" ng-show="showAll">
+					<img src="public/images/qiandao0.png" alt="" / >
+					<p>签到</p>
+				</div>
+				<div class="gundong" ng-click="showalert();">
+					<img src="public/images/zhinan.png" alt="" / >
+					<p>新手指南</p>
+				</div>
+			</div>
+			<!--留言账户选择部分-->
+			<div class="liuWrap">
+				<div class="ly liuyan" ui-sref="feedback">
+					<span><i class="icon iconfont icon-duanxin"></i></span>
+					&nbsp;&nbsp;&nbsp;&nbsp;<span>留言</span>
+				</div>
+				<div class="ly zhanghu" ui-sref="account">
+					<span><i class="icon iconfont icon-shezhi"></i></span>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span>账户设定</span>
+				</div>
+					<div class="ly address" ui-sref="address">
+					<span><i class="icon iconfont icon-shouhuodizhi1"></i></span>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span>收货地址</span>
+				</div>
+				<div class="ly renzheng" ng-click="authentication();" ng-if="showAll">
+					<span><i class="icon iconfont icon-shimingrenzheng1"></i></span>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span>实名认证</span>
+				</div>
+			</div>
+			<!--新闻部分-->
+			<div class="newsBox" ng-if="showAll">
+				<div class="newsMore">
+					<span class="left-red">NEWS</span>
+					<span><a ng-click="news();">more</a></span>
+				</div>
+				<div class="newsActicl">
+					<div class="acticals">
+					<p><b>01</b>&nbsp;&nbsp;&nbsp;&nbsp;<a ng-click="news();">新闻推送内容...</a></p>
+				</div>	
+				</div>
+					<div class="newsMore">
+					<span class="left-red">NOTICES</span>
+					<span><a ui-sref="notice({noticeId:1})">more</a></span>
+				</div>
+				<div class="newsActicl">
+					<div class="acticals">
+					<p><b>01</b>&nbsp;&nbsp;&nbsp;&nbsp;<a ui-sref="notice({noticeId:1})">注意事项内容...</a></p>
+					<p><b>02</b>&nbsp;&nbsp;&nbsp;&nbsp;<a ui-sref="notice({noticeId:2})">告家人书...</a></p>
+					<p><b>03</b>&nbsp;&nbsp;&nbsp;&nbsp;<a ui-sref="notice({noticeId:3})">鼎烨互捐服务通知...</a></p>
+				</div>	
+				</div>
+			</div>
+		</div>
+	</ion-content>
+	
+</ion-view>

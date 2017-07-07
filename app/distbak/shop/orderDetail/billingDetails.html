@@ -1,0 +1,36 @@
+<ion-modal-view class="openDetail">
+    <ion-header-bar class="bar bar-header bar-blue">
+        <a ng-click="closeBilling();" class="button icon-left ion-close-round button-clear"></a>
+        <h2 class="title">开单详情</h2>
+    </ion-header-bar>
+    <ion-content has-bouncing="false" style="background:#fff;">
+        <div class="open-detail">
+            <table>
+                <tr>
+                    <td><i>等&nbsp;&nbsp;值&nbsp;&nbsp;积&nbsp;&nbsp;分</i></td>
+                    <td><b ng-bind="totalMoneyReurnScore"></b></td>
+                </tr>
+                <tr>
+                    <td><i>是否保留积分</i></td>
+                    <td><b ng-bind="isSaveScore"></b></td>
+                </tr>
+                <tr>
+                    <td><i>商&nbsp;&nbsp;品&nbsp;&nbsp;件&nbsp;&nbsp;数</i></td>
+                    <td><b ng-bind="quantity"></b></td>
+                </tr>
+                <tr>
+                    <td><i>总&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;价</i></td>
+                    <td><b ng-bind="amount | currency:'￥'"></b></td>
+                </tr>
+                <tr ng-if="signdate">
+                    <td><i>确&nbsp;&nbsp;认&nbsp;&nbsp;时&nbsp;&nbsp;间</i></td>
+                    <td><b ng-bind="signdate"></b></td>
+                </tr>
+            </table>
+        </div>
+        <div class="printscreen">
+            <img src="public/images/dakuanjietu.png" alt="打款小图标"/>
+            <img ng-src="{{host}}{{payImg}}" alt="打款截图"/>
+        </div>
+    </ion-content>
+</ion-modal-view>

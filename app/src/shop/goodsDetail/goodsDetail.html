@@ -1,0 +1,54 @@
+<ion-view view-title="商品详情" class="goodsDetail">
+    <ion-header-bar class="bar bar-header bar-blue">
+        <a ng-back class="button icon-left ion-chevron-left button-clear"></a>
+        <a class="button button-clear" ui-sref="cart"><img src="public/images/gouwuche.png" alt="" style="width:32px;height:32px;"/><b ng-bind="account.cartNumber"></b></a>
+    </ion-header-bar>
+    <!--<i class="ion-android-arrow-dropleft-circle" ng-style="{opacity:opacity}" style="position: absolute;z-index: 10;font-size: 40px;top: 10px;left: 10px;"></i>-->
+    <ion-content on-scroll="scrollHandler();">
+        <div class="carousel">
+            <ion-slide-box does-continue="true" does-continue="true" style="width:100%;height:100%;">
+				<ion-slide ng-repeat="item in productImageList">
+					<div class="imgW"><img ng-src="{{host}}{{item.image2}}" style="width: 100%;height: auto;"></div>
+				</ion-slide>
+			</ion-slide-box>
+            <a ng-click="addToFavorite();">
+                <img ng-show="!isFavorate"src="public/images/dianjishoucang.png" alt="收藏按钮"/>
+                <img ng-show="isFavorate" src="public/images/favorite.png" alt="收藏按钮"/>
+            </a>
+        </div>
+        <div class="buy-control">
+            <p ng-bind="goodData.name" class="black"></p>
+   
+            <div class="newsWrap">
+            	<div class="box box-left">
+            		<span><i>售价 &nbsp;&nbsp;¥</i><b ng-bind="goodData.nowPrice"></b></span>
+            		<span><i>已售 &nbsp;&nbsp;&nbsp;</i><b ng-bind="goodData.sellcount"></b></span>
+            		<span ng-if="goodData.productType===38 && goodData.point"><i>返利额度 &nbsp;</i><b ng-bind="goodData.point"></b></span>
+            		<span><i>发货周期 &nbsp;</i><b ng-bind="goodData.maxPicture"></b></span>
+            	</div>
+            	<div class="box box-right">
+            		<span><i>原价 &nbsp;&nbsp;¥</i><b style="text-decoration: line-through;color:gray;" ng-bind="goodData.price"></b></span>	
+            		<span><i>商品编号 &nbsp;&nbsp;</i><b ng-bind="goodData.shortname"></b></span>
+            		  <span class="span-border"><button ng-click="changeAmount(-1);">－</button>
+                        <input type="number" min="1" ng-model="vm.amount" ng-change="checkValid();" ng-model-options="{allowInvalid: false}" disabled="disabled"/>
+                        <button ng-click="changeAmount(1);">＋</button></span>
+            	
+            	</div>
+            </div>
+        </div>
+        <div class="goods-info">
+            <div class="titles">
+                <span ng-class="{true:'active',false:''}[tabIndex===0]" ng-click="tab(0);">商品介绍</span>
+                <span ng-class="{true:'active',false:''}[tabIndex===1]" ng-click="tab(1);">商品属性</span>
+            </div>
+            <div ng-show="tabIndex===0" ng-bind-html="productHTML"></div>
+            <div ng-show="tabIndex===1" ng-bind-html="goodProperty"></div>
+        </div>
+        <div class="height-box"></div>
+    </ion-content>
+    <div ng-click="scrollTop();" class="to-top"><img src="public/images/top.png" alt=""/></div>
+    <div class="buy-or-join bar bar-footer">
+        <button class="btn-buy"ng-click="addToCart(true);">立即购买</button>
+        <button class="join-shopping" ng-click="addToCart();">加入购物车</button>
+    </div>
+</ion-view>

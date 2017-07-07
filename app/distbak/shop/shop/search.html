@@ -1,0 +1,26 @@
+<ion-modal-view class="shopSearch" ng-controller="shopSearchController">
+    
+    <ion-header-bar class="bar bar-header bar-blue item-input-inset">
+        <button ng-click="closeModal();" class="button button-clear icon-left ion-close-round"><span></span></button>
+        <form style="width:100%;" ng-submit="search();">
+            <label class="item-input-wrapper">
+                <i class="icon ion-ios-search placeholder-icon" on-tap="search();"></i>
+                <input type="search" placeholder="搜索" ng-model="searchContent">
+                <i class="icon ion-close-circled placeholder-icon" style="vertical-align: middle;" on-tap="clearSearch()" ng-if="searchContent.length"></i>  
+            </label>
+            <button ng-click="search();" type="submit" style="display:none;"></button>
+        </form>
+        <button class="button button-clear" ng-click="gotoCart();"><span class="shopIndex-shopCar"></span><b ng-bind="account.cartNumber"></b></button>
+    </ion-header-bar>
+    
+
+    <ion-content has-bouncing="false" style="background:#fff;">
+        <div class="search-goodShow">
+            <div class="search-goodPho" ng-repeat="product in productList" ng-click="goodDetail({{product.id}});">
+                <img class="search-imgPho" ng-src="{{host}}{{product.pic}}" />
+                <span class="search-hang1"><b ng-bind="product.name" class="black"></b></span>
+                <span class="search-hang2"><b class="search-xianjia" ng-bind="product.nowPrice | currency:'￥'"></b>&nbsp;<i class="black">市场价</i><b class="search-yuanjia" ng-bind="product.price | currency:'￥'"></b></span>
+            </div>
+        </div>
+    </ion-content>
+</ion-modal-view>

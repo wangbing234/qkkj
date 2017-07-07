@@ -1,0 +1,30 @@
+<ion-view view-title="忘记密码">
+    <ion-header-bar class="bar bar-header bar-blue">
+        <a ng-back class="button icon-left ion-chevron-left button-clear"></a>
+        <h2 class="title">找回密码</h2>
+    </ion-header-bar>
+    
+    <ion-content>
+        <div class="luruWrap">
+            <ul>
+                <li><span></span><input type="text" name="" ng-model="vm.userAccount" placeholder="请输入您的手机号码" /></li>
+                <li>
+                    <span id="setBtn" ng-click="getVerifyCode();" ng-style="countDown!==0?{background:'gray'}:{background:'#e27b02'}">短信验证
+                        <i id="lastTime" ng-show="countDown !== 0" ng-bind="countDown"></i>
+                    </span>
+                </li>
+                <li><span></span><input type="text" name="" ng-model="vm.userName" placeholder="请输入您的真实姓名" /></li>
+                <li><span></span><input type="text" name="" ng-model="vm.verifyCode" placeholder="请输入您的验证码" /></li>
+                <li><span></span><input type="password" name="" ng-model="vm.pwd1" placeholder="请输入您的新密码" /></li>
+                <li><span></span><input type="password" name="" ng-model="vm.pwd2" placeholder="请再次输入您的新密码" /></li>
+            </ul>
+        </div>
+        <div id="error2">
+            <span style="font-size: 0.24rem;color: red;"></span>
+        </div>
+
+        <div class="sure" ng-click="changePassword();">
+            <button id="ffff" class="highlight">确&nbsp;&nbsp;定</button>
+        </div>
+    </ion-content>
+</ion-view>

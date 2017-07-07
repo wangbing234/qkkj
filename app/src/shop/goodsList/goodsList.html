@@ -1,0 +1,37 @@
+<ion-view view-title="商品列表" class="goodsList">
+    <ion-header-bar class="bar bar-header bar-blue">
+        <a ng-click="toShopIndex();" class="button icon-left ion-chevron-left button-clear"></a>
+        <h2 class="title" ng-bind="title">商品列表</h2>
+        <a class="button button-clear" ui-sref="cart"><img src="public/images/gouwuche.png"/><b ng-bind="account.cartNumber"></b></a>
+    </ion-header-bar>
+
+    <ion-content>
+        <div ng-if="type==='billing'">
+            <div ng-repeat="product in billingGoods" class="commodity-list" ng-click="goodsDetail(product.id);">
+                <img ng-src="{{host}}{{product.pic}}" alt=""/>
+                <p ng-bind="product.name"></p>
+                <p><span ng-bind="product.nowPrice | currency:'￥'" class="d22"></span>&nbsp;<span><i class="smallSize">市场价</i><b ng-bind="product.price | currency:'￥'" class="line"></b></span></p>
+            </div>
+            <ion-infinite-scroll ng-if="!billingLoaded" on-infinite="getGoodsData('billing');" distance="1%"></ion-infinite-scroll>
+        </div>
+
+        <div ng-if="type==='donation'">
+            <div ng-repeat="product in donationGoods" class="commodity-list" ng-click="goodsDetail(product.id);">
+                <img ng-src="{{host}}{{product.pic}}" alt=""/>
+                <p ng-bind="product.name"></p>
+                <p><span class="smallSize">消费券</span><span ng-bind="product.nowPrice" class="d22"></span>&nbsp;&nbsp;<span class="smallSize">市场价</span><span ng-bind="product.price | currency:'￥'" class="line"></span></p>
+            </div>
+            <ion-infinite-scroll ng-if="!donationLoaded" on-infinite="getGoodsData('donation');" distance="1%"></ion-infinite-scroll>
+        </div>
+
+        <div ng-if="type==='point'">
+            <div ng-repeat="product in pointGoods" class="commodity-list" ng-click="goodsDetail(product.id);">
+                <img ng-src="{{host}}{{product.pic}}" alt=""/>
+                <p ng-bind="product.name"></p>
+                <p><span ng-bind="product.nowPrice | currency:'￥'" class="d22"></span>&nbsp;&nbsp;<span class="smallSize">市场价</span><span ng-bind="product.price | currency:'￥'" class="line"></span></p>
+            </div>
+            <ion-infinite-scroll ng-if="!pointLoaded" on-infinite="getGoodsData('point');" distance="1%"></ion-infinite-scroll>
+        </div>
+    </ion-content>
+
+</ion-view>

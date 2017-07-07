@@ -1,0 +1,29 @@
+<ion-view view-title="收货地址">
+    <ion-header-bar class="bar bar-header bar-blue">
+        <a ng-back class="button icon-left ion-chevron-left button-clear"></a>
+        <h2 style="color:#fff;display: block;position: absolute;top: 0;right: 0;left: 0;z-index: 0;overflow: hidden;margin: 0 10px;min-width: 30px;height: 43px; text-align: center;text-overflow: ellipsis;white-space: nowrap;font-size: 17px;font-weight: 500;line-height: 44px;">收货地址</h2>
+    </ion-header-bar>
+    <ion-content overflow-scroll="true" scroll="false">
+        <div id="moWrapBox">
+            <div class='moWrap' ng-repeat="address in addressList">
+                <div class='mo1'>
+                    <span class='ming8' ng-bind="address.name"></span>
+                    <span class='phone3' ng-bind="address.mobile"></span>
+                    <p class='add1'>
+                        <span ng-bind="address.pcadetail"></span>
+                        <span ng-bind="address.address"></span>
+                    </p>
+                </div>
+                <div class='mo2'>
+                    <!--<div class='checkMo' ng-click="changeDefault($index);" id='{{address.isDefault===1?"aa1":"aa2"}}'></div>
+                    <span class='morenDi' for='{{address.isDefault===1?"aa1":"aa2"}}'>默认地址</span>-->
+                  <a class='shanchu' ng-click="deleteAddress($index);">删除</a>
+                    <a class='xiugai' ng-click="changeAddress($index);">修改</a>
+                </div>
+            </div> 
+        </div>
+        <div class="more" ng-click="addAddress();" ng-If="addressList.length<5">
+            <span class="highlight"><i class="icon iconfont icon-jiahao"></i></span><span>&nbsp;&nbsp;新增地址</span><span><i class="icon iconfont icon-jiantouyou"></i></span>
+        </div>
+    </ion-content>
+</ion-view>

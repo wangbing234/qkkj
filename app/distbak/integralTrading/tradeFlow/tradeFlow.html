@@ -1,0 +1,30 @@
+<ion-view view-title="交易流水" class="tradeFlowWrap">
+	<ion-header-bar class="bar bar-header bar-blue">
+		<a ng-back class="button icon-left ion-chevron-left button-clear"></a>
+		<h2 class="title">交易流水</h2>
+	</ion-header-bar>
+
+	<div class="first">
+		<div class="nav">
+			<span class="flex3">成交时间</span>
+			<span class="flex2">成交价格</span>
+			<span class="flex2">成交数量</span>
+			<span class="flex2">成交总价</span>
+		</div>
+	</div>
+	<ion-content style="background: #e4f5ff;margin-top:44px;margin-bottom:1rem;">
+			<div class="newList">
+				<span ng-repeat="item in list" ng-style="{true: {color:'#f80002'}, false: {color:'#9cce07'}}[item.isBuy==1]">
+					<i class="flex3" ng-bind="item.time | date:'yy-MM-dd HH:mm:ss'"></i>
+					<i class="flex2" ng-bind="item.price | currency:'¥ '"></i>
+					<i class="flex2" ng-bind="item.amount"></i>
+					<i class="flex2" ng-bind="item.total | currency:'¥ '"></i>
+				</span>
+			</div>
+	</ion-content>
+	<div class="tradeFlowFooter">
+		<span ng-click="filterBuy();"><i class="f1"></i><b>&nbsp;买入</b></span>
+		<span ng-click="filterSell();"><i class="f2"></i><b>&nbsp;卖出</b></span>
+		<span ng-click="filterAll();"><i class="f3"></i><b>&nbsp;全部</b></span>
+	</div>
+</ion-view>

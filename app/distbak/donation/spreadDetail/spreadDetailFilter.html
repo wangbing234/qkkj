@@ -1,0 +1,24 @@
+<ion-modal-view>
+
+    <ion-header-bar class="bar bar-header bar-blue">
+        <a ng-click="closeModal();" class="button icon-left ion-close-round button-clear"></a>
+        <h2 class="title">推广钱包查询</h2>
+    </ion-header-bar>
+
+    <ion-content style="background: #e4f5ff;">
+        <div id="tgSelectWrap">
+            <div class="selectWrap">
+                <span ng-click="filter('Base');"><i id="tg1"></i><b>全部收益</b></span>
+                <span ng-click="filter('Order');"><i id="tg2"></i><b>商城消费</b></span>
+                <span ng-click="filter('Exit');"><i id="tg3"></i><b>提现</b></span>
+                <span ng-click="filter('Team');"><i id="tg4"></i><b>一级市场数量</b></span>
+                <!-- <span ng-click="filter('Team2');"><i id="tg5"></i><b>二级团队</b></span> -->
+                <!-- <span ng-click="filter('Team3');"><i id="tg6"></i><b>三级团队</b></span> -->
+            </div>
+            <div class="subbit">
+                <button>显示全部</button>
+            </div>
+        </div>
+    </ion-content>
+        
+</ion-modal-view>

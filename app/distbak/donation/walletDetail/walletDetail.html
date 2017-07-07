@@ -1,0 +1,20 @@
+<ion-view view-title="钱包明细">
+
+    <ion-header-bar class="bar bar-header bar-blue">
+        <a ng-back class="button icon-left ion-chevron-left button-clear"></a>
+        <h2 ng-bind="head_title" class="title"></h2>
+    </ion-header-bar>
+
+    <ion-content>
+        <div id="daibanWrap">
+            <div class="ssWrap">
+                <div class="k2 moneylist">
+                    <ul class="tuiG message">
+                        <li class='aa' ng-repeat="item in list" ng-bind="item"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+    
+</ion-view>

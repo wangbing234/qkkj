@@ -1,0 +1,28 @@
+<ion-view view-title="资金转出">
+	<ion-header-bar class="bar bar-header bar-blue">
+		<a ng-back class="button icon-left ion-chevron-left button-clear"></a>
+		<h2 class="title">资金转出</h2>
+	</ion-header-bar>
+	<ion-content style="background: #f1f2f6;">
+		<div class="fundWrap">
+			<ion-list style="width:100%;">
+				<ion-radio ng-model="vm.cardId" ng-value="1" ng-if="bankNum">
+					<p><i>银行卡号:  </i><span ng-bind="bankNum"></span></p>
+					<p><i>开户银行:  </i><span ng-bind="depositBank"></span></p>
+					<p><i>支行名称:  </i><span ng-bind="detailBank"></span></p>
+				</ion-radio>
+				<ion-radio ng-model="vm.cardId" ng-value="2" ng-if="bankNum2">
+					<p><i>银行卡号:  </i><span ng-bind="bankNum2"></span></p>
+					<p><i>开户银行:  </i><span ng-bind="depositBank2"></span></p>
+					<p><i>支行名称:  </i><span ng-bind="detailBank2"></span></p>
+				</ion-radio>
+			</ion-list>
+			<div class="second">
+				<div class="inputBox"><span><i class="box3"></i></span><input type="text" name="" id="" ng-model="vm.amount" placeholder="可转出额度" /><b>全部转出</b></div>
+			</div>
+			<div class="third" ng-click="submit();">
+				<button>转&nbsp;出</button>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

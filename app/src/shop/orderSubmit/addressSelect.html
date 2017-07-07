@@ -1,0 +1,20 @@
+<ion-modal-view>
+    <ion-header-bar class="bar bar-header bar-blue">
+        <a ng-click="closeModal();" class="button icon-left ion-close-round button-clear"></a>
+        <h2 class="title">选择地址</h2>
+    </ion-header-bar>
+    <ion-content has-bouncing="false" style="background:#fff;">
+        <div id="moWrapBox">
+            <div class='moWrap' ng-repeat="address in addressList" ng-click="selectAddress($index);">
+                <div class='mo1'>
+                    <span class='ming8' ng-bind="address.name"></span>
+                    <span class='phone3' ng-bind="address.mobile"></span>
+                    <p class='add1'>
+                        <span ng-bind="address.pcadetail"></span>
+                        <span ng-bind="address.address"></span>
+                    </p>
+                </div>
+            </div> 
+        </div>
+    </ion-content>
+</ion-modal-view>

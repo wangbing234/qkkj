@@ -1,0 +1,590 @@
+@var1: #f7f7f7;
+@var2: #e7e7e7;
+@var3: #cccccc;
+@var4: #f4f4f4;
+@var5: #a6c04c;
+@var6: #d47272;
+@var7: #3da6ec;
+@var8: #4babeb;
+.orderSteps_donation {
+    .pay-info {
+        height: 0.94rem;
+        background: @var1;
+        .pay-info-number,
+        .pay-info-money {
+            width: 50%;
+            height: 0.58rem;
+            float: left;
+            margin-top: 0.18rem;
+            text-align: center;
+            line-height: 0.58rem;
+            box-sizing: border-box;
+            span {
+                font-size: 0.25rem;
+            }
+        }
+        .pay-info-number {
+            border-right: 0.02rem solid @var2;
+        }
+        &:before {
+            clear: both;
+        }
+    }
+    .commodity-list {
+        margin-top: 0.25rem;
+        padding: 0 0.3rem;
+        .order-box {
+            border: 0.01rem solid @var3;
+            .shangpinDd {
+                width: 100%;
+                height: 1.9rem;
+                padding: 3%;
+                box-sizing: border-box;
+                border-bottom: 2px solid @var4;
+                clear: both;
+                position: relative;
+                .jiLeft {
+                    width: 24%;
+                    height: 1.6rem;
+                    float: left;
+                    img {
+                        width: 100%;
+                        height: 1.32rem;
+                        display: block;
+                    }
+                    span {
+                        width: 100%;
+                        height: 0.28rem;
+                        display: block;
+                        border: 1px solid @var4;
+                        box-sizing: border-box;
+                        text-align: center;
+                        line-height: 0.28rem;
+                        font-size: 0.14rem;
+                        color: @var5;
+                    }
+                    .jf {
+                        color: @var5;
+                    }
+                    .kd {
+                        color: @var6;
+                    }
+                    .hj {
+                        color: @var7;
+                    }
+                }
+                .jifenRight {
+                    width: 70%;
+                    height: 100%;
+                    float: left;
+                    padding-left: 0.18rem;
+                    box-sizing: border-box;
+                    span {
+                        display: block;
+                        border-bottom: 0.05rem;
+                        height: auto;
+                        margin-bottom: 0.04rem;
+                    }
+                    i,
+                    b {
+                        font-size: 0.2rem;
+                    }
+                    i {
+                        display: inline-block;
+                    }
+                    b {
+                        display: inline-block;
+                        width: 2.4rem;
+                    }
+                }
+            }
+        }
+    }
+    .deduct-detail {
+        margin: 0.25rem 0.3rem;
+        height: 1.8rem;
+        border: 0.01rem solid @var3;
+        .deduct-detail-title {
+            height: 0.48rem;
+            border-bottom: 0.01rem solid @var3;
+            line-height: 0.48rem;
+            text-align: center;
+            font-size: 0.25rem;
+            font-weight: 600;
+            box-sizing: border-box;
+        }
+        .deduct-detail-data {
+            width: 100%;
+            height: 1.32rem;
+            ul {
+                width: 100%;
+                height: 100%;
+                li {
+                    display: block;
+                    height: 50%;
+                    ul {
+                        width: 100%;
+                        height: 100%;
+                        li {
+                            display: inline-block;
+                            vertical-align: middle;
+                            span {
+                                height: 100%;
+                                line-height: 0.66rem;
+                                font-size: 0.2rem;
+                            }
+                            img {
+                                width: 0.42rem;
+                                height: auto;
+                                margin-top: 0.12rem;
+                            }
+                            &:first-of-type {
+                                margin-left: 0.4rem;
+                            }
+                            &:nth-child(2) {
+                                margin-left: 0.25rem;
+                            }
+                            &:nth-child(3) {
+                                margin-left: 0.3rem;
+                            }
+                            &:nth-child(4) {
+                                margin-left: 0.32rem;
+                            }
+                        }
+                        &:before {
+                            clear: both;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .clear-fix {
+        clear: both;
+    }
+    .font-color {
+        color: @var8;
+    }
+    .ddtjiao {
+        width: 100%;
+        height: 1.6rem;
+        span {
+            display: block;
+            height: 0.6rem;
+            text-align: center;
+            line-height: 0.6rem;
+            b {
+                color: #ff0000;
+                font-size: 0.2rem;
+            }
+        }
+        button {
+            width: 70%;
+            height: 0.66rem;
+            background: #49aced;
+            color: #fff;
+            text-align: center;
+            line-height: 0.66rem;
+            margin: 0 auto;
+            display: block;
+            outline: none;
+            border: 0;
+            border-radius: 0.33rem;
+            font-size: 0.27rem;
+        }
+    }
+}
+
+.orderSteps_point {
+    .diZhiLan {
+        width: 100%;
+        height: 0.95rem;
+        background: #fff;
+        padding-bottom: 0.2rem;
+        box-sizing: border-box;
+        overflow: hidden;
+        background: #f7f7f7;
+        i,
+        b {
+            font-style: normal;
+        }
+        .d1,
+        .d2 {
+            float: left;
+            width: 50%;
+            height: 0.6rem;
+            line-height: 0.95rem;
+            padding-left: 0.4rem;
+            box-sizing: border-box;
+            i,
+            b {
+                font-size: 0.3rem;
+            }
+            b {
+                color: #45aaed;
+            }
+        }
+    }
+    .dianDanWrap {
+        width: 90%;
+        height: auto;
+        margin: 0.35rem auto;
+        background: #fff;
+        overflow: hidden;
+        .shangpinDd {
+            width: 100%;
+            height: 1.9rem;
+            padding: 3%;
+            box-sizing: border-box;
+            border: 1px solid #F4F4F4;
+            margin-bottom: 0.1rem;
+            clear: both;
+            position: relative;
+            .jiLeft {
+                width: 24%;
+                height: 1.6rem;
+                float: left;
+                img {
+                    width: 100%;
+                    height: 1.32rem;
+                    display: block;
+                }
+                span {
+                    width: 100%;
+                    height: 0.28rem;
+                    display: block;
+                    border: 1px solid #f4f4f4;
+                    box-sizing: border-box;
+                    text-align: center;
+                    line-height: 0.28rem;
+                    font-size: 0.14rem;
+                    color: #a6c04c;
+                }
+                .jf {
+                    color: #a6c04c;
+                }
+                .kd {
+                    color: #bd1e1e;
+                }
+                .hj {
+                    color: #3da6ec;
+                }
+            }
+            .jifenRight {
+                width: 76%;
+                height: 100%;
+                float: left;
+                padding-left: 0.18rem;
+                box-sizing: border-box;
+                span {
+                    display: block;
+                    border-bottom: 0.05rem;
+                    height: auto;
+                    margin-bottom: 0.04rem;
+                }
+                i,
+                b {
+                    font-size: 0.2rem;
+                }
+                i {
+                    display: inline-block;
+                }
+                b {
+                    display: inline-block;
+                    box-sizing: border-box;
+                }
+                .cLan {
+                    color: #d22d19;
+                }
+            }
+            .shanchu {
+                position: absolute;
+                width: 0.22rem;
+                height: 0.25rem;
+                bottom: 0.25rem;
+                right: 0.4rem;
+                background: url(public/images/shanchu.jpg) no-repeat;
+                background-size: cover;
+            }
+        }
+        .jeXx {
+            width: 100%;
+            height: 1.4rem;
+            border-bottom: 2px solid #f4f4f4;
+            .je3 {
+                width: 100%;
+                box-sizing: border-box;
+                margin-top: 0.1rem;
+                overflow: hidden;
+                padding-left: 0;
+                span {
+                    display: block;
+                    width: 50%;
+                    height: 0.56rem;
+                    float: left;
+                    line-height: 0.56rem;
+                    padding-left: 10px;
+                    i,
+                    b {
+                        width: auto;
+                        margin-left: 0;
+                        font-size: 0.2rem;
+                        color: #fff;
+                    }
+                }
+                .jifen {
+                    background: #8aab13;
+                }
+                .xfjuan {
+                    background: #ffac0b;
+                }
+            }
+        }
+        .choice {
+            width: 100%;
+            height: auto;
+            span {
+                display: block;
+                width: 100%;
+                height: 0.42rem;
+                margin-bottom: 0.15rem;
+                i,
+                b,
+                input {
+                    display: block;
+                    float: left;
+                    font-size: 0.26rem;
+                }
+                i {
+                    width: 28%;
+                    height: 100%;
+                    line-height: 0.42rem;
+                }
+                b {
+                    width: 20%;
+                    height: 100%;
+                    background: #49aced;
+                    line-height: 0.42rem;
+                    text-align: center;
+                    color: #fff;
+                }
+                input {
+                    width: 52%;
+                    height: 100%;
+                    display: block;
+                    outline: none;
+                    border: 0;
+                    background: #f7f7f7;
+                }
+            }
+        }
+    }
+    .ddtjiao {
+        width: 100%;
+        height: 1.6rem;
+        span {
+            display: block;
+            height: 0.6rem;
+            text-align: center;
+            line-height: 0.6rem;
+            b {
+                color: #ff0000;
+                font-size: 0.2rem;
+            }
+        }
+        button {
+            width: 70%;
+            height: 0.66rem;
+            background: #49aced;
+            color: #fff;
+            text-align: center;
+            line-height: 0.66rem;
+            margin: 0 auto;
+            display: block;
+            outline: none;
+            border: 0;
+            border-radius: 0.33rem;
+            font-size: 0.27rem;
+        }
+    }
+}
+
+.orderSteps_billing {
+    .cLan {
+        color: #d22d19;
+    }
+    .infoBold{
+        background:aliceblue;
+        span{
+            font-weight: bold;
+        }
+    }
+    .consume-info {
+        padding: 0.36rem 0.48rem;
+    }
+    .consume-info span {
+        font-size: 0.28rem;
+    }
+    .height-box1 {
+        height: 0.28rem;
+        background: #f7f7f7;
+    }
+    .ifRetain {
+        height: 1.57rem;
+    }
+    .ifRetain p {
+        height: 0.7rem;
+        text-align: center;
+        margin-top: 0.28rem;
+        line-height: 0.7rem;
+        font-size: 0.28rem;
+    }
+    .ifRetain .Jpoint {
+        color: #D22D19;
+        font-weight: 600;
+        font-size: 0.24rem;
+    }
+    .ifRetain div {
+        position: relative;
+        width: 60%;
+        height: 0.63rem;
+        display: inline-block;
+        margin: 0 20%;
+    }
+    .ifRetain div button:first-of-type {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-style: none;
+        font-size: 0.25rem;
+        color: white;
+        width: 47%;
+        height: 0.63rem;
+        border-radius: 0.2rem;
+    }
+    .ifRetain div button:nth-child(2) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-style: none;
+        font-size: 0.25rem;
+        color: white;
+        width: 47%;
+        height: 0.63rem;
+        border-radius: 0.2rem;
+    }
+    .height-box2 {
+        height: 0.12rem;
+        background: #f7f7f7;
+    }
+    .orderList {
+        height: auto;
+        padding: 0.2rem 0.35rem;
+    }
+    .orderList .order-box {
+        border: 0.01rem solid #cccccc;
+    }
+    .orderList .shangpinDd {
+        width: 100%;
+        height: 1.9rem;
+        padding: 3%;
+        box-sizing: border-box;
+        border-bottom: 2px solid #f4f4f4;
+        clear: both;
+        position: relative;
+    }
+    .orderList .shangpinDd .jiLeft {
+        width: 24%;
+        height: 1.6rem;
+        float: left;
+    }
+    .orderList .shangpinDd .jiLeft img {
+        width: 100%;
+        height: 1.32rem;
+        display: block;
+    }
+    .orderList .shangpinDd .jiLeft span {
+        width: 100%;
+        height: 0.28rem;
+        display: block;
+        border: 1px solid #f4f4f4;
+        box-sizing: border-box;
+        text-align: center;
+        line-height: 0.28rem;
+        font-size: 0.14rem;
+        color: #a6c04c;
+    }
+    .orderList .shangpinDd .jiLeft .jf {
+        color: #a6c04c;
+    }
+    .orderList .shangpinDd .jiLeft .kd {
+        color: #d47272;
+    }
+    .orderList .shangpinDd .jiLeft .hj {
+        color: #3da6ec;
+    }
+    .orderList .shangpinDd .jifenRight {
+        width: 70%;
+        height: 100%;
+        float: left;
+        padding-left: 0.18rem;
+        box-sizing: border-box;
+    }
+    .orderList .shangpinDd .jifenRight span {
+        display: block;
+        border-bottom: 0.05rem;
+        height: auto;
+        margin-bottom: 0.04rem;
+    }
+    .orderList .shangpinDd .jifenRight i,
+    .orderList .shangpinDd .jifenRight b {
+        font-size: 0.2rem;
+    }
+    .orderList .shangpinDd .jifenRight i {
+        display: inline-block;
+    }
+    .orderList .shangpinDd .jifenRight b {
+        display: inline-block;
+    }
+    .payBtns {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-justify-content: center;
+        -moz-justify-content: center;
+        -o-justify-content: center;
+        -ms-justify-content: center;
+        justify-content: center;
+    }
+    .payBtns button {
+        margin: 0 1.5%;
+        width: 27.5%;
+        height: 0.65rem;
+        border-radius: 0.18rem;
+        border-style: none;
+        color: white;
+        font-size: 0.24rem;
+        letter-spacing: -4px;
+    }
+    .payBtns button span {
+        display: inline-block;
+        height: 100%;
+        line-height: 0.65rem;
+        letter-spacing: normal;
+        vertical-align: middle;
+    }
+    .payBtns button .btn-icon1 {
+        margin-left: 0;
+    }
+    .payBtns button .btn-icon2 {
+        margin-left: -0.24rem;
+    }
+    .payBtns button .btn-icon3 {
+        margin-left: -0.48rem;
+    }
+    .payBtns button img {
+        height: 0.33rem;
+        width: auto;
+        margin-top: 0.16rem;
+        margin-right: 0.05rem;
+    }
+}

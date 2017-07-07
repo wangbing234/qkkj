@@ -1,0 +1,39 @@
+<ion-view view-title="提供捐助" class="provideDonation">
+
+    <ion-header-bar class="bar bar-header bar-blue">
+        <a ng-back class="button icon-left ion-chevron-left button-clear"></a>
+		<h2 class="title">提供捐助</h2>
+	</ion-header-bar>
+
+    <ion-content>
+        <div class="donationWrap" >
+            <div class="sbox">
+                <span class="sboxa3"><em class="em3"></em><i>我的互捐服务</i><b ng-bind="game"></b></span>
+                <span class="sboxa2"><em class="em2"></em><i>上次捐赠额度</i><b ng-bind="entryLast"></b></span>
+                <span class="sboxa1" ui-sref="goodsList({type:'billing'})"><em class="em1"></em><i>总捐赠额度&gt;&gt;</i><b ng-bind="entryStage"></b></span>
+            </div>
+            <h5>提供捐助</h5>
+            <div class="addReduict">
+                <button class="btleft" ng-click="changeAmount(-100);" ng-style="vm.amount<=entryMin?{'background':'#eee'}:''">-</button>
+                <input type="text" ng-model="vm.amount" ng-blur="checkValid();" />
+                <button  class="btright" ng-click="changeAmount(100);" ng-style="vm.amount>=entryMax?{'background':'#eee'}:''">+</button>
+            </div>
+        </div>
+        <div class="wenxiWrap">
+            <div class="tishi tishiXin">
+                <h5>互捐规则：</h5>
+                <span>1.您可以生成<strong style="color: #D22D19;">500~30000</strong>互捐额度的订单，每次捐赠额度为<strong style="color: #D22D19;">100</strong>的整数倍。</span>
+                <span>2.订单金额提交后，将不能取消或修改。</span>
+                <span>当系统为您匹配到接受会员的捐助后，您必须在<b id="limit" style="color: #D22D19;" ng-bind="limit"></b>小时内为对方付款，否则系统会冻结您的账户。</span>
+                <span>4.当您存在一笔未完结主动捐赠订单时无法再次生成和提交订单。</span>
+                <span>5.每次捐赠的额度必须<strong style="color: #D22D19;">大于或等于</strong>上次成功捐赠的额度，初次除外。</span>
+                <h5 style="margin-top: 0.2rem;"><a style="font-size: 0.24rem;text-decoration:underline" ui-sref="notice({noticeId:3})">互捐服务消耗规则&gt;&gt;</a></h5>
+            </div>
+            <div class="btns">
+                <button id="tijiao" class="highlight" ng-click="checkAmount();">确定提交</button>
+                <button id="liaojie" ui-sref="aboutUs" class="highlight">先了解鼎烨</button>
+            </div>
+        </div>
+    </ion-content>
+
+</ion-view>

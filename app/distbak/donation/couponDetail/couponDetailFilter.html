@@ -1,0 +1,25 @@
+<ion-modal-view>
+
+    <ion-header-bar class="bar bar-header bar-blue">
+        <a ng-click="closeModal();" class="button icon-left ion-close-round button-clear"></a>
+        <h2 class="title">消费券查询</h2>
+    </ion-header-bar>
+
+    <ion-content style="background: #e4f5ff;">
+        <div id="conponSelectWrap">
+            <div class="selectWrap">
+                <span class="selectc1" ng-click="filter('Entry');"><i></i><b>捐赠</b></span>
+                <span class="selectc2" ng-click="filter('Unfreeze');"><i></i><b>订单到期</b></span>
+                <span class="selectc3" ng-click="filter('Max');"><i></i><b>捐赠满额</b></span>
+                <span class="selectc4" ng-click="filter('Team');"><i></i><b>推广会员</b></span>
+                <span class="selectc5" ng-click="filter('Order');"><i></i><b>商城消费</b></span>
+                <span class="selectc6" ng-click="filter('OrderCancel');"><i></i><b>取消订单</b></span>
+                <span class="selectc7" ng-click="filter('Other');"><i></i><b>其他</b></span>
+            </div>
+            <div class="subbit">
+                <button>显示全部</button>
+            </div>
+        </div>
+    </ion-content>
+        
+</ion-modal-view>

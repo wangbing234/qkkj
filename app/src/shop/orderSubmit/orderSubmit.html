@@ -1,0 +1,53 @@
+<ion-view view-title="订单明细" class="orderSubmit">
+    <ion-header-bar class="bar bar-header bar-blue">
+        <a ng-back class="button icon-left ion-chevron-left button-clear"></a>
+        <h2 class="title">我的订单</h2>
+    </ion-header-bar>
+    <ion-content has-bouncing="false">
+    <div class="self_warp">
+        <button class="button" ng-if="addressList.length<=0 " ui-sref="address">请添加收货地址</button>
+        <div class="diZhiLan" ng-if="addressList.length>0 ">
+            <span class="d1"><b ng-bind="defaultAddress.name" class="black"></b></span><span class="d2"><b ng-bind="defaultAddress.mobile" class="black"></b></span><br/>
+            <span class="d3"><b><span ng-bind="defaultAddress.pcadetail"></span><span ng-bind="defaultAddress.address" class="black"></span><em ng-click="chooseAddress();"></em></span>
+        </div>
+
+        <div class="dianDanWrap">
+            <div ng-repeat="product in productList" class="shangpinDd">
+                <div class="jiLeft">
+                    <img ng-src="{{host}}{{product.picurl160}}"/>
+                    <span ng-class="product.productType===31?'hj':product.productType===37?'jf':product.productType===38?'kd':''" ng-bind="product.catalogName"></span>
+                </div>
+                <div class="jifenRight">
+                    <span class="sJ"><b class="black" ng-bind="product.name"></b></span>
+                    <span><b class="cLan" ng-bind="product.nowPrice | currency:'￥'"></b></span>
+                    <span><i>×</i><b class="cLan" ng-bind="product.buyCount"></b></span>
+                </div>
+                <div class="shanchu" ng-click="deleteItem($index);"></div>
+            </div>
+        </div>
+        
+        <div class="jeXx">
+            <span class="je1"><i class="black">总&nbsp;金&nbsp;额&nbsp;</i><b ng-bind="amount | currency:'￥'"></b></span>
+            <span class="je1">
+                <!--<i>运费:</i><b>¥100.00</b>-->
+            </span>
+            <span class="je2">
+                <!--<i>总&nbsp;支&nbsp;付:</i><b>¥100.00</b>-->
+            </span>
+            <!--<span class="je3">
+                <i class="black">付现:</i><b ng-bind="totalExchangeMoney | currency:'￥'"></b>&nbsp;&nbsp;
+                <i class="black">钱包:</i><b ng-bind="totalExchangeWallet | currency:'￥'"></b>&nbsp;&nbsp;
+                <i class="black">积分或消费券:</i><b ng-bind="totalExchangeScore"></b>
+            </span>-->
+           <span class="je1"><i class="black">付&nbsp;现&nbsp;</i><b ng-bind="totalExchangeMoney | currency:'￥'"></b></span>
+        <span class="je1"><i class="black">钱&nbsp;包&nbsp;</i><b ng-bind="totalExchangeWallet | currency:'￥'"></b></span>
+ <span class="je1"> <i class="black">积分或消费券&nbsp;</i>&nbsp;<b ng-bind="totalExchangeScore"></b></span>
+        </div>
+        <div class="ddtjiao">
+            <span><b ng-bind="errorMessage"></b></span>
+            <button ng-style="(productList.length>0 && errorMessage==='')?{background:'#49aced'}:{background:'#eee'}" ng-click="submit();">提交订单</button>
+            <span></span>
+        </div>
+    </div>
+    </ion-content>
+</ion-view>

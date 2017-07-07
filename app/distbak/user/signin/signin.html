@@ -1,0 +1,38 @@
+<ion-view view-title="会员签到">
+    <!--头部部分-->
+    <div style="width: 100%;height: 100%;background: #e4f5ff;">
+        <div class="bar bar-header bar-blue">
+            <a ng-back class="button icon-left ion-chevron-left button-clear"></a>
+            <h2 class="title">会员签到</h2>
+        </div>
+        <div class="mg5"></div>
+        <h2 class="h_2">已连续签到</h2>
+        <div class="hzi">
+            <span class="border0" id="tian1"></span>
+            <span class="border0" id="tian2"></span>
+            <span class="border0" id="tian3"></span>
+            <span class="tian">天</span>
+            <b ng-bind="days"></b>
+        </div>
+
+        <div class="mg6"></div>
+        <div id="dianji">
+            <button ng-click="submit();" ng-bind-html="signState"></button>
+        </div>
+        <div class="hezi">
+            <div class="fir"><span class="xi">连续签到</span><span class="xw">奖励</span><span class="clr"></span></div>
+            <div class="sec">
+                <span class="jindu"><span class="ah"></span></span>&nbsp;&nbsp;
+                <b ng-bind="signDays2"></b>/<b ng-bind="signDays"></b>&nbsp;&nbsp;<b>天</b><b class="aq">互捐服务</b><span class="ae" ng-bind="bonusSum">0</span>
+            </div>
+        </div>
+        <div class="guize">
+            <h5>签到规则</h5>
+            <p>
+                1.利好消息：会员连续签到5天即可获得互捐服务一次！！！
+            是连续五天哦，<b>中间如有间断会从零开始重新计算的</b>，每天一签，坚持不断！加油加油！！
+            </p>
+            <p></p>
+        </div>
+    </div>
+</ion-view>

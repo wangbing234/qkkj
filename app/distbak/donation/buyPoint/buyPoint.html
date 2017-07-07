@@ -1,0 +1,112 @@
+<ion-view view-title="积分交易中心" style="background:#001f3a;">
+    <ion-header-bar class="bar bar-header bar-blue">
+        <a ng-back class="button icon-left ion-chevron-left button-clear"></a>
+        <h2 class="title">积分交易中心</h2>
+        <a class="button icon-right button-clear" ng-class="data.isConnected?'ion-connection-bars':'ion-alert-circled'"></a>
+    </ion-header-bar>
+
+    <ion-content overflow-scroll="true" style="background:#001f3a;">
+        <div class="purchaseWrap">
+            <div class="second" style="margin-top:5px;">
+                <div>
+                    <span><i></i><b><em>可&nbsp;&nbsp;&nbsp;用&nbsp;&nbsp;</em><strong ng-bind="baseFree | currency:'¥ '"></strong></b></span>
+                    <span><i></i><b><em>持&nbsp;&nbsp;&nbsp;仓&nbsp;&nbsp;</em><strong ng-bind="data.wallet.point"></strong></b><b><em>不可用&nbsp;&nbsp;</em><strong ng-bind="data.wallet.point2"></strong></b></span>
+                </div>
+                <div>
+                    <span><i></i><b><em ng-style="data.todayChanges>=0?{color:'red'}:{color:'#cffa35'}" ng-bind="data.todayChanges>=0?'盈&nbsp;+':'亏&nbsp;'"></em><strong ng-style="data.todayChanges>=0?{color:'red'}:{color:'#cffa35'}" ng-bind="data.todayChanges | currency:'¥ '"></strong></b></span>
+                    <span><i></i><b><em>成&nbsp;&nbsp;&nbsp;本&nbsp;&nbsp;</em><strong ng-bind="data.wallet.pointAvg"></strong></b><b><em>现&nbsp;&nbsp;&nbsp;价&nbsp;&nbsp;</em><strong ng-bind="data.market.curPrice"></strong></b></span>
+                </div>
+            </div>
+            <div class="third">
+                <span class="title">买入积分</span>
+                <div class="inputBox"><i class="box1"></i><input type="text" name="" ng-blur="calc();" ng-model="vm.price" placeholder="买入价格" /></div>
+                <div class="info"><span><i>涨停：</i><b ng-bind="data.market.limitUpPrice"></b></span><span><i>跌停：</i><b ng-bind="data.market.limitDownPrice"></b></span></div>
+                <div class="inputBox"><i class="box2"></i><input type="text" name="" ng-blur="calc();" ng-model="vm.amount" placeholder="买入数量" /></div>
+                <div class="info"><span><i>最新：</i><b ng-bind="data.market.curPrice"></b></span><span><i>可买：</i><b ng-bind="maxBuyNumber"></b></span></div>
+                <div class="third_transaction">
+                    <div class="box box-left">
+                        <span><i>买入比例 </i></span>
+                        <span><i>交易额</i></span>
+                        <span><i>手续费</i></span>
+                    </div>
+                    <div class="box box-right">
+                        <span class="span-border"><button ng-click="changePercentage(-10);">－</button>
+                        <input type="text" min="1" max="100" ng-model="vm.percentage" number-Input="checkValid();" ng-model-options="{allowInvalid: false}" value="10"/>
+                        <b>%</b>
+                        <button ng-click="changePercentage(10);">＋</button></span>
+                        <span><i ng-bind="tradeVolume"></i><b>CNY</b></span>
+                        <span><i ng-bind="commission"></i><b></b>CNY</span>
+                    </div>
+                </div>
+                <div class="inputBox"><i class="box3"></i><input type="password" name="" id="" ng-model="vm.password" placeholder="交易密码" /></div>
+                <div class="fourth">
+                    <button ng-click="buy();">买&nbsp;&nbsp;入</button>
+                </div>
+            </div>
+            
+            <div class="fifth">
+                <span class="title">全网交易量化表</span>
+                <div class="surface">
+                    <table border="1px" cellspacing="1px" cellpadding="1px">
+                        <tr>
+                            <th rowspan="6" class="left">卖</th>
+                            <th class="price">单价</th>
+                            <th class="state">待卖出</th>
+                        </tr>
+                        <tr>
+                            <td class="price" ng-bind="data.market.sellQueue[0].price"></td>
+                            <td class="state" ng-bind="data.market.sellQueue[0].amount"></td>
+                        </tr>
+                        <tr>
+                            <td class="price" ng-bind="data.market.sellQueue[1].price"></td>
+                            <td class="state" ng-bind="data.market.sellQueue[1].amount"></td>
+                        </tr>
+                        <tr>
+                            <td class="price" ng-bind="data.market.sellQueue[2].price"></td>
+                            <td class="state" ng-bind="data.market.sellQueue[2].amount"></td>
+                        </tr>
+                        <tr>
+                            <td class="price" ng-bind="data.market.sellQueue[3].price"></td>
+                            <td class="state" ng-bind="data.market.sellQueue[3].amount"></td>
+                        </tr>
+                        <tr>
+                            <td class="price" ng-bind="data.market.sellQueue[4].price"></td>
+                            <td class="state" ng-bind="data.market.sellQueue[4].amount"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="surface">
+                    <table border="1px" cellspacing="1px" cellpadding="1px">
+                        <tr>
+                            <th rowspan="6" class="left">买</th>
+                            <th class="price">单价</th>
+                            <th class="state">购买量</th>
+                        </tr>
+                        <tr>
+                            <td class="price" ng-bind="data.market.buyQueue[0].price"></td>
+                            <td class="state" ng-bind="data.market.buyQueue[0].amount"></td>
+                        </tr>
+                        <tr>
+                            <td class="price" ng-bind="data.market.buyQueue[1].price"></td>
+                            <td class="state" ng-bind="data.market.buyQueue[1].amount"></td>
+                        </tr>
+                        <tr>
+                            <td class="price" ng-bind="data.market.buyQueue[2].price"></td>
+                            <td class="state" ng-bind="data.market.buyQueue[2].amount"></td>
+                        </tr>
+                        <tr>
+                            <td class="price" ng-bind="data.market.buyQueue[3].price"></td>
+                            <td class="state" ng-bind="data.market.buyQueue[3].amount"></td>
+                        </tr>
+                        <tr>
+                            <td class="price" ng-bind="data.market.buyQueue[4].price"></td>
+                            <td class="state" ng-bind="data.market.buyQueue[4].amount"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="clr">
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

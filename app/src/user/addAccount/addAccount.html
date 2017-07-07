@@ -1,0 +1,53 @@
+<ion-view view-title="更新账户信息">
+  <ion-header-bar class="bar bar-header bar-blue">
+    <a ng-back class="button icon-left ion-chevron-left button-clear"></a>
+    <h2 class="title">更新账户信息</h2>
+  </ion-header-bar>
+  <ion-content>
+    <div id="addAccount_wrap">
+    	<div class="addAccount_spare">
+      <span>常用银行卡</span>
+    </div>
+    <div class="addAccount_wrap1">
+      <ul>
+        <li><span>银行卡号</span>&nbsp;&nbsp;&nbsp;&nbsp;<input class="addAccount_card_1" type="text" ng-model="vm.bankNum" /><i class="clr"></i></li>
+        <li><span>开户银行</span>&nbsp;&nbsp;&nbsp;&nbsp;<input class="addAccount_cardAdd" type="text" ng-model="vm.depositBank" /><i class="clr"></li>
+        <li><span>支行名称</span>&nbsp;&nbsp;&nbsp;&nbsp;<input class="addAccount_cardName" type="text" ng-model="vm.detailBank" /><i class="clr"></li>
+      </ul>
+    </div>
+    <div class="addAccount_spare">
+      <span>备用银行卡</span>
+    </div>
+    <div class="addAccount_wrap1">
+      <ul>
+        <li><span>银行卡号</span>&nbsp;&nbsp;&nbsp;&nbsp;<input class="addAccount_card_2" type="text" ng-model="vm.bankNum2" /><i class="clr"></li>
+        <li><span>开户银行</span>&nbsp;&nbsp;&nbsp;&nbsp;<input class="addAccount_cardAdd2" type="text" ng-model="vm.depositBank2" /><i class="clr"></li>
+        <li><span>支行名称</span>&nbsp;&nbsp;&nbsp;&nbsp;<input class="addAccount_cardName2" type="text" ng-model="vm.detailBank2" /><i class="clr"></li>
+      </ul>
+    </div>
+    <div class="addAccount_spare">
+      <span>支付宝账户</span>
+    </div>
+    <div class="addAccount_wrap1" id="addAccount_wrapZf">
+      <ul>
+
+
+
+        <li><span>支付宝账户</span>&nbsp;&nbsp;&nbsp;&nbsp;<input class="addAccount_zhifubao" type="text" ng-model="vm.alipayId" /><i class="clr"></li>
+
+      </ul>
+    </div>
+    <div class="addAccount_spare2">
+      <span>免责声明:个人需确保输入信息真实有效</span>
+      <span class="red">注:请填写完整的支行名称(X省X市X区X支行)</span>
+    </div>
+    <div id="addAccount_error">
+      <span></span>
+    </div>
+    <div class="addAccount_tijiao">
+      <button class="highlight" ng-click="submit()">更新账户信息</button>
+    </div>
+  </div>
+  </ion-content>
+  
+</ion-view>

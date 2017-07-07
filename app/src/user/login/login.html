@@ -1,0 +1,42 @@
+<ion-view view-title="会员登录">
+    <div id="wrapss">
+        <div class="logo">
+            <div class="clog"></div>
+        </div>
+        <div class="loginWrap">
+            <span class="title">会员登录</span>
+            <div class="inBox">
+                <div class="inA">
+                    <span><img src="public/images/user.png" alt=""/><em></em></span>
+                    <input type="text" name="" id="usePhone" ng-model="phoneNumber" placeholder="用户名/手机/邮箱" class="bbb" />
+                </div>
+                <div class="inB">
+                    <span><img src="public/images/password.png" alt=""/><em></em></span>
+                    <input type="password" name="" id="pwdd" ng-model="passWord" placeholder="请输入密码" class="bbb" />
+                </div>
+            </div>
+            <div class="btn">
+                <div class="ckWrap">
+                    <span>
+                        <input type="checkbox" id="rem_pw" class="check" checked/><label for="rem_pw"></label>
+                        <span name="ae" id="jizhu">记住密码</span>
+                    </span>
+                    <span class="pwd">
+                        <a ui-sref="forget">忘记密码&nbsp;&gt;</a>
+                    </span>
+                </div>
+                <div class="err">
+                    <span class="error1"></span>
+                </div>
+                <button class="login highlight" ng-click="login();">登&nbsp;&nbsp;录</button>
+                <button class="register highlight" ui-sref="register">注&nbsp;&nbsp;册</button>
+                <div class="ckWrap">
+                    <span>
+                        <input type="checkbox" id="xieyi" class="check" checked/><label for="xieyi"></label>
+                        <a ui-sref="agreements" name="ae">同意用户协议</a>
+                    </span>						
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-view>

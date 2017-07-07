@@ -1,0 +1,39 @@
+<ion-view view-title="公益钱包-得到捐助" class="provideDonation">
+
+    <ion-header-bar class="bar bar-header bar-blue">
+        <a ng-back class="button icon-left ion-chevron-left button-clear"></a>
+		<h2 class="title">公益钱包-得到捐助</h2>
+	</ion-header-bar>
+
+    <div style="padding-top:44px;overflow:scroll;height:100%;">
+        <div class="donationWrap" >
+            <div class="sbox">
+                <span class="sboxa3"><em class="em3"></em><i>我的排单币</i><b ng-bind="game"></b></span>
+                <span class="sboxa2"><em class="em2"></em><i>上次捐赠额度</i><b ng-bind="entryLast"></b></span>
+                <span class="sboxa1" ui-sref="goodsList({type:'billing'})"><em class="em1"></em><i>总捐赠额度&gt;&gt;</i><b ng-bind="entryStage"></b></span>
+            </div>
+            <h5>提供捐助</h5>
+            <div class="addReduict">
+                <button class="btleft" ng-click="changeAmount(-100);" ng-style="vm.amount<=entryMin?{'background':'#eee'}:''">-</button>
+                <input type="text" ng-model="vm.amount" ng-blur="checkValid();" />
+                <button  class="btright" ng-click="changeAmount(100);" ng-style="vm.amount>=entryMax?{'background':'#eee'}:''">+</button>
+            </div>
+        </div>
+        <div class="wenxiWrap">
+            <div class="tishi tishiXin">
+                <h5>温馨提示：</h5>
+                <span>1.每次提取额度为<strong style="color: #D22D19;">100</strong>的整数倍.</span>
+                <span>2.订单金额提交后，将不能取消或修改.</span>
+                <span>3.当系统为您匹配到接受会员的捐助后您必须在48小时内确认收款，否则系统会冻结您的账户.</span>
+                <span>4..需等待上一笔提取订单完成后方可进行下一笔提取.</span>
+        
+                
+            </div>
+            <div class="btns">
+                <button id="tijiao" class="highlight" ng-click="checkAmount();">确定提交</button>
+                <button id="liaojie" ui-sref="aboutUs" class="highlight">先了解鼎烨</button>
+            </div>
+        </div>
+    </div>
+
+</ion-view>

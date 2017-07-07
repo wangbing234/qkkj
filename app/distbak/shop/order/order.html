@@ -1,0 +1,191 @@
+<ion-view view-title="订单明细" class="order">
+    <!--头部部分-->
+    <ion-header-bar class="bar bar-header bar-blue">
+        <a ng-back class="button icon-left ion-chevron-left button-clear"></a>
+        <h2 class="title">我的订单</h2>
+    </ion-header-bar>
+    <ion-tabs class="tabs-positive tabs-icon-only order_tab" delegate-handle="order_tab">
+        <ion-tab title="全部" ng-click="tab(0);"></ion-tab>
+        <ion-tab title="待付款" ng-click="tab(1);"></ion-tab>
+        <ion-tab title="待发货" ng-click="tab(2);"></ion-tab>
+        <ion-tab title="待签收" ng-click="tab(3);"></ion-tab>
+        <ion-tab title="已完成" ng-click="tab(4);"></ion-tab>
+    </ion-tabs>
+
+	<ion-slide-box style="width:100%;height:100%;background:#eee;" show-pager="false" on-slide-changed="activeTab($index);">
+		<ion-slide>
+			<ion-content style="padding-top: 0.58rem;">
+				<div class="order-info">
+					<div ng-repeat="order in orderAllList" ng-click="orderHandler(order.status,order.id);" class="wait-pay-order">
+						<p>
+							<span><i>订单号：</i><b ng-bind="order.orderNo"></b></span>
+							<!--<span><i>下单时间：</i><b ng-bind="order.createdate"></b></span>-->
+							<span></span>
+							<span class="{{ order.status | orderClass }}"></span>
+						</p>
+						<div class="order-box">
+							<div class="shangpinDd" ng-repeat="product in order.orders">
+								<div class="jiLeft">
+									<img ng-src="{{host}}{{product.picurl160}}" />
+									<span ng-class="product.productType==='31'?'hj':product.productType==='37'?'jf':product.productType==='38'?'kd':''" ng-bind="product.catalogName"></span>
+								</div>
+								<div class="jifenRight">
+									<span><i></i><b ng-bind="product.productName"></b></span>
+									<span><i></i><b class="cLan" ng-bind="product.price | currency:'￥'"></b></span>
+									<span><i>×</i><b class="cLan" ng-bind="product.productNumber"></b></span>
+									<button class="button button-positive" ng-click="queryExpress(product,$event);" ng-if="product.status === 'send' || product.status === 'sign'">查看物流</button>
+									<button class="button button-positive" ng-click="sign(product,$event);" ng-if="product.status === 'send'">确认收货</button>
+								</div>
+							</div>
+						</div>
+						<div class="total">
+							<span><i>共计</i><b class="data-color" ng-bind="order.orders.length"></b><i>件商品合计￥</i>
+								<b class="data-color" ng-bind="order.amount"></b>
+							</span>
+						</div>
+					</div>
+				</div>
+				<ion-infinite-scroll ng-if="!orderAllLoaded" on-infinite="getOrderData('');" distance="1%"></ion-infinite-scroll>
+			</ion-conten>
+		</ion-slide>
+
+		<ion-slide>
+			<ion-content style="padding-top: 0.58rem;">
+				<div class="order-info">
+					<div ng-repeat="order in orderWaitPayList" ng-click="orderHandler(order.status,order.id);" class="wait-pay-order">
+						<p>
+							<span><i>订单号：</i><b ng-bind="order.orderNo"></b></span>
+							<!--<span><i>下单时间：</i><b ng-bind="order.createdate"></b></span>-->
+							<span></span>
+							<span class="state-color1"></span>
+						</p>
+						<div class="order-box">
+							<div class="shangpinDd" ng-repeat="product in order.orders">
+								<div class="jiLeft">
+									<img ng-src="{{host}}{{product.picurl160}}" />
+									<span ng-class="product.productType==='31'?'hj':product.productType==='37'?'jf':product.productType==='38'?'kd':''" ng-bind="product.catalogName"></span>
+								</div>
+								<div class="jifenRight">
+									<span><i></i><b ng-bind="product.productName" class="black"></b></span>
+									<span><i></i><b class="cLan" ng-bind="product.price | currency:'￥'"></b></span>
+									<span><i>×</i><b class="cLan" ng-bind="product.productNumber"></b></span>
+									<button class="button button-positive" ng-click="sign(order,$event);" ng-if="order.status === 'send'">确认收货</button>
+								</div>
+							</div>
+						</div>
+						<div class="total">
+							<span><i>共计</i><b class="data-color" ng-bind="order.orders.length"></b><i>件商品合计￥</i>
+								<b class="data-color" ng-bind="order.amount"></b>
+							</span>
+						</div>
+					</div>
+				</div>
+				<ion-infinite-scroll ng-if="!orderWaitPayLoaded" on-infinite="getOrderData('waitPay');" distance="1%"></ion-infinite-scroll>
+			</ion-conten>
+		</ion-slide>
+
+		<ion-slide>
+			<ion-content style="padding-top: 0.58rem;">
+				<div class="order-info">
+					<div ng-repeat="order in orderWaitSendList" ng-click="orderHandler(order.status,order.id);" class="wait-pay-order">
+						<p>
+							<span><i>订单号：</i><b ng-bind="order.orderNo"></b></span>
+							<!--<span><i>下单时间：</i><b ng-bind="order.createdate"></b></span>-->
+							<span></span>
+							<span class="state-color2"></span>
+						</p>
+						<div class="order-box">
+							<div class="shangpinDd" ng-repeat="product in order.orders">
+								<div class="jiLeft">
+									<img ng-src="{{host}}{{product.picurl160}}" />
+									<span ng-class="product.productType==='31'?'hj':product.productType==='37'?'jf':product.productType==='38'?'kd':''" ng-bind="product.catalogName"></span>
+								</div>
+								<div class="jifenRight">
+									<span><i></i><b ng-bind="product.productName"></b></span>
+									<span><i></i><b class="cLan" ng-bind="product.price | currency:'￥'"></b></span>
+									<span><i>×</i><b class="cLan" ng-bind="product.productNumber"></b></span>
+									<button class="button button-positive" ng-click="sign(order,$event);" ng-if="order.status === 'send'">确认收货</button>
+								</div>
+							</div>
+						</div>
+						<div class="total">
+							<span><i>共计</i><b class="data-color" ng-bind="order.orders.length"></b><i>件商品合计￥</i>
+								<b class="data-color" ng-bind="order.amount"></b>
+							</span>
+						</div>
+					</div>
+				</div>
+				<ion-infinite-scroll ng-if="!orderWaitSendLoaded" on-infinite="getOrderData('waitSend');" distance="1%"></ion-infinite-scroll>
+			</ion-conten>
+		</ion-slide>
+
+		<ion-slide>
+			<ion-content style="padding-top: 0.58rem;">
+				<div class="order-info">
+					<div ng-repeat="order in orderWaitReceiveList" ng-click="orderHandler(order.status,order.id);" class="wait-pay-order">
+						<p>
+							<span><i>订单号：</i><b ng-bind="order.orderNo"></b></span>
+							<!--<span><i>下单时间：</i><b ng-bind="order.createdate"></b></span>-->
+							<span></span>
+							<span class="state-color3"></span>
+						</p>
+						<div class="order-box">
+							<div class="shangpinDd" ng-repeat="product in order.orders">
+								<div class="jiLeft">
+									<img ng-src="{{host}}{{product.picurl160}}" />
+									<span ng-class="product.productType==='31'?'hj':product.productType==='37'?'jf':product.productType==='38'?'kd':''" ng-bind="product.catalogName"></span>
+								</div>
+								<div class="jifenRight">
+									<span><i></i><b ng-bind="product.productName"></b></span>
+									<span><i></i><b class="cLan" ng-bind="product.price | currency:'￥'"></b></span>
+									<span><i>×</i><b class="cLan" ng-bind="product.productNumber"></b></span>
+									<button class="button button-positive" ng-click="sign(order,$event);" ng-if="order.status === 'send'">确认收货</button>
+								</div>
+							</div>
+						</div>
+						<div class="total">
+							<span><i>共计</i><b class="data-color" ng-bind="order.orders.length"></b><i>件商品合计￥</i>
+								<b class="data-color" ng-bind="order.amount"></b>
+							</span>
+						</div>
+					</div>
+				</div>
+				<ion-infinite-scroll ng-if="!orderWaitReceiveLoaded" on-infinite="getOrderData('waitReceive');" distance="1%"></ion-infinite-scroll>
+			</ion-conten>
+		</ion-slide>
+
+		<ion-slide>
+			<ion-content style="padding-top: 0.58rem;">
+				<div class="order-info">
+					<div ng-repeat="order in orderCompleteList" ng-click="orderHandler(order.status,order.id);" class="wait-pay-order">
+						<p>
+							<span><i>订单号：</i><b ng-bind="order.orderNo"></b></span>
+							<!--<span><i>下单时间：</i><b ng-bind="order.createdate"></b></span>-->
+							<span></span>
+							<span class="state-color4"></span>
+						</p>
+						<div class="order-box">
+							<div class="shangpinDd" ng-repeat="product in order.orders">
+								<div class="jiLeft">
+									<img ng-src="{{host}}{{product.picurl160}}" />
+									<span ng-class="product.productType==='31'?'hj':product.productType==='37'?'jf':product.productType==='38'?'kd':''" ng-bind="product.catalogName"></span>
+								</div>
+								<div class="jifenRight">
+									<span><i></i><b ng-bind="product.productName"></b></span>
+									<span><i></i><b class="cLan" ng-bind="product.price | currency:'￥'"></b></span>
+									<span><i>×</i><b class="cLan" ng-bind="product.productNumber"></b></span>
+								</div>
+							</div>
+						</div>
+						<div class="total">
+							<span><i>共计</i><b class="data-color" ng-bind="order.orders.length"></b><i>件商品合计￥</i>
+								<b class="data-color" ng-bind="order.amount"></b>
+							</span>
+						</div>
+					</div>
+				</div>
+				<ion-infinite-scroll ng-if="!orderCompleteLoaded" on-infinite="getOrderData('waitRate');" distance="1%"></ion-infinite-scroll>
+			</ion-conten>
+		</ion-slide>
+	</ion-slide-box>
+</ion-view>

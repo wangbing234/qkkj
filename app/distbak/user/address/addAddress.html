@@ -1,0 +1,25 @@
+<ion-modal-view ng-controller="addAddressController">
+    <!--头部部分-->
+    <ion-header-bar class="bar bar-header bar-blue">
+        <a ng-click="closeModal();" class="button icon-left ion-chevron-left button-clear"></a>
+        <h2 class="title">新增收货地址</h2>
+    </ion-header-bar>
+    <ion-content overflow-scroll="true" scroll="false">
+        <div class="wrap1">
+            <ul>
+                <li><span>收件人姓名</span><input type="text" class="ming9" id="ms" ng-model="vm.name"/></li>
+                <li><span>手机号码</span><input type="text" class="phone4" id="ms1" required ng-model="vm.phoneNumber"/></li>
+                <li><span>邮政编码</span><input type="text" class="youbian" id="ms2" ng-model="vm.zip"/></li>
+                <li ng-click="chooseArea();"><span>省,&nbsp;市&nbsp;,区</span><div class="input"><span ng-bind="vm.selectedAddress.province.name"></span><span ng-bind="vm.selectedAddress.city.name"></span><span ng-bind="vm.selectedAddress.area.name"></span></div></li>
+                <li><span>详细地址</span><input type="text" class="xAddr" id="ms4" ng-model="vm.address"/></li>
+            </ul>
+        </div>
+        <div class="errorr">
+            <span id="error3"></span>
+        </div>
+        <div class="sure">
+            <button class="highlight" ng-click="submit();">确&nbsp;定&nbsp;提&nbsp;交</button>
+        </div>
+    </ion-content>
+        
+</ion-modal-view>

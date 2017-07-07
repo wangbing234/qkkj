@@ -1,0 +1,52 @@
+<ion-modal-view ng-controller="transferInController" class="pay">
+    <ion-header-bar class="bar bar-header bar-blue">
+        <a ng-click="closetransferInModal();" class="button icon-left ion-chevron-left button-clear"></a>
+        <h2 class="title">积分转入-打款</h2>
+    </ion-header-bar>
+    <ion-content has-bouncing="false" style="background:#f3f2f7;">
+        <div>
+            <div class="amountInput" style="background:#fff;margin:10px 0;padding:10px 0;">
+                <input type="number" ng-model="vm.amount">
+            </div>
+            <div class="uploadImg" style="background:#fff;">
+                <div class="chooseBtns">
+                    <span style="background: #49aced">相册<input type="file" accept="image/*" onchange="angular.element(this).scope().img_upload(this.files)"/></span>
+                    <span style="background: #1964aa">拍摄<input type="file" accept="image/*" capture="camera" onchange="angular.element(this).scope().img_upload(this.files)"/></span>
+                    <i class="clr"></i>
+                </div>
+                <img ng-src="{{host}}{{imgSrc}}" alt="" />
+                
+                <div class="uploadSubmit">
+                    <button ng-style="imgSrc?{background:'#49aced'}:{background:'#eee'}" ng-click="submit();">提交</button>
+                </div>
+            </div>
+            <div class="payInfo" style="margin-bottom: 0.36rem;background:#fff;">
+                <p class="pay-explain">打款账户内容</p>
+                <p>
+                    公司对公账户正在开办中，测试期间请汇款至以下账户。请务必在汇款页面备注：APP账号。
+                </p>
+                <p>
+                    <span><i>客服电话:</i></span><br/><span><strong>027-87419069</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>027-87419057</strong></span><br/>
+                    <span><i>财务客服QQ:</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>409410660</strong></span><br/>
+                </p>
+                <p>
+                    <span><i>支付宝账号:</i></span><br/>
+                    <span><i>支付宝名称:</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>朱玉红</strong></span><br/>
+                    <span><i>支付宝账户：</i>&nbsp;&nbsp;&nbsp;<strong>15717141017</strong></span>
+                </p>
+                <p>
+                    <span><i>银行账户:</i></span><br/>
+                    <span><i>开户名称:</i><strong>&nbsp;&nbsp;万智创烨（武汉）实业有限公司</strong></span><br/>
+                    <span><i>备注:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;开立中...</i></span><br/>
+                </p>
+                <p style="border-bottom: none">
+                    <span><i>银行账户:</i></span><br/>
+                    <span>开户名称:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>朱玉红</strong></span><br/>
+                    <span>开户电话:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>15717141017</strong></span><br/>
+                    <span>开户行名称:&nbsp;&nbsp;<strong>武汉市洪山区工商银行邮科院支行</strong></span><br/>
+                    <span>银行卡账号:&nbsp;&nbsp;&nbsp;<strong>6215 5932 0201 4706 009</strong></span>
+                </p>
+            </div>
+        </div>
+    </ion-content>
+</ion-modal-view>

@@ -1,0 +1,39 @@
+<ion-view view-title="购物车">
+    <ion-header-bar class="bar bar-header bar-blue">
+        <a ng-back class="button icon-left ion-chevron-left button-clear"></a>
+        <h2 class="title">购物车</h2>
+        <button class="button" ui-sref="main.shop">继续购买</button>
+    </ion-header-bar>
+    <ion-content>
+        <div class="dianDanWrap" ng-show="productList.length > 0 ">
+            <div ng-repeat="product in productList" class="shangpinDd">
+                <div class="jiLeft">
+                    <img ng-src="{{host}}{{product.picurl160}}"/>
+                    <span ng-class="product.productType===31?'hj':product.productType===37?'jf':product.productType===38?'kd':''"
+                        ng-bind="product.catalogName"></span>
+                </div>
+                <div class="jifenRight">
+                    <span class="sJ"><i></i><b ng-bind="product.name"></b></span>
+                    <span><i></i><b class="cLan" ng-bind="product.nowPrice | currency:'￥'"></b></span>
+                    <span><i>×</i><b class="cLan" ng-bind="product.buyCount"></b></span>
+                </div>
+                <div class="shanchu" ng-click="deleteItem($index);"></div>
+                <div class="add" ng-click="changeNumber($index,1);"></div>
+                <div class="reduict" ng-click="changeNumber($index,-1);"></div>
+            </div>
+            <div class="jeXx">
+                <span class="je2"><i class="black">共&nbsp;&nbsp;计:</i>&nbsp;&nbsp;<b ng-bind="buyNumber"></b><i>&nbsp;件商品</i></span>
+                <span class="je3"><i class="black">金&nbsp;&nbsp;额:</i><b ng-bind="amount | currency:'￥'"></b></span>
+            </div>
+            <div class="ddtjiao" ng-click="orderSubmit();">
+                <button ng-style="productList.length>0?{background:'#49aced'}:{background:'#eee'}">购&nbsp;&nbsp;买</button>
+            </div>
+        </div>
+        <div class="dianDanWrap1" ng-show="account.cartNumber === 0">
+            <div class="imgBox">
+                <img src="./public/images/cart_empty.png" alt="">
+            </div>
+            <span>购物车空空如也</span>
+        </div>
+	</ion-content>
+</ion-view>

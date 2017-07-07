@@ -1,0 +1,73 @@
+<ion-view view-title="鼎烨--推广首页" class="spread">
+	<ion-header-bar class="bar bar-header bar-blue">
+        <h2 class="title">推广中心</h2>
+		<a class="button button-clear" ui-sref="spreadRecord">发放记录</a>
+	</ion-header-bar>
+
+	<!--推广中心页面-->
+	<div class="" id="sssw">
+	<div class="tuiWarp">
+	<!--会员信息页面-->
+	<!--激活码数量栏部分-->
+		<div class="counts">
+			<div class="ca1"><img src="./public/images/jhm.png"><b>激活服务次数</b><strong class="jshu" ng-bind="activeCoinNum"></strong></div>
+			<div class="ca2"><img src="./public/images/pdb.png"><b>互捐服务次数</b><strong class="pdan" ng-bind="gameCoinNum"></strong></div>
+		</div>
+		<div class="counts2">
+			<div class="a1">
+				<span class="ii1"><i class="bb1"></i></span>
+				<span class="al1 ay">一级市场数量</span>
+				<strong class="yiji cc1 ay" ng-bind="group1Num"></strong>
+			</div>
+			<div class="a1">
+				<span class="ii1"><i class="bb2"></i></span>
+				<span class="al1 ab">二级市场数量</span>
+				<strong class="erji cc1 ab" ng-bind="group2Num"></strong>
+			</div>
+			<div class="a1">
+				<span class="ii1"><i class="bb3"></i></span>
+				<span class="al1 ac">三级市场数量</span>
+				<strong class="sanji cc1 ac" ng-bind="group3Num"></strong>
+				
+			</div>
+		</div>
+		<div class="fasong">
+			<div class="shu">
+				<i></i>
+				<input type="text" placeholder="请输入手机号" id="pNumm" ng-model="phoneNum"/>
+				<span class="xian"></span>
+				<input type="text" placeholder="发送数量" id="q1" ng-model="giveNumber"/>
+				<div class="clr"></div>
+			</div>
+			<div class="bts">
+				<button id="jho" class="highlight" ng-click="give('activationCode');"></button>
+				<button id="pd" class="highlight" ng-click="give('coin');"></button>
+			</div>
+		</div>
+		<!--修改后HTML部分-->
+		<div class="xuhao">
+			<ul>
+				<li class="x1"><span class="border0">姓名</span></li>
+				<li class="x2"><span>手机号码</span></li>
+				<li class="x3"><span>注册时间</span></li>
+				<li class="x5"><span >级别</span></li>
+				<li class="x4"><span>状态</span></li>
+			</ul>
+		</div>
+	</div>
+	<ion-content>
+		<div class="xuhao1">
+			<ul class='u2' ng-repeat="person in groupList" 
+				
+				ng-class="{true:'active6',false:''}[personIndex===$index]"
+				ng-click="selectPerson($index);">
+				<li class='aaa x1' ng-bind="person.name"></li>
+				<li class='r1 x2' ng-bind="person.phone"></li>
+				<li class='x3' ng-bind="person.regDate | limitTo:10"></li>
+				<li class='x5' ng-bind="person.level"></li>
+				<li class='x4' ng-bind="person.state" ng-style="person.state==='未激活'?{'color':'#d22d19'}:person.state==='未实名认证'?{'color':'#e05a73'}:person.state==='冻结'?{'color':'#25aad5'}:person.state==='正常'?{'color':'#84b83a'}:{}"></li>
+			</ul>
+		</div>
+	</ion-content>
+</ion-view>
+		

@@ -1,0 +1,17 @@
+<ion-tabs class="tabs-icon-top tabs-color-active-positive">
+    <ion-tab title="互捐" icon="icon iconfont icon-tongxinghuzhutubiao01" href="#/main/donation" ng-if="showAll">
+        <ion-nav-view name="main-donation"></ion-nav-view>
+    </ion-tab>
+    <ion-tab title="推广" icon="icon iconfont icon-iconfonthuodonggonggao" href="#/main/spread" ng-if="showAll">
+        <ion-nav-view name="main-spread"></ion-nav-view>
+    </ion-tab>
+    <ion-tab title="商城" icon="icon iconfont icon-shangcheng1" href="#/main/shop" ng-if="true">
+        <ion-nav-view name="main-shop"></ion-nav-view>
+    </ion-tab>
+    <ion-tab title="积分" icon="icon iconfont icon-jinbib" href="#/main/integralTrading" ng-if="showAll">
+        <ion-nav-view name="main-integralTrading"></ion-nav-view>
+    </ion-tab>
+    <ion-tab title="我的" icon="icon iconfont icon-shu" href="#/main/user" ng-if="true">
+        <ion-nav-view name="main-user"></ion-nav-view>
+    </ion-tab>
+</ion-tabs>

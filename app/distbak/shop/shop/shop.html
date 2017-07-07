@@ -1,0 +1,75 @@
+<ion-view view-title="鼎烨--商城" class="shop">
+	<ion-content>
+		<ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh();"></ion-refresher>
+		<div class="bar bar-header item-input-inset">
+			<button class="button button-clear"><span></span></button>
+			<label class="item-input-wrapper" on-tap="search();">
+				<i class="icon ion-ios-search placeholder-icon"></i>
+				<input type="search" disabled="disabled" placeholder="搜索">
+			</label>
+			<button class="button button-clear" ui-sref="cart"><span class="shopIndex-shopCar"></span><b ng-bind="account.cartNumber"></b></button>
+		</div>
+		<div class="shopIndex-lunbo">
+			<ion-slide-box does-continue="true" auto-play="true" slide-interval="4000" delegate-handle="shopCarousel" class="shopIndex-imgW">
+				<ion-slide ng-repeat="item in carousel">
+					<div class="imgW"><img ng-src="{{host}}{{item.picurl400}}"></div>
+				</ion-slide>
+			</ion-slide-box>
+		</div>
+		<!--导航部分-->
+		<div class="shopIndex-nav1">
+			<span class="shopIndex-sp1"><i ng-bind="account.point | number:2 "></i><b class="black">我的积分</b></span>
+			<span class="shopIndex-sp2"><i ng-bind="account.ticket | number:2 "></i><b class="black">我的消费券</b></span>
+			<span class="shopIndex-sp3" ui-sref="order"><i></i><b class="black">我的订单</b></span>
+			<span class="shopIndex-sp4" ui-sref="shopCenter"><i></i><b class="black">商城中心</b></span>
+			<span class="clr"></span>
+		</div>
+		<div class="shopIndex-nav2">
+			<span ui-sref="goodsList({type:'billing'})"><i class="shopIndex-i1"></i><b class="b1 black">开单好礼</b></span>
+			<span ui-sref="goodsList({type:'donation'})"><i class="shopIndex-i2"></i><b class="b2 black">重销商品</b></span>
+			<span ui-sref="goodsList({type:'point'})"><i class="shopIndex-i3"></i><b class="b3 black">积分商品</b></span>
+			<strong class="clr"></strong>
+		</div>
+		<div class="shopIndex-goodBkuan">
+			<div class="shopIndex-left">
+				<a ng-click="goodDetail('hot_donation_product');">
+					<img class="shopIndex-pic1Goods" ng-src="{{host}}{{hot_donation_product.picurl160}}" alt="" />
+				</a>
+				<img class="shopIndex-picJieshao" src="./public/images/hujuanzi.png"/>
+			</div>
+			<div class="shopIndex-right">
+				<div class="shopIndex-rightPic">
+					<a ng-click="goodDetail('hot_billing_product');">
+						<img class="shopIndex-pic2Goods" ng-src="{{host}}{{hot_billing_product.picurl160}}" alt="" />
+					</a>
+					<img class="shopIndex-picJieshao" src="./public/images/kaidanshangpin.png"/>
+				</div>
+				<div class="shopIndex-rightPic">
+					<a ng-click="goodDetail('hot_point_product');">
+						<img class="shopIndex-pic2Goods" ng-src="{{host}}{{hot_point_product.picurl160}}" alt="" />
+					</a>
+					<img class="shopIndex-picJieshao" src="./public/images/jifensahngpin.png"/>
+				</div>
+			</div>
+			<div class="clr"></div>
+		</div>
+
+		<div class="shopIndex-titile">
+			<span class="shopIndex-xian"></span>
+			<span class="shopIndex-biaoTi black">开单好礼</span>
+			<span class="shopIndex-xian"></span>
+		</div>
+		<div class="shopIndex-goodShow">
+			<div class="shopIndex-goodPho" ng-repeat="product in point_product" ng-click="goodDetail({{product.id}});">
+				<img class="shopIndex-imgPho" ng-src="{{host}}{{product.picture}}" alt="" />
+				<span class="shopIndex-hang1"><nobr ng-bind="product.name" class="black"></nobr></span>
+				<span class="shopIndex-hang2"><b class="shopIndex-xianjia" ng-bind="product.nowPrice | currency:'￥'"></b></span>
+			</div>
+		</div>
+		<!--<div class="shopIndex-btnWrap">
+			<button id="shopIndex-btnMore">
+				查看全部
+			</button>
+		</div>-->
+	</ion-content>
+</ion-view>

@@ -1,0 +1,61 @@
+<ion-modal-view class="orderSteps_donation">
+    <ion-header-bar class="bar bar-header bar-blue">
+        <a ng-click="closeDonation();" class="button icon-left ion-close-round button-clear"></a>
+        <h2 class="title">重销详情</h2>
+    </ion-header-bar>
+    <ion-content has-bouncing="false" style="background:#fff;">
+        <div class="pay-info" >
+            <div class="pay-info-number">
+                <span>重销商品</span><span class="font-color" ng-bind="donation_buyNumber"></span><span>件</span>
+            </div>
+            <div class="pay-info-money">
+                <span>共消费</span><span class="font-color" ng-bind="donation_amount | currency:'￥'"></span>
+            </div>
+            <div class="clear-fix"></div>
+        </div>
+        <div class="commodity-list">
+            <div class="wait-pay-order">
+                <div class="order-box">
+                    <div class="shangpinDd" ng-repeat="product in donation_product">
+                        <div class="jiLeft">
+                            <img ng-src="{{host}}{{product.picurl160}}"/>
+                            <span class="hj">重销商品</span>
+                        </div>
+                        <div class="jifenRight">
+                            <span><i>商品名称</i><b ng-bind="product.productName"></b></span>
+                            <span><i>现价</i><b class="font-color" ng-bind="product.price | currency:'￥'"></b></span>
+                            <span><i>数量</i><b class="font-color" ng-bind="product.productNumber"></b></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="deduct-detail">
+            <div class="deduct-detail-title">
+                扣除明细
+            </div>
+            <div class="deduct-detail-data">
+                <ul>
+                    <li>
+                        <ul>
+                            <li><img src="public/images/tuijian.png" alt=""/></li>
+                            <li><span>推荐钱包</span></li>
+                            <li><span>扣除</span><span class="font-color" ng-bind="userWalletRewardLost | currency:'￥'"></span></li>
+                            <li><span>剩余</span><span class="font-color" ng-bind="userWalletRewardLeft | currency:'￥'"></span></li>
+                            <li class="clear-fix"></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li><img src="public/images/xiaofeiquanicon.png" alt=""/></li>
+                            <li><span>消费钱包</span></li>
+                            <li><span>扣除</span><span class="font-color" ng-bind="userWalletShopLost | currency:'￥'"></span></li>
+                            <li><span>剩余</span><span class="font-color" ng-bind="userWalletShopLeft | currency:'￥'"></span></li>
+                            <li class="clear-fix"></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </ion-content>
+</ion-modal-view>

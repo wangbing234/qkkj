@@ -1,0 +1,29 @@
+<ion-view view-title="推广钱包详情" class="spreadDetail">
+
+    <ion-header-bar class="bar bar-header bar-blue">
+        <a ng-back class="button icon-left ion-chevron-left button-clear"></a>
+		<h2 class="title">推广钱包详情</h2>
+		 <a class="button button-clear" ng-click="showFilter();"><img src="public/images/qb11.png" alt="" style="width:32px;height:32px;"/></a>
+	</ion-header-bar>
+
+    <div style="padding-top:44px;overflow:scroll;height:100%;">
+        <div class="donationWrap" >
+            <div class="sbox">
+                <span class="sboxa3"><em class="em3"></em><i>已确认金额</i><b ng-bind="growFree"></b></span>
+                <span class="sboxa2"><em class="em2"></em><i>未确认金额</i><b ng-bind="growTrading"></b></span>
+                <!-- <span class="sboxa1" ui-sref="goodsList({type:'billing'})"><em class="em1"></em><i>累计收益</i><b ng-bind="entryStage"></b></span> -->
+            </div>
+        </div> 
+    </div>
+    <ion-content style="top:1.6rem;margin-top:52px;background:#e4f5ff;margin-bottom: 0.8rem;">
+        <div ng-repeat="item in list" class="list">
+            <span ng-bind="item.createTime | date:'MM-dd'"></span>
+            <span><i>收</i></span><span><b><i ng-bind="item.changeAmount | currency:'￥'"></i><br><i ng-bind="item.changeReason"></i><!-- <strong>一级团队</strong></b><b><i>捐赠人:&nbsp;&nbsp;</i><strong>王小猪</strong><i>&nbsp;&nbsp;&nbsp;捐赠金额:&nbsp;&nbsp;</i><strong>¥13320</strong></b> --></span>
+        </div>
+    </ion-content>
+    <div class="gyfooter">
+        <span style="background: #fff;" ui-sref="main.shop">消费</span><span ui-sref="spreadWithdraw">提现</span>
+    </div>
+   
+
+</ion-view>

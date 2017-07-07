@@ -1,0 +1,27 @@
+<ion-view view-title="资金管理">
+    <ion-header-bar class="bar bar-header bar-blue">
+        <a ng-back class="button icon-left ion-chevron-left button-clear"></a>
+        <h2 class="title">资金管理</h2>
+    </ion-header-bar>
+    <ion-content style="background: #e4f5ff;">
+        <div class="topBox">
+            <span><b ng-bind="data.wallet.walletTotal | currency:'¥'"></b></span>
+            <span><i>资金</i></span>
+        </div>
+        <div class="managementWrap">
+            <div class="sbox">
+                <span class="sboxa3"><em class="em3"></em><i>冻结</i><b ng-bind="data.wallet.wallet2 | currency:'¥'"></b></span>
+                <span class="sboxa2"><em class="em2"></em><i>可取</i><b ng-bind="data.wallet.wallet | currency:'¥'"></b></span>
+                <span class="sboxa1"><em class="em1"></em><i>可用</i><b ng-bind="data.wallet.wallet | currency:'¥'"></b></span>
+            </div>
+            <div class="upOut">
+                <span ui-sref="fundRollOut"><i></i><b>&nbsp;资金转出</b></span>
+                <span ng-click="transferIn();"><i></i><b>&nbsp;资金转入</b></span>
+            </div>
+            <div class="water">
+                <!--<span ui-sref="accountsFlow"><b>转账流水</b><i></i></span>-->
+                <span ui-sref="tradeFlow"><b>交易流水</b><i></i></span>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

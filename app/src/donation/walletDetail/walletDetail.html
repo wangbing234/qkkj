@@ -1,0 +1,26 @@
+<ion-view view-title="钱包明细">
+
+    <ion-header-bar class="bar bar-header bar-blue">
+        <a ng-back class="button icon-left ion-chevron-left button-clear"></a>
+        <h2 ng-bind="head_title" class="title"></h2>
+    </ion-header-bar>
+
+    <ion-content id="daibanWrap" style="margin-top:0;">
+        <div class="card" ng-if="walletId==='1'" style="text-align:center;">
+            <span>实际总收益：</span>
+            <span ng-bind="baseProfit"></span>
+        </div>
+        <div class="card" ng-if="walletId==='2'" style="text-align:center;">
+            <span>推广钱包总收益：</span>
+            <span ng-bind="growProfit"></span>
+        </div>
+        <div class="card" ng-if="list.length >= 0">
+            <div class="k2 moneylist">
+                <ul class="tuiG message">
+                    <li class='aa' ng-repeat="item in list" ng-bind="item"></li>
+                </ul>
+            </div>
+        </div>
+    </ion-content>
+    
+</ion-view>

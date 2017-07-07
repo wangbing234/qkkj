@@ -1,0 +1,33 @@
+<ion-view view-title="实名认证">
+    <ion-header-bar class="bar bar-header bar-blue">
+        <a ng-back class="button icon-left ion-chevron-left button-clear"></a>
+        <h2 class="title">实名认证</h2>
+    </ion-header-bar>
+    
+    <ion-content>
+        <div class="wrap1 selectable">
+            <ul>
+                <li><span>真实姓名</span>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="ns" /></li>
+                <li><span>身份证号</span>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="nz" /></li>
+                <li><span>银行卡号</span>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="creditCardNew" /></li>
+                <li><span>开户银行</span>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="openNew" /></li>
+                <li><span>详细支行</span>&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="openNews" /></li>
+            </ul>
+        </div>
+        <div class="zp primary"> 	
+            <div class="primary"><img src="" id="oomg"/></div>
+            <a href="javascript:;" class="file">上传本人身份证正面照片<input id="zh" type="file" accept="image/*;capture=camera"></a>
+        </div>
+        <div class="zp primary"> 	
+            <div class="primary"><img src="" id="oomg1"/></div>
+            <a href="javascript:;" class="file">上传本人自拍照<input id="zh1" type="file" accept="image/*;capture=camera"></a>
+        </div>
+        <div class="spare">
+            <span style="display: block;font-weight: 700;background: #fff;">免责声明:个人需确保输入信息真实有效</span>
+            <span style="display: block;color:red;background: #fff;">注:请输入本人真实正确信息,实名认证通过后便不能更改.请填写完整的开户行地址（X省X市X区X支行）</span>
+        </div>
+        <div class="tijiao">
+            <button class="highlight" ng-click="submit();">确&nbsp;定&nbsp;提&nbsp;交</button>
+        </div>
+    </ion-content>
+</ion-view>

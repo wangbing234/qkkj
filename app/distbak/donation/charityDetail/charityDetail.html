@@ -1,0 +1,30 @@
+<ion-view view-title="公益钱包详情">
+
+    <ion-header-bar class="bar bar-header bar-blue">
+        <a ng-back class="button icon-left ion-chevron-left button-clear"></a>
+        <h2 class="title">公益钱包详情</h2>  
+        <a class="button button-clear" ng-click="showFilter();"><img src="public/images/qb11.png" alt="" style="width:32px;height:32px;"/></a>
+    </ion-header-bar>
+
+    <ion-content style="background: #fff;">
+    	<!-- <div class="topBox" ui-sref="gyshouyiDetail">
+        	<span><i>¥</i><b>25.8</b></span>
+        	<span>昨日收益</span>
+        	<span><i>今日提成标准&nbsp;</i><b ng-bind="baseRate"></b><i>%</i></span>
+        </div> -->
+        <div id="gongyiWrap">
+        <!-- <div class="toptitle">
+        	<span><i class="to1"></i><b>&nbsp;&nbsp;总收益&nbsp;&nbsp;</b><strong>256</strong></span>
+        	<span><i class="to2"></i><b>&nbsp;&nbsp;积分&nbsp;&nbsp;</b><strong>256</strong></span>
+        </div> -->
+            <div class="date" ng-repeat="item in list">
+                <span><i ng-bind="item.createTime | date:'MM-dd'"></i></span><span ><i ng-bind="item.shorReason" ng-style="{ background: item.backgroundColor }"  class="dayg"></i></span>
+                <span><i ng-bind="item.changeAmount + '点'"></i><i ng-bind="item.changeReason"></i></span>
+            </div>
+        </div>
+      
+    </ion-content>
+      <div class="gyfooter">
+        	<span>开单</span><span>提现</span>
+        </div>
+</ion-view>

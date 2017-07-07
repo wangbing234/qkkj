@@ -1,0 +1,111 @@
+<ion-view view-title="订单详情" class="orderDetail">
+    <ion-header-bar class="bar bar-header bar-blue">
+        <a ng-back class="button icon-left ion-chevron-left button-clear"></a>
+        <h2 class="title">订单详情</h2>
+    </ion-header-bar>
+    <ion-content has-bouncing="false">
+        <div class="addres-wrap" ng-show="senddate">
+            <span class="a1"><i>快递公司:</i><b ng-bind="expressCompanyChinaName"></b></span>
+            <span class="a2"><i>快递单号:</i><b ng-bind="expressNo"></b></span>
+            <button ng-click="queryExpress();">快速查询</button>
+        </div>
+        <div class="address-info">
+            <div>
+                <table>
+                    <tr>
+                        <td><b ng-bind="address.shipname"></b></td>
+                        <td><b ng-bind="address.phone"></b></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <span>
+                                <b ng-bind="address.province"></b>
+                                <b ng-bind="address.city"></b>
+                                <b ng-bind="address.area"></b>
+                                <b ng-bind="address.shipaddress"></b>
+                            </span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="orderList white">
+            <div class="order-box">
+                <div ng-repeat="product in productList" class="shangpinDd">
+                    <div class="jiLeft">
+                        <img ng-src="{{host}}{{product.picurl160}}"/>
+                        <span ng-class="product.productType===31?'hj':product.productType===37?'jf':product.productType===38?'kd':''" ng-bind="product.catalogName"></span>
+                    </div>
+                    <div class="jifenRight">
+                        <span class="sJ"><b ng-bind="product.productName" class="black"></b></span>
+                        <span><b class="cLan" ng-bind="product.price | currency:'￥'"></b></span>
+                        <span><i>×</i><b class="cLan" ng-bind="product.productNumber"></b></span>
+                    </div>
+                    <div class="shanchu" ng-click="deleteItem($index);"></div>
+                </div>
+            </div>
+        </div>
+        <div class="open-detail white">
+            <div class="open-title" ng-if="billing_buyNumber>0" ng-click="billingDetail();">
+                <img src="public/images/hzifuxiangqing.png" alt=""/>
+            </div>
+            <div class="open-title" ng-if="donation_buyNumber>0" ng-click="donationDetail();">
+                <img src="public/images/cxfuxiangqing.png" alt=""/>
+            </div>
+            <div class="pay-detail-info">
+                <table>
+                    <!--<tr>
+                        <td><i>运费</i></td>
+                        <td><b ng-bind="scoreProxy"></b></td>
+                    </tr>-->
+                    <tr>
+                        <td><i class="black">实付现金</i></td>
+                        <td><b ng-bind="cutMoney | currency:'￥'"></b></td>
+                    </tr>
+                    <tr>
+                        <td><i class="black">消费钱包</i></td>
+                        <td><b ng-bind="cutWallet | currency:'￥'"></b></td>
+                    </tr>
+                    <tr>
+                        <td><i class="black">推荐钱包</i></td>
+                        <td><b ng-bind="cutWalletReward | currency:'￥'"></b></td>
+                    </tr>
+                    <tr>
+                        <td><i class="black">实付积分</i></td>
+                        <td>&nbsp;<b ng-bind="cutScorePoint"></b></td>
+                    </tr>
+                    <tr>
+                        <td><i class="black">实付消费券</i></td>
+                        <td>&nbsp;<b ng-bind="cutScoreTicket"></b></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="send-info">
+            <div>
+                <table>
+                    <tr>
+                        <td><i class="black">订单编号:</i></td>
+                        <td>&nbsp;&nbsp;<b ng-bind="orderNo"></b></td>
+                    </tr>
+                    <tr>
+                        <td><i class="black">下单时间:</i></td>
+                        <td>&nbsp;&nbsp;<b ng-bind="createdate"></b></td>
+                    </tr>
+                    <tr>
+                        <td><i class="black">付款时间:</i></td>
+                        <td>&nbsp;&nbsp;<b ng-bind="paydate"></b></td>
+                    </tr>
+                    <tr ng-if="senddate">
+                        <td><i class="black">发货时间:</i></td>
+                        <td>&nbsp;&nbsp;<b ng-bind="senddate"></b></td>
+                    </tr>
+                    <tr ng-if="signdate">
+                        <td><i class="black">成交时间:</i></td>
+                        <td>&nbsp;&nbsp;<b ng-bind="signdate"></b></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

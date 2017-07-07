@@ -1,0 +1,77 @@
+<ion-view view-title="钱包" class="walletList">
+    <div class="bar bar-header bar-blue">
+        <a ng-back class="button icon-left ion-chevron-left button-clear"></a>
+        <h2 class="title">钱包</h2>
+    </div>
+
+    <ion-content style="background: #264969;">
+        <div class="mg5"></div>
+        <div class="toper">
+            <div class="left" ui-sref="pointDetail">
+                <i></i>
+                <span><b><em class="em1">我的积分</em><em ng-bind="pointFree"></em></b><b><em class="em1">冻结</em><em ng-bind="pointInactive"></em></b></span>
+            </div>
+            <div class="right" ui-sref="couponDetail">
+                <i></i>
+                <span><b><em class="em1">我的消费券</em><em ng-bind="point2Free"></em></b><b><em></em><em></em></b></span>
+            </div>
+        </div>
+
+        <div class="qbWrap">
+            <div class="title">
+                <i></i><b>&nbsp;&nbsp;互捐钱包</b>
+            </div>
+            <div class="gongyi">
+                <div class="left">
+                    <i></i>
+                    <b>公益钱包</b>
+                </div>
+                <div class="center">
+                    <span><i>已冻结</i>&nbsp;&nbsp;<em ng-bind="baseFreeze"></em></span>
+                    <span><i>未到期</i>&nbsp;&nbsp;<em ng-bind="baseTrading"></em></span>
+                    <span><i>已确认</i>&nbsp;&nbsp;<em ng-bind="baseFree"></em></span>
+                </div>
+                <div class="right">
+                    <span class="sp1" ui-sref="buyPoint"><i></i><b>买积分</b></span>
+                    <span class="sp2" ui-sref="charityWithdraw"><i></i><b>提现</b></span>
+                    <em ui-sref="charityDetail"></em>
+                </div>
+            </div>
+            <div class="tuiguang">
+                <div class="left">
+                    <i></i>
+                    <b>推广钱包</b>
+                </div>
+                <div class="center">
+                    <span><i>已确定</i>&nbsp;&nbsp;<em ng-bind="growFree"></em></span>
+
+                    <span><i>未确定</i>&nbsp;&nbsp;<em ng-bind="growTrading"></em></span>
+                </div>
+                <div class="right">
+                    <span class="sp1" ui-sref="main.shop"><i></i><b>消费</b></span>
+                    <span class="sp2" ui-sref="spreadWithdraw"><i></i><b>提现</b></span>
+                    <em ui-sref="spreadDetail"></em>
+                </div>
+            </div>
+            <div class="title titile1">
+                <i></i><b>&nbsp;&nbsp;积分交易</b>
+            </div>
+
+        </div>
+        <div class="zichan">
+            <i>总资产:&nbsp;&nbsp;</i><strong ng-bind="data.totalMoney | currency:'¥'"></strong>
+        </div>
+        <div class="footer">
+            <div>
+                <span class="a1"><i>总市值</i><b ng-bind="data.totalMarketValue | currency:'¥'"></b></span>
+                <span class="a2"><i>总盈亏</i><b>000000</b></span>
+                <span class="a1"><i>今日盈亏</i><b ng-bind="data.todayChanges | currency:'¥'"></b></span>
+            </div>
+            <div>
+                <span class="a2"><i>可取</i><b ng-bind="data.wallet.wallet | currency:'¥'"></b></span>
+                <span class="a1"><i>可用</i><b ng-bind="data.wallet.wallet | currency:'¥'"></b></span>
+                <span class="a3" ui-sref="management"><em></em></span>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

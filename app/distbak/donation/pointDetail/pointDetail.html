@@ -1,0 +1,28 @@
+<ion-view view-title="积分账单">
+
+    <ion-header-bar class="bar bar-header bar-blue">
+        <a ng-back class="button icon-left ion-chevron-left button-clear"></a>
+        <h2 class="title">积分账单</h2>  
+        <a class="button button-clear" ng-click="showFilter();"><img src="public/images/qb11.png" alt="" style="width:32px;height:32px;"/></a>
+    </ion-header-bar>
+
+    <ion-content style="background: #e4f5ff;">
+        <div id="billWrap">
+            <!-- <div class="title">
+            	<span><i>您有</i><b>280</b>点未激活积分</span><span><b>激活积分</b></span>
+            	<em class="clr"></em>
+            </div> -->
+
+            <div ng-if="!list" style="text-align: center;">
+                暂无相关订单信息
+            </div>
+
+            <div ng-repeat="item in list" class="date" ng-if="list">
+                <span><i ng-bind="item.createTime | date:'MM-dd'"></i></span><span><i ng-class="item.iconClass"></i></span>
+                <span><i ng-bind="item.changeAmount + '点'"></i><i ng-bind="item.changeReason"></i></span><span></span>
+            </div>
+            
+        </div>
+    </ion-content>
+    
+</ion-view>

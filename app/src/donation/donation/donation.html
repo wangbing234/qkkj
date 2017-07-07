@@ -1,0 +1,93 @@
+<ion-view view-title="鼎烨--互捐中心">
+	<header class="bar bar-header bar-blue">
+		<h2 class="title">互捐中心</h2>
+	</header>
+	
+	<div class="home_wrap">
+		<div id="xitong" style="background: #fff;width: 100;height: 0.4rem;border: 0;line-height: 0.4rem;">
+			<marquee scrollamount=5 id="gundong" style="color:#49acef;font-size: 0.22rem;">系统通知:今日提成标准<span style="color:#d22d19;" ng-bind="baseRate"></span>%，积分价格<span style="color:#d22d19;" ng-bind="pointRate"></span>元/个,祝您体验愉快!</marquee>
+		</div>	
+		<div class="help">
+			<!--<div class="h1 juanzhu" ui-sref="provideDonation">
+				<span class="s s1"></span>
+				<span><b>提供捐助</b></span>
+			</div>-->
+			<div class="h1 border2" ui-sref="walletList">
+				<span class="s s2"></span>
+				<span><b>钱&nbsp;包</b></span>
+			</div>
+			<!--<div class="h1 getJuan" ui-sref="getDonation">
+				<span class="s s3"></span>
+				<span><b>得到捐助</b></span>
+			</div>-->
+		</div>
+		<div class="case">
+			<div class="k1" id="k1" ng-class="{true:'active1',false:''}[tabIndex===0]" ng-click="tab(0)">
+				<span class="k1a">等待中<b id="bleng1" class="bleng">{{waitList.length}}</b></span>
+			</div>
+			<div class="k1 border4" id="k2" ng-class="{true:'active1',false:''}[tabIndex===1]" ng-click="tab(1)">
+				<span class="k1a ">待办理<b id="bleng2" class="bleng">{{todoList.length}}</b></span>
+			</div>
+			<div class="k1" id="k3" ng-class="{true:'active1',false:''}[tabIndex===2]" ng-click="tab(2)">
+				<span class="k1a">已完成<b id="bleng3" class="bleng">{{finishList.length}}</b></span>
+			</div>
+		</div>
+	</div>
+
+	<ion-slide-box style="width:100%;height:100%;background:#eee;" delegate-handle="donation" show-pager="false" on-slide-changed="activeTab($index);">
+		<ion-slide>
+			<div style="top:2.59rem;margin-top:52px;width: 100%;height: 100%;position: absolute;overflow: scroll;">
+				<div class="keng">
+					<div class="dengdai">
+						<div ng-repeat="wait in waitList" class='d' 
+							ng-class="wait.type===3?'sr':(wait.type===4?'cr':'')"
+							ng-style="wait.type===1?{color:'#949494'}:wait.type===2?{color:'#2f6493'}:wait.type===3?{color:'#ee9b50'}:{color:'#637f4e'}"
+							ng-click="waitHandler($index);">
+							<b ng-bind="wait.desc"></b>
+							<i ng-if="wait.type===3" ng-bind="wait.id"></i>
+						</div>
+					</div>
+				</div>
+				<div style="width: 100%;height: 2.55rem;margin-top: 104px;"></div>
+			</div>
+		</ion-slide>
+
+		<ion-slide>
+			<div style="top:2.59rem;margin-top:52px;width: 100%;height: 100%;position: absolute;overflow: scroll;">
+				<div class="keng">
+					<div class="daiban">
+						<div ng-repeat="todo in todoList" 
+							ng-class="{true:'pre',false:'next'}[todo.type===1]" 
+							ng-click="todoHandler($index);">
+							<span class='tt1' ng-if="todo.type===1"><b>等待您打款,信息如下:</b></br></span>
+							<span class='tt1' ng-if="todo.type===2"><b>等待您收款,信息如下:</b></br></span>
+							<p class='pd'>
+								{{todo.desc}}
+								<b ng-style="todo.type===1?{color:'red'}:''" id='seconds{{$index}}' count-down="todo.overtime"></b>
+								<b ng-if="todo.type===1">打款截至时间：{{todo.overtime}}</b>
+								<b ng-if="todo.type===2">收款截至时间：{{todo.overtime}}</b>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div style="width: 100%;height: 2.55rem;margin-top: 104px;"></div>
+			</div>
+		</ion-slide>
+
+		<ion-slide>
+			<div style="top:2.59rem;margin-top:52px;width: 100%;height: 100%;position: absolute;overflow: scroll;">
+				<div class="keng">
+					<div class="wancheng">
+						<div class='w' ng-repeat="finish in finishList" 
+							ng-class="finish.type===1?'wr':'wcr'"
+							ng-style="finish.type===1?{color:'#eb9e59'}:{color:'#003100'}"
+							ng-click="finishHandler($index);">
+							<b ng-bind="finish.desc"></b>
+						</div>
+					</div>
+				</div>
+				<div style="width: 100%;height: 2.55rem;margin-top: 104px;"></div>
+			</div>
+		</ion-slide>
+	</ion-slide-box>
+</ion-view>

@@ -1,0 +1,30 @@
+<ion-view view-title="确认收款">
+    <ion-header-bar class="bar bar-header bar-blue">
+        <a ng-back class="button icon-left ion-chevron-left button-clear"></a>
+		<h2 class="title">确认收款</h2>
+	</ion-header-bar>
+
+    <ion-content overflow-scroll="true">
+        <div class="getMoney-wrap1 selectable">
+            <ul>
+                <li><span>打款人姓名：</span><span class="aaaa" id="entryName" ng-bind="entryName"></span></li>
+                <li><span>打款人联系方式：</span><span class="aaaa" id="entryPhone" ng-bind="entryPhone" ></span></li>
+                <li><span>上级姓名：</span>&nbsp;<span class="aaaa" id="refName" ng-bind="refName"/></span></li>
+                <li><span>上级联系方式：</span><span class="aaaa" id="refPhone" ng-bind="refPhone" ></span></li>
+                <li><span>打款金额：</span><span class="aaaa" id="Amount" ng-bind="amount" ></span></li>
+                <li><span>打款时间：</span><span class="aaaa"  ng-bind="transTime"/></span></li>
+                <li><span>打款备注：</span><span class="aaaa"  ng-bind="transRemark"/></span></li>
+            </ul>
+        </div>
+        <div class="getMoney-footerWrap">
+            <div class="huizhi primary">
+                <span>打款截图:</span>
+                <img src=""  id="transImg" ng-src="{{host}}{{transImg}}"/>
+            </div> 
+            <div class="sure">
+            <span>备注:请以实际收到款项为主,截图仅做参考.</span>
+                <button class="highlight" ng-click="confirm();">确&nbsp;定&nbsp;收&nbsp;款</button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

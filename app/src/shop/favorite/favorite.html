@@ -1,0 +1,35 @@
+<ion-view view-title="购物车">
+    <ion-header-bar class="bar bar-header bar-blue">
+        <a ng-back class="button icon-left ion-chevron-left button-clear"></a>
+        <h2 class="title">我的收藏</h2>
+    </ion-header-bar>
+    <ion-content>
+        <div class="collect-list">
+            <div ng-repeat="item in favoriteList" class="collect">
+                <div class="collect-title">
+                    <span><img  src="public/images/shanchu.jpg" alt=""/></span>
+                    <span ng-click="deleteFavorite($index);">移除</span>
+                    <span ng-bind="item.createtime"></span>
+                </div>
+                <div class="collect-content">
+                    <div class="collect-img">
+                        <img ng-src="{{host}}{{item.product.picurl160}}" alt=""/>
+                    </div>
+                    <div>
+                        <table>
+                            <tr>
+                                <td>商品名称</td>
+                                <td ng-bind="item.product.name"></td>
+                            </tr>
+                            <tr>
+                                <td>现价</td>
+                                <td><span class="collect-data" ng-bind="item.product.nowPrice | currency:'￥'"></span></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="clear-fix"></div>
+                </div>
+            </div>
+        </div>
+	</ion-content>
+</ion-view>

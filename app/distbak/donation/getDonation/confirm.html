@@ -1,0 +1,29 @@
+<ion-view view-title="确认收款" style="background:#eee;">
+    <ion-header-bar class="bar bar-header bar-blue">
+        <a ng-back class="button icon-left ion-chevron-left button-clear"></a>
+		<h2 class="title">得到捐助</h2>
+	</ion-header-bar>
+
+    <ion-content>
+        <div class="sBar">
+            <span class="cheng">您本次提取的金额(人民币):</span>
+            <input type="text" placeholder="请输入提取金额为100的整数倍" id="am1" ng-model="vm.amount"/>
+            <span class="err1"></span>
+        </div>
+        <div class="wenxiWrap">
+            <div class="tishi">
+                <h5>温馨提示</h5>
+                <span>订单金额提交后,将不能取消或修改,</span>
+                <span>当系统为您匹配到接受会员的捐助后,</span>
+                <span>您必须在<b id="limit" style="color: red;" ng-bind="limit"></b>小时内确认收款,</span>
+                <span>否则系统会冻结您的账户.</span>
+                <span style="color:#9c0b0b">注:需等待上一笔提取单完成后方可进行下一笔提取.</span>
+            </div>
+            <div class="btns">
+                <button id="tijiao" class="highlight" ng-click="submit();">确定提交</button>
+                <button id="liaojie" ui-sref="aboutUs" class="highlight">先了解鼎烨</button>
+            </div>
+        </div>
+    </ion-content>
+    
+</ion-view>

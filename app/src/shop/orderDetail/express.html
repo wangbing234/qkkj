@@ -1,0 +1,16 @@
+<ion-modal-view class="">
+    <ion-header-bar class="bar bar-header bar-blue">
+        <a ng-click="closeExpress();" class="button icon-left ion-close-round button-clear"></a>
+        <h2 class="title">快递详情</h2>
+    </ion-header-bar>
+    <ion-content has-bouncing="false" style="background:#fff;">
+        <div class="list card">
+            <div href="#" class="item item-icon-left" ng-repeat="item in express" style="white-space: normal;">
+                <i class="icon ion-android-radio-button-on"></i>
+                <b ng-bind="item.time"></b>
+                <br/>
+                <b ng-bind="item.context"></b>
+            </div>
+        </div>
+    </ion-content>
+</ion-modal-view>
