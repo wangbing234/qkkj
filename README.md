@@ -1,8 +1,9 @@
 # qkkj
 最近本人代码积累。
 
-app 商城前端
-chain 商城后端架构，Struts2.0+Spring3.0+Mybaits
+app ：商城前端
+
+chain ：商城后端架构，Struts2.0+Spring3.0+Mybaits
 
 TestSpring ：一些java特性高级用法
 
