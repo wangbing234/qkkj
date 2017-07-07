@@ -1,0 +1,13 @@
+﻿#wrap input{font-family:"Microsoft Yahei","Microsoft JhengHei",Arial,sans-serif;}
+#search #keyWord{ padding-top:5px; }
+#search input[type=text]{height:20px;}
+.navCategory_S .s_last{margin-top:-2px;}
+
+/*商品頁*/
+.product_info .color a{outline: 0;}
+
+/*fix常見問題Q&A*/
+.ask_note .askform li #Msg_question_type{margin-left:220px;margin-top:-22px;*margin-left:0;*margin-top:-3px;}
+
+/*訂閱電子報2015*/
+#epaper2015m .epaper-left ul li label.email { left: 100px; }

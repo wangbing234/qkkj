@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<constant name="struts.custom.i18n.resources" value="global" />
+	<constant name="struts.devMode" value="false" />
+	  <constant name="struts.configuration.xml.reload" value="false"/>
+	<constant name="struts.multipart.maxSize" value="6846970006" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.multipart.saveDir" value="/mnt/data/img/temp/" />
+	<constant name="struts.objectFactory" value="spring" />
+	<!-- 设置浏览器是否缓存静态内容，默认值为true，开发阶段最好false   -->
+	<constant name="struts.serve.static.browserCache" value="false"/>  
+	<bean type="org.apache.struts2.dispatcher.multipart.MultiPartRequest" name="myRequestParser" class="net.onlineshop.core.servlet.RequestParseWrapper"
+	scope="prototype" optional="true" />
+	<constant name="struts.multipart.parser" value="myRequestParser" />
+
+	<!-- 后台拦截器配置 -->
+	<package name="struts-onlineshop-manage" extends="struts-default" namespace="/manage" strict-method-invocation="false">
+		<interceptors>
+			<interceptor name="login2" class="net.onlineshop.core.interceptor.ManageInterceptor"/>
+			<interceptor-stack name="mydefault">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="login2">
+					<param name="excludeMethods">login</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="mydefault" />
+		<global-results>
+			<result name="login">/WEB-INF/manages/system/index.jsp</result>
+			<result name="not_privilege" >/WEB-INF/manages/common/error.jsp</result>
+			<result name="not_db_privilege" >/WEB-INF/manages/common/not_db_privilege.jsp</result>
+			<result name="error">/WEB-INF/manages/common/error.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception" result="error" />
+		</global-exception-mappings>
+	</package>
+	
+	<!-- 前台拦截器配置 -->
+	<package name="struts-onlineshop-front" extends="struts-default" strict-method-invocation="false">
+		<interceptors>
+			<interceptor name="commonInterceptor" class="net.onlineshop.core.interceptor.FrontInterceptor"/>
+			<interceptor-stack name="mydefault">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="commonInterceptor">
+					<param name="excludeMethods">login</param>
+					<param name="excludeMethods">toShop</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="mydefault" />
+		<global-results>
+<!-- 			<result name="invalid.token">/input333.jsp</result> -->
+			<result name="error">/error.jsp</result>
+			<result name="toLogin">/users/login.jsp</result>
+			<result name="toPcLogin">/pc/login.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception" result="error" />
+		</global-exception-mappings>
+	</package>
+	<include file="strutsSpring/manage/struts_system.xml" />
+	<include file="strutsSpring/manage/struts_services.xml" />
+	<include file="strutsSpring/front/struts_services.xml" />
+</struts>

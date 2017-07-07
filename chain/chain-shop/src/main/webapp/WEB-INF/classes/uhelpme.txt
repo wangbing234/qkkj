@@ -1,0 +1,59 @@
+查询商品修改记录：
+select * from t_systemlog t where t.content like '%删除%' 
+
+查询
+select t.* from t_orderdetail t where t.id in(4319,4324,4327)
+
+
+
+redis------------------------------------------------------------------
+我们来稍微讲解下以上命令的意思：
+
+/** 设置redis密码**/
+config set requirepass qkkj@2017
+
+/** 使用密码进行验证**/
+redis-cli -h 127.0.0.1 -p 6379 -a qkkj@2017
+
+这条命令是说要连接redis服务器，IP是127.0.0.1，端口是6379，密码是qkkj@2017。
+
+set ilanni testredis添加一个键值ilanni，内容为testredis。
+
+get ilanni查看ilanni这个键值的内容。
+
+redis的命令使用暂时我们就介绍这么多。
+
+
+redis-cli -h 127.0.0.1 -p 6379 shutdown
+
+
+keys *是查看redis所有的键值对。
+//删除当前数据库中的所有Key
+flushdb
+//删除所有数据库中的key
+flushall
+
+
+无启动挂载
+nohup redis-server   redis.conf  >nohup.out 2>&1 &
+
+路径
+/usr/local/yum
+
+安装命令
+rpm -ivh yum-2.0.8-1.src.rpm
+
+查看安装成功没
+rpm -qa |grep yum 
+
+查找文件名字
+find . -name "redis.conf" | xargs grep "cluster-enabled"
+
+
+统计：
+SELECT sum(t.cutMoney) as '开单',
+	     sum(t.cutWallet) as '重销',
+	     sum(t.cutScore) as  '积分' , 
+sum(t.cutMoney)+sum(t.cutWallet)+sum(t.cutScore) '所有总额'  
+FROM t_order t  where   t.paystatus='y' and  t.status in ('pass','sign','send')
+

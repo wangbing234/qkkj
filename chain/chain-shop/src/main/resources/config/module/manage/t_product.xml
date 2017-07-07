@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- create by autoCode,v1.0.0 -->
+<mapper namespace="manage.product">
+	<select id="manage.product.selectPageList" parameterType="net.onlineshop.services.manage.product.bean.Product"
+		resultType="net.onlineshop.services.manage.product.bean.Product">
+		select
+		p.id,p.catalogID,p.productType,p.name,p.price,p.point,p.nowPrice,p.isnew,p.sale,p.hit,p.createAccount,DATE_FORMAT(p.createtime,'%Y-%m-%d')
+		createtime,p.supplierId,
+		p.status,p.sellcount,p.stock,p.giftID,p.taourl,p.draft,p.istui,p.shortname,p.picture,p.quality,p.ismiao,p.miaoPrice,p.miaoSta,p.miaoEnd,p.maxPicture,p.introduce
+		from t_product p where 1=1
+		<if test="id!=null and id!=''">
+			and p.id=#{id}
+		</if>
+		<!-- <if test="catalogID!=null and catalogID!=''"> -->
+		<!-- and catalogID=#{catalogID} -->
+		<!-- </if> -->
+		<if test="status!=0">
+			and status=#{status}
+		</if>
+		<if test="isnew!=null and isnew!=''">
+			and isnew=#{isnew}
+		</if>
+		<if test="productType!=null and productType!=''">
+			and productType=#{productType}
+		</if>
+		<if test="sale!=null and sale!=''">
+			and sale=#{sale}
+		</if>
+		<if test="quality!=null and quality!=''">
+			and quality=#{quality}
+		</if>
+		<if test="name!=null and name!=''">
+			and (p.name like CONCAT('%','${name}','%' ) or p.shortname
+			like CONCAT('%','${name}','%' ) )
+		</if>
+		<if test="startDate!=null and startDate!=''">
+			and createtime &gt;= #{startDate}
+		</if>
+		<if test="endDate!=null and endDate!=''">
+			and createtime &lt;= #{endDate}
+		</if>
+		<if test="startPrice!=null and startPrice!=''">
+			and nowPrice &gt;= #{startPrice}
+		</if>
+		<if test="endPrice!=null and endPrice!=''">
+			and nowPrice &lt;= #{endPrice}
+		</if>
+		<if test="istui!=null and istui!=''">
+			and istui=#{istui}
+		</if>
+			<if test="supplierId=='-1'">
+			and supplierId is null
+		</if>
+		<if test="supplierId!=null and supplierId!='' and supplierId!='-1'">
+			and supplierId=#{supplierId}
+		</if>
+		
+		<if test="queryCatalogIDs!=null and queryCatalogIDs.size &gt; 0">
+			and p.catalogID in
+			<foreach item="item" index="index" collection="queryCatalogIDs"
+				open="(" separator="," close=")">
+				#{item}
+			</foreach>
+		</if>
+		<if test="selectOutOfStockProduct">
+			and status=2 and stock &lt;= 0
+		</if>
+		
+		order by p.id desc
+		limit #{offset},#{pageSize}
+	</select>
+
+	<select id="manage.product.selectPageCount" parameterType="net.onlineshop.services.manage.product.bean.Product"
+		resultType="java.lang.Integer">
+		select count(*) from t_product p where 1=1
+		<if test="id!=null and id!=''">
+			and p.id=#{id}
+		</if>
+		<!-- <if test="catalogID!=null and catalogID!=''"> -->
+		<!-- and catalogID=#{catalogID} -->
+		<!-- </if> -->
+		<if test="status!=0">
+			and p.status=#{status}
+		</if>
+		<if test="isnew!=null and isnew!=''">
+			and isnew=#{isnew}
+		</if>
+		<if test="productType!=null and productType!=''">
+			and productType=#{productType}
+		</if>
+		<if test="sale!=null and sale!=''">
+			and sale=#{sale}
+		</if>
+		<if test="quality!=null and quality!=''">
+			and quality=#{quality}
+		</if>
+		<if test="name!=null and name!=''">
+			and (p.name like CONCAT('%','${name}','%' ) or p.shortname like
+			CONCAT('%','${name}','%' ) )
+		</if>
+		<if test="startDate!=null and startDate!=''">
+			and createtime &gt;= #{startDate}
+		</if>
+		<if test="endDate!=null and endDate!=''">
+			and createtime &lt;= #{endDate}
+		</if>
+
+		<if test="startPrice!=null and startPrice!=''">
+			and nowPrice &gt;= #{startPrice}
+		</if>
+		<if test="endPrice!=null and endPrice!=''">
+			and nowPrice &lt;= #{endPrice}
+		</if>
+		<if test="istui!=null and istui!=''">
+			and istui= #{istui}
+		</if>
+		<if test="supplierId=='-1'">
+			and supplierId is null
+		</if>
+		<if test="supplierId!=null and supplierId!='' and supplierId!='-1'">
+			and supplierId=#{supplierId}
+		</if>
+		<if test="queryCatalogIDs!=null and queryCatalogIDs.size &gt; 0">
+			and p.catalogID in
+			<foreach item="item" index="index" collection="queryCatalogIDs"
+				open="(" separator="," close=")">
+				#{item}
+			</foreach>
+		</if>
+		<if test="selectOutOfStockProduct">
+			and status=2 and stock &lt;= 0
+		</if>
+	</select>
+
+	<select id="manage.product.selectList" parameterType="net.onlineshop.services.manage.product.bean.Product"
+		resultType="net.onlineshop.services.manage.product.bean.Product">
+		select *
+		from t_product t where 1=1
+		<if test="id!=null and id!=''">
+			and id=#{id}
+		</if>
+		<if test="catalogID!=null and catalogID!=''">
+			and catalogID=#{catalogID}
+		</if>
+		<if test="status!=0">
+			and status=#{status}
+		</if>
+		<if test="istui!=null and istui!=''">
+			and istui= #{istui}
+		</if>
+		<if test="supplierId!=null and supplierId!=''">
+			and supplierId=#{supplierId}
+		</if>
+		<if test="name!=null and name!=''">
+			and (name like CONCAT('%','${name}','%' ) or shortname like
+			CONCAT('%','${name}','%' ) )
+		</if>
+		<if test="quality!=null and quality!=''">
+
+			and quality like CONCAT('${quality}','%' )
+		</if>
+
+		<if test="ids!=null and ids!=''">
+			and id in (${ids})
+		</if>
+		order by id desc
+	</select>
+
+	<insert id="manage.product.insert" parameterType="net.onlineshop.services.manage.product.bean.Product"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into t_product
+		(
+		id,createAccount,createtime,status
+		<if test="catalogID!=null and catalogID!=''">
+			,catalogID
+		</if>
+		<if test="name!=null and name!=''">
+			,name
+		</if>
+		<if test="introduce!=null and introduce!=''">
+			,introduce
+		</if>
+		<if test="price!=null and price!=''">
+			,price
+		</if>
+		<if test="point!=null and point!=''">
+			,point
+		</if>
+		<if test="nowPrice!=null and nowPrice!=''">
+			,nowPrice
+		</if>
+		<if test="picture!=null and picture!=''">
+			,picture
+		</if>
+
+		,taourl
+
+		<if test="maxPicture!=null and maxPicture!=''">
+			,maxPicture
+		</if>
+		<if test="productHTML !=null and productHTML !=''">
+			,productHTML
+		</if>
+		<if test="score!=0">
+			,score
+		</if>
+		<if test="isnew!=null and isnew!=''">
+			,isnew
+		</if>
+		<if test="sale!=null and sale!=''">
+			,sale
+		</if>
+		<if test="hit!=0">
+			,hit
+		</if>
+		<if test="unit!=null and unit!=''">
+			,unit
+		</if>
+		<if test="activityID!=null and activityID!=''">
+			,activityID
+		</if>
+		<if test="images!=null and images!=''">
+			,images
+		</if>
+		<if test="sellcount!=0">
+			,sellcount
+		</if>
+		<if test="stock!=0">
+			,stock
+		</if>
+		<if test="searchKey!=null and searchKey!=''">
+			,searchKey
+		</if>
+		<if test="title!=null and title!=''">
+			,title
+		</if>
+		<if test="description!=null and description!=''">
+			,description
+		</if>
+		<if test="keywords!=null and keywords!=''">
+			,keywords
+		</if>
+		<if test="isTimePromotion!=null and isTimePromotion!=''">
+			,isTimePromotion
+		</if>
+		<if test="draft!=null and draft!=''">
+			,draft
+		</if>
+		<if test="istui!=null and istui!=''">
+			,istui
+		</if>
+		<if test="quality!=null and quality!=''">
+			,quality
+		</if>
+		<if test="shortname!=null and shortname!=''">
+			,shortname
+		</if>
+		<if test="ismiao!=null and ismiao!=''">
+			,ismiao
+		</if>
+
+		<if test="miaoPrice!=null and miaoPrice!=''">
+			,miaoPrice
+		</if>
+		<if test="miaoSta!=null and miaoSta!=''">
+			,miaoSta
+		</if>
+		<if test="miaoEnd!=null and miaoEnd!=''">
+			,miaoEnd
+		</if>
+		<if test="supplierId!=null and supplierId!=''">
+			,supplierId
+		</if>
+		)
+		values
+		(
+		id,#{createAccount},now(),#{status}
+		<if test="catalogID!=null and catalogID!=''">
+			,#{catalogID}
+		</if>
+		<if test="name !=null and name !=''">
+			,#{name}
+		</if>
+		<if test="introduce !=null and introduce !=''">
+			,#{introduce}
+		</if>
+		<if test="price !=null and price !=''">
+			,#{price}
+		</if>
+		<if test="point !=null and point !=''">
+			,#{point}
+		</if>
+		<if test="nowPrice !=null and nowPrice !=''">
+			,#{nowPrice}
+		</if>
+
+		<if test="picture !=null and picture !=''">
+			,#{picture}
+		</if>
+
+		,#{taourl}
+
+		<if test="maxPicture !=null and maxPicture !=''">
+			,#{maxPicture}
+		</if>
+		<if test="productHTML !=null and productHTML !=''">
+			,#{productHTML}
+		</if>
+		<if test="score!=0">
+			,#{score}
+		</if>
+		<if test="isnew !=null and isnew!=''">
+			,#{isnew}
+		</if>
+		<if test="sale !=null and sale!=''">
+			,#{sale}
+		</if>
+		<if test="hit !=0">
+			,#{hit}
+		</if>
+		<if test="unit!=null and unit!=''">
+			,#{unit}
+		</if>
+		<if test="activityID!=null and activityID!=''">
+			,#{activityID}
+		</if>
+		<if test="images!=null and images!=''">
+			,#{images}
+		</if>
+		<if test="sellcount!=0">
+			,#{sellcount}
+		</if>
+		<if test="stock!=0">
+			,#{stock}
+		</if>
+		<if test="searchKey!=null and searchKey!=''">
+			,#{searchKey}
+		</if>
+		<if test="title!=null and title!=''">
+			,#{title}
+		</if>
+		<if test="description!=null and description!=''">
+			,#{description}
+		</if>
+		<if test="keywords!=null and keywords!=''">
+			,#{keywords}
+		</if>
+		<if test="isTimePromotion!=null and isTimePromotion!=''">
+			,#{isTimePromotion}
+		</if>
+		<if test="draft!=null and draft!=''">
+			,#{draft}
+		</if>
+		<if test="istui!=null and istui!=''">
+			,#{istui}
+		</if>
+		<if test="quality!=null and quality!=''">
+			,#{quality}
+		</if>
+		<if test="shortname!=null and shortname!=''">
+			,#{shortname}
+		</if>
+		<if test="ismiao!=null and ismiao!=''">
+			,#{ismiao}
+		</if>
+
+		<if test="miaoPrice!=null and miaoPrice!=''">
+			,#{miaoPrice}
+		</if>
+
+		<if test="miaoSta!=null and miaoSta!=''">
+			,#{miaoSta}
+		</if>
+		<if test="miaoEnd!=null and miaoEnd!=''">
+			,#{miaoEnd}
+		</if>
+		<if test="supplierId!=null and supplierId!=''">
+			,#{supplierId}
+		</if>
+		)
+	</insert>
+	
+	
+	<update id="manage.product.updateSupplier" parameterType="hashmap">
+		update t_product set 
+		<if test="supplierId !=null and supplierId!=''">
+			supplierId=#{supplierId}
+		</if>
+		
+		<if test="supplierId ==null or supplierId==''">
+			supplierId=null
+		</if>
+		
+		where id in 
+		<foreach collection="ids" item="item" index="index" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</update>
+	
+	
+	<update id="manage.product.updateStockAfterPaySuccess"
+		parameterType="net.onlineshop.services.manage.product.bean.Product">
+		update t_product set
+		stock=stock-#{addSellcount},sellcount=#{addSellcount}+sellcount where
+		1=1 and id=#{id}
+
+	</update>
+	<!-- 更新后台商品信息，若其他地方需要更新商品部分数据，请另外写方法，此方法仅仅用于更新商品全部数据（此方法不作为通用update方法调用，否则会导致部分字段的数据丢失，切记。） -->
+	<update id="manage.product.update" parameterType="net.onlineshop.services.manage.product.bean.Product">
+		update t_product
+		set id=#{id},updatetime=now(),updateAccount=#{updateAccount}
+		,score=#{score},sellcount=#{sellcount},stock=#{stock}
+		,giftID =
+		#{giftID}
+		<if test="isnew !=null and isnew!=''">
+			,isnew=#{isnew}
+		</if>
+		<if test="istui!=null and istui!=''">
+			,istui=#{istui}
+		</if>
+		<if test="productType!=null and productType!=''">
+			,productType=#{productType}
+		</if>
+		<if test="sale !=null and sale!=''">
+			,sale=#{sale}
+		</if>
+		<if test="status != 0">
+			,status=#{status}
+		</if>
+		<if test="supplierId!=null and supplierId!=''">
+			,supplierId=#{supplierId}
+		</if>
+		<if test="catalogID !=null and catalogID!=''">
+			,catalogID=#{catalogID}
+		</if>
+		<if test="name !=null and name !=''">
+			,name=#{name}
+		</if>
+		<if test="introduce !=null and introduce !=''">
+			,introduce=#{introduce}
+		</if>
+		<if test="price !=null and price !=''">
+			,price=#{price}
+		</if>
+		<if test="point !=null and point !=''">
+			,point=#{point}
+		</if>
+		<if test="nowPrice !=null and nowPrice !=''">
+			,nowPrice=#{nowPrice}
+		</if>
+		<if test="picture !=null and picture !=''">
+			,picture=#{picture}
+		</if>
+		<if test="maxPicture !=null and maxPicture !=''">
+			,maxPicture=#{maxPicture}
+		</if>
+		<if test="productHTML !=null and productHTML !=''">
+			,productHTML=#{productHTML}
+		</if>
+		<if test="createtime !=null and createtime !=''">
+			,createtime=#{createtime}
+		</if>
+		<if test="unit!=null and unit!=''">
+			,unit=#{unit}
+		</if>
+
+		,taourl=#{taourl}
+
+		<if test="activityID!=null and activityID!=''">
+			,activityID = #{activityID}
+		</if>
+		<if test="images!=null and images!=''">
+			,images=#{images}
+		</if>
+		<if test="searchKey!=null and searchKey!=''">
+			,searchKey=#{searchKey}
+		</if>
+		<if test="title!=null and title!=''">
+			,title=#{title}
+		</if>
+		<if test="description!=null and description!=''">
+			,description=#{description}
+		</if>
+		<if test="keywords!=null and keywords!=''">
+			,keywords=#{keywords}
+		</if>
+		<if test="isTimePromotion!=null and isTimePromotion!=''">
+			,isTimePromotion=#{isTimePromotion}
+		</if>
+
+		,draft=#{draft}
+		<if test="quality!=null and quality!=''">
+			,quality=#{quality}
+		</if>
+		<if test="shortname!=null and shortname!=''">
+			,shortname=#{shortname}
+		</if>
+		<if test="ismiao!=null and ismiao!=''">
+			,ismiao=#{ismiao}
+		</if>
+
+		<if test="miaoPrice!=null and miaoPrice!=''">
+			,miaoPrice=#{miaoPrice}
+		</if>
+		<if test="miaoSta!=null and miaoSta!=''">
+			,miaoSta=#{miaoSta}
+		</if>
+		<if test="miaoEnd!=null and miaoEnd!=''">
+			,miaoEnd=#{miaoEnd}
+		</if>
+
+		where 1=1 and id=#{id}
+	</update>
+
+	<select id="manage.product.selectOne" parameterType="net.onlineshop.services.manage.product.bean.Product"
+		resultType="net.onlineshop.services.manage.product.bean.Product">
+		select *
+		from t_product t where 1=1
+		<if test="id!=null and id!=''">
+			and id=#{id}
+		</if>
+		<if test="status != 0">
+			and status=#{status}
+		</if>
+		<if test="catalogID!=null and catalogID!=''">
+			and catalogID=#{catalogID}
+		</if>
+		<if test="name!=null and name!=''">
+			and t.name like CONCAT('%','${name}','%' )
+		</if>
+		<if test="quality!=null and quality!=''">
+			and quality=#{quality}
+		</if>
+	</select>
+
+	<select id="manage.product.selectById" parameterType="string"
+		resultType="net.onlineshop.services.manage.product.bean.Product">
+		select * from t_product t where id=#{id}
+	</select>
+
+	<delete id="manage.product.deleteById" parameterType="int">
+		delete from
+		t_product where 1=1 and id=#{id}
+	</delete>
+
+	<delete id="manage.product.deleteAttributeLinkByProductID"
+		parameterType="int">
+		delete from t_attribute_link where
+		productID=#{productID}
+	</delete>
+
+	<select id="manage.product.selectStockByIDs" parameterType="list"
+		resultType="net.onlineshop.services.manage.product.bean.Product">
+		select id,stock from t_product t where 1=1
+		and id in
+		<foreach item="item" index="index" collection="list" open="("
+			separator="," close=")">
+			#{item}
+		</foreach>
+	</select>
+
+	<select id="manage.product.selectOutOfStockProductCount"
+		resultType="int">
+		select count(*) from t_product t where 1=1 and status=2 and stock &lt;= 0
+	</select>
+	<update id="manage.product.updateImg" parameterType="net.onlineshop.services.manage.product.bean.Product">
+		update
+		t_product
+		set id=#{id},picture=#{picture},isnew=#{isnew},sale=#{sale}
+		where 1=1 and id=#{id}
+	</update>
+
+	<update id="manage.product.updateProductStatus" parameterType="net.onlineshop.services.manage.product.bean.Product">
+		update t_product set
+		status=#{status},updateAccount=#{updateAccount},updatetime=now() where
+		1=1 and id=#{id}
+	</update>
+
+	<update id="manage.product.updateProductBindActivityId"
+		parameterType="net.onlineshop.services.manage.product.bean.Product">
+		update t_product set activityID=#{activityID}
+		where id in
+		<foreach item="item" index="index" collection="productIds"
+			open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</update>
+
+	<update id="manage.product.updateResetThisProductActivityID"
+		parameterType="string">
+		update t_product set activityID=null where activityID=#{activityID}
+	</update>
+
+	<select id="manage.product.selectSellInfo" parameterType="net.onlineshop.services.manage.product.bean.Product"
+		resultType="net.onlineshop.services.manage.product.bean.SellInfo">
+		SELECT a.productName ,SUM(price) as totalSell ,COUNT(*) as countOrder
+		from t_orderdetail a LEFT JOIN t_order b on a.orderID=b.id WHERE
+		b.status!='cancel'
+		<if test="id!=null and id!=0 ">
+			and a.productID=#{id}
+		</if>
+		<if test="startDate!=null and startDate!=''">
+			and date_format(b.createdate,'%Y-%m-%d') &gt;= #{startDate}
+		</if>
+		<if test="endDate!=null and endDate!=''">
+			and date_format(b.createdate,'%Y-%m-%d') &lt;= #{endDate}
+		</if>
+		GROUP BY a.productID ORDER BY countOrder DESC
+
+	</select>
+	<select id="manage.product.selectGzidInfo" parameterType="net.onlineshop.services.manage.product.bean.Product"
+		resultType="net.onlineshop.services.manage.product.bean.GzidInfo">
+		SELECT gzid, count(*) as num from t_order a
+		<if test="id!=null and id!=0 ">
+			LEFT JOIN t_orderdetail b on a.id=b.orderID
+		</if>
+		WHERE a.status!='cancel'
+		<if test="id!=null and id!=0 ">
+			and b.productID=#{id}
+		</if>
+		<if test="startDate!=null and startDate!=''">
+			and date_format(a.createdate,'%Y-%m-%d') &gt;= #{startDate}
+		</if>
+		<if test="endDate!=null and endDate!=''">
+			and date_format(a.createdate,'%Y-%m-%d') &lt;= #{endDate}
+		</if>
+		GROUP BY a.gzid ORDER BY num desc
+	</select>
+</mapper>

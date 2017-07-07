@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+"http://struts.apache.org/dtds/struts-2.5.dtd">
+    
+<struts>
+	<!-- 滚动图片维护 -->
+	<package name="indexImg" namespace="/manage" extends="struts-onlineshop-manage" strict-method-invocation="false">
+		<action name="indexImg" class="indexImgActionManage">
+			<result name="toList">/WEB-INF/manages/indexImg/indexImgList.jsp</result>
+			<result name="toEdit">/WEB-INF/manages/indexImg/indexImgEdit.jsp</result>
+			<result name="toAdd">/WEB-INF/manages/indexImg/indexImgEdit.jsp</result>
+						<result name="floorView">/WEB-INF/manages/indexImg/floorView.jsp</result>
+							<result name="floor">/WEB-INF/manages/indexImg/floor.jsp</result>
+
+		</action>
+	</package>
+	
+	<!-- 门户新闻 -->
+	<package name="news" namespace="/manage" extends="struts-onlineshop-manage" strict-method-invocation="false">
+		<action name="news" class="newsActionManage">
+			<result name="toList">/WEB-INF/manages/news/newsList.jsp</result>
+			<result name="toEdit">/WEB-INF/manages/news/newsEdit.jsp</result>
+			<result name="toAdd">/WEB-INF/manages/news/newsEdit.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 友情链接 -->
+	<package name="navigation" namespace="/manage" extends="struts-onlineshop-manage" strict-method-invocation="false">
+		<action name="navigation" class="navigationActionManage">
+			<result name="toList">/WEB-INF/manages/navigation/navigationList.jsp</result>
+			<result name="toEdit">/WEB-INF/manages/navigation/navigationEdit.jsp</result>
+			<result name="toAdd">/WEB-INF/manages/navigation/navigationEdit.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 会员等级 -->
+	<package name="accountRank" namespace="/manage" extends="struts-onlineshop-manage" strict-method-invocation="false">
+		<action name="accountRank" class="accountRankActionManage">
+			<result name="toList">/WEB-INF/manages/accountRank/accountRankList.jsp</result>
+			<result name="toEdit">/WEB-INF/manages/accountRank/accountRankEdit.jsp</result>
+			<result name="toAdd">/WEB-INF/manages/accountRank/accountRankEdit.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 会员 -->
+	<package name="account" namespace="/manage" extends="struts-onlineshop-manage" strict-method-invocation="false">
+		<action name="accounts" class="accountActionManage">
+			<result name="loginSuccess">/toIndex.jsp</result>
+			<result name="loginFaild">/login.jsp</result>
+			<result name="regeistSuccess" type="redirect">/regeist_success.jsp</result>
+			<result name="loginOut">/toIndex.jsp</result>
+			<result name="regFaild">/regeistFalid.jsp</result>
+			<result name="toList">/WEB-INF/manages/account/accountList.jsp</result>
+			<result name="toEdit">/WEB-INF/manages/account/accountEdit.jsp</result>
+			<result name="freeze">/WEB-INF/manages/account/freeze.jsp</result>
+			<result name="show">/WEB-INF/manages/account/show.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 充值 -->
+	<package name="recharge" namespace="/manage" extends="struts-onlineshop-manage" strict-method-invocation="false">
+		<action name="recharge" class="rechargeActionManage">
+			<result name="toList">/WEB-INF/manages/account/rechargeList.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 分类管理 -->
+	<package name="catalog" namespace="/manage" extends="struts-onlineshop-manage" strict-method-invocation="false">
+		<action name="catalog" class="catalogActionManage">
+			<result name="toList">/WEB-INF/manages/catalog/catalogList.jsp</result>
+			<result name="selectAllList" type="redirect">catalog!selectList.action?e.type=${e.type}</result>
+			<result name="toAdd">/WEB-INF/manages/catalog/catalogEdit.jsp</result>
+			<result name="toEdit">/WEB-INF/manages/catalog/catalogEdit.jsp</result>
+		</action>
+	</package>
+		<!-- 物流管理 -->
+	<package name="transport" namespace="/manage" extends="struts-onlineshop-manage" strict-method-invocation="false">
+	
+	<action name="transport" class="transportActionManage">
+
+		<result name="list">/WEB-INF/manages/transport/transportList.jsp</result>
+		<result name="toEdit">/WEB-INF/manages/transport/transportEdit.jsp</result>
+		<result name="area">/WEB-INF/manages/transport/transArea.jsp</result>
+		<result name="info_ems">/WEB-INF/manages/transport/transport_ems.jsp</result>
+		<result name="info_express">/WEB-INF/manages/transport/transport_express.jsp</result>
+		<result name="info_mail">/WEB-INF/manages/transport/transport_mail.jsp</result>
+	</action>
+	</package>
+	
+	
+
+	<!-- 商品信息 -->
+	<package name="product" namespace="/manage" extends="struts-onlineshop-manage" strict-method-invocation="false">
+		<action name="product" class="productActionManage">
+			<result name="toList">/WEB-INF/manages/product/productList.jsp</result>
+			<result name="toAdd">/WEB-INF/manages/product/productEdit.jsp</result>
+			<result name="toEdit">/WEB-INF/manages/product/productEdit.jsp</result>
+			<result name="toSupplierList">/WEB-INF/manages/product/productSupplierList.jsp</result>
+			<result name="toSupplierInProduct">/WEB-INF/manages/supplier/supplierEditProduct.jsp</result>
+			<result name="gzidInfo">/WEB-INF/manages/product/productGzidInfo.jsp</result>
+			
+		</action>
+	</package>
+	
+	<!-- 订单 -->
+	<package name="order" namespace="/manage" extends="struts-onlineshop-manage" strict-method-invocation="false">
+		<action name="order" class="orderActionManage">
+			<result name="toList">/WEB-INF/manages/order/orderList.jsp</result>
+			<result name="toAdd">/WEB-INF/manages/order/orderEdit.jsp</result>
+			<result name="toEdit">/WEB-INF/manages/order/orderEdit.jsp</result>
+			<result name="toPrint">/WEB-INF/manages/order/orderPrint.jsp</result>
+			<result name="toSendProduct">/WEB-INF/manages/order/sendProduct.jsp</result>
+			<result name="selectOrdership">/WEB-INF/manages/order/updateOrdership.jsp</result>
+			<result name="initImport">/WEB-INF/manages/order/initImport.jsp</result>
+			<result name="detail">/WEB-INF/manages/order/detail.jsp</result>
+			
+		</action>
+	</package>
+	
+	<!-- notice公告
+	<package name="notice" namespace="/manage" extends="struts-onlineshop-manage">
+		<action name="notice" class="noticeAction">
+			<result name="toList">/WEB-INF/manages/notice/noticeList.jsp</result>
+			<result name="toAdd">/WEB-INF/manages/notice/noticeEdit.jsp</result>
+			<result name="toEdit">/WEB-INF/manages/notice/noticeEdit.jsp</result>
+		</action>
+	</package>-->
+	
+	<!-- 系统日志管理-->
+	<package name="systemlog" namespace="/manage" extends="struts-onlineshop-manage" strict-method-invocation="false">
+		<action name="systemlog" class="systemlogActionManage">
+			<result name="toList">/WEB-INF/manages/systemlog/systemlogList.jsp</result>
+			<result name="toAdd">/WEB-INF/manages/systemlog/systemlogEdit.jsp</result>
+			<result name="toEdit">/WEB-INF/manages/systemlog/systemlogEdit.jsp</result>
+			<result name="systemlogListAndDetail">/WEB-INF/manages/systemlog/systemlogListAndDetail.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 区域管理-->
+	<package name="area" namespace="/manage" extends="struts-onlineshop-manage" strict-method-invocation="false">
+		<action name="area" class="areaActionManage">
+			<result name="toList">/WEB-INF/manages/area/areaList.jsp</result>
+			<result name="toAdd">/WEB-INF/manages/area/areaEdit.jsp</result>
+			<result name="toEdit">/WEB-INF/manages/area/areaEdit.jsp</result>
+			<result name="areaTree">/WEB-INF/manages/area/areaTree.jsp</result>
+			<result name="addOrUpdate">/WEB-INF/manages/area/addOrUpdate.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 系统设置-->
+	<package name="systemSetting" namespace="/manage" extends="struts-onlineshop-manage" strict-method-invocation="false">
+		<action name="systemSetting" class="systemSettingActionManage">
+			<result name="toEdit">/WEB-INF/manages/systemSetting/systemSettingEdit.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 评论 -->
+	<package name="comment" namespace="/manage" extends="struts-onlineshop-manage" strict-method-invocation="false">
+		<action name="comment" class="commentActionManage">
+			<result name="toList">/WEB-INF/manages/comment/commentList.jsp</result>
+			<result name="selectAllList" type="redirect">comment!selectList.action</result>
+			<result name="toAdd">/WEB-INF/manages/comment/commentReply.jsp</result>
+			<result name="toEdit">/WEB-INF/manages/comment/commentReply.jsp</result>
+				<result name="add">/WEB-INF/manages/comment/commentEdit.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 键值对 -->
+	<package name="keyvalue" namespace="/manage" extends="struts-onlineshop-manage" strict-method-invocation="false">
+		<action name="keyvalue" class="keyvalueActionManage">
+			<result name="toList">/WEB-INF/manages/keyvalue/keyvalueList.jsp</result>
+			<result name="selectAllList" type="redirect">keyvalue!selectList.action</result>
+			<result name="toAdd">/WEB-INF/manages/keyvalue/keyvalueEdit.jsp</result>
+			<result name="toEdit">/WEB-INF/manages/keyvalue/keyvalueEdit.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 产品属性 -->
+	<package name="attribute" namespace="/manage" extends="struts-onlineshop-manage" strict-method-invocation="false">
+		<action name="attribute" class="attributeActionManage">
+			<result name="toList">/WEB-INF/manages/attribute/attributeList.jsp</result>
+			<result name="toAdd">/WEB-INF/manages/attribute/attributeEdit.jsp</result>
+			<result name="toEdit">/WEB-INF/manages/attribute/attributeEdit.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 广告管理 -->
+	<package name="advert" namespace="/manage" extends="struts-onlineshop-manage" strict-method-invocation="false">
+		<action name="advert" class="advertActionManage">
+			<result name="toList">/WEB-INF/manages/advert/advertList.jsp</result>
+			<result name="toAdd">/WEB-INF/manages/advert/advertEdit.jsp</result>
+			<result name="toEdit">/WEB-INF/manages/advert/advertEdit.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 问卷管理 -->
+	<package name="questionnaire" namespace="/manage" extends="struts-onlineshop-manage"  strict-method-invocation="false">
+		<action name="questionnaire" class="questionnaireActionManage">
+			<result name="toList">/WEB-INF/manages/questionnaire/questionnaireList.jsp</result>
+			<result name="toAdd">/WEB-INF/manages/questionnaire/questionnaireEdit.jsp</result>
+			<result name="toEdit">/WEB-INF/manages/questionnaire/questionnaireEdit.jsp</result>
+<!-- 			<result name="addQuestionItemPage">/WEB-INF/manages/questionnaire/questionnaireItemEdit.jsp</result> -->
+		</action>
+	</package>
+	
+	<!-- 支付方式管理 -->
+	<package name="pay" namespace="/manage" extends="struts-onlineshop-manage" strict-method-invocation="false">
+		<action name="pay" class="payActionManage">
+			<result name="toList">/WEB-INF/manages/pay/payList.jsp</result>
+			<result name="toAdd">/WEB-INF/manages/pay/payEdit.jsp</result>
+			<result name="toEdit">/WEB-INF/manages/pay/payEdit.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 存储方式管理 -->
+	<package name="oss" namespace="/manage" extends="struts-onlineshop-manage" strict-method-invocation="false">
+		<action name="oss" class="ossActionManage">
+			<result name="toList">/WEB-INF/manages/oss/ossList.jsp</result>
+			<result name="toAdd">/WEB-INF/manages/oss/ossEdit.jsp</result>
+			<result name="toEdit">/WEB-INF/manages/oss/ossEdit.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 评论方式管理 -->
+	<package name="commentType" namespace="/manage" extends="struts-onlineshop-manage" strict-method-invocation="false">
+		<action name="commentType" class="commentTypeActionManage">
+			<result name="toList">/WEB-INF/manages/commentType/commentTypeList.jsp</result>
+			<result name="toAdd">/WEB-INF/manages/commentType/commentTypeEdit.jsp</result>
+			<result name="toEdit">/WEB-INF/manages/commentType/commentTypeEdit.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 评论方式管理 -->
+	<package name="report" namespace="/manage" extends="struts-onlineshop-manage" strict-method-invocation="false">
+		<action name="report" class="reportActionManage">
+			<result name="orderSales">/WEB-INF/manages/report/orderSales.jsp</result>
+			<result name="productSales">/WEB-INF/manages/report/productSales.jsp</result>
+			<result name="userSales">/WEB-INF/manages/report/userSales.jsp</result>
+			<result name="registerSales">/WEB-INF/manages/report/registerSales.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 物流管理 -->
+	<package name="express" namespace="/manage" extends="struts-onlineshop-manage" strict-method-invocation="false">
+		<action name="express" class="expressActionManage">
+			<result name="toList">/WEB-INF/manages/express/expressList.jsp</result>
+			<result name="toAdd">/WEB-INF/manages/express/expressEdit.jsp</result>
+			<result name="toEdit">/WEB-INF/manages/express/expressEdit.jsp</result>
+		</action>
+	</package>
+	
+	<!-- SMS短信管理 -->
+	<package name="sms" namespace="/manage" extends="struts-onlineshop-manage" strict-method-invocation="false">
+		<action name="sms" class="smsActionManage">
+			<result name="toList">/WEB-INF/manages/sms/smsList.jsp</result>
+<!-- 			<result name="toAdd">/WEB-INF/manages/sms/smsEdit.jsp</result> -->
+<!-- 			<result name="toEdit">/WEB-INF/manages/sms/smsEdit.jsp</result> -->
+		</action>
+	</package>
+	
+	<!-- 商品到货通知 -->
+	<package name="emailNotifyProduct" namespace="/manage" extends="struts-onlineshop-manage" strict-method-invocation="false">
+		<action name="emailNotifyProduct" class="emailNotifyProductActionManage">
+			<result name="toList">/WEB-INF/manages/emailNotifyProduct/emailNotifyProductList.jsp</result>
+			<result name="toAdd">/WEB-INF/manages/emailNotifyProduct/emailNotifyProductEdit.jsp</result>
+			<result name="toEdit">/WEB-INF/manages/emailNotifyProduct/emailNotifyProductEdit.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 通知模板 -->
+	<package name="notifyTemplate" namespace="/manage" extends="struts-onlineshop-manage" strict-method-invocation="false">
+		<action name="notifyTemplate" class="notifyTemplateActionManage">
+			<result name="toList">/WEB-INF/manages/notifyTemplate/notifyTemplateList.jsp</result>
+<!-- 			<result name="toAdd">/WEB-INF/manages/notifyTemplate/notifyTemplateEdit.jsp</result> -->
+			<result name="toEdit">/WEB-INF/manages/notifyTemplate/notifyTemplateEdit.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 邮件管理 -->
+	<package name="email" namespace="/manage" extends="struts-onlineshop-manage" strict-method-invocation="false">
+		<action name="email" class="emailActionManage">
+			<result name="toList">/WEB-INF/manages/email/emailList.jsp</result>
+			<result name="toAdd">/WEB-INF/manages/email/emailEdit.jsp</result>
+			<result name="toEdit">/WEB-INF/manages/email/emailEdit.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 任务管理 -->
+	<package name="task" namespace="/manage" extends="struts-onlineshop-manage" strict-method-invocation="false">
+		<action name="task" class="taskActionManage">
+			<result name="toList">/WEB-INF/manages/task/taskList.jsp</result>
+<!-- 			<result name="toAdd">/WEB-INF/manages/task/taskEdit.jsp</result> -->
+<!-- 			<result name="toEdit">/WEB-INF/manages/task/taskEdit.jsp</result> -->
+		</action>
+	</package>
+	
+	<!-- 活动促销管理 -->
+	<package name="activity" namespace="/manage" extends="struts-onlineshop-manage" strict-method-invocation="false">
+		<action name="activity" class="activityActionManage">
+			<result name="toList">/WEB-INF/manages/activity/activityList.jsp</result>
+			<result name="toAdd">/WEB-INF/manages/activity/activityEdit.jsp</result>
+			<result name="toEdit">/WEB-INF/manages/activity/activityEdit.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 商品赠品管理 -->
+	<package name="gift" namespace="/manage" extends="struts-onlineshop-manage" strict-method-invocation="false">
+		<action name="gift" class="giftActionManage">
+			<result name="toList">/WEB-INF/manages/gift/giftList.jsp</result>
+			<result name="toAdd">/WEB-INF/manages/gift/giftEdit.jsp</result>
+			<result name="toEdit">/WEB-INF/manages/gift/giftEdit.jsp</result>
+			<result name="show">/WEB-INF/manages/gift/show.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 热门查询管理 -->
+	<package name="hotquery" namespace="/manage" extends="struts-onlineshop-manage" strict-method-invocation="false">
+		<action name="hotquery" class="hotqueryActionManage">
+			<result name="toList">/WEB-INF/manages/hotquery/hotqueryList.jsp</result>
+			<result name="toAdd">/WEB-INF/manages/hotquery/hotqueryEdit.jsp</result>
+			<result name="toEdit">/WEB-INF/manages/hotquery/hotqueryEdit.jsp</result>
+		</action>
+	</package>
+	
+	<!--案例管理 -->
+	<package name="cases" namespace="/manage" extends="struts-onlineshop-manage" strict-method-invocation="false">
+		<action name="cases" class="casesActionManage">
+			<result name="toList">/WEB-INF/manages/cases/casesList.jsp</result>
+			<result name="toAdd">/WEB-INF/manages/cases/casesEdit.jsp</result>
+			<result name="toEdit">/WEB-INF/manages/cases/casesEdit.jsp</result>
+		</action>
+	</package>
+	
+	<!--供应商管理-->
+	<package name="supplier" namespace="/manage" extends="struts-onlineshop-manage" strict-method-invocation="false">
+		<action name="supplier" class="supplierActionManage">
+			<result name="toList">/WEB-INF/manages/supplier/supplierList.jsp</result>
+			<result name="toAdd">/WEB-INF/manages/supplier/supplierEdit.jsp</result>
+			<result name="toEdit">/WEB-INF/manages/supplier/supplierEdit.jsp</result>
+		</action>
+	</package>
+	
+	<!--供应商管理-->
+	<package name="supplierlinkman" namespace="/manage" extends="struts-onlineshop-manage" strict-method-invocation="false">
+		<action name="supplierlinkman" class="supplierlinkmanActionManage">
+			<result name="toList">/WEB-INF/manages/supplierlinkman/supplierlinkmanList.jsp</result>
+			<result name="toAdd">/WEB-INF/manages/supplierlinkman/supplierlinkmanEdit.jsp</result>
+			<result name="toEdit">/WEB-INF/manages/supplierlinkman/supplierlinkmanEdit.jsp</result>
+		</action>
+	</package>
+	
+</struts>

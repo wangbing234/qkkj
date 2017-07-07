@@ -1,0 +1,1 @@
+$(document).ready(function(){$(".sent").mouseover(function(){$(this).removeClass().addClass("senth")});$(".sent").mouseout(function(){$(this).removeClass().addClass("sent")})})

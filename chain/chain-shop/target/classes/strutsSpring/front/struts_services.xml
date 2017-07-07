@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+	<!-- 会员 -->
+	<package name="accountFront" namespace="/"
+		extends="struts-onlineshop-front"  strict-method-invocation="false">
+		<action name="account" class="accountActionFront">
+			<result name="toRecharge">alipayapi.jsp</result>
+			<result name="toIndex" type="redirect">/</result>
+			<result name="toLogin">/users/login.jsp</result>
+			<result name="toPcLogin">/pc/login.jsp</result>
+			<result name="toLoginRedirect" type="redirect">/</result>
+			<result name="register">/users/regeist.jsp</result>
+			<result name="pcRegister">/pc/regeist.jsp</result>
+			<result name="pcChangePwdSuccess">/pc/users/changePwdSuccess.jsp</result>
+			<result name="changePwdSuccess">/users/changePwdSuccess.jsp</result>
+			<result name="checkEmail">/users/regsuccess.jsp</result>
+			<result name="regsuccess" type="redirect">/users/regsuccess.html</result>
+			<result name="comment">/users/comment.jsp</result>
+			<result name="help">/help.jsp</result>
+			<result name="toPcUser">/pc/users/user.jsp</result>
+			<result name="user">/users/user.jsp</result>
+			<result name="toPcRecharge">/pc/users/recharge.jsp</result>
+			<result name="recharge">/users/recharge.jsp</result>
+			<result name="toPcRechargeType">/pc/users/rechargeType.jsp</result>
+			<result name="rechargeType">/users/rechargeType.jsp</result>
+			<result name="pc_userView">/pc/users/userView.jsp</result>
+			<result name="userView">/users/userView.jsp</result>
+			<result name="saveSetting" type="redirect">/users/setting.html</result>
+			<result name="score">/users/score.jsp</result>
+			<result name="msg">/users/msg.jsp</result>
+			<result name="topwd">/users/topwd.jsp</result>
+			<result name="pc_topwd">/pc/users/topwd.jsp</result>
+			<result name="pc_orders">/pc/users/orders.jsp</result>
+			<result name="orders">/users/orders.jsp</result>
+			<result name="pc_letters">/pc/users/letters.jsp</result>
+			<result name="letters">/users/letters.jsp</result>
+			<result name="pc_address">/pc/users/address.jsp</result>
+			<result name="pc_addressView">/pc/users/addressView.jsp</result>
+			<result name="address">/users/address.jsp</result>
+			<result name="addressView">/users/addressView.jsp</result>
+			<result name="jcrop">/users/jcrop.jsp</result>
+			<result name="pc_forget">/pc/users/forget.jsp</result>
+			<result name="forget">/users/forget.jsp</result>
+			<result name="toWaitUserCheck" type="redirect">/user/waitUserCheck.html
+			</result>
+			<result name="waitUserCheck">/users/waitUserCheck.jsp</result>
+			<result name="pc_waitUserCheck">/pc/users/waitUserCheck.jsp</result>
+			<result name="reset">/users/reset.jsp</result>
+			<result name="resetSuccess">/users/resetSuccess.jsp</result>
+			<result name="forget_redirect" type="redirect">/forget.jsp</result>
+			<result name="foget_sendEmail_success">/forget.jsp</result>
+			<result name="forgetCallbackSuccess" type="redirect">/forgetCallbackSuccess.html
+			</result>
+			<result name="alipayFastLogin">/users/alipayapi_fastLogin.jsp</result>
+			<result name="cart">/cart.jsp</result>
+			<result name="toChangeEmail">/users/changeEmail.jsp</result>
+			<result name="changeEamilWait" type="redirect">/user/changeEamilWait.html
+			</result>
+			<result name="toChangeEamilWait">/users/changeEamilWait.jsp</result>
+			<result name="active">/users/active.jsp</result>
+			<result name="activeAccount">/users/reg_success_active_result.jsp</result>
+			<result name="pc_favorite">/pc/users/favorite.jsp</result>
+			<result name="favorite">/users/favorite.jsp</result>
+			<result name="head">/pc/users/head.jsp</result>
+		</action>
+	</package>
+
+	<!-- 购物车 -->
+	<package name="cartFront" namespace="/" extends="struts-onlineshop-front"  strict-method-invocation="false">
+		<action name="cart" class="cartActionFront">
+			<result name="cart">/cart.jsp</result>
+			<result name="toLogin">/user/login.html</result>
+			<!-- PC端 -->
+			<result name="pc_cart">/pc/cart.jsp</result>
+			<result name="pc_toLogin">/user/login.html</result>
+		</action>
+	</package>
+	<!-- -->
+	<package name="files" namespace="/" extends="struts-onlineshop-front"  strict-method-invocation="false">
+		<action name="files" class="filesUploadAction">
+		</action>
+	</package>
+
+	<!-- 产品 -->
+	<package name="productFront" namespace="/"
+		extends="struts-onlineshop-front"  strict-method-invocation="false">
+		<action name="product" class="productActionFront">
+			<result name="toLogin" type="redirect">/user/login.html</result>
+			<result name="productList">productList.jsp</result>
+			<result name="specialProductList">specialProductList.jsp</result>
+			<result name="product">product.jsp</result>
+			<result name="cart">cart.jsp</result>
+			<result name="list">productList.jsp</result>
+			<result name="confirmOrder">confirmOrder.jsp</result>
+			<result name="index">indexNew.jsp</result>
+			<result name="newsList">newsList.jsp</result>
+			<result name="newsInfo">newsInfo.jsp</result>
+			<result name="help">help.jsp</result>
+			<result name="selectMemoryStock">/test/selectMemoryStock.jsp</result>
+			<!-- PC端 -->
+			<result name="pc_toLogin" type="redirect">/user/login.html</result>
+			<result name="pc_productList">/pc/productList.jsp</result>
+			<result name="pc_specialProductList">/pc/specialProductList.jsp</result>
+			<result name="pc_product">/pc/product.jsp</result>
+			<result name="pc_cart">/pc/cart.jsp</result>
+			<result name="pc_list">/pc/productList.jsp</result>
+			<result name="pc_confirmOrder">/pc/confirmOrder.jsp</result>
+			<result name="pc_index">/pc/indexNew.jsp</result>
+			<result name="pc_newsList">/pc/newsList.jsp</result>
+			<result name="pc_newsInfo">/pc/newsInfo.jsp</result>
+			<result name="pc_help">/pc/help.jsp</result>
+		</action>
+		
+	</package>
+
+	<!-- 订单 -->
+	<package name="ordersFront" namespace="/" extends="struts-onlineshop-front"  strict-method-invocation="false">
+		<action name="orders" class="ordersActionFront">
+			<!-- <result name="toLogin" type="redirect">login.jsp</result> -->
+			<result name="toLogin">/users/login.jsp</result>
+			<result name="toPcLogin">/pc/login.jsp</result>
+			<result name="toPay">alipayapi.jsp</result>
+			<result name="toYeePay">yeepayapi.jsp</result>
+			<result name="rate">rate.jsp</result>
+			<result name="pay_success">pay_success.jsp</result>
+			<result name="doPay" type="redirect">doPay.jsp</result>
+			<result name="pc_weixin">/pc/qrcode.jsp</result>
+			<result name="weixin">/users/waitPay.jsp</result>
+			<result name="myOrders">/users/myOrders.jsp</result>
+			<result name="orderQueryInfo">/users/orderQueryInfo.jsp</result>
+			<result name="orderInfo">/users/orderInfo.jsp</result>
+			<result name="orderhipInfo">/users/orderhipInfo.jsp</result>
+			<result name="confirmOrder">/confirmOrder.jsp</result>
+			<result name="quickOrder">/quickOrder.jsp</result>
+			<result name="quickPay">/quickPaySuccess.jsp</result>
+			<result name="paySuccess">/paySuccess.jsp</result>
+			<result name="pc_paySuccess">/pc/paySuccess.jsp</result>
+			<result name="payFail">/payFail.jsp</result>
+			<result name="thinksRate">/thinksRate.jsp</result>
+			<result name="orderQuery">/orderQuery.jsp</result>
+			<result name="pc_thinksRate">/pc/users/thinksRate.jsp</result>
+			<result name="pc_toPay">/pc/alipayapi.jsp</result>
+			<result name="pc_toYeePay">/pc/yeepayapi.jsp</result>
+			<result name="pc_rate">/pc/users/rate.jsp</result>
+			<result name="pc_pay_success">/pc/pay_success.jsp</result>
+			<result name="pc_doPay" type="redirect">/pc/doPay.jsp</result>
+			<result name="pc_myOrders">/pc/users/myOrders.jsp</result>
+			<result name="pc_orderQueryInfo">/pc/users/orderQueryInfo.jsp</result>
+			<result name="pc_orderInfo">/pc/users/orderInfo.jsp</result>
+			<result name="pc_orderhipInfo">/pc/users/orderhipInfo.jsp</result>
+			<result name="pc_confirmOrder">/pc/confirmOrder.jsp</result>
+			<result name="pc_paySuccess">/pc/paySuccess.jsp</result>
+			<result name="pc_payFail">/pc/payFail.jsp</result>
+			<result name="pc_thinksRate">/pc/thinksRate.jsp</result>
+			<result name="pc_orderQuery">/pc/orderQuery.jsp</result>
+		</action>
+	</package>
+
+	<!-- 模板 -->
+	<package name="freemarkerFront" namespace="/"
+		extends="struts-onlineshop-front"  strict-method-invocation="false">
+		<action name="freemarker" class="freemarkerActionFront">
+			<result name="success" type="redirect">/manage/freemarker/freemarkerList.jsp
+			</result>
+		</action>
+	</package>
+
+	<!-- 问卷管理 -->
+	<package name="questionnaireFront" namespace="/"
+		extends="struts-onlineshop-front"  strict-method-invocation="false">
+		<action name="questionnaire" class="questionnaireActionFront">
+			<result name="show">/questionnaire.jsp</result>
+			<result name="success" type="redirect">/questionnaireSuccess.jsp</result>
+		</action>
+	</package>
+
+	<!-- 文章管理 -->
+	<package name="newsFront" namespace="/" extends="struts-onlineshop-front"  strict-method-invocation="false">
+		<action name="news" class="newsActionFront">
+			<result name="newsInfo">/newsInfo.jsp</result>
+			<result name="help">/help.jsp</result>
+			<result name="pc_history">/pc/history.jsp</result>
+			<result name="history">/history.jsp</result>
+			<result name="pc_help">/pc/help.jsp</result>
+		</action>
+	</package>
+	<!-- 文件下载管理 -->
+	<package name="downloadFront" extends="struts-default" namespace="/"  strict-method-invocation="false">
+		<action name="download" class="downloadActionFront">
+			<result name="success" type="stream">
+				<param name="contentType">application/x-msdownload</param>
+				<param name="inputName">getInputStream()</param>
+				<param name="contentDisposition">attachment;filename="${newfilename}"</param>
+				<param name="bufferSize">40960</param>
+			</result>
+		</action>
+	</package>
+	<package name="apiFront" extends="struts-default" namespace="/"  strict-method-invocation="false">
+		<action name="api" class="apiActionFront">
+	</action>
+	</package>
+	<!-- 案例管理 -->
+	<package name="casesFront" namespace="/" extends="struts-onlineshop-front"  strict-method-invocation="false">
+		<action name="cases" class="casesActionFront">
+			<result name="casesInfo">/casesInfo.jsp</result>
+			<result name="casesList">casesList.jsp</result>
+		</action>
+	</package>
+	<!-- 微信支付 -->
+	<package name="weiPay" namespace="/" extends="struts-onlineshop-front"  strict-method-invocation="false">
+		<action name="weiPay" class="weiPayActionFront">
+			<result name="qrcode">/pc/qrcode.jsp</result>
+			<result name="waitPay">/users/waitPay.jsp</result>
+		</action>
+	</package>
+	<!-- 支付宝支付 -->
+	<package name="paycallback" namespace="/" extends="struts-onlineshop-front"  strict-method-invocation="false">
+		<action name="callback" class="callBackActionFront"/>
+	</package>
+</struts>

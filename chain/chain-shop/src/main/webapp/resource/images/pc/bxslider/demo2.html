@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="响应式，bxSlider，jquery" />
+<meta name="description" content="Helloweba演示平台，演示XHTML、CSS、jquery、PHP案例和示例" />
+<title>演示：响应式内容滑动插件bxSlider</title>
+<link rel="stylesheet" type="text/css" href="../css/main.css" />
+<link rel="stylesheet" type="text/css" href="jquery.bxslider.css">
+<style type="text/css">
+#header{width:90%}
+#main{width:90%; position:relative; margin:0 auto}
+.demo_nav{padding:10px; width:80%; height:80px; margin:10px auto}
+.demo_nav li{float:left; padding:4px 10px;}
+.demo_nav li a.cur{font-weight:bold}
+.demo{clear:both; position:relative; margin:20px auto; width:80%}
+ul.bxslider li img {margin: 0 auto; width:100%}
+</style>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.bxslider.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('.bxslider').bxSlider({
+		mode: 'fade',
+  		captions: true
+	});
+});
+</script>
+</head>
+
+<body>
+<div id="header">
+   <div id="logo"><h1><a href="http://www.helloweba.com" title="返回helloweba首页">helloweba</a></h1></div>
+</div>
+
+<div id="main">
+   <h2 class="top_title"><a href="http://www.helloweba.com/view-blog-219.html">响应式内容滑动插件bxSlider</a></h2>
+   <ul class="demo_nav">
+   		<li><a href="index.html">Demo1:标准</a></li>
+        <li><a href="demo2.html" class="cur">Demo2:带标题的图片滑动</a></li>
+        <li><a href="demo3.html">Demo3:自动滑动控制</a></li>
+        <li><a href="demo4.html">Demo4:垂直滑动</a></li>
+   </ul>
+   <div class="demo">
+   		<ul class="bxslider">
+  			<li><img src="images/s1.jpg" title="J15起飞" /></li>
+  			<li><img src="images/s2.jpg" title="美女" /></li>
+  			<li><img src="images/s3.jpg" title="静谧的农场" /></li>
+		</ul>
+<pre>
+$(function(){
+	$('.bxslider').bxSlider({
+		mode: 'fade',
+  		captions: true
+	});
+});
+</pre>
+   <br/><div class="ad_76090"><script src="/js/ad_js/bd_76090.js" type="text/javascript"></script></div><br/>
+   </div>
+</div>
+<div id="footer">
+    <p>Powered by helloweba.com  允许转载、修改和使用本站的DEMO，但请注明出处：<a href="http://www.helloweba.com">www.helloweba.com</a></p>
+</div>
+
+<p id="stat"><script type="text/javascript" src="http://js.tongji.linezing.com/1870888/tongji.js"></script></p>
+</body>
+</html>

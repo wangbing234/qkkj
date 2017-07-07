@@ -1,0 +1,235 @@
+﻿.adjust input.nb{width:15px;}
+/*首頁*/
+.homebanner760 { width: 760px; float: left; margin-bottom:15px;}
+.homebanner185 { width: 185px; float: right;margin-bottom:15px; }
+
+.homepage .homecontent{ padding:10px 0 10px;}
+
+/*特輯*/
+.p_featurelist { width: 960px; float:left; margin-bottom:20px}
+.p_featurelist3 { width: 480px; float:left; margin-bottom:20px}
+.p_featurelist2 { width: 320px; float:left; margin-bottom:20px}
+
+.p_featurelist3line  { background: url(/i/Page/images/feature/feature_3dotline.gif) repeat-y left;}
+.p_featurelist2Lline  { background: url(/i/Page/images/feature/feature_2dotline.gif) repeat-y right;}
+.p_featurelist2Rline  { background: url(/i/Page/images/feature/feature_2dotline.gif) repeat-y left;}
+
+.p_feature ul { overflow:hidden;}	
+.p_feature ul li{ float:left;height:160px;text-align:center;display:block;font-size:11px;width:140px;}
+
+.p_featureR ul li{padding-left:20px;}
+.p_featureL ul li{padding-right:20px;}
+.p_featureC ul li{padding-right:10px;padding-left:10px;}	
+	
+.p_feature ul li h3{ margin:5px 0px 5px 0px; line-height: 12px;}
+.p_featureBlank {height: 10px;}
+
+.p_featureNEW h3{ margin:5px 0px 5px 0px; line-height: 12px; font-size:12px; font-family:"Verdana","新細明體", Geneva, Tahoma, sans-serif; color:#706E6C; 
+
+text-align: center;}
+.p_featureLine { background: url(/i/Page/images/feature/dotline.gif) repeat-y;}
+
+.p_homegreyNew{
+	background:#ffffff;
+	height:765px;
+	}
+
+/*新品預告*/
+.p_advanceTable { border-top: 1px solid #cccccc; border-left: 1px solid #cccccc; border-right: 1px solid #cccccc;}
+.p_advanceTh { background-color: #f0f0f0; padding: 10px; font-size: 12px; text-align:center; color: #666666; font-weight: bold; border-bottom: 1px solid 
+
+#cccccc;}
+.p_advanceTd { padding: 7px; font-size: 12px; text-align:center; color: #666666; border-bottom: 1px solid #cccccc; line-height: 20px;}
+.p_advanceLeftLine { border-left: 1px solid #cccccc;}
+
+/*downjacket*/
+.downjacket { font-family: "Verdana","新細明體"; font-size: 11px; color: #999999;}
+.downjacket a:link    {color:#333333; text-decoration: underline;} 
+.downjacket a:visited {color:#333333; text-decoration: underline;} 
+.downjacket a:active  {color:#999999; text-decoration: none;} 
+.downjacket a:hover   {color:#999999; text-decoration: none;}
+
+/*2011 index*/
+
+#indexbottomBtn ul {list-style-type: none; margin: 0px; padding: 0px;}
+#indexbottomBtn li.indexService {height: 60px; width:128px; background:url(/i/Page/images/2011/index_service.gif); text-align: right; font-size: 12px; line-
+
+height: 60px; float: left; margin-right: 32px;}
+#indexbottomBtn li.indexService a{height:60px; width:128px; display:block; color: #666666;}
+#indexbottomBtn li.indexService a:hover{background:url(/i/Page/images/2011/index_service_over.gif) 0 0px; color: #83521e; text-decoration:none;}
+
+#indexbottomBtn li.indexExperience {height: 60px; width:128px; background:url(/i/Page/images/2011/index_experience.gif); text-align: right; font-size: 12px; 
+
+line-height: 60px; float: left; margin-right: 32px;}
+#indexbottomBtn li.indexExperience a{height:60px; width:128px; display:block; color: #666666;}
+#indexbottomBtn li.indexExperience a:hover{background:url(/i/Page/images/2011/index_experience_over.gif) 0 0px; color: #83521e; text-decoration:none;}
+
+#indexbottomBtn li.indexBlogs {height: 60px; width:128px; background:url(/i/Page/images/2011/index_blog.gif); text-align: right; font-size: 12px; line-height: 
+
+60px; float: left; margin-right: 32px;}
+#indexbottomBtn li.indexBlogs a{height:60px; width:128px; display:block; color: #666666;}
+#indexbottomBtn li.indexBlogs a:hover{background:url(/i/Page/images/2011/index_blog_over.gif) 0 0px; color: #83521e; text-decoration:none;}
+
+#indexbottomBtn li.indexLinks {height: 60px; width:128px; background:url(/i/Page/images/2011/index_links.gif); text-align: right; font-size: 12px; line-height: 
+
+60px; float: left; margin-right: 32px;}
+#indexbottomBtn li.indexLinks a{height:60px; width:128px; display:block; color: #666666;}
+#indexbottomBtn li.indexLinks a:hover{background:url(/i/Page/images/2011/index_links_over.gif) 0 0px; color: #83521e; text-decoration:none;}
+
+#indexbottomBtn li.indexShopping {height: 60px; width:128px; background:url(/i/Page/images/2011/index_shopping.gif); text-align: right; font-size: 12px; line-
+
+height: 60px; float: left; margin-right: 32px;}
+#indexbottomBtn li.indexShopping a{height:60px; width:128px; display:block; color: #666666;}
+#indexbottomBtn li.indexShopping a:hover{background:url(/i/Page/images/2011/index_shopping_over.gif) 0 0px; color: #83521e; text-decoration:none;}
+
+#indexbottomBtn li.indexWanted {height: 60px; width:128px; background:url(/i/Page/images/2011/index_wanted.gif); text-align: right; font-size: 12px; line-
+
+height: 60px; float: left; margin-right: 32px;}
+#indexbottomBtn li.indexWanted a{height:60px; width:128px; display:block; color: #666666;}
+#indexbottomBtn li.indexWanted a:hover{background:url(/i/Page/images/2011/index_wanted_over.gif) 0 0px; color: #83521e; text-decoration:none;}
+
+.indexblog2011 {font-size:12px; font-family:"Verdana","新細明體", Geneva, Tahoma, sans-serif; color:#666666; text-decoration:none;}
+.indexblog2011 a{color:#666666; line-height: 20px; text-decoration:none;}
+.indexblog2011 a:hover{color:#83521e; line-height: 20px; text-decoration:underline;}
+.indexblog2011 span{display:block; padding-bottom:7px;color:#999999; text-decoration:none; font-size:11px; font-family:"Verdana","新細明體", Geneva, Tahoma, 
+
+sans-serif;}
+.indexblog2011 img{float:left; margin-right:10px;}
+
+.indexnews2012 { font-family: "Verdana","新細明體"; font-size: 11px; color: #999999; vertical-align: middle; border-bottom: 1px solid #dddddd;}
+.indexnews2012 a:link    {color:#83521e; text-decoration: none;} 
+.indexnews2012 a:visited {color:#83521e; text-decoration: none;} 
+.indexnews2012 a:active  {color:#999999; text-decoration: underline;} 
+.indexnews2012 a:hover   {color:#999999; text-decoration: underline;}
+
+.p_featureTopLine { border-top: 1px solid #e0e0e0; border-right: 1px solid #e0e0e0; font-size:12px; font-family:"Verdana","新細明體"; color:#666666; text-
+
+align: center; text-align: center; vertical-align: top; padding-bottom: 10px;}
+.p_featureLeftLine { border-left: 1px solid #e0e0e0;}
+
+.indexnews20120809 { font-family: "Verdana","新細明體"; font-size: 11px; color: #858585; vertical-align: middle; text-align:left;}
+.indexnews20120809 a:link    {color:#858585; text-decoration: none;} 
+.indexnews20120809 a:visited {color:#858585; text-decoration: none;} 
+.indexnews20120809 a:active  {color:#5d3b24; text-decoration: underline;} 
+.indexnews20120809 a:hover   {color:#5d3b24; text-decoration: underline;}
+
+.p_eventText { font-family: "Verdana","新細明體", Geneva, Tahoma, sans-serif; font-size: 15px; color: #333333; line-height: 30px; }
+.p_eventText a:link    {color:#83521e; text-decoration: none;} 
+.p_eventText a:visited {color:#83521e; text-decoration: none;} 
+.p_eventText a:active  {color:#333333; text-decoration: underline;} 
+.p_eventText a:hover   {color:#333333; text-decoration: underline;}
+
+.p_eventText li { margin-left: -8px}
+
+.p_eventFooter  { font-family: "Verdana","新細明體", Geneva, Tahoma, sans-serif; font-size: 12px; color: #858585; line-height: 30px; border-top: solid 1px 
+
+#cccccc}
+.p_eventFooter a:link    {color:#83521e; text-decoration: none;} 
+.p_eventFooter a:visited {color:#83521e; text-decoration: none;} 
+.p_eventFooter a:active  {color:#858585; text-decoration: underline;} 
+.p_eventFooter a:hover   {color:#858585; text-decoration: underline;}
+
+.p_content { font-family: "Verdana","新細明體", Geneva, Tahoma, sans-serif; font-size: 12px; color:#706E6C;line-height:25px;}
+.p_content ul { margin-left:20px;}
+.p_content ul li{list-style-type:decimal;}
+
+.p_disclaimer h1{background:#f0eeec url('../i/Page/images/disclaimer_h1.gif') no-repeat 20px 100px;height:900px;}
+.p_policy h1{background:#f0eeec url('../i/Page/images/policy_h1.gif') no-repeat 20px 100px;height:900px;}
+.p_terms h1{background:#f0eeec url('../i/Page/images/terms_h1.gif') no-repeat 20px 100px;height:900px;}
+
+
+.indexnews2013 { font-family: "Verdana","新細明體"; font-size: 12px; color: #909090; vertical-align: middle;line-height: 35px}
+.indexnews2013 a:link    {color:#909090; text-decoration: none;} 
+.indexnews2013 a:visited {color:#909090; text-decoration: none;} 
+.indexnews2013 a:active  {color:#333333; text-decoration: underline;} 
+.indexnews2013 a:hover   {color:#333333; text-decoration: underline;}
+
+.p_overseas h3 {
+background-image: url('/i/Page/images/2013/shophelp_title.gif');}
+
+.p_overseasGB h3 {
+background-image: url('/i/Page/images/2014/shophelpGB_title.gif');}
+
+.p_helpInvoice h3 {
+background-image: url('/i/Page/images/helpInvoice_title.gif');}
+
+.p_delivery h3 {
+background-image: url('/images/shophelp_h23.gif');}
+
+
+.p_eventText12 { font-family: "Verdana","新細明體", Geneva, Tahoma, sans-serif; font-size: 13px; color: #333333; line-height: 25px; }
+.p_eventText12 a:link    {color:#83521e; text-decoration: none;} 
+.p_eventText12 a:visited {color:#83521e; text-decoration: none;} 
+.p_eventText12 a:active  {color:#333333; text-decoration: underline;} 
+.p_eventText12 a:hover   {color:#333333; text-decoration: underline;}
+
+/*ATTITUDE TEE*/
+#p_ATbgcolor{ background-color:#ffffff; widht:100%; height:2620px;}
+#p_AThead{margin-left:auto;margin-right:auto;position:relative;width:1180px;height:70px;z-index:95;text-align:left}
+#p_ATmainpic{margin-left:auto;margin-right:auto;position:relative;width:1180px;height:652px;z-index:95;text-align:left}
+
+#p_ATmenu{margin-left:auto;margin-right:auto;position:relative;width:1180px;height:80px;z-index:95;text-align:left;background:url
+
+(http://s2.lativ.com.tw/i/Page/images/2015ss_attitudeTEE/menu.gif)}
+#p_ATmenu ul{list-style:none; margin: 0; padding: 0;}
+#p_ATmenu li{float:left; margin:0;}
+#p_ATmenu li a{height:80px; width:393px; display:block; line-height: 9000px; overflow: hidden;}
+.p_ATmenu_men a:hover{background:url(http://s2.lativ.com.tw/i/Page/images/2015ss_attitudeTEE/menu.gif) 0 80px}
+.p_ATmenu_women a:hover{background:url(http://s2.lativ.com.tw/i/Page/images/2015ss_attitudeTEE/menu.gif) 787px 80px}
+.p_ATmenu_kids a:hover{background:url(http://s2.lativ.com.tw/i/Page/images/2015ss_attitudeTEE/menu.gif) 394px 80px}
+
+.p_ATmenu_menNow a{background:url(http://s2.lativ.com.tw/i/Page/images/2015ss_attitudeTEE/menu.gif) 0 80px}
+.p_ATmenu_womenNow a{background:url(http://s2.lativ.com.tw/i/Page/images/2015ss_attitudeTEE/menu.gif) 787px 80px}
+.p_ATmenu_kidsNow a{background:url(http://s2.lativ.com.tw/i/Page/images/2015ss_attitudeTEE/menu.gif) 394px 80px}
+
+#p_ATaibox{margin-left:auto;margin-right:auto;position:relative;width:1200px;;z-index:95;text-align:left;margin-top:10px;}
+#p_ATaibox ul {list-style-type:none; margin: 0px; padding: 0px;}
+#p_ATaibox li {float:left; margin:0;height: 280px; width:280px; text-align: center;padding:10px}
+#p_ATaibox li a{height:280px; width:280px; display:block; border:0px;opacity: 0.3; filter: alpha(opacity=30);}
+#p_ATaibox li a:hover{ opacity: 1; filter: alpha(opacity=100); }
+
+/*首頁簡體*/
+.p_indexTxt  { font-family: "Verdana","宋体"; font-size: 12px; color: #313131; line-height: 25px;}
+.p_indexTxt a:link    {color:#313131; text-decoration: none;} 
+.p_indexTxt a:visited {color:#313131; text-decoration: none;} 
+.p_indexTxt a:active  {color:#646464; text-decoration: underline;} 
+.p_indexTxt a:hover   {color:#646464; text-decoration: underline;}
+
+.p_indexTitle  { font-family: "Verdana","微軟正黑體"; font-size: 20px; color: #313131; line-height: 25px;}
+.p_catalogTitle  { font-family: "Verdana","微軟正黑體"; font-size: 16px; color: #313131; line-height: 25px;}
+
+/*七天無理由退貨*/
+.p_freereturns  { font-family: "Verdana","宋体"; font-size: 15px; color: #666666; line-height: 30px;}
+.p_freereturns a:link    {color:#59452a; text-decoration: underline;} 
+.p_freereturns a:visited {color:#59452a; text-decoration: underline;} 
+.p_freereturns a:active  {color:#666666; text-decoration: none;} 
+.p_freereturns a:hover   {color:#666666; text-decoration: none;}
+
+.p_freereturns_qaT  { font-family: "Verdana","宋体"; font-size: 15px; color: #000000; line-height: 30px;}
+.p_freereturns_qa  { font-family: "Verdana","宋体"; font-size: 12px; color: #666666; line-height: 25px;}
+.p_freereturns_qa a:link    {color:#59452a; text-decoration: underline;} 
+.p_freereturns_qa a:visited {color:#59452a; text-decoration: underline;} 
+.p_freereturns_qa a:active  {color:#666666; text-decoration: none;} 
+.p_freereturns_qa a:hover   {color:#666666; text-decoration: none;}
+
+/*news*/
+.p_newsdate {background: url('http://s.lativ.com/i/Page/images/news_datebg.gif') no-repeat 0 0; font-size: 11px; font-weight: bold; color: #686868; padding: 5px 20px 5px 20px; margin: 0 20px 0 0px; float: left; display: block; width:110px;}
+
+.p_newspart {  overflow: hidden;  border-top: 1px #ccc dotted; padding: 30px 0 10px;}
+
+/*服務條款*/
+.p_termservice{  position: relative; overflow: hidden;  width: 1180px;  margin-bottom: 10px;  padding: 15px 0; margin-left: auto; margin-right: auto;}
+
+.p_termserviceBorder{ width: 960px; margin: 0 auto; border: 1px solid #e0e0e0;border-radius: 5px; text-align: left;  margin: 50px 0;}
+
+.p_termserviceTitle { font-family: 微軟正黑體; line-height: 1.5; font-size: 20px; color: #333; text-align: center; padding-bottom: 40px; padding-top: 50px;}
+
+.p_termserviceText {font-family: "Verdana","宋体"; font-size: 12px; color: #666666; line-height: 30px; margin-bottom:50px; padding: 0px 100px;}
+
+.p_SearchEmptyTitle { font-family: Arial,"Microsoft Yahei","Microsoft JhengHei","Hiragino Sans GB","Heiti SC",STXihei,sans-serif; font-size: 16px; color: #c14948; line-height: 25px; text-align: center;}
+
+.p_SearchEmptyTxt { font-family: Arial,"Microsoft Yahei","Microsoft JhengHei","Hiragino Sans GB","Heiti SC",STXihei,sans-serif; Geneva, Tahoma, sans-serif; font-size: 13px; color: #333333; line-height: 25px; text-align: center;}
+.p_SearchEmptyTxt a:link    {color:#333333; text-decoration: underline;} 
+.p_SearchEmptyTxt a:visited {color:#333333; text-decoration: underline;} 
+.p_SearchEmptyTxt a:active  {color:#333333; text-decoration: none;} 
+.p_SearchEmptyTxt a:hover   {color:#333333; text-decoration: none;}

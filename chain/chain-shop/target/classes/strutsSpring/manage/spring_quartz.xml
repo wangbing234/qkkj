@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="timingJob" class="net.onlineshop.core.task.TimingJob" >
+		<property name="manageCache" ref="manageCache"></property>
+		<property name="frontCache" ref="frontCache"></property>
+		<property name="orderService" ref="orderServiceManage"></property>
+		<property name="accountService" ref="accountServiceFront"></property>
+	</bean>
+	<!-- 每分钟任务  测试
+	<bean id="cronTriggerMinutely" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+				<property name="targetObject" ref="timingJob" />
+				<property name="targetMethod" value="minutely" />
+			</bean>
+		</property>
+		<property name="cronExpression" value="0 0/3 * * * ?" />
+	</bean>-->
+
+	<!-- 每小时任务 -->
+	<bean id="cronTriggerHourly" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+				<property name="targetObject" ref="timingJob" />
+				<property name="targetMethod" value="hourly" />
+			</bean>
+		</property>
+		<property name="cronExpression" value="0 0 * * * ?" />
+	</bean>
+
+	<!-- 每日任务 -->
+	<bean id="cronTriggerDaily" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+				<property name="targetObject" ref="timingJob" />
+				<property name="targetMethod" value="daily" />
+			</bean>
+		</property>
+		<property name="cronExpression" value="0 0 0 * * ?" />
+	</bean>
+
+	<bean id="quartz" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<!-- 固定周期任务 
+				<ref bean="cronTriggerMinutely" />-->
+				<ref bean="cronTriggerHourly" />
+				<ref bean="cronTriggerDaily" />
+			</list>
+		</property>
+		<property name="autoStartup" value="true" />
+	</bean>
+
+</beans>

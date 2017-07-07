@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- create by autoCode,v1.0.0 -->
+<mapper namespace="front.mebstatic">
+	 <!-- 消费积分数据 -->
+	<update id="front.account.point.update" parameterType="net.onlineshop.services.front.account.bean.MebPoint">
+		update ${@net.onlineshop.services.front.account.impl.SystemParms@PREFIX_POINT}.meb_wallet t set t.meb_id=#{meb_id}
+		<if test="point_free!=null and point_free!='' and point_free!=0">
+			,point_free=point_free+#{point_free}
+		</if>
+		where t.meb_id=#{meb_id}
+	</update>
+	
+		
+	<!-- 查询互积分 -->
+	<select id="front.account.cqs.point" parameterType="net.onlineshop.services.front.account.bean.MebPoint"
+		resultType="net.onlineshop.services.front.account.bean.MebPoint">
+		select * from ${@net.onlineshop.services.front.account.impl.SystemParms@PREFIX_POINT}.meb_wallet t where  1=1 
+		<if test="meb_id!=null and meb_id!=''">
+			and t.meb_id=#{meb_id}
+		</if>
+	</select>
+	
+	
+	<insert id="front.account.pointlog.insert" useGeneratedKeys="true" keyProperty="rid" 
+	parameterType="net.onlineshop.services.front.account.bean.MebWalletLog">
+        INSERT INTO ${@net.onlineshop.services.front.account.impl.SystemParms@PREFIX_POINT}.meb_wallet_log (
+	        <if test="rid!=null">
+	        	rid,
+	        </if>
+        	meb_id, wallet_type, wallet_sub_type, change_amount, new_amount, create_time, change_reason, change_id
+        	<if test="oper!=null and oper!=''">
+        	,oper
+        	</if>
+        	<if test="oper_remark!=null and oper_remark!=''">
+        	, oper_remark
+        	</if>
+        ) VALUES (
+        	 <if test="rid!=null">
+          		 #{rid},
+          	</if>
+            #{meb_id}, #{wallet_type}, #{wallet_sub_type}, #{change_amount}, #{new_amount}, now(), #{change_reason}, 
+           #{change_id}
+           <if test="oper!=null and oper!=''"> 
+          	 ,#{oper}
+           </if>
+           <if test="oper_remark!=null and oper_remark!=''">
+          	 , #{oper_remark}
+           </if>
+        )
+    </insert>
+</mapper>

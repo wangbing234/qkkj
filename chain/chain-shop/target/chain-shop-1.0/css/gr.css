@@ -1,0 +1,194 @@
+﻿@charset "utf-8";
+/* CSS Document */
+.mianbox{margin-top:20px;margin-bottom:40px;}
+.lfbox{float:left;width:269px;}
+.lftit{height:61px;background:#414141;color:#fff;padding-left:80px; line-height:61px; text-align:center;font-size:18px; overflow:hidden;}
+.lftit img{float:left; margin-top:19px;}
+.lftit p{float:left;}
+.lfnr{width:267px;border:1px solid #cbcbcb;border-top:none; overflow:hidden;background:#fff;}
+.lfnr ul{padding-left:60px; margin:20px 0;}
+.f18{font-size:18px !important;}
+.lfnr ul li{ line-height:30px;font-size:14px;}
+.lfnr ul li a{color:#414141;    line-height: 30px}
+.lfnr ul li a.ks{color:#7c4b25;}
+
+.rtbox{width:909px;margin-left:20px;border:1px solid #cbcbcb;float:left;background:#fff;}
+.rtit{height:56px;background:#ededed; line-height:56px;padding-left:20px;font-size:18px;border-bottom:1px solid #cbcbcb;}
+.rtny{overflow:hidden;}
+.rtlist{width:110px;margin-top:20px;margin-left:30px; float:left;overflow:hidden;}
+.rtlist ul li{font-size:16px; line-height:72px;float:right;}
+.lflist{float:left;margin-left:20px;margin-top:20px;}
+
+.zfhz{width:200px;height:77px;border:1px solid #cbcbcb;float:left; position:relative; right:0 !important; text-align:center;margin-right:20px;}
+.lflist ul li{font-size:16px; line-height:70px;overflow:hidden;width:480px;}
+.lflist ul li input{height:40px;width:280px;padding-left:5px;}
+.lflist ul li a{ position:relative;right:70px;font-size:12px;color:#269df0;}
+.lflist ul li span{color:#ca3030; font-weight:bold;}
+.lflist ul li label p{color:#ca3030; width:120px; float:left;}
+.tjbt{height:40px; width:160px;background:#7c4b25;margin:40px 160px;color:#fff; text-align:center; line-height:40px; display:block;border:none;}
+
+.scbox{overflow:hidden;margin:20px;}
+.scbx{width:270px;height:345px;padding:10px 0;float:left;border:1px solid #cbcbcb;margin-right:15px;margin-bottom:15px;}
+.sctp{ text-align:center;}
+.scbx h3{ text-align:center;margin:10px 0;font-weight:normal;}
+.scbx p{padding:0 9px;font-size:12px;color:#888888;}
+.scbx ul{overflow:hidden;padding:0 9px;margin-top:20px;}
+.scbx ul li{color:#df1802;font-size:20px;font-weight:bold; float:left;margin-right:10px;}
+
+.rzbx{width:270px;height:430px;padding:10px 0;float:left;border:1px solid #cbcbcb;margin-right:15px;margin-bottom:15px;position:relative;}
+.sctp{ text-align:center;}
+.rzbx h3{ text-align:center;margin:10px 0;font-weight:normal;}
+.rzbx p{padding:0 9px;font-size:12px;color:#888888;}
+.rzq{padding:10px;}
+.rzq span{font-weight:bold;color:#bf3b3b;font-size:14px;}
+.rzbx ul{overflow:hidden;padding:0 1px;margin-top:20px;position:absolute;bottom:10px;}
+.rzbx ul li{color:#868686;font-size:14px; float:left;margin-right:7px;}
+.rzbx ul li.fr{color:#868686;font-size:14px; float:left;}
+.rzbx ul li span{color:#7c4b25;font-weight:bold;}
+
+.jxbx{width:270px;height:345px;padding:10px 0;float:left;border:1px solid #cbcbcb;margin-right:15px;margin-bottom:15px;}
+.jxbx h3{ text-align:center;margin:10px 0;font-weight:normal;}
+.jxbx p{padding:0 9px;font-size:12px;color:#888888;}
+.jxbx ul{overflow:hidden;padding:0 9px;margin-top:6px;}
+.jxbx ul li{float:left;font-size:10px;}
+.jxbx ul li ul li{float:none !important;}
+.jxbx ul li ul li span{color:#7c4b25;}
+.jxbt{height:30px;width:90px;background:#7c4b25; text-align:center;color:#fff !important; line-height:30px; border-radius:3px;font-size:14px !important;margin-top:9px;}
+
+.xjq{overflow:hidden;margin:50px;}
+.ktp{float:left;}
+.xjq ul{float:left;margin-left:40px;margin-top:30px;font-size:16px;width: 160px; }
+.xjq ul li span{color:#c62828;}
+.xjbt{height:40px;width:160px; text-align:center; line-height:40px;background:#24b4ff;margin-top:10px;}
+.xjbt a{color:#fff;line-height:40px;}
+
+.ccc{overflow:hidden;}
+.rigbox{width:933px;border:1px solid #cbcbcb;float:right;}
+.rigtit{height:60px;border-bottom:1px solid #cbcbcb; line-height:60px;padding-left:10px;font-size:18px; overflow:hidden;}
+.gwcb{width:140px;height:45px;border:1px solid #a00e0e;background:url(/data/img/images/gly.jpg) no-repeat 10px;float:right;margin-top:7px;margin-right:5px; line-height:45px;padding-left:60px;color:#a00e0e;}
+.btz{width:120px; text-align:right; line-height:70px;font-size:16px;margin:40px 0; float:left;}
+.bdbox{margin-left:20px;margin-top:40px; line-height:70px; font-size:16px;float:left;}
+.gerzx{width:300px;height:40px;line-height:40px;}
+.gerzx ul li{ overflow:hidden;}
+.gerzx ul li select{float:left;height:40px;line-height:40px}
+.sebo{height:40px;width:100px;line-height:40px}
+.tjb{width:160px;height:50px;background:#7c4b25;margin-bottom:40px; line-height:50px; text-align:center;color:#fff; display:block; position:relative; right:172px;}
+.dzcd{width:500px !important;height:40px !important;line-height:40px}
+
+.dzhz{width:900px;margin:20px auto;border-left:none;border-bottom:none;}
+.dzhz ul{ overflow:hidden;border-bottom:1px solid #cbcbcb;}
+.dzhz ul li{float:left;padding:10px 10px;}
+.dzhz ul li ul{overflow:hidden;border-bottom:none !important;}
+.dzhz ul li ul li{float:left;padding:0px !important;width:40px; text-align:center;}
+.dzhz ul li ul li a{color:#7c7c7c;}
+.w84{width:84px;}
+.w500{width:510px; padding-left:20px;}
+.w123{width:123px;}
+.w68{width:68px;}
+.w127{width:127px;}
+.w149{width:149px;}
+.w98{width:98px;}
+.w89{width:89px;}
+
+.ddtab ul{overflow:hidden;padding:15px 0;border-bottom:1px solid #cbcbcb;}
+.ddtab ul li{float:left;width:20%; text-align:center;font-size:18px;}
+.ddtab ul li a{color:#414141;}
+.ddtab ul li a span{color:#a00e0e;}
+.ddtab ul li a.laiba{color:#a00e0e;}
+.w381{width:338px;}
+.w99{width:99px;}
+.w190{width:190px;}
+.w112{width:112px;}
+.w132{width:130px;}
+.bbc ul{overflow:hidden;}
+.bbc ul li{float:left;padding:15px 0; text-align:center;}
+.shangpx{height:54px;background:#ededed; line-height:54px;padding:0 15px;overflow:hidden;border-top:1px solid #cbcbcb;}
+.tim{float:left;margin-right:20px;}
+.shangpx a{padding-top:18px; float:right;}
+.ddlb ul{overflow:hidden;padding:5px;}
+.ddlb ul li{float:left; line-height:60px;text-align:center;}
+.ddlb ul li ul{overflow:hidden;}
+.ddlb ul li ul li{float:left;margin-right:20px;}
+.ddczb{background:#cc2d2d;height:35px;width:95px; border-radius:3px; line-height:35px !important; text-align:center; margin-top:23px;}
+.ddczb a{color:#fff;    line-height: 35px}
+.ddpjb{height:35px;width:95px; border-radius:3px; line-height:35px !important; text-align:center; margin-top:23px;border:1px solid #cbcbcb;}
+.ddpjb a{color:#6a6a6a;}
+.ddqrb a{background:#7c4b25;height:35px;color:#fff; border-radius:3px; line-height:35px !important; text-align:center; margin-top:23px;width:120px;padding:5px 10px;}
+
+
+.danlb{height:100px;margin-top:20px; }
+.danlb ul li{ line-height:25px;}
+.danlb ul li span{color:red;}
+.danlb ul li i{ font-style:normal;color:#09976d;}
+.danlb ul li strong{color:red;}
+.xqpj{margin-left:40px;margin-top:10px;}
+
+.zzc{ width:100%;; height:100%; position:fixed; top:0%; left:0%; background:#333; opacity:0.5; z-index:100; margin:0 auto;}
+
+/*tcc*/
+.tcc{ width:500px; border:1px solid #ededed; position:fixed; top:30%; left:40%; background:#FFF; padding:20px 0; border-radius: 2px;}
+.tcc span{ font-size:18px; margin-left:20px; }
+.tcc .tcfgx{ border-bottom:1px solid #ededed;margin-top:10px;}
+.tcc .xzbox{ width:60%; margin:0 auto; margin-top:20px; overflow:hidden;}
+.tcc .xzbox input{ margin:0 auto;margin-top:20px; }
+.tcc .xzbox .xzl{ width:100%; }
+.tcc .xzbox li{ line-height:3;float:left;margin-left:20px;}
+.botbox{ width:60%; margin:0 auto; margin-top:30px;}
+.tjbot{padding:10px 40px; background:#C03; color:#FFF; margin-right:30px;border:0px}
+.czbot{padding:10px 40px; background:#666; color:#FFF;border:0px}
+
+
+
+.anniu1{height:45px;width:160px;background:#0997d6; text-align:center; line-height:45px; display:block;color:#fff; border-radius:3px;}
+
+.fgx{border:1px dashed #e6e6e6;}
+.wdd{padding:20px;}
+.wdd ul{overflow:hidden;margin-top:10px;}
+.wdd ul li{float:left;margin-right:80px;font-size:16px;}
+.wdd ul li span{color:red;font-weight:bold;margin-left:5px;}
+.jbzl{overflow:hidden;padding:20px;}
+.zil{float:left;}
+.zil h3{padding-left:0px;margin-bottom:5px;}
+.zil ul li{ line-height:30px;}
+.zil ul li strong{color:#7c4b25;}
+.zil ul li ul{overflow:hidden;}
+.zil ul li ul li{float:left;margin-right:30px;}
+.zil ul li ul li span{color:red;font-weight:bold;font-size:16px;}
+
+.zir{float:left;padding:30px 0;margin-left:60px;}
+.zir ul{overflow:hidden;margin-left:60px;}
+.zir ul li{}
+.anniu1{height:45px;width:160px;background:#0997d6; text-align:center; line-height:45px; display:block;color:#fff; border-radius:3px;}
+.anniu2{height:45px;width:160px;background:#7c4b25; text-align:center; line-height:45px; display:block;color:#fff; border-radius:3px;margin-top:20px;}
+
+.fgx{border:1px dashed #e6e6e6;}
+.wdd{padding:20px;}
+.wdd ul{overflow:hidden;margin-top:10px;padding-left:100px}
+.wdd ul li{float:left;margin-right:20px;font-size:16px;width:160px;height:140px;}
+.wdd ul li a{line-height:100px;}
+.wdd ul li span{color:red;font-weight:bold;margin-left:5px;}
+
+.tjl h3{margin-top:20px;padding-left:20px;margin-bottom:5px;}
+.tjl ul{overflow:hidden;padding-left:20px; margin-top:15px; padding-bottom:20px;}
+.tjl ul li{float:left;margin-right:30px;padding:5px;width:180px;border: 1px solid #e6e6e6;}
+.tjl p{ text-align:left; line-height:18px; font-size:14px;height:40px;}
+.jg{overflow:hidden;font-size:14px;}
+.wsj{float:left;}
+.wsj span{color:#F00;font-size:13px;}
+.wspj{float:right;}
+.wspj i{ font-style:normal;color:green;}
+
+.gezl{padding:20px;}
+.gezl ul{ overflow:hidden;margin-bottom:20px;}
+.gel{float:left; line-height:40px;width:100px;}
+.gerb{float:left; overflow:hidden;}
+.gerb select{height:40px;width:150px;line-height: 40px;}
+.gerb input{height:40px;width:260px;padding-left:5px;}
+
+.xcv a{height:40px;width:140px;background:#0997d6;color:#fff; text-align:center; line-height:40px; display:block;border-radius:3px;margin-left:120px;margin-bottom:40px;}
+
+.zffs{margin:30px;font-size:16px;}
+.zffs ul{overflow:hidden;}
+.zffs ul li{float:left;margin-right:20px;margin-top:20px;position:relative; }
+.zffs ul li a{border:1px solid #e6e6e6;padding:3px;display:block;}
+.zffs ul li a.lalx{border:1px solid #7c4b25;}

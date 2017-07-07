@@ -1,0 +1,96 @@
+﻿html body, html body input, #wrap input {font-family:"Microsoft Yahei","Microsoft JhengHei",Arial,sans-serif;}
+#wrap{font-size:12px;}
+.loginnote{*margin-left:0;}				
+.passie7{*width:127px;}
+.topnav{vertical-align:middle;}
+.topnav li{*display:inline;/*for ie6 haslaayout bug*/*margin:0 0px 0;/**width:68px;*/*float:left;}
+.topnav li a {*display:inline-block;*float:none;}
+#nav li.menu_home{float:right;}
+		
+/*商品頁*/
+.tag{filter:alpha(opacity=80);position:absolute;}
+.tag .tag_bg td{background:rgb(190, 190, 190);}
+.product_info .color a{outline: 0;}
+ #search #keyWord{line-height:20px;}
+ 
+/*會員登入-訂單查詢*/
+.review select{width:11.5em;}
+.review em{margin:-1px 0px 0 0}
+.inquire table th.tr_style{height:0px;*height:15px;}
+.history-detail .h-list{width:96%;}
+textarea{overflow:auto;} 
+.delete{padding:1px 20px 4px 30px;}
+.picksize{margin-top:8px;*margin-top:7px;}
+.sitemap{margin-top:3px;}			
+.btn_styles span{padding:1px 15px 1px;font-size:10.5px;}
+		
+/*任選頁面加入購物車按鈕*/
+.choose .adjust a span{padding:2px 17px 0px; font-size:11px;*padding:1px 17px 0px;}
+		
+.display li p{margin-top:5px; height:15px;}
+.display .any_size a{	margin-top:3px;}
+.display .any_size select{margin:0 5px;}
+.display .any_size{overflow:hidden;width:72%;margin:10px 14% 0;}
+#footer{margin-bottom:20px;}
+#footer .copyright{float:right;font-size:10px;}
+.topnav li#cart img{margin:-2px 10px 0 0px;*margin:-1px 10px 0 0;}
+.container_48 .addcart .btn_styles span{font-size:12px;padding:4px 15px 2px;*padding:5px 15px 1px;line-height:1.2;}
+#forgetpw-2015 .forgetpw-remind {width:730px}
+	
+/*開始結帳按鈕*/
+.check, .check2{font-size:13px;}
+		
+/*input 確定送出*/
+.sent, .sent:hover, .senth{padding-bottom:0;padding-top:3px;*font-size:95%;_font-size:93%;}
+		
+.senth{color:#fff;width:100px;height:25px;cursor:pointer;border:none;background:transparent url('../images/submitaa.jpg') bottom left no-repeat;}
+.order .radio{*height:15px;*width:25px;}		
+		
+/*ie8 join*/
+.roundbox_center span.remind, .roundbox_center span.field-validation-error{*margin:0px 0 0 -3px;}
+.roundbox_center .address span.field-validation-error, .roundbox_center .address span.remind{margin:*margin:0px 0 0 -3px;}
+li.name span.remind, li.name span.field-validation-error{*margin:3px 0 0 100px;}
+li.name span.checkTitle{*margin:3px 0 0 -2px;}
+li.getgoods span.field-validation-error{*margin:-5px 0px 0 2px;}
+.sitemapout{float:left;margin-left:15px;margin-top:20px;*margin-top:20px;}
+#exhibit .pagerin{float:right;*margin-top:-34px;}	
+.product_info h1, .product_info h2, .color, .size, .addcart, .clearfloat{*width:435px;}
+.ask_note .short2 span.remind, .ask_note .short2 span.field-validation-error{*margin:-2px 0 0  60px;}/*chrome*/
+		
+/*QuickView*/		
+#fancybox-outer{filter:alpha(opacity=80);}
+#fancybox-content{border-color:#444;position:static;}
+#fancybox-frame{filter:alpha(opacity=100);position: absolute;}
+#fancybox-title{background-color:#444;filter:alpha(opacity=80);}
+#fancybox-title-over{background:#646464;}
+		
+/*新品頁&分類頁*/
+.list_display li{margin:20px 25px 10px 0;}
+.list_display_5 li{margin:20px 14px 10px 0;}
+        
+/*i-Look*/
+.tag2{filter:alpha(opacity=80);position:absolute;}
+.tag2 .tag_bg td{background:rgb(190, 190, 190);}
+.tag2 .zoom_glass img{background:transparent;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='');}
+.bx-prev, .bx-next{background:#FFF;}
+
+/*fix常見問題Q&A*/
+.ask_note .askform li span.ie8-faqtitle-fix{margin-left:401px;*margin-left:0;}
+.ask_note .askform li.broke span.ie8-faqcontent-fix{margin-left:501px;*margin-left:0;}
+.ask_note .askform li #Msg_question_type{margin-left:220px;margin-top:-22px;*margin-left:0;*margin-top:-3px;}
+
+/*fix結帳頁相關*/
+.order select { height: auto; }
+.order ul li.order-group span.field-validation-error, .order ul li.receiving-group span.field-validation-error { margin-top: -5px; }
+
+/*fix會員修改*/
+.area-group span.field-validation-error{margin-top: -5px; } 
+
+/*fix申請退貨相關*/
+.return-type select { height: auto; }
+#order-return .return-type li.myself-li { padding-left:32px\0; }
+.return-type .disc{margin-left: 48px\0;}
+
+/*fix故障通知*/
+#feedback-link{padding-right:10px;}
+#feedback-title,#feedback-mail{line-height:2.2;}

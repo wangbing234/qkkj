@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+"http://struts.apache.org/dtds/struts-2.5.dtd">
+    
+<struts>
+    <package name="user" namespace="/manage" extends="struts-onlineshop-manage" strict-method-invocation="false">
+        <action name="user" class="userActionManage">
+            <result name="input">/WEB-INF/manages/system/index.jsp</result>
+            <result name="success">/WEB-INF/manages/main.jsp</result>
+            <result name="toList">/WEB-INF/manages/system/user/userList.jsp</result>
+            <result name="toAdd">/WEB-INF/manages/system/user/editUser.jsp</result>
+            <result name="toEdit">/WEB-INF/manages/system/user/editUser.jsp</result>
+            <result name="toChangePwd">/WEB-INF/manages/system/user/toChangePwd.jsp</result>
+            <result name="changePwd">/WEB-INF/manages/system/user/changePwd.jsp</result>
+            <result name="show">/WEB-INF/manages/system/user/show.jsp</result>
+            <result name="initManageIndex">/WEB-INF/manages/system/right.jsp</result>
+        </action>
+    </package>
+    
+    <package name="role" namespace="/manage" extends="struts-onlineshop-manage" strict-method-invocation="false">
+        <action name="role" class="roleActionManage">
+            <result name="toList">/WEB-INF/manages/system/role/roleList.jsp</result>
+            <result name="toEdit">/WEB-INF/manages/system/role/editRole.jsp</result>
+            <result name="toAdd">/WEB-INF/manages/system/role/editRole.jsp</result>
+        </action>
+    </package>
+    
+    <package name="menu" namespace="/manage" extends="struts-onlineshop-manage" strict-method-invocation="false">
+        <action name="menu" class="menuActionManage">
+            <result name="toList">/WEB-INF/manages/system/menu/menuList.jsp</result>
+            <result name="toEdit">/WEB-INF/manages/system/menu/editMenu.jsp</result>
+            <result name="addOrUpdate">/WEB-INF/manages/system/menu/addOrUpdate.jsp</result>
+        </action>
+    </package>
+    <package name="control" namespace="/manage" extends="struts-onlineshop-manage" strict-method-invocation="false">
+        <action name="control" class="controlActionManage">
+            <result name="top">/WEB-INF/manages/system/top.jsp</result>
+            <result name="left">/WEB-INF/manages/system/menu/leftMenu.jsp</result>
+             <result name="area">/WEB-INF/manages/area/areaTree.jsp</result>
+              <result name="menu">/WEB-INF/manages/system/menu/menuList.jsp</result>
+               <result name="cache">/WEB-INF/manages/cache/cache.jsp</result>
+           
+               
+        </action>
+    </package>
+</struts>

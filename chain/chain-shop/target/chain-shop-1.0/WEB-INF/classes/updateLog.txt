@@ -1,0 +1,113 @@
+/**产品中增加供应商**/
+ALTER TABLE `t_product`
+ADD COLUMN `supplierId`  int(11) NULL;
+
+
+/**供应商表**/
+drop table if exists shop.t_supplier;
+
+/**==============================================================
+ Table: t_supplier                                            
+==============================================================**/
+CREATE TABLE `t_supplier` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `code` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `name` varchar(45) CHARACTER SET utf8 DEFAULT NULL,
+  `type` varchar(50) DEFAULT NULL,
+  `status` varchar(50) DEFAULT '0',
+  `remark` varchar(600) CHARACTER SET utf8 DEFAULT NULL,
+  `catalogIDs` varchar(500) DEFAULT NULL,
+  `createtime` datetime DEFAULT NULL,
+  `updatetime` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1 COMMENT='供应商';
+
+
+ 
+
+
+
+/**供应商联系人表**/
+drop table if exists shop.t_supplier_linkman;
+
+/**==============================================================
+Table: t_supplier_linkman                                    
+==============================================================**/
+create table shop.t_supplier_linkman
+(
+   id                   int(11) not null auto_increment,
+   supId                int(11),
+   name                 varchar(50),
+   tel                  varchar(13),
+   phone                varchar(30),
+   qq                   varchar(20),
+   address              varchar(200),
+   isMain               int(2),
+   primary key (id)
+);
+
+alter table shop.t_supplier_linkman comment '供应商联系人';
+
+ALTER TABLE `t_supplier_linkman`
+ADD INDEX `super_idx` (`supId`) USING BTREE ;
+
+
+
+/** 增加供应商菜单**/
+INSERT INTO `t_menu` VALUES ('105', '0', '', '供应商管理', '11', 'module', '/resource/images/menu/caiwu.jpg', '1');
+INSERT INTO `t_menu` VALUES ('106', '105', '/manage/supplier!selectList.action', '供应商管理', '1', 'page', null, '1');
+
+
+
+
+
+
+
+
+
+
+ALTER TABLE `t_orderdetail`
+ADD COLUMN `status`  varchar(8) NULL COMMENT '发货状态' AFTER `remarks`,
+ADD COLUMN `expressNo`  varchar(50) NULL COMMENT '快递单号' AFTER `status`,
+ADD COLUMN `expressCompanyName`  varchar(50) NULL AFTER `expressNo`,
+ADD COLUMN `productType`  varchar(50) NULL AFTER `expressNo`,
+ADD COLUMN `senddate`  datetime NULL COMMENT '发货日期' AFTER `expressCompanyName`,
+ADD COLUMN `signdate`  datetime NULL AFTER `senddate`,
+ADD COLUMN `supplierId`  int(11) NULL  COMMENT '供应商' AFTER `senddate`,
+ADD COLUMN `shortName`  varchar(100) NULL AFTER `remarks`,
+ADD COLUMN `productType`  int(11) NULL AFTER `status`,
+ADD COLUMN `reurnScore`  float(20,4) NULL AFTER `lowStocks`;
+
+
+/**更新订单状态数据**/
+UPDATE t_orderdetail,t_order SET 
+t_orderdetail.status= t_order.status,
+t_orderdetail.expressCompanyName= t_order.expressCompanyName,
+t_orderdetail.expressNo= t_order.expressNo,
+t_orderdetail.senddate= t_order.senddate
+ WHERE t_orderdetail.orderID= t_order.id;
+ 
+ UPDATE t_orderdetail,t_product SET 
+ t_orderdetail.reurnScore= t_product.point,
+ t_orderdetail.productType= t_product.productType,
+t_orderdetail.shortName= t_product.shortname
+ WHERE t_orderdetail.productID= t_product.id;
+ 
+ 
+/**更新产品供应商**/
+UPDATE t_orderdetail,t_product SET 
+t_orderdetail.supplierId= t_product.supplierId
+ WHERE t_orderdetail.productID= t_product.id;   
+ 
+ ALTER TABLE `t_orderdetail`
+ADD INDEX `orderid_index` (`orderID`) USING BTREE ;
+ 
+/**商品重销和积分字段增加**/
+ALTER TABLE `t_order`
+ADD COLUMN cutShopFree  float(20,4) UNSIGNED NULL DEFAULT NULL,
+ADD COLUMN `cutPointFree`  float(20,4) NULL AFTER `cutShopFree`,
+ADD COLUMN `cutPoint2Free`  float(20,4) NULL AFTER `cutPointFree`,
+ADD COLUMN `isPayTicket`  varchar(5) NULL AFTER `cutPoint2Free`;
+
+
+

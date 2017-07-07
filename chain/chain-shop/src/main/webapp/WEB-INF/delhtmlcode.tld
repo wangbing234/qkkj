@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	version="2.0"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd">
+	<description>去除html代码</description>
+	<tlib-version>1.0</tlib-version>
+	<short-name>delcode</short-name>
+	<uri>/delcode</uri>
+
+	<tag>
+		<name>delhtmlcode</name>
+		<tag-class>net.onlineshop.core.util.DelHtmlTag</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<name>incode</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+
+		</attribute>
+		<attribute>
+			<name>num</name>
+			<required>true</required>
+		</attribute>
+	</tag>
+</taglib>

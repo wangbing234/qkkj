@@ -1,0 +1,38 @@
+*{margin:0;padding:0;}
+#sidebar{position: absolute;height:auto;width:175px;z-index: 10000;margin-top:40px;display:none;
+background: #656565;margin-left:0px;border-top: 0px;}
+#sidebar h3{text-align:left;margin-top: 10px;margin-bottom: 0px;padding-left: 20px;}
+#sidebar .sidelist{position:relative;z-index:1;height:32px;width:100%;
+ 
+}
+#sidebar .sidelist span h3{;position:relative;z-index:20;height:32px;line-height:32px;font-size:14px;font-weight:normal;
+vertical-align: middle;
+/* background: url(http://www.lingshi.com/templates/default/images/menu.png) 63px -2px no-repeat;margin: 10px; */
+/* background: url(../../../images/222.png) 0px 0px  no-repeat; */
+
+}
+#sidebar .sidelist span h3 a{font-size:14px;text-decoration:none;display:block;width:auto;height:auto;color:#fff;
+}
+#sidebar .sidelist span h3 a:hover{color:#fff;}
+#sidebar .i-list{display:none;position:absolute;z-index:1;left:259px;top:0px;text-align:left;
+/*width:180px;height:150px;*/
+/* width:100%; */
+width:250px;
+padding:15px;background: #505050;border:1px solid #A9A9A9;
+/*border-left:0px;*/
+}
+#sidebar .i-list ul li{width:60px;float:left;list-style:none;line-height:32px;heignt:32px;}
+#sidebar .i-list ul li a{color:#fff;text-decoration:none;font-size:12px;}
+#sidebar .i-list ul li a:hover{text-decoration:underline;color:fff;background: #505050;}
+
+#sidebar .hover{border-top:1px solid #A9A9A9;border-bottom:1px solid #505050;border-right:0px;background: #505050;width:260px;}
+
+#sidebar .hotText{
+	display: block;
+/* 	margin:30px;padding:0 15px; */
+/* 	width: 50px; */
+	overflow: hidden; /*ע�ⲻҪд�������*/
+	white-space: nowrap;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+}

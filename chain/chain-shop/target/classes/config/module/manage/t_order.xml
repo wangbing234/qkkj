@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- create by autoCode,v1.0.0 -->
+<mapper namespace="manage.order">
+	<select id="manage.order.selectPageList" parameterType="net.onlineshop.services.manage.order.bean.Order" resultType="net.onlineshop.services.manage.order.bean.Order">
+	 select t.* ,a.nickname
+	 from t_order t,t_ordership s,t_account a where  t.id=s.orderid and a.account=t.account
+	 <if test="id!=null and id!=''">
+		and t.id=#{id}
+	 </if>
+	 <if test="account!=null and account!=''">
+		and t.account=#{account}
+	 </if>
+	 
+	  <if test="phone!=null and phone!=''">
+		and s.phone=#{phone}
+	 </if>
+	  <if test="shipname!=null and shipname!=''">
+		and s.shipname like CONCAT('%','${shipname}','%' )
+	 </if>
+	 <if test="status!=null and status!=''">
+		and t.status=#{status}
+	 </if>
+	 <if test="status==null or status==''">
+		and t.status!='cancel' 
+	 </if>
+	 <if test="refundStatus!=null and refundStatus!=''">
+		and t.refundStatus=#{refundStatus}
+	 </if>
+	 <if test="paystatus!=null and paystatus!=''">
+		and t.paystatus=#{paystatus}
+	 </if>
+	  <if test="payType!=0">
+	  <if test="payType==3">
+		and t.payType=#{payType}
+	 </if>
+	<if test="payType!=3">
+		and t.payType!=3
+	</if>
+	</if>
+	 <if test="startDate!=null and startDate!=''">
+		and date_format(t.createdate,'%Y-%m-%d')  &gt;= #{startDate}
+	 </if>
+	 <if test="endDate!=null and endDate!=''">
+		and date_format(t.createdate,'%Y-%m-%d')  &lt;= #{endDate}
+	 </if>
+	  <if test="ipaddress!=null and ipaddress!=''">
+		and t.ipaddress like CONCAT('%','${ipaddress}','%' ) 
+	 </if>
+	  <if test="orderMobile!=null and orderMobile!=''">
+		and t.orderMobile=${orderMobile}
+	 </if>
+	  <if test="remark!=null and remark!=''">
+		and t.remark like CONCAT('%','${remark}','%' ) 
+	 </if>
+	  <if test="orderNo!=null and orderNo!=''">
+		and t.orderNo=#{orderNo}
+	 </if>
+	  <if test="nickname!=null and nickname!=''">
+		and a.nickname=#{nickname}
+	  </if>
+	   <if test="updateAmount!=null and updateAmount!=''">
+			and t.${updateAmount}>0
+	 </if>
+	  <if test="(supplierId!=null and supplierId!='') or 
+	  (expressCompanyName!=null and expressCompanyName!='') or
+	   (productName!=null and productName!='') or
+	    (shortName!=null and shortName!='') or
+	     (sstatus!=null and sstatus!='') or
+	   (expressNo!=null and expressNo!='')">
+				 	 and t.id in(select od.orderID from t_orderdetail od where
+				 	  od.orderID =t.id 
+					 	   <if test="supplierId!=null and supplierId!=''">
+					 	 	 and od.supplierId=${supplierId}
+					 	   </if>
+					 	    <if test="expressCompanyName!=null and expressCompanyName!=''">
+								and od.expressCompanyName=#{expressCompanyName}
+							 </if>
+							  <if test="expressNo!=null and expressNo!=''">
+								and od.expressNo=#{expressNo}
+							 </if>
+							  <if test="productName!=null and productName!=''">
+								and od.productName=#{productName}
+							 </if>
+							  <if test="shortName!=null and shortName!=''">
+								and od.shortName=#{shortName}
+							 </if>
+							  <if test="sstatus!=null and sstatus!=''">
+								and od.status=#{sstatus}
+							 </if>
+							 
+				)
+	  </if>
+ 		order by t.id desc limit #{offset},#{pageSize} 
+	</select>
+ 
+	<select id="manage.order.selectPageCount" parameterType="net.onlineshop.services.manage.order.bean.Order" resultType="java.lang.Integer">
+						 select count(*)
+				 from t_order t,t_ordership s,t_account a where   t.id=s.orderid and a.account=t.account
+				 <if test="id!=null and id!=''">
+					and t.id=#{id}
+				 </if>
+				 <if test="account!=null and account!=''">
+					and t.account=#{account}
+				 </if>
+				 
+				  <if test="phone!=null and phone!=''">
+					and s.phone=#{phone}
+				 </if>
+				  <if test="shipname!=null and shipname!=''">
+					and s.shipname like CONCAT('%','${shipname}','%' )
+				 </if>
+				 <if test="status!=null and status!=''">
+					and t.status=#{status}
+				 </if>
+				 <if test="status==null or status==''">
+					and t.status!='cancel' 
+				 </if>
+				 <if test="refundStatus!=null and refundStatus!=''">
+					and t.refundStatus=#{refundStatus}
+				 </if>
+				
+				  <if test="payType!=0">
+					  <if test="payType==3">
+						and t.payType=#{payType}
+					 </if>
+					<if test="payType!=3">
+					and t.payType!=3
+					</if>
+				</if>
+				 <if test="startDate!=null and startDate!=''">
+					and date_format(t.createdate,'%Y-%m-%d')  &gt;= #{startDate}
+				 </if>
+				 <if test="endDate!=null and endDate!=''">
+					and date_format(t.createdate,'%Y-%m-%d')  &lt;= #{endDate}
+				 </if>
+				  <if test="ipaddress!=null and ipaddress!=''">
+					and t.ipaddress like CONCAT('%','${ipaddress}','%' ) 
+				 </if>
+				  <if test="orderMobile!=null and orderMobile!=''">
+					and t.orderMobile=${orderMobile}
+				 </if>
+				  <if test="remark!=null and remark!=''">
+					and t.remark like CONCAT('%','${remark}','%' ) 
+				 </if>
+				  <if test="orderNo!=null and orderNo!=''">
+					and t.orderNo=#{orderNo}
+				 </if>
+				  <if test="nickname!=null and nickname!=''">
+					and a.nickname=#{nickname}
+				  </if>
+				   <if test="updateAmount!=null and updateAmount!=''">
+					and t.${updateAmount}>0
+				  </if>
+				   <if test="paystatus!=null and paystatus!=''">
+							and t.paystatus=#{paystatus}
+					</if>
+				   <if test="(supplierId!=null and supplierId!='') or 
+	  (expressCompanyName!=null and expressCompanyName!='') or
+	   (productName!=null and productName!='') or
+	    (shortName!=null and shortName!='') or
+	     (sstatus!=null and sstatus!='') or
+	   (expressNo!=null and expressNo!='')">
+				 	 and t.id in(select od.orderID from t_orderdetail od where
+				 	  od.orderID =t.id 
+					 	   <if test="supplierId!=null and supplierId!=''">
+					 	 	 and od.supplierId=${supplierId}
+					 	   </if>
+					 	    <if test="expressCompanyName!=null and expressCompanyName!=''">
+								and od.expressCompanyName=#{expressCompanyName}
+							 </if>
+							  <if test="expressNo!=null and expressNo!=''">
+								and od.expressNo=#{expressNo}
+							 </if>
+							  <if test="productName!=null and productName!=''">
+								and od.productName=#{productName}
+							 </if>
+							  <if test="shortName!=null and shortName!=''">
+								and od.shortName=#{shortName}
+							 </if>
+							  <if test="sstatus!=null and sstatus!=''">
+								and od.status=#{sstatus}
+							 </if>
+							 
+				)
+	  </if>
+	</select>
+	
+	<select id="manage.order.selectList" parameterType="net.onlineshop.services.manage.order.bean.Order" 
+	resultType="net.onlineshop.services.manage.order.bean.Order">
+	 select t.* from t_order t where 1=1 
+ <if test="id!=null and id!=''">
+		and id=#{id}
+	 </if>
+	 <if test="account!=null and account!=''">
+		and account=#{account}
+	 </if>
+	  <if test="status!=null and status!=''">
+		and status=#{status}
+	 </if>
+	 <if test="refundStatus!=null and refundStatus!=''">
+		and refundStatus=#{refundStatus}
+	 </if>
+	 <if test="paystatus!=null and paystatus!=''">
+		and paystatus=#{paystatus}
+	 </if>
+	  <if test="remark!=null and remark!=''">
+		and t.remark like CONCAT('%','${remark}','%' ) 
+	 </if>
+	 	  <if test="payType!=0">
+	  <if test="payType==3">
+		and t.payType=#{payType}
+	 </if>
+	<if test="payType!=3">
+	and t.payType!=3
+	</if>
+	</if>
+	 <if test="startDate!=null and startDate!=''">
+		and date_format(createdate,'%Y-%m-%d')  &gt;= #{startDate}
+	 </if>
+	 <if test="endDate!=null and endDate!=''">
+		and date_format(createdate,'%Y-%m-%d')  &lt;= #{endDate}
+	 </if>
+	 <if test="ipaddress!=null and ipaddress!=''">
+		and t.ipaddress like CONCAT('%','${ipaddress}','%' ) 
+	 </if>
+	  <if test="orderMobile!=null and orderMobile!=''">
+		and t.orderMobile like CONCAT('%','${orderMobile}','%' ) 
+	 </if>
+	  <if test="orderNo!=null and orderNo!=''">
+		and t.orderNo=#{orderNo}
+	 </if>
+	    <if test="(supplierId!=null and supplierId!='') or 
+	  (expressCompanyName!=null and expressCompanyName!='') or
+	   (productName!=null and productName!='') or
+	    (shortName!=null and shortName!='') or
+	     (sstatus!=null and sstatus!='') or
+	   (expressNo!=null and expressNo!='')">
+				 	 and t.id in(select od.orderID from t_orderdetail od where
+				 	  od.orderID =t.id 
+					 	   <if test="supplierId!=null and supplierId!=''">
+					 	 	 and od.supplierId=${supplierId}
+					 	   </if>
+					 	    <if test="expressCompanyName!=null and expressCompanyName!=''">
+								and od.expressCompanyName=#{expressCompanyName}
+							 </if>
+							  <if test="expressNo!=null and expressNo!=''">
+								and od.expressNo=#{expressNo}
+							 </if>
+							  <if test="productName!=null and productName!=''">
+								and od.productName=#{productName}
+							 </if>
+							  <if test="shortName!=null and shortName!=''">
+								and od.shortName=#{shortName}
+							 </if>
+							  <if test="sstatus!=null and sstatus!=''">
+								and od.status=#{sstatus}
+							 </if>
+							 
+				)
+	  </if>
+	</select>
+	
+	
+	<select id="manage.order.selectExportFinanceList" parameterType="net.onlineshop.services.manage.order.bean.Order"  
+	resultType="net.onlineshop.services.manage.order.bean.OrderQuery">
+			 select t.id,t.remark,t.orderNo,a.nickname,a.tel,
+			 t.quantity ,t.payType,t.amount,t.gzid,t.createdate,t.expressCompanyName,t.expressNo,t.status,t.paystatus,t.orderFrom,
+			 t.cutScore,t.cutWallet,t.cutMoney,t.isSaveScoreFinal,t.reurnScore,t.cutScorePoint,t.cutWalletReward,
+			 s.shipname,s.phone,s.phoneAddress,s.province,s.city,s.area,s.shipaddress,s.remark as notes
+			 from t_order t,t_ordership s,t_account a where a.account=t.account and t.id=s.orderid and t.status!='cancel'
+				 <if test="id!=null and id!=''">
+					and t.id=#{id}
+				 </if>
+				 <if test="account!=null and account!=''">
+					and t.account=#{account}
+				 </if>
+				 
+				  <if test="phone!=null and phone!=''">
+					and s.phone=#{phone}
+				 </if>
+				  <if test="shipname!=null and shipname!=''">
+					and s.shipname=#{shipname}
+				 </if>
+				 <if test="status!=null and status!=''">
+					and t.status=#{status}
+				 </if>
+				 <if test="refundStatus!=null and refundStatus!=''">
+					and t.refundStatus=#{refundStatus}
+				 </if>
+				 <if test="paystatus!=null and paystatus!=''">
+					and t.paystatus=#{paystatus}
+				 </if>
+				 <if test="payType!=0">
+				  <if test="payType==3">
+					and t.payType=#{payType}
+				 </if>
+				</if>
+				 <if test="startDate!=null and startDate!=''">
+					and date_format(t.createdate,'%Y-%m-%d')  &gt;= #{startDate}
+				 </if>
+				 <if test="endDate!=null and endDate!=''">
+					and date_format(t.createdate,'%Y-%m-%d')  &lt;= #{endDate}
+				 </if>
+				 <if test="ipaddress!=null and ipaddress!=''">
+					and t.ipaddress like CONCAT('%','${ipaddress}','%' ) 
+				 </if>
+				  <if test="orderMobile!=null and orderMobile!=''">
+					and t.orderMobile like CONCAT('%','${orderMobile}','%' ) 
+				 </if>
+				  <if test="remark!=null and remark!=''">
+					and t.remark like CONCAT('%','${remark}','%' ) 
+				 </if>
+				  <if test="orderNo!=null and orderNo!=''">
+					and t.orderNo=#{orderNo}
+				 </if>
+				  <if test="updateAmount!=null and updateAmount!=''">
+					and t.${updateAmount}>0
+				  </if>
+				    <if test="nickname!=null and nickname!=''">
+						and a.nickname=#{nickname}
+					 </if>
+					  <if test="startDate!=null and startDate!=''">
+					and date_format(t.createdate,'%Y-%m-%d')  &gt;= #{startDate}
+				 </if>
+				 <if test="endDate!=null and endDate!=''">
+					and date_format(t.createdate,'%Y-%m-%d')  &lt;= #{endDate}
+				 </if>
+				   <if test="(supplierId!=null and supplierId!='') or 
+	  (expressCompanyName!=null and expressCompanyName!='') or
+	   (productName!=null and productName!='') or
+	    (shortName!=null and shortName!='') or
+	     (sstatus!=null and sstatus!='') or
+	   (expressNo!=null and expressNo!='')">
+				 	 and t.id in(select od.orderID from t_orderdetail od where
+				 	  od.orderID =t.id 
+					 	   <if test="supplierId!=null and supplierId!=''">
+					 	 	 and od.supplierId=${supplierId}
+					 	   </if>
+					 	    <if test="expressCompanyName!=null and expressCompanyName!=''">
+								and od.expressCompanyName=#{expressCompanyName}
+							 </if>
+							  <if test="expressNo!=null and expressNo!=''">
+								and od.expressNo=#{expressNo}
+							 </if>
+							  <if test="productName!=null and productName!=''">
+								and od.productName=#{productName}
+							 </if>
+							  <if test="shortName!=null and shortName!=''">
+								and od.shortName=#{shortName}
+							 </if>
+							  <if test="sstatus!=null and sstatus!=''">
+								and od.status=#{sstatus}
+							 </if>
+							 
+				)
+	  </if>
+			 order by t.id desc 
+	</select>
+	
+	<select id="manage.order.selectExportList" parameterType="net.onlineshop.services.manage.order.bean.Order"  resultType="net.onlineshop.services.manage.order.bean.OrderQuery">
+			 select t.id,t.orderNo,a.nickname,a.tel,d.productName as remark,d.shortName as shortname,d.productType,d.number as  quantity,d.supplierId,
+			   t.gzid,t.createdate,t.expressCompanyName,t.expressNo,t.status,t.paystatus,t.orderFrom,
+			 t.cutScore,t.cutWallet,t.cutMoney,t.isSaveScoreFinal,t.reurnScore,t.cutScorePoint,t.cutWalletReward,
+			 s.shipname,s.phone,s.phoneAddress,s.province,s.city,s.area,s.shipaddress,s.remark as notes
+			 from t_order t,t_ordership s,t_account a ,t_orderdetail d where a.account=t.account and t.id=s.orderid and d.orderID=t.id 
+			and t.status!='cancel'
+				 <if test="id!=null and id!=''">
+					and t.id=#{id}
+				 </if>
+				 <if test="account!=null and account!=''">
+					and t.account=#{account}
+				 </if>
+				 
+				  <if test="phone!=null and phone!=''">
+					and s.phone=#{phone}
+				 </if>
+				  <if test="shipname!=null and shipname!=''">
+					and s.shipname=#{shipname}
+				 </if>
+				 <if test="status!=null and status!=''">
+					and t.status=#{status}
+				 </if>
+				 <if test="refundStatus!=null and refundStatus!=''">
+					and t.refundStatus=#{refundStatus}
+				 </if>
+				 <if test="expressCompanyName!=null and expressCompanyName!=''">
+					and d.expressCompanyName=#{expressCompanyName}
+				 </if>
+				  <if test="expressNo!=null and expressNo!=''">
+					and d.expressNo=#{expressNo}
+				 </if>
+				 <if test="paystatus!=null and paystatus!=''">
+					and t.paystatus=#{paystatus}
+				 </if>
+				 <if test="payType!=0">
+				  <if test="payType==3">
+					and t.payType=#{payType}
+				 </if>
+				</if>
+				 <if test="startDate!=null and startDate!=''">
+					and date_format(t.createdate,'%Y-%m-%d')  &gt;= #{startDate}
+				 </if>
+				 <if test="endDate!=null and endDate!=''">
+					and date_format(t.createdate,'%Y-%m-%d')  &lt;= #{endDate}
+				 </if>
+				 <if test="ipaddress!=null and ipaddress!=''">
+					and t.ipaddress like CONCAT('%','${ipaddress}','%' ) 
+				 </if>
+				  <if test="orderMobile!=null and orderMobile!=''">
+					and t.orderMobile like CONCAT('%','${orderMobile}','%' ) 
+				 </if>
+				  <if test="remark!=null and remark!=''">
+					and t.remark like CONCAT('%','${remark}','%' ) 
+				 </if>
+				  <if test="orderNo!=null and orderNo!=''">
+					and t.orderNo=#{orderNo}
+				 </if>
+				  <if test="updateAmount!=null and updateAmount!=''">
+					and t.${updateAmount}>0
+				  </if>
+				    <if test="nickname!=null and nickname!=''">
+						and a.nickname=#{nickname}
+					 </if>
+					  <if test="startDate!=null and startDate!=''">
+					and date_format(t.createdate,'%Y-%m-%d')  &gt;= #{startDate}
+				 </if>
+				 <if test="endDate!=null and endDate!=''">
+					and date_format(t.createdate,'%Y-%m-%d')  &lt;= #{endDate}
+				 </if>
+				 <if test="supplierId!=null and supplierId!=''">
+				 	 and d.supplierId=${supplierId}
+				  </if>
+				   <if test="productName!=null and productName!=''">
+								and d.productName=#{productName}
+					</if>
+					  <if test="shortName!=null and shortName!=''">
+						and d.shortName=#{shortName}
+					 </if>
+					  <if test="sstatus!=null and sstatus!=''">
+						and d.status=#{sstatus}
+					 </if>
+			 order by t.id desc
+	</select>
+	
+	<!-- 查询需要取消的订单 -->
+	<select id="manage.order.selectCancelList" parameterType="net.onlineshop.services.manage.order.bean.Order" resultType="net.onlineshop.services.manage.order.bean.Order">
+	 	select t.id from t_order t where  status='init' and paystatus='n' and createdate &lt;= #{startDate} 
+	</select>
+	<!-- 查询需要已经发货，待签收的订单 -->
+	<select id="manage.order.selectSendList" parameterType="net.onlineshop.services.manage.order.bean.Order" resultType="net.onlineshop.services.manage.orderdetail.bean.Orderdetail">
+	 	select t.* from t_orderdetail t,t_order o where   t.status='send' and o.id=t.orderID and o.paystatus='y' and t.senddate &lt;= #{startDate}
+	</select>
+	
+	<select id="manage.order.selectOrderSales" parameterType="net.onlineshop.web.action.manage.report.ReportInfo" resultType="net.onlineshop.web.action.manage.report.ReportInfo">
+		SELECT sum(if(t.status!='sure',t.cutMoney,0)) as sumAmount,
+	     sum(t.cutWallet) as walletAmount,
+	     sum(t.cutScore) as scoreAmount,
+		   count(t.id) as productSellCount 
+		FROM t_order t
+		where   t.paystatus='y' and  t.status!='cancel'
+		<if test="startDate !=null and startDate !=''">
+			and date_format(t.createdate,'%Y-%m-%d') &gt;= #{startDate}
+		</if>
+		<if test="endDate !=null and endDate !='' ">
+			and date_format(t.createdate,'%Y-%m-%d') &lt;= #{endDate} 
+		</if>
+	</select>
+	
+	<select id="manage.order.selectProductSales" parameterType="net.onlineshop.web.action.manage.report.ReportInfo" resultType="net.onlineshop.web.action.manage.report.ReportInfo">
+			SELECT  od.shortName,od.productName ,sum(od.number) productSellCount,sum(od.total0) as sumAmount,od.supplierId FROM t_order o,t_orderdetail od
+			where  o.id=od.orderid  and o.paystatus='y' and  o.status!='cancel'
+			<if test="startDate !=null and startDate !=''">
+				and date_format(o.createdate,'%Y-%m-%d') &gt;= #{startDate}
+			</if>
+			<if test="endDate !=null and endDate !='' ">
+				and date_format(o.createdate,'%Y-%m-%d') &lt;= #{endDate} 
+			</if>
+			<if test="productName !=null and productName !='' ">
+				and od.productName= #{productName} 
+			</if>
+			<if test="name !=null and name !='' ">
+				and od.productName= #{name} 
+			</if>
+			<if test="shortName !=null and shortName !='' ">
+				and t.shortName= #{shortName} 
+			</if>
+		    group by od.shortName
+		    order by sum(od.number) desc 
+	</select>
+ 
+	<update id="manage.order.update" parameterType="net.onlineshop.services.manage.order.bean.Order">
+		update t_order
+		  set id=#{id}
+		<if test="status !=null and status !=''">
+		,status=#{status}
+		</if>
+		<if test="refundStatus !=null and refundStatus !=''">
+		,refundStatus=#{refundStatus}
+		</if>
+		 <if test="paystatus !=null and paystatus !=''">
+		,paystatus=#{paystatus}
+		</if>
+		<if test="amount !=null and amount !=''">
+		,amount=#{amount}
+		</if>
+		<if test="updateAmount !=null and updateAmount !=''">
+		,updateAmount=#{updateAmount}
+		</if>
+		 <if test="fee !=null and fee !=''">
+		,fee=#{fee}
+		</if>
+		<if test="account !=null and account !=''">
+		,account=#{account}
+		</if>
+		<if test="quantity>0">
+		,quantity=#{quantity}
+		</if>
+		<if test="rebate !=null and rebate !=''">
+		,rebate=#{rebate}
+		</if>
+		<if test="remark !=null and remark !=''">
+		,remark=#{remark}
+		</if>
+		<if test="expressCode !=null and expressCode !=''">
+		,expressCode=#{expressCode}
+		</if>
+		<if test="expressName !=null and expressName !=''">
+		,expressName=#{expressName}
+		</if>
+		<if test="expressNo !=null and expressNo !=''">
+		,expressNo=#{expressNo}
+		</if>
+		<if test="expressCompanyName !=null">
+		,expressCompanyName=#{expressCompanyName}
+		</if>
+		<if test="confirmSendProductRemark !=null and confirmSendProductRemark !=''">
+		,confirmSendProductRemark=#{confirmSendProductRemark}
+		</if>
+		<if test="closedComment!=null and closedComment!=''">
+		,closedComment=#{closedComment}
+		</if>
+		<if test="ptotal!=null and ptotal!=''">
+		,ptotal=#{ptotal}
+		</if>
+		<if test="payType!=0">
+		,payType=#{payType}
+	 	</if>
+	 	<if test="signdate!=null and signdate!=''">
+		,signdate=now()
+	 	</if>
+	 	<if test="senddate!=null and senddate!=''">
+		,senddate=now()
+	 	</if>
+	 	<if test="isReturnPoint!=null and isReturnPoint!=''">
+		,isReturnPoint=#{isReturnPoint}
+	 	</if>
+	 	<if test="isPayTicket!=null and isPayTicket!=''">
+		,isPayTicket=#{isPayTicket}
+	 	</if>
+	 	<!-- <if test="cutGrowFree!=null and cutGrowFree!=''">
+		,cutGrowFree=#{cutGrowFree}
+	 	</if> -->
+	 	<if test="cutPointFree!=null and cutPointFree!=''">
+		,cutPointFree=#{cutPointFree}
+	 	</if>
+	 	<if test="cutPoint2Free!=null and cutPoint2Free!=''">
+		,cutPoint2Free=#{cutPoint2Free}
+	 	</if>
+		 where  id=#{id}
+	</update>
+	<select id="manage.order.selectOne" parameterType="net.onlineshop.services.manage.order.bean.Order" resultType="net.onlineshop.services.manage.order.bean.Order">
+			 select * from t_order t where 1=1 
+			<if test="id!=null and id!=''">
+				and id=#{id}
+			</if>
+			  <if test="expressNo!=null and expressNo!=''">
+				and expressNo=#{expressNo}
+			 </if>
+			 <if test="status !=null and status !=''">
+				and status=#{status}
+			</if>
+			 <if test="paystatus !=null and paystatus !=''">
+				and paystatus=#{paystatus}
+			</if>
+	</select>
+	<select id="manage.order.selectById" parameterType="string" resultType="net.onlineshop.services.manage.order.bean.Order">
+	 select * from t_order t where 1=1 and id=#{id}
+	</select>
+	<delete id="manage.order.deleteById" parameterType="net.onlineshop.services.manage.order.bean.Order">
+		delete from t_order where 1=1 and id=#{id}
+	</delete>
+	<update id="manage.order.updatePayMonery" parameterType="net.onlineshop.services.manage.order.bean.Order">
+		update t_order set id=#{id},amount=#{amount},updateAmount=#{updateAmount},ptotal=#{ptotal},fee=#{fee} where 1=1 and id=#{id}
+	</update>
+	<select id="manage.order.loadOrdersReport" resultType="net.onlineshop.services.manage.order.bean.OrdersReport">
+		SELECT 
+		(SELECT count(*) FROM t_order where status='cancel')  cancelCount,
+		(SELECT count(*) FROM t_order where paystatus='n' and status!='cancel')  notPayCount,
+		(SELECT count(*) FROM t_order where paystatus='y' and status='sure')  payButNotPassCount,
+		(SELECT count(*) FROM t_order where paystatus='y' and status='pass')  waitSendGoodsCount,
+		(SELECT count(*) FROM t_order where paystatus='n' and status='init' and payType=3)  orderWaitAuditingCount,
+		(SELECT count(*) FROM t_order where refundStatus='WAIT_SELLER_AGREE')  WAIT_SELLER_AGREE,
+		(SELECT count(*) FROM t_order where refundStatus='SELLER_REFUSE_BUYER')  SELLER_REFUSE_BUYER,
+		(SELECT count(*) FROM t_order where refundStatus='WAIT_BUYER_RETURN_GOODS')  WAIT_BUYER_RETURN_GOODS,
+		(SELECT count(*) FROM t_order where refundStatus='WAIT_SELLER_CONFIRM_GOODS')  WAIT_SELLER_CONFIRM_GOODS
+		
+		FROM t_systemsetting
+	</select>
+	
+	<select id="manage.order.selectUserSales" parameterType="net.onlineshop.web.action.manage.report.ReportInfo" resultType="net.onlineshop.web.action.manage.report.ReportInfo">
+	SELECT count(t.id) as productSellCount, if(isnull(t.trueName),0,1) as userType   FROM t_account t where 1=1 
+	<if test="startDate !=null and startDate !=''">
+		and date_format(t.regeistDate,'%Y-%m-%d') &gt;= #{startDate}
+	</if>
+	<if test="endDate !=null and endDate !='' ">
+		and date_format(t.regeistDate,'%Y-%m-%d') &lt;= #{endDate} 
+	</if>
+	<if test="userType !=null and userType !=''">
+		and if(isnull(t.trueName),0,1) = #{userType} 
+	</if>
+	group by if(isnull(t.trueName),0,1)
+	</select>
+	
+	<select id="manage.order.selectRegisterSales" parameterType="net.onlineshop.web.action.manage.report.ReportInfo" resultType="net.onlineshop.web.action.manage.report.ReportInfo">
+	SELECT count(t.id) as productSellCount, if(isnull(t.trueName),0,1) as userType   FROM t_account t where 1=1 
+	<if test="startDate !=null and startDate !=''">
+		and date_format(t.regeistDate,'%Y-%m-%d') &gt;= #{startDate}
+	</if>
+	<if test="endDate !=null and endDate !='' ">
+		and date_format(t.regeistDate,'%Y-%m-%d') &lt;= #{endDate} 
+	</if>
+	<if test="userType !=null and userType !=''">
+		and if(isnull(t.trueName),0,1) = #{userType} 
+	</if>
+	group by if(isnull(t.trueName),0,1)
+	</select>
+	
+</mapper>

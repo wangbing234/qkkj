@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- create by autoCode,v1.0.0 -->
+<mapper namespace="manage.supplierlinkman">
+	<select id="manage.supplierlinkman.selectPageList" parameterType="net.onlineshop.services.manage.supplierlinkman.bean.SupplierLinkman" resultType="net.onlineshop.services.manage.supplierlinkman.bean.SupplierLinkman">
+		select count(*) from t_supplier_linkman where 1=1
+		<if test="supId!=null and supId!=''">
+			and supId=#{supId}
+		</if>
+		<if test="name!=null and name!=''">
+			and name like CONCAT('%','${name}','%' )
+		</if>
+		<if test="tel!=null and tel!=''">
+			and tel=#{tel}
+		</if>
+		<if test="phone!=null and phone!=''">
+			and phone=#{phone}
+		</if>
+		<if test="qq!=null and qq!=''">
+			and qq=#{qq}
+		</if>
+		<if test="address!=null and address!=''">
+			and address=#{address}
+		</if>
+		<if test="isMain!=null and isMain!=''">
+			and isMain=#{isMain}
+		</if>
+		order by id desc
+		limit #{offset},#{pageSize}
+	</select>
+
+	<select id="manage.supplierlinkman.selectPageCount" parameterType="net.onlineshop.services.manage.supplierlinkman.bean.SupplierLinkman" resultType="java.lang.Integer">
+		select count(*) from t_supplier_linkman where 1=1
+		<if test="supId!=null and supId!=''">
+			and supId=#{supId}
+		</if>
+		<if test="name!=null and name!=''">
+			and name like CONCAT('%','${name}','%' )
+		</if>
+		<if test="tel!=null and tel!=''">
+			and tel=#{tel}
+		</if>
+		<if test="phone!=null and phone!=''">
+			and phone=#{phone}
+		</if>
+		<if test="qq!=null and qq!=''">
+			and qq=#{qq}
+		</if>
+		<if test="address!=null and address!=''">
+			and address=#{address}
+		</if>
+		<if test="isMain!=null and isMain!=''">
+			and isMain=#{isMain}
+		</if>
+	</select>
+	
+	<select id="manage.supplierlinkman.selectList"  parameterType="net.onlineshop.services.manage.supplierlinkman.bean.SupplierLinkman"  resultType="net.onlineshop.services.manage.supplierlinkman.bean.SupplierLinkman">
+		select * from t_supplier_linkman where 1=1
+		<if test="supId!=null and supId!=''">
+			and supId=#{supId}
+		</if>
+		<if test="name!=null and name!=''">
+			and name like CONCAT('%','${name}','%' )
+		</if>
+		<if test="tel!=null and tel!=''">
+			and tel=#{tel}
+		</if>
+		<if test="phone!=null and phone!=''">
+			and phone=#{phone}
+		</if>
+		<if test="qq!=null and qq!=''">
+			and qq=#{qq}
+		</if>
+		<if test="address!=null and address!=''">
+			and address=#{address}
+		</if>
+		<if test="isMain!=null and isMain!=''"> 
+			and isMain=#{isMain}
+		</if>
+		order by id desc
+	</select>
+	
+
+	<insert id="manage.supplierlinkman.insert" parameterType="net.onlineshop.services.manage.supplierlinkman.bean.SupplierLinkman"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into t_supplier_linkman
+		(
+		id
+		<if test="supId!=null and supId!=''">
+			,supId
+		</if>
+		<if test="name!=null and name!=''">
+			,name
+		</if>
+		<if test="tel!=null and tel!=''">
+			,tel
+		</if>
+		<if test="phone!=null and phone!=''">
+			,phone
+		</if>
+		<if test="qq!=null and qq!=''">
+			,qq
+		</if>
+		<if test="address!=null and address!=''">
+			,address
+		</if>
+		<if test="isMain!=null and isMain!=''">
+			,isMain
+		</if>
+		)
+		values
+		(
+		id
+		<if test="supId!=null and supId!=''">
+			,#{supId}
+		</if>
+		<if test="name!=null and name!=''">
+			,#{name}
+		</if>
+		<if test="tel!=null and tel!=''">
+			,#{tel}
+		</if>
+		<if test="phone!=null and phone!=''">
+			,#{phone}
+		</if>
+		<if test="qq!=null and qq!=''">
+			,#{qq}
+		</if>
+		<if test="address!=null and address!=''">
+			,#{address}
+		</if>
+		<if test="isMain!=null and isMain!=''">
+			,#{isMain}
+		</if>
+	
+		)
+	</insert>
+
+	<update id="manage.supplierlinkman.update" parameterType="net.onlineshop.services.manage.supplierlinkman.bean.SupplierLinkman">
+		update t_supplier_linkman set id=#{id}
+			<if test="supId!=null and supId!=''">
+			,supId=#{supId}
+			</if>
+		<if test="name!=null and name!=''">
+			,name=#{name}
+		</if>
+		<if test="tel!=null and tel!=''">
+			,tel=#{tel}
+		</if>
+		<if test="phone!=null and phone!=''">
+			,phone=#{phone}
+		</if>
+		<if test="qq!=null and qq!=''">
+			,qq=#{qq}
+		</if>
+		<if test="address!=null and address!=''">
+			,address=#{address}
+		</if>
+		<if test="isMain!=null and isMain!=''">
+			,isMain=#{isMain}
+		</if>
+		where id=#{id}
+	</update>
+
+	<select id="manage.supplierlinkman.selectOne" parameterType="net.onlineshop.services.manage.supplierlinkman.bean.SupplierLinkman"
+		resultType="net.onlineshop.services.manage.supplierlinkman.bean.SupplierLinkman">
+		select * from t_supplier_linkman t where 1=1
+		<if test="id!=null and id!=''">
+			and id=#{id}
+		</if>
+		 
+	</select>
+
+	<select id="manage.supplierlinkman.selectById" parameterType="string" resultType="net.onlineshop.services.manage.supplierlinkman.bean.SupplierLinkman">
+		select * from t_supplier_linkman t where 1=1 and id=#{id}
+	</select>
+
+	<delete id="manage.supplierlinkman.deleteById"  parameterType="string" >
+		delete from t_supplier_linkman where  id=#{id}
+	</delete>
+	
+	<delete id="manage.supplierlinkman.delete" parameterType="net.onlineshop.services.manage.supplierlinkman.bean.SupplierLinkman">
+		delete from t_supplier_linkman where  1=1 
+		<if test="id!=null and id!=''">
+			and id=#{id}
+		</if>
+		<if test="supId!=null and supId!=''">
+			and supId=#{supId}
+		</if>
+	</delete>
+	 
+</mapper>

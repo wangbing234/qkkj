@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- create by autoCode,v1.0.0 -->
+<mapper namespace="front.product">
+	<select id="front.product.selectPageList" parameterType="net.onlineshop.services.front.product.bean.Product"
+		resultType="net.onlineshop.services.front.product.bean.Product">
+		select
+		t.id "id",
+		t.status,
+		t.catalogID "catalogID",
+		t.productType "productType",
+		t.name "name",
+		t.introduce
+		"introduce",
+		t.price "price",
+		t.nowPrice "nowprice",
+		t.picture "picture",
+		DATE_FORMAT(t.createtime,'%Y-%m-%d') "createtime",
+		t.isnew "isnew",
+		t.sale "sale",
+		t.hit "hit",
+		t.stock,t.sellcount,t.taourl,t.istui,t.quality,t.shortname,t.ismiao,t.miaoPrice,t.miaoSta,t.miaoEnd
+		from t_product t where status=2 
+		<if test="attrID!=0">
+			and t.id in (select al.productID from t_attribute_link al where
+			al.attrID=#{attrID})
+		</if>
+		<if test="querySql!=null and querySql!=''">
+			and t.id in (#{querySql});
+		</if>
+
+		<if test="queryCatalogIDs!=null and queryCatalogIDs.size &gt; 0">
+			and catalogID in
+			<foreach item="item" index="index" collection="queryCatalogIDs"
+				open="(" separator="," close=")">
+				#{item}
+			</foreach>
+		</if>
+		<if test="queryAttrIDs!=null and queryAttrIDs.size &gt; 0">
+			and t.id in (select al.productID from t_attribute_link al where
+			al.attrID in
+			<foreach item="item" index="index" collection="queryAttrIDs"
+				open="(" separator="," close=")">
+				#{item}
+			</foreach>
+			)
+		</if>
+
+		<if test="id!=null and id!=''">
+			and id=#{id}
+		</if>
+		<if test="upPrice!=null and upPrice!=''">
+			and price  &lt;= #{upPrice}
+		</if>
+		<if test="downPrice!=null and downPrice!=''">
+			and price &gt;= #{downPrice}
+		</if>
+		<if test="productType!=null and productType!=''">
+			and productType=#{productType}
+		</if>
+		<if test="istui!=null and istui!=''">
+			and istui='y'
+		</if>
+		<if test="ismiao!=null and ismiao!=''">
+			and ismiao='y'
+		</if>
+		
+		<if test="name!=null and name!=''">
+			and (t.name like CONCAT('%','${name}','%' ) or t.shortname like
+			CONCAT('%','${name}','%') or t.quality like CONCAT('%','${name}','%'
+			))
+		</if>
+		<if test="special!=null and special!=''">
+			<if test="special.equals('newest')"> and isnew='y' </if>
+			<if test="special.equals('sale')"> and sale='y' </if>
+		</if>
+
+		<if test="orderBy==0">
+			order by id desc
+		</if>
+		<if test="orderBy==1">
+			order by hit desc
+		</if>
+		<if test="orderBy==-1">
+			order by hit asc
+		</if>
+		<if test="orderBy==2">
+			order by nowPrice desc
+		</if>
+		<if test="orderBy==-2">
+			order by nowPrice asc
+		</if>
+		<if test="orderBy==3">
+			order by sellcount desc
+		</if>
+		<if test="orderBy==-3">
+			order by sellcount asc
+		</if>
+		limit #{offset},#{pageSize}
+	</select>
+
+	<select id="front.product.selectPageCount" parameterType="net.onlineshop.services.front.product.bean.Product"
+		resultType="java.lang.Integer">
+		select count(*) from t_product t where      status=2 and activityID
+		is null
+		<if test="attrID!=0">
+			and t.id in (select al.productID from t_attribute_link al where
+			al.attrID=#{attrID})
+		</if>
+		<if test="queryCatalogIDs!=null and queryCatalogIDs.size &gt; 0">
+			and catalogID in
+			<foreach item="item" index="index" collection="queryCatalogIDs"
+				open="(" separator="," close=")">
+				#{item}
+			</foreach>
+		</if>
+		<if test="id!=null and id!=''">
+			and id=#{id}
+		</if>
+		<if test="productType!=null and productType!=''">
+			and productType=#{productType}
+		</if>
+		<if test="ismiao!=null and ismiao!=''">
+			and ismiao='y'
+		</if>
+		<if test="istui!=null and istui!=''">
+			and istui='y'
+		</if>
+		<if test="name!=null and name!=''">
+			and (t.name like CONCAT('%','${name}','%' ) or t.shortname like
+			CONCAT('%','${name}','%' ))
+		</if>
+		<if test="special!=null and special!=''">
+			<if test="special.equals('hot')"> order by hit desc </if>
+			<if test="special.equals('newest')"> and isnew='y' </if>
+			<if test="special.equals('sale')"> and sale='y' </if>
+		</if>
+	</select>
+
+	<select id="front.product.selectHotSearch" parameterType="net.onlineshop.services.front.product.bean.Product"
+		resultType="net.onlineshop.services.front.product.bean.Product">
+		select
+		t.id,
+		t.name,
+		t.taourl,
+		t.shortname
+
+		from t_product t where   status=2  
+		<if test="productIds!=null and productIds.size &gt; 0">
+			and t.id in
+			<foreach item="item" index="index" collection="productIds"
+				open="(" separator="," close=")">
+				#{item}
+			</foreach>
+		</if>
+	</select>
+
+	<!-- 加载促销活动的商品 -->
+	<select id="front.product.selectActivityProductList"
+		parameterType="net.onlineshop.services.front.product.bean.Product"
+		resultType="net.onlineshop.services.front.product.bean.Product">
+		select
+		t.id "id",
+		t.status,
+		t.catalogID "catalogID",
+		t.productType "productType",
+		t.name "name",
+		t.introduce
+		"introduce",
+		t.price "price",
+		t.nowPrice "nowprice",
+		t.picture "picture",
+		DATE_FORMAT(t.createtime,'%Y-%m-%d') "createtime",
+		t.isnew "isnew",
+		t.sale "sale",
+		t.point "point",
+		t.hit "hit",
+		t.stock,t.sellcount,
+		t.activityID,t.taourl,t.istui,t.quality,t.shortname,t.ismiao,t.miaoPrice,t.miaoSta,t.miaoEnd
+		<!-- (select * from t_activity activity where activity.id=t.activityID) -->
+		from t_product t where 1=1 and status=2 and activityID is not null
+		<if test="productIds!=null and productIds.size &gt; 0">
+			and t.id in
+			<foreach item="item" index="index" collection="productIds"
+				open="(" separator="," close=")">
+				#{item}
+			</foreach>
+		</if>
+	</select>
+
+	<select id="front.product.loadHotProductShowInSuperMenu"
+		parameterType="net.onlineshop.services.front.product.bean.Product"
+		resultType="net.onlineshop.services.front.product.bean.Product">
+		select t.id,t.name from t_product t where 1=1 and status=2
+		<if test="productIds!=null and productIds.size &gt; 0">
+			and t.catalogID in
+			<foreach item="item" index="index" collection="productIds"
+				open="(" separator="," close=")">
+				#{item}
+			</foreach>
+		</if>
+		order by sellcount desc
+		limit 0,#{top}
+	</select>
+
+	<select id="front.product.loadHotProductShowInIndex"
+		parameterType="net.onlineshop.services.front.product.bean.Product"
+		resultType="net.onlineshop.services.front.product.bean.Product">
+		select t.id,t.name,t.nowPrice ,t.picture,t.catalogID
+		,t.shortname,t.ismiao,t.miaoPrice,t.taourl,t.introduce from t_product
+		t where 1=1 and status=2
+		<if test="productType!=null and productType!=''">
+			and productType=#{productType}
+		</if>
+		and t.catalogID =#{catalogID} and istui='y'
+
+		order by updatetime desc
+		limit 0,#{top}
+	</select>
+
+
+	<select id="front.product.selectList" parameterType="net.onlineshop.services.front.product.bean.Product"
+		resultType="net.onlineshop.services.front.product.bean.Product">
+		select
+		t.id "id",
+		t.catalogID "catalogID",
+		t.productType "productType",
+		t.name "name",
+		t.introduce "introduce",
+		t.price "price",
+		t.point "point",
+		t.nowPrice "nowprice",
+		t.picture "picture",
+		DATE_FORMAT(t.createtime,'%Y-%m-%d') "createtime",
+		t.isnew "isnew",
+		t.sale "sale",
+		t.hit "hit",
+		t.stock,t.sellcount,t.taourl,t.istui,t.quality,t.shortname,t.ismiao,t.miaoPrice,t.miaoSta,t.miaoEnd,
+		CONCAT(FLOOR(HOUR(TIMEDIFF(t.miaoEnd,now())) / 24)+1, 'day',
+		MOD(HOUR(TIMEDIFF(t.miaoEnd,now())), 24), 'hour',
+		MINUTE(TIMEDIFF(t.miaoEnd,now())), 'minute',
+		SECOND(TIMEDIFF(t.miaoEnd,now())), 'second') "miaoTime"
+		from t_product t where 1=1 and status=2
+		<if test="queryCatalogIDs!=null and queryCatalogIDs.size &gt; 0">
+			and catalogID in
+			<foreach item="item" index="index" collection="queryCatalogIDs"
+				open="(" separator="," close=")">
+				#{item}
+			</foreach>
+		</if>
+		<if test="id!=null and id!=''">
+			and id=#{id}
+		</if>
+		<if test="name!=null and name!=''">
+			and (t.name like CONCAT('%','${name}','%' ) or t.shortname like
+			CONCAT('%','${name}','%' ))
+		</if>
+		<if test="isnew!=null and isnew!=''">
+			and isnew=#{isnew}
+		</if>
+		<if test="productType!=null and productType!=''">
+			and productType=#{productType}
+		</if>
+		<if test="sale!=null and sale!=''">
+			and sale=#{sale}
+		</if>
+		<if test="istui!=null and istui!=''">
+			and istui=#{istui}
+		</if>
+		<if test="ismiao !=null and ismiao !=''">
+			and ismiao=#{ismiao} and date_format(now(),'%Y-%m-%d') BETWEEN t.miaoSta
+			and t.miaoEnd
+		</if>
+
+		<if test="hot">
+			order by sellcount desc
+		</if>
+		<if test="!hot">
+			order by sellcount desc
+		</if>
+		<if test="top &gt; 0">
+			limit 0,#{top}
+		</if>
+	</select>
+
+
+
+
+	<select id="front.product.selectPageLeftHotProducts"
+		parameterType="net.onlineshop.services.front.product.bean.Product"
+		resultType="net.onlineshop.services.front.product.bean.Product">
+		select
+		t.id "id",
+		t.catalogID "catalogID",
+		t.productType "productType",
+		t.point "point",
+		t.name "name",
+		t.price "price",
+		t.nowPrice "nowprice",
+		t.picture "picture",
+		t.isnew "isnew",
+		t.sale
+		"sale",
+		t.hit "hit",
+		t.stock,t.sellcount,t.taourl,t.istui,t.quality,t.shortname,t.ismiao,t.miaoPrice,t.miaoSta,t.miaoEnd,t.introduce
+		from t_product t where 1=1 and status=2
+		<if test="catalogID!=null and catalogID!=''"> and catalogID=#{catalogID} </if>
+			<if test="productType!=null and productType!=''">
+			and productType=#{productType}
+		</if>
+		<if test="queryCatalogIDs!=null and queryCatalogIDs.size &gt; 0">
+			and catalogID in
+			<foreach item="item" index="index" collection="queryCatalogIDs"
+				open="(" separator="," close=")">
+				#{item}
+			</foreach>
+		</if>
+		order by t.sellcount desc
+		limit 0,#{top}
+	</select>
+
+	<select id="front.product.selectStockList" parameterType="net.onlineshop.services.front.product.bean.Product"
+		resultType="net.onlineshop.services.front.product.bean.ProductStockInfo">
+		select t.id,t.stock,t.activityID,score from t_product t where 1=1 and
+		status=2
+		<if test="id!=null and id!=''"> and id=#{id}</if>
+	</select>
+
+	<select id="front.product.selectProductListByIds" parameterType="net.onlineshop.services.front.product.bean.Product"
+		resultType="net.onlineshop.services.front.product.bean.Product">
+		select
+		t.id,t.stock,t.name,t.nowPrice,t.price,t.point,t.picture,t.quality,t.shortname
+		,t.ismiao,t.taourl,t.miaoPrice from t_product t where 1=1 and status=2
+		<if test="productIds!=null and productIds.size &gt; 0">
+			and id in
+			<foreach item="item" index="index" collection="productIds"
+				open="(" separator="," close=")">
+				#{item}
+			</foreach>
+		</if>
+	</select>
+
+	<select id="front.product.selectListProductHTML" parameterType="net.onlineshop.services.front.product.bean.Product"
+		resultType="net.onlineshop.services.front.product.bean.Product">
+		select t.id,t.productHTML from t_product t where 1=1 and status=2 and
+		t.productHTML is not null
+		<if test="id!=null and id!=''"> and id=#{id}</if>
+	</select>
+
+	<update id="front.product.update" parameterType="net.onlineshop.services.front.product.bean.Product">
+		update t_product
+		set id=#{id}
+		<if test="catalogID!=null and catalogID!=''">
+			,catalogID=#{catalogID}
+		</if>
+		<if test="productType!=null and productType!=''">
+			,productType=#{productType}
+		</if>
+		
+		<if test="name !=null and name !=''">
+			,name=#{name}
+		</if>
+		<if test="introduce !=null and introduce !=''">
+			,introduce=#{introduce}
+		</if>
+		<if test="price !=null and price !=''">
+			,price=#{price}
+		</if>
+		<if test="point !=null and point !=''">
+			,point=#{point}
+		</if>
+		<if test="nowPrice !=null and nowPrice !=''">
+			,nowPrice=#{nowPrice}
+		</if>
+		<if test="picture !=null and picture !=''">
+			,picture=#{picture}
+		</if>
+		<if test="taourl !=null and taourl !=''">
+			,taourl=#{taourl}
+		</if>
+		<if test="maxPicture !=null and maxPicture !=''">
+			,maxPicture=#{maxPicture}
+		</if>
+		<if test="productHTML !=null and productHTML !=''">
+			,productHTML=#{productHTML}
+		</if>
+		<if test="createtime !=null and createtime !=''">
+			,createtime=#{createtime}
+		</if>
+		<if test="isnew !=null and isnew!=''">
+			,isnew=#{isnew}
+		</if>
+		<if test="sale !=null and sale!=''">
+			,sale=#{sale}
+		</if>
+		<if test="hit !=0">
+			,hit=#{hit}
+		</if>
+		<if test="status !=0">
+			,status=#{status}
+		</if>
+		<if test="draft!=null and draft!=''">
+			,draft=#{draft}
+		</if>
+		<if test="istui!=null and istui!=''">
+			,istui=#{istui}
+		</if>
+		<if test="quality!=null and quality!=''">
+			,quality=#{quality}
+		</if>
+		<if test="shortname!=null and shortname!=''">
+			,shortname=#{shortname}
+		</if>
+		where 1=1 and id=#{id}
+	</update>
+
+	<update id="front.product.updateStockAfterPaySuccess"
+		parameterType="net.onlineshop.services.front.product.bean.Product">
+		update t_product set
+		stock=stock-#{addSellcount},sellcount=#{addSellcount}+sellcount where
+		1=1 and id=#{id}
+
+	</update>
+
+	<update id="front.product.updateHit" parameterType="net.onlineshop.services.front.product.bean.Product">
+		update
+		t_product set hit=hit+1 where 1=1 and id=#{id}
+	</update>
+
+	<select id="front.product.selectOne" parameterType="net.onlineshop.services.front.product.bean.Product"
+		resultType="net.onlineshop.services.front.product.bean.Product">
+		select *
+		from t_product t where 1=1
+		<if test="id!=null and id!=''">
+			and id=#{id}
+		</if>
+		<if test="catalogID!=null and catalogID!=''">
+			and catalogID=#{catalogID}
+		</if>
+		<if test="name!=null and name!=''">
+			and (t.name like CONCAT('%','${name}','%' ) or t.shortname like
+			CONCAT('%','${name}','%' ))
+		</if>
+	</select>
+	<select id="front.product.selectParameterList" parameterType="net.onlineshop.services.front.product.bean.Product"
+		resultType="net.onlineshop.services.front.product.bean.Product">
+		SELECT a.name,al.value FROM t_attribute a,t_attribute_link al
+		where a.id=al.attrID and al.productID=#{id} and al.value is not null order
+		by a.order1
+	</select>
+
+	<select id="front.product.selectById" parameterType="string"
+		resultType="net.onlineshop.services.front.product.bean.Product">
+		select * from t_product t where 1=1 and id=#{id}
+	</select>
+</mapper>

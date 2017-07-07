@@ -1,0 +1,1 @@
+package net.onlineshop.services.manage.cases.dao;import net.onlineshop.core.DaoManager;import net.onlineshop.services.manage.cases.bean.Cases;public interface CasesDao extends DaoManager<Cases> {}

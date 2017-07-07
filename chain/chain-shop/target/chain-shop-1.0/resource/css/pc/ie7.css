@@ -1,0 +1,70 @@
+﻿html body, html body input, #wrap input {font-family:"Microsoft Yahei","Microsoft JhengHei",Arial,sans-serif;}
+/*訂單查詢頁籤*/
+#login_nav ul li.lastli{margin-right:10px;}
+#login_nav{margin-bottom:30px;}
+.return-detail .container{display : inline-block;*display : inline;}
+
+/*商品頁-tag*/
+.tag{filter:alpha(opacity=80);position:absolute;}
+.tag .tag_bg td{background:#aaa;}
+.product_title{height:auto!important; }
+
+/*商品頁推薦商品*/
+.product_push{margin:20px 5px 5px 25px;}
+
+/*QuickView*/
+.product_info_qv #price{line-height:0.9;display:inline-block;}
+.product_info_qv .product_image_qv{margin-top:10px;}
+#fancybox-outer{filter:alpha(opacity=100);}
+#fancybox-content{filter:alpha(opacity=80);}
+#fancybox-frame{position:absolute;}
+#fancybox-title{background-color:#444;filter:alpha(opacity=80);}
+#fancybox-title-over{background:#646464;}
+.fix_img_ie7{margin-top:110px;}
+.navCategory_S .s_last{margin-top:-2px;}
+#shortcut_menu input{width:15px;}
+#go-shopping{filter:alpha(opacity=100);background-color:#fff;}
+
+/*fix商品頁快捷選單會被覆蓋掉的問題*/
+.fix_shortcut_menu, .gray_header,#head{z-index:-1;}
+
+/*fix填寫訂購資料內，統一編號與發票抬頭訊息提示框位置*/
+.roundbox_center_3 span.field-validation-error.checkCompanyNo, .roundbox_center_3 span.field-validation-error.checkCompanyTitle{margin-left:-5px;margin-top:0;}
+
+/*新品頁&分類頁*/
+.list_display li{margin:20px 25px 10px 0;}
+.list_display_5 li{margin:20px 14px 10px 0;}
+
+/*fix活動頁購物車列表*/
+#any_pick_panel #shop_list dl{width:auto;}
+.shoppingCartCheck{line-height:1.6;}
+#AjaxDiv .sale-list li{height:285px}
+
+/*i-Look*/
+.tag2{filter:alpha(opacity=80);position:absolute;}
+.tag2 .tag_bg td{background:#aaa;}
+.tag2 .zoom_glass img{background:transparent;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='');}
+
+/*fix結帳頁錯誤訊息位置*/
+.order ul li.order-group span.field-validation-error, .order ul li.receiving-group span.field-validation-error { margin-top: -3px; }
+
+/*fix故障通知*/
+#feedback-link{padding-right:10px;}
+#feedback-title,#feedback-mail{line-height:2.3;}
+
+/*商品頁尺碼表*/
+.size .size2 {margin-top: 15px;}
+
+/*商品頁*/
+.size .picksize a { margin-right: 2px; }
+.addcart .btn_saleOut, .addcart .btn_addcart, .addcart .btn_notify { padding-top: 2px; padding-bottom:3px; }
+
+/*fix結帳頁帶入歷史地址*/
+#history-address-choose { top: 21px; }
+#history-address { top: 42px; }
+/*fix地-手機版連結*/
+#footer span.web-mobile a{padding-top:0px;}
+
+/*體驗活動首頁*/
+.banner-head .banner-subtitle { display: block; margin-top: 50px; letter-spacing: 5px; }
+.banner-head .heatup-logo .banner-price { vertical-align: baseline; }

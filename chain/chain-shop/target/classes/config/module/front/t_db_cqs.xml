@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- create by autoCode,v1.0.0 -->
+<mapper namespace="front.mebstatic">
+	<!-- 查询排单币 -->
+	<select id="front.account.other" 
+		resultType="java.lang.Object">
+		select * from ${@net.onlineshop.services.front.account.impl.SystemParms@PREFIX_CQS}.biz_coin_trans
+	 </select>
+	 
+	<!-- 查询互捐用户 -->
+	<select id="front.account.cqs.login" parameterType="net.onlineshop.services.front.account.bean.MebInfo"
+		resultType="net.onlineshop.services.front.account.bean.MebInfo">
+		select * from ${@net.onlineshop.services.front.account.impl.SystemParms@PREFIX_CQS}.meb_info t where 1=1
+		<if test="meb_id!=null and meb_id!=''">
+			and meb_id=#{meb_id}
+		</if>
+		<if test="meb_phone!=null and meb_phone!=''">
+			and meb_phone=#{meb_phone}
+		</if>
+		<!--<if test="meb_pwd!=null and meb_pwd!=''">
+			and meb_pwd=#{meb_pwd}
+		</if> -->
+	</select>
+	
+	<!-- 查询互捐钱包数据 -->
+	<select id="front.account.cqs.wallet" parameterType="net.onlineshop.services.front.account.bean.MebWallet"
+		resultType="net.onlineshop.services.front.account.bean.MebWallet">
+		select * from ${@net.onlineshop.services.front.account.impl.SystemParms@PREFIX_CQS}.meb_wallet t where  1=1 
+		<if test="meb_id!=null and meb_id!=''">
+			and t.meb_id=#{meb_id}
+		</if>
+	</select>
+	
+	<!-- ,shop_shopping=shop_shopping-#{shop_shopping}消费钱包数据    ,reward_shopping=reward_shopping-#{reward_shopping}-->
+	<update id="front.account.wallet.update" parameterType="net.onlineshop.services.front.account.bean.MebWallet">
+		update ${@net.onlineshop.services.front.account.impl.SystemParms@PREFIX_CQS}.meb_wallet t set t.meb_id=#{meb_id}
+		<if test="shop_free!=null and shop_free!='' and shop_free!=0">
+			,shop_free=shop_free+#{shop_free}
+		</if>
+		where t.meb_id=#{meb_id}
+	</update>
+	
+	<insert id="front.account.walletlog.insert" useGeneratedKeys="true" keyProperty="rid" 
+	parameterType="net.onlineshop.services.front.account.bean.MebWalletLog">
+        INSERT INTO ${@net.onlineshop.services.front.account.impl.SystemParms@PREFIX_CQS}.meb_wallet_log (
+	        <if test="rid!=null">
+	        	rid,
+	        </if>
+        	meb_id, wallet_type, wallet_sub_type, change_amount, new_amount, create_time, change_reason, change_id
+        	<if test="oper!=null and oper!=''">
+        	,oper
+        	</if>
+        	<if test="oper_remark!=null and oper_remark!=''">
+        	, oper_remark
+        	</if>
+        ) VALUES (
+        	 <if test="rid!=null">
+          		 #{rid},
+          	</if>
+            #{meb_id}, #{wallet_type}, #{wallet_sub_type}, #{change_amount}, #{new_amount}, now(), #{change_reason}, 
+           #{change_id}
+           <if test="oper!=null and oper!=''"> 
+          	 ,#{oper}
+           </if>
+           <if test="oper_remark!=null and oper_remark!=''">
+          	 , #{oper_remark}
+           </if>
+        )
+    </insert>
+    
+    
+	<!-- <update id="front.account.statistics.update" parameterType="java.util.HashMap">
+		update ${@net.onlineshop.services.front.account.impl.SystemParms@PREFIX_CQS}.meb_statistics t 
+		set t.entry_stage2=t.entry_stage2+#{entry_stage}
+		where t.meb_id=#{meb_id}
+	</update> -->
+	
+	<!-- 查询统计信息 -->
+	<select id="front.account.statistics.selectOne" parameterType="net.onlineshop.services.front.account.bean.MebStatistics"
+		resultType="net.onlineshop.services.front.account.bean.MebStatistics">
+		select * from ${@net.onlineshop.services.front.account.impl.SystemParms@PREFIX_CQS}.meb_statistics t where  1=1 
+		<if test="meb_id!=null and meb_id!=''">
+			and t.meb_id=#{meb_id}
+		</if>
+	</select>
+	
+	<!-- 中奖根据ID查询明细表 -->
+	<select id="front.prize.selectOne" parameterType="net.onlineshop.services.front.account.bean.MebPrize"
+		resultType="net.onlineshop.services.front.account.bean.MebPrize">
+		select * from ${@net.onlineshop.services.front.account.impl.SystemParms@PREFIX_CQS}.prize_detail t where  1=1
+		<if test="id!=null and id!=''">
+			and t.id=#{id}
+		</if>
+	</select>
+	
+	  <!--更新奖品状态 -->
+	<update id="front.prize.update" parameterType="net.onlineshop.services.front.account.bean.MebPrize">
+		update ${@net.onlineshop.services.front.account.impl.SystemParms@PREFIX_CQS}.prize_detail t
+		set t.is_send=#{is_send},t.order_id=#{order_id}
+		where t.id=#{id}
+	</update>
+	
+</mapper>

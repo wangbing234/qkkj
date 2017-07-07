@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- create by autoCode,v1.0.0 -->
+<mapper namespace="front.recharge">
+	<select id="front.recharge.selectPageList"
+		parameterType="net.onlineshop.services.front.recharge.bean.Recharge"
+		resultType="net.onlineshop.services.front.recharge.bean.Recharge">
+		select * from t_recharge t where 1=1
+
+		<if test="startDate!=null and startDate!=''">
+			and date_format(createtime,'%Y-%m-%d') &gt;= #{startDate}
+		</if>
+		<if test="endDate!=null and endDate!=''">
+			and date_format(createtime,'%Y-%m-%d') &lt;= #{endDate}
+		</if>
+		<if test="createAccount !=null and createAccount !=''">
+			and createAccount=#{createAccount}
+		</if>
+		order by id desc
+		limit #{offset},#{pageSize}
+	</select>
+
+	<select id="front.recharge.selectPageCount"
+		parameterType="net.onlineshop.services.front.recharge.bean.Recharge"
+		resultType="java.lang.Integer">
+		select count(*) from (select 1 from t_recharge t where 1=1
+		) a
+	</select>
+
+	<select id="front.recharge.selectList"
+		parameterType="net.onlineshop.services.front.recharge.bean.Recharge"
+		resultType="net.onlineshop.services.front.recharge.bean.Recharge">
+		select *
+		from t_recharge t where 1=1
+		order by id desc
+	</select>
+
+	<insert id="front.recharge.insert"
+		parameterType="net.onlineshop.services.front.recharge.bean.Recharge"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into t_recharge
+		(
+		id,createtime
+		<if test="createAccount !=null and createAccount !=''">
+			,createAccount
+		</if>
+		<if test="money !=null and money !=''">
+			,money
+		</if>
+		<if test="fee !=null and fee !=''">
+			,fee
+		</if>
+		<if test="note !=null and note !=''">
+			,note
+		</if>
+		<if test="tradNo !=null and tradNo !=''">
+			,tradNo
+		</if>
+		<if test="state !=null and state !=''">
+			,state
+		</if>
+		<if test="type !=null and type !=''">
+			,type
+		</if>
+		)
+		values
+		(
+		id,now()
+		<if test="createAccount !=null and createAccount !=''">
+			,#{createAccount}
+		</if>
+		<if test="money !=null and money !=''">
+			,#{money}
+		</if>
+		<if test="fee !=null and fee !=''">
+			,#{fee}
+		</if>
+		<if test="note !=null and note !=''">
+			,#{note}
+		</if>
+		<if test="tradNo !=null and tradNo !=''">
+			,#{tradNo}
+		</if>
+		<if test="state !=null and state !=''">
+			,#{state}
+		</if>
+		<if test="type !=null and type !=''">
+			,#{type}
+		</if>
+		)
+	</insert>
+	<update id="front.recharge.update"
+		parameterType="net.onlineshop.services.front.recharge.bean.Recharge">
+		update t_recharge
+		set id=#{id}
+		<if test="createAccount !=null and createAccount !=''">
+			,createAccount= #{createAccount}
+		</if>
+		<if test="money !=null and money !=''">
+			,money = #{money}
+		</if>
+		<if test="fee !=null and fee !=''">
+			,fee = #{fee}
+		</if>
+		<if test="note !=null and note !=''">
+			,note = #{note}
+		</if>
+		<if test="tradNo !=null and tradNo !=''">
+			,tradNo = #{tradNo}
+		</if>
+		<if test="state !=null and state !=''">
+			,state = #{state}
+		</if>
+		<if test="type !=null and type !=''">
+			,type=#{type}
+		</if>
+		where 1=1 and id=#{id}
+	</update>
+	<select id="front.recharge.selectOne"
+		parameterType="net.onlineshop.services.front.recharge.bean.Recharge"
+		resultType="net.onlineshop.services.front.recharge.bean.Recharge">
+		select * from t_recharge t where 1=1 and
+
+		<if test="id !=null and id !=''">
+			id = #{id}
+		</if>
+
+		<if test="tradNo !=null and tradNo !=''">
+			tradNo = #{tradNo}
+		</if>
+
+	</select>
+
+	<select id="front.recharge.selectById"
+		parameterType="net.onlineshop.services.front.recharge.bean.Recharge"
+		resultType="net.onlineshop.services.front.recharge.bean.Recharge">
+		select * from t_recharge t where 1=1 and id=#{id}
+	</select>
+</mapper>

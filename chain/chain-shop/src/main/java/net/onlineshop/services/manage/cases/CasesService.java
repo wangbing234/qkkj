@@ -1,0 +1,1 @@
+package net.onlineshop.services.manage.cases;import net.onlineshop.core.Services;import net.onlineshop.services.manage.cases.bean.Cases;public interface CasesService extends Services<Cases> {}

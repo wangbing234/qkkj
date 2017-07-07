@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+<meta charset="UTF-8">
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="yes" name="apple-touch-fullscreen">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="320" name="MobileOptimized">
+<meta content="telephone=no" name="format-detection">
+<link rel="stylesheet" href="/mobile/css/qdwap.css">
+<script> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }</script>
+<title>${e.name}</title>
+<script type="text/javascript" src="/mobile/js/jquery.min.js"></script>
+<script src="/mobile/js/time.js"></script>
+<script src="/mobile/js/yahoo-dom-event.js" type="text/javascript"></script> 
+	
+<script src="/mobile/js/imglazyload-min.js" type="text/javascript"></script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?09f49173bb906845048a7e52f2cf42e2";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!--在线QQ客服开始-->
+<!--需要其它风格，可导入“style/”目录下的其它样式表文件-->
+<!--<link rel="stylesheet" type="text/css" href="QQZXKF/style/red.css"/>
+<script type="text/javascript" src="QQZXKF/js/jquery-1.7.2.min.js"></script>
+<script language="javascript" src="QQZXKF/js/jquery.Sonline.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("body").Sonline({
+		Position:"right",//left或right
+		Top:200,//顶部距离，默认200px
+		Effect:true, //滚动或者固定两种方式，布尔值：true或false
+		DefaultsOpen:true, //默认展开：true,默认收缩：false
+		Qqlist:"855005267|客服01" //多个QQ用','隔开，QQ和客服名用'|'隔开
+	});
+})	
+</script>-->
+<!--在线QQ客服结束-->
+
+</head>
+
+<body>
+<div id="page">
+  <header>
+   <h1 style="text-align: center;display: inline-block;">欧蓝森官方旗舰店</h1>
+    <div style="float:right">
+			
+			<a href="/"  style="color:#fff;padding-right:10px;font-size:16px;" ><i class="icon-home"></i></a>
+		</div>
+  </header>
+  <div class="banner"><img src="${e.picture}"></div>
+  <section class="buy">
+    <div class="row1"> <strong>￥${nowPrice}</strong>
+      <ol>
+        <li>
+          <p>原价</p>
+          ￥${price}</li>
+        <li>
+          <p>折扣</p>
+         ${zhe}</li>
+        <li>
+          <p>节省</p>
+          ￥
+          ${sheng}</li>
+      </ol>
+    </div>
+    <div class="row2"> <strong><script language="JavaScript">
+<!-- 计数开始
+var caution = false
+function setCookie(name, value, expires, path, domain, secure) {
+var curCookie = name + "=" + escape(value) +
+((expires) ? "; expires=" + expires.toGMTString() : "") +
+((path) ? "; path=" + path : "") +
+((domain) ? "; domain=" + domain : "") +
+((secure) ? "; secure" : "")
+if (!caution || (name + "=" + escape(value)).length <= 4000)
+document.cookie = curCookie
+else
+if (confirm("Cookie exceeds 4KB and will be cut!"))
+document.cookie = curCookie
+}
+function getCookie(name) {
+var prefix = name + "="
+var cookieStartIndex = document.cookie.indexOf(prefix)
+if (cookieStartIndex == -1)
+return null
+var cookieEndIndex = document.cookie.indexOf(";", cookieStartIndex + prefix.length)
+if (cookieEndIndex == -1)
+cookieEndIndex = document.cookie.length
+return unescape(document.cookie.substring(cookieStartIndex + prefix.length, cookieEndIndex))
+}
+function deleteCookie(name, path, domain) {
+if (getCookie(name)) {
+document.cookie = name + "=" + 
+((path) ? "; path=" + path : "") +
+((domain) ? "; domain=" + domain : "") +
+"; expires=Thu, 01-Jan-70 00:00:01 GMT"
+}
+}
+function fixDate(date) {
+var base = new Date(0)
+var skew = base.getTime()
+if (skew > 0)
+date.setTime(date.getTime() - skew)
+}
+var now = new Date()
+fixDate(now)
+now.setTime(now.getTime() + 365 * 24 * 60 * 60 * 1000)
+var visits = getCookie("counter")
+if (!visits)
+visits = 365824
+else
+visits = parseInt(visits) + 38
+setCookie("counter", visits, now)
+document.write(visits + " 人已购买")
+// 计数结束-->
+</script></strong>
+      <div class="djs">
+        <div class="time-count">
+          <div id="remainTime_1" class="jltimer"><span>00</span>天<span>05</span>小时<span>15</span>分<span>08</span>秒</div>
+          <script language="javascript">
+                            addTimeLesser(1, 131321);
+                        </script> 
+        </div>
+      </div>
+    </div>
+    <article class="des"></article>
+   </section>
+  <article class="showcontent">
+    <h2> 抢购描述</h2>
+    <div class="btn">${introduce}</div>
+    <h2> 购买流程</h2>
+    <img src="/mobile/images/gmlc.jpg">
+    <h2> 产品简介</h2>
+${e.productHTML}
+    <h2> 客户服务</h2>
+ <div class="btn"> ${e.name}，优惠价${nowPrice}元，全国货到付款,免运费！<a class="btn" href="tel:18906871450">热线咨询：18906871450</a>
+        <center>【上班时间：9:00-22:00】注意：电话拨入过多，接通率低，请尽量短信订购。</center></div>
+ 
+  <article id="buy"> <a id="buy2"></a></article>
+    <h2>订单信息</h2>
+  
+<img src="/mobile/images/xhbz.jpg" style="width:100%" /><p>
+<div class="tip">亲爱的顾客您好，请您在确认收货前，仔细检查鞋盒外包装，如非图上所示，请您不要签收以防收到假冒伪劣产品。我们默认发圆通快递,如有收到顺丰快件请您拒签。
+</div>
+
+    </article>
+</div>
+ <div class="copy"> <span class="foot">浙ICP备15022198号</span></div>
+
+<div class="in_bot2">
+  <div class="wz1"> <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=855005269&site=qq&menu=yes"> <span class="wz1a"><img src="/mobile/images/qq.jpg" alt=""></span> <span class="wz1b">QQ咨询</span> </a> </div>
+  <div class="wz3"> <a href="/order/quickOrder.html?productID=${e.id}" id="buybut"> 立即购买 </a> </div>
+</div>
+        
+     <script type="text/javascript"> 
+KISSY.ImageLazyload({ 
+mod: "manual", // 延迟模式。默认为 auto 
+diff: 30  // 当前屏幕下多远处的图片开始延迟加载。默认两屏外的图片才延迟加载 
+}); 
+
+ function getParameter(param)  
+    {  
+        var query = window.location.search;  
+        var iLen = param.length;
+        var iStart = query.indexOf(param);
+        if (iStart == -1)
+            return "";  
+        iStart += iLen + 1;  
+        var iEnd = query.indexOf("&", iStart);
+        if (iEnd == -1)
+            return query.substring(iStart);
+        return query.substring(iStart, iEnd);
+    }  
+  
+    function init() {  
+        var param = getParameter("gzid");  
+        
+        if(param!=""){
+        document.getElementById("buybut").href=document.getElementById("buybut").href+"&gzid="+param;
+       }
+    } 
+    init(); 
+</script>    
+        
+</body>
+
+</html>
