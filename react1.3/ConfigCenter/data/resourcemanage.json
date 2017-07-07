@@ -1,0 +1,106 @@
+{
+  "totalList": [
+    {
+      "type": "mysql",
+      "code": "879",
+      "name": "测试数据",
+      "host": "172.92.9.191",
+      "port": "3308",
+      "createTime": "2016-01-01",
+      "updateTime": "2016-01-01",
+      "creator": "jupiter"
+    },
+    {
+      "type": "oracle",
+      "code": "879",
+      "name": "测试数据",
+      "host": "172.92.9.191",
+      "port": "3308",
+      "createTime": "2016-01-01",
+      "updateTime": "2016-01-01",
+      "creator": "jupiter"
+    },
+    {
+      "type": "hive",
+      "code": "879",
+      "name": "测试数据",
+      "host": "172.92.9.191",
+      "port": "3308",
+      "createTime": "2016-01-01",
+      "updateTime": "2016-01-01",
+      "creator": "jupiter"
+    },
+    {
+      "type": "mysql",
+      "code": "879",
+      "name": "测试数据",
+      "host": "172.92.9.191",
+      "port": "3308",
+      "createTime": "2016-01-01",
+      "updateTime": "2016-01-01",
+      "creator": "jupiter"
+    },
+    {
+      "type": "mysql",
+      "code": "879",
+      "name": "测试数据",
+      "host": "172.92.9.191",
+      "port": "3308",
+      "createTime": "2016-01-01",
+      "updateTime": "2016-01-01",
+      "creator": "jupiter"
+    },
+    {
+      "type": "mysql",
+      "code": "879",
+      "name": "测试数据",
+      "host": "172.92.9.191",
+      "port": "3308",
+      "createTime": "2016-01-01",
+      "updateTime": "2016-01-01",
+      "creator": "jupiter"
+    },
+    {
+      "type": "mysql",
+      "code": "879",
+      "name": "测试数据",
+      "host": "172.92.9.191",
+      "port": "3308",
+      "createTime": "2016-01-01",
+      "updateTime": "2016-01-01",
+      "creator": "jupiter"
+    },
+    {
+      "type": "mysql",
+      "code": "879",
+      "name": "测试数据",
+      "host": "172.92.9.191",
+      "port": "3308",
+      "createTime": "2016-01-01",
+      "updateTime": "2016-01-01",
+      "creator": "jupiter"
+    },
+    {
+      "type": "mysql",
+      "code": "879",
+      "name": "测试数据",
+      "host": "172.92.9.191",
+      "port": "3308",
+      "createTime": "2016-01-01",
+      "updateTime": "2016-01-01",
+      "creator": "jupiter"
+    },
+    {
+      "type": "mysql",
+      "code": "879",
+      "name": "测试数据",
+      "host": "172.92.9.191",
+      "port": "3308",
+      "createTime": "2016-01-01",
+      "updateTime": "2016-01-01",
+      "creator": "jupiter"
+    }
+  ],
+  "currentPage": 1,
+  "totalPageNum": 30
+}

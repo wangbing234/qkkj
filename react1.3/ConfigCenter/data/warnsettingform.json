@@ -1,0 +1,51 @@
+{
+  "totalList": [
+    {
+      "level": "测试",
+      "type": "邮件组",
+      "value": "测试使用,测试使用",
+      "frequency": "2016-01-01",
+      "state": "2016-01-01",
+      "emailgroup": "jupiter",
+      "notegroup": "jupiter"
+    },
+    {
+      "level": "测试",
+      "type": "邮件组",
+      "value": "测试使用,测试使用",
+      "frequency": "2016-01-01",
+      "state": "2016-01-01",
+      "emailgroup": "jupiter",
+      "notegroup": "jupiter"
+    },
+    {
+      "level": "测试",
+      "type": "邮件组",
+      "value": "测试使用,测试使用",
+      "frequency": "2016-01-01",
+      "state": "2016-01-01",
+      "emailgroup": "jupiter",
+      "notegroup": "jupiter"
+    },
+    {
+      "level": "测试",
+      "type": "邮件组",
+      "value": "测试使用,测试使用",
+      "frequency": "2016-01-01",
+      "state": "2016-01-01",
+      "emailgroup": "jupiter",
+      "notegroup": "jupiter"
+    },
+    {
+      "level": "测试",
+      "type": "邮件组",
+      "value": "测试使用,测试使用",
+      "frequency": "2016-01-01",
+      "state": "2016-01-01",
+      "emailgroup": "jupiter",
+      "notegroup": "jupiter"
+    }
+  ],
+  "currentPage": 1,
+  "totalPageNum": 30
+}

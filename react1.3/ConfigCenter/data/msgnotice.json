@@ -1,0 +1,94 @@
+{
+  "totalList": [
+    {
+      "name": "测试",
+      "type": "邮件组",
+      "remark": "测试使用,测试使用",
+      "createTime": "2016-01-01",
+      "updateTime": "2016-01-01",
+      "creator": "jupiter"
+    },
+    {
+      "name": "测试",
+      "type": "邮件组",
+      "remark": "测试使用,测试使用",
+      "createTime": "2016-01-01",
+      "updateTime": "2016-01-01",
+      "creator": "jupiter"
+    },
+    {
+      "name": "测试",
+      "type": "邮件组",
+      "remark": "测试使用,测试使用",
+      "createTime": "2016-01-01",
+      "updateTime": "2016-01-01",
+      "creator": "jupiter"
+    },
+    {
+      "name": "测试",
+      "type": "邮件组",
+      "remark": "测试使用,测试使用",
+      "createTime": "2016-01-01",
+      "updateTime": "2016-01-01",
+      "creator": "jupiter"
+    },
+    {
+      "name": "测试",
+      "type": "邮件组",
+      "remark": "测试使用,测试使用",
+      "createTime": "2016-01-01",
+      "updateTime": "2016-01-01",
+      "creator": "jupiter"
+    },
+    {
+      "name": "测试",
+      "type": "邮件组",
+      "remark": "测试使用,测试使用",
+      "createTime": "2016-01-01",
+      "updateTime": "2016-01-01",
+      "creator": "jupiter"
+    },
+    {
+      "name": "测试",
+      "type": "邮件组",
+      "remark": "测试使用,测试使用",
+      "createTime": "2016-01-01",
+      "updateTime": "2016-01-01",
+      "creator": "jupiter"
+    },
+    {
+      "name": "测试",
+      "type": "邮件组",
+      "remark": "测试使用,测试使用",
+      "createTime": "2016-01-01",
+      "updateTime": "2016-01-01",
+      "creator": "jupiter"
+    },
+    {
+      "name": "测试",
+      "type": "邮件组",
+      "remark": "测试使用,测试使用",
+      "createTime": "2016-01-01",
+      "updateTime": "2016-01-01",
+      "creator": "jupiter"
+    },
+    {
+      "name": "测试",
+      "type": "邮件组",
+      "remark": "测试使用,测试使用",
+      "createTime": "2016-01-01",
+      "updateTime": "2016-01-01",
+      "creator": "jupiter"
+    },
+    {
+      "name": "测试",
+      "type": "邮件组",
+      "remark": "测试使用,测试使用",
+      "createTime": "2016-01-01",
+      "updateTime": "2016-01-01",
+      "creator": "jupiter"
+    }
+  ],
+  "currentPage": 1,
+  "totalPageNum": 30
+}

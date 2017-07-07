@@ -1,0 +1,236 @@
+.width1000 .bfd-modal__modal-dialog {
+  width: 840px;
+}
+
+.list_left_bar {
+  height: 620px;
+  background-color: #ffffff;
+  border: 1px solid #D7DBDF;
+  border-radius: 3px;
+  .panel-heading {
+    font-size: 14px;
+    padding: 7px 14px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    height: 25px;
+    i {
+      margin-left: -9px;
+      margin-top: -2px;
+    }
+    span {
+      font-weight: bold;
+      margin-top: -5px;
+      margin-left: 10px;
+    }
+  }
+
+  .panel-body {
+    border: 0px;
+    height: 100%;
+    background-color: #f6f8fa;
+    padding: 6px;
+  }
+}
+
+.modelToolBar {
+  .bfd-dropdown {
+    margin-top: -3px;
+  }
+  .bfd-select2 .dropdown-menu {
+    max-height: 211px;
+  }
+}
+
+.fullScreenStyle {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  overflow: visible;
+  opacity: 1.0;
+  z-index: 100;
+  background-color: #ffffff
+}
+
+/*文件上传 START*/
+//注意 !importance 只在 webuploader 上使用, 上传插件初始化才生成下面的div,因此 无法使用JS设置,并且不设置 importance 会被覆盖
+.webuploader-container > div[id] {
+  opacity: 0;
+}
+
+.webuploader-pick {
+  //background: transparent;
+  //padding: 0;
+}
+
+.normoalScreenStyle {
+  width: 100%;
+  height: 100%;
+  //height: 500px;
+  position: relative;
+  background-color: #ffffff;
+  margin-top: -10px;
+}
+
+.model_list_div {
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;
+  margin-top: 0;
+  .bdos-hsp {
+    height: 100%;
+  }
+  .bdos-hsp__left {
+    overflow: hidden;
+  }
+
+  .bdos-hsp__left-main{
+    position: absolute;
+  }
+}
+
+.paperStyleOut {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.paperStyle {
+  //padding-top:45px;
+  background: #E9E9E9;
+  height: 93%;
+  width: 100%;
+  overflow: auto;
+}
+
+.popUpWinStyle {
+  .form-control {
+    width: 290px;
+  }
+  .bfd-select2 {
+    width: 290px;
+  }
+  .bdos-tree-select {
+    width: 290px;
+  }
+  .bfd-auto-complete {
+    width: 290px;
+  }
+  .layout-container .form-group {
+    margin-bottom: 15px;
+  }
+}
+
+.sliderBarRight {
+  width: 25px;
+  height: 24px;
+  position: absolute;
+  x: 100px;
+  z-index: 99;
+  cursor: pointer;
+  top: 50%;
+}
+
+.sliderLeft {
+  width: 25px;
+  height: 24px;
+  position: absolute;
+  x: 0px;
+  z-index: 99;
+  cursor: pointer;
+  top: 50%;
+}
+
+.foldedButton {
+
+}
+
+.field_grid_div {
+  max-height: 450px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  .title_bar {
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+
+  .module-edit-container {
+    padding-top: 10px;
+    .center {
+      .btn-primary {
+        height: 25px;
+        margin-top: -15px;
+      }
+
+    }
+
+    .table > tbody > tr > td {
+      padding: 4px
+    }
+  }
+}
+
+.canvas_main {
+  padding: 0 10px;
+  -webkit-user-select: none; /* Chrome all / Safari all */
+  -moz-user-select: none; /* Firefox all */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none;
+  overflow: hidden;
+  position: relative;
+  //min-height: 700px;
+  height: 100%;
+  width: 100%;
+  .canvas_left {
+    width: 200px;
+    float: left;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    overflow-y: auto;
+  }
+
+  .bdos-hsp__right {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+  }
+
+  .bdos-hsp {
+    height: 100%;
+  }
+
+  .model_tree {
+    border: 1px solid #D7DBDF;
+    border-radius: 3px;
+    background-color: #F4F6F9;
+    max-height: 100%;
+    .foldedButton {
+      height: 25px;
+    }
+  }
+
+  .canvas_right {
+    margin-left: 210px;
+    min-width: 750px;
+    height: 100%;
+  }
+
+}
+
+.modulelist-right {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  >.module-container {
+    min-width: 860px;
+  }
+}
+
+
+
+
+

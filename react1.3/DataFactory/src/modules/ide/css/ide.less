@@ -1,0 +1,294 @@
+.ide-import, .ide-export {
+  #picker {
+    position: relative;
+  }
+  /*文件上传 START*/
+  //注意 !importance 只在 webuploader 上使用, 上传插件初始化才生成下面的div,因此 无法使用JS设置,并且不设置 importance 会被覆盖
+  .webuploader-container > div[id] {
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    opacity: 0;
+  }
+  .webuploader-pick {
+    background: transparent;
+    padding: 0;
+  }
+  /*文件上传 END*/
+}
+
+.ide-list-container {
+  position: relative;
+  height: 100%;
+  padding: 0 10px;
+
+  //左侧脚本树
+  .ide-list-left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    overflow-y: auto;
+    border: 1px solid #D7DBDF;
+    background: #f6f8fa;
+    border-radius: 3px;
+
+    //左侧树
+    .ide-list-tree {
+      position: absolute;
+      width: 100%;
+
+      //脚本树,脚本名称太长,则...
+      .bfd-tree .node-content > :last-child {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .sidebar-op-btn {
+        position: absolute;
+        right: 5px;
+        top: 10px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      .tree-container {
+        padding: 0 10px;
+      }
+      //IDE 左侧选项卡样式 START
+      .bfd-tabs .nav-tabs > li {
+        text-align: center;
+      }
+      //IDE  左侧选项卡样式  END
+
+      //脚本信息样式  START
+      .script-info {
+        width: 100%;
+        height: 100%;
+        table {
+          table-layout: fixed;
+        }
+        td {
+          height: 30px;
+          line-height: 30px;
+        }
+        td:first-child {
+          text-align: right;
+          width: 80px;
+          font-weight: bold;
+        }
+        td:last-child {
+          width: 110px;
+          padding-left: 10px;
+          text-align: left;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          -ms-text-overflow: ellipsis;
+          -o-text-overflow: ellipsis;
+        }
+      }
+      //脚本信息样式  END
+    }
+  }
+
+  //右侧脚本列表, IDE编辑器
+  .ide-list-right {
+    height: 100%;
+    width: 99%;
+    position: absolute;
+    //padding-left: 200px;
+
+    .module-container {
+      min-width: 835px;
+      .module-search {
+        margin-bottom: 0;
+      }
+    }
+
+    .ide-editor-right-container {
+      height: 100%;
+      background-color: #F6F7FA;
+      border-radius: 5px;
+      border: 1px solid #D7DBDF;
+      -webkit-display: flex;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+
+      //右侧工具栏
+      .ide-editor-menu {
+        height: 35px;
+        line-height: 35px;
+        padding-top: 5px;
+        border-bottom: 1px solid #D7DBDF;
+        background-color: #F6F7FA;
+
+        .bfd-dropdown {
+          float: left;
+          .dropdown-toggle {
+            height: 30px;
+          }
+        }
+        //IDE 编辑器栏, 字体图标样式
+        .ide-fontIcon {
+          height: 25px;
+          width: 30px;
+          text-align: center;
+          font-size: 20px;
+          line-height: 25px;
+          margin-left: 5px;
+          margin-right: 0;
+          color: #4E6B78;
+        }
+        .ide-icon-help {
+          border: 1px solid transparent;
+        }
+
+        //帮助下拉框
+        .ide-question-help {
+          padding: 0;
+          margin: 0;
+          list-style: none;
+          li {
+            list-style: none;
+            height: 20px;
+            line-height: 20px;
+          }
+          .ide-question-help-key {
+            display: inline-block;
+            width: 60px;
+            text-align: right;
+          }
+          .ide-question-help-remark {
+            margin-left: 10px;
+            display: inline-block;
+          }
+        }
+
+        .ide-fontIcon:hover {
+          border: 1px solid #C8C9C9;
+          border-radius: 3px;
+        }
+        .ide-fontIcon[disabled] {
+          color: #ccc;
+        }
+      }
+
+      .ide-editor-split-pane {
+        flex: 1;
+        height: inherit;
+        min-height: inherit;
+      }
+
+      //IDE编辑器
+      .ide-editor-editor {
+        width: 100%;
+        height: 100%;
+        //height: 350px;
+        //border-bottom: 1px solid #D7DBDF;
+        background-color: #FFF;
+        padding-top: 5px;
+        overflow: auto;
+
+        .ide-editor-title-icon {
+          line-height: 25px;
+        }
+
+        .ide-editor-title {
+          max-width: 100px;
+          padding: 0 10px 0 5px;
+        }
+
+        .bdos-tab2-tab-active .ide-editor-title {
+          color: #3A93F2;
+        }
+
+        .bdos-tab2 {
+          height: 100%;
+          .bdos-tab2-tab-panel {
+            position: absolute;
+            top: 30px;
+            bottom: 10px;
+            width: 100%;
+          }
+        }
+      }
+
+      //sparkMr的有一个label 长度比较长, 因此设置宽度为120
+      .spark-mr-form, .custom-mr-form, .save-script-form {
+        .form-label {
+          width: 120px !important;
+        }
+        .form-content {
+          margin-left: 120px !important;
+        }
+        .form-group {
+          margin-bottom: 10px;
+        }
+      }
+      .spark-mr-form, .custom-mr-form {
+        width: 90%;
+        padding-top: 10px;
+        background: #FFF;
+        max-width: 700px;
+        min-width: 700px;
+      }
+
+      //日志面板
+      .ide-editor-resultlog {
+        //min-height: 200px;
+        height: 100%;
+        width: 100%;
+        flex: 1;
+        overflow: hidden;
+        position: absolute;
+
+        .ide-hide-close {
+          .bdos-tab-close {
+            display: none;
+          }
+        }
+
+        //pre标签自动换行
+        pre {
+          white-space: pre-wrap;
+          word-wrap: break-word;
+          //height: 100%;
+          //overflow: auto;
+        }
+
+        .bdos-tab2 {
+          height: 100%;
+          .bdos-tab2-tabs {
+            padding-right: 30px;
+          }
+        }
+        //设置IDE编辑器高度为100%
+        .bdos-tab2-tab-panel {
+          position: absolute;
+          top: 25px;
+          bottom: 0;
+          width: 100%;
+          overflow: auto;
+        }
+      }
+    }
+  }
+}
+
+.ide-version-history {
+  .bfd-modal__modal-dialog {
+    width: 800px;
+  }
+}
+
+.ide-script-list__type {
+  .dropdown-menu {
+    max-height: 230px;
+  }
+}

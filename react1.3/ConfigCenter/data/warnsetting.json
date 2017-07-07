@@ -1,0 +1,113 @@
+{
+  "totalList": [
+    {
+      "name": "测试",
+      "type": "邮件组",
+      "remark": "测试使用,测试使用",
+      "createTime": "2016-01-01",
+      "updateTime": "2016-01-01",
+      "creator": "jupiter",
+      "warnForm": {
+        "cluster": "集群一",
+        "group": "组一",
+        "warnItem": "监控项一",
+        "host": [],
+        "warnSetting": {
+          "totalList": [
+            {
+              "level": "报警",
+              "yzType": "值",
+              "yz": "12",
+              "frequency": "12",
+              "status": "",
+              "emailGroup": "",
+              "msgGroup": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "测试",
+      "type": "邮件组",
+      "remark": "测试使用,测试使用",
+      "createTime": "2016-01-01",
+      "updateTime": "2016-01-01",
+      "creator": "jupiter"
+    },
+    {
+      "name": "测试",
+      "type": "邮件组",
+      "remark": "测试使用,测试使用",
+      "createTime": "2016-01-01",
+      "updateTime": "2016-01-01",
+      "creator": "jupiter"
+    },
+    {
+      "name": "测试",
+      "type": "邮件组",
+      "remark": "测试使用,测试使用",
+      "createTime": "2016-01-01",
+      "updateTime": "2016-01-01",
+      "creator": "jupiter"
+    },
+    {
+      "name": "测试",
+      "type": "邮件组",
+      "remark": "测试使用,测试使用",
+      "createTime": "2016-01-01",
+      "updateTime": "2016-01-01",
+      "creator": "jupiter"
+    },
+    {
+      "name": "测试",
+      "type": "邮件组",
+      "remark": "测试使用,测试使用",
+      "createTime": "2016-01-01",
+      "updateTime": "2016-01-01",
+      "creator": "jupiter"
+    },
+    {
+      "name": "测试",
+      "type": "邮件组",
+      "remark": "测试使用,测试使用",
+      "createTime": "2016-01-01",
+      "updateTime": "2016-01-01",
+      "creator": "jupiter"
+    },
+    {
+      "name": "测试",
+      "type": "邮件组",
+      "remark": "测试使用,测试使用",
+      "createTime": "2016-01-01",
+      "updateTime": "2016-01-01",
+      "creator": "jupiter"
+    },
+    {
+      "name": "测试",
+      "type": "邮件组",
+      "remark": "测试使用,测试使用",
+      "createTime": "2016-01-01",
+      "updateTime": "2016-01-01",
+      "creator": "jupiter"
+    },
+    {
+      "name": "测试",
+      "type": "邮件组",
+      "remark": "测试使用,测试使用",
+      "createTime": "2016-01-01",
+      "updateTime": "2016-01-01",
+      "creator": "jupiter"
+      },
+    {
+      "name": "测试",
+      "type": "邮件组",
+      "remark": "测试使用,测试使用",
+      "createTime": "2016-01-01",
+      "updateTime": "2016-01-01",
+      "creator": "jupiter"
+    }
+  ],
+  "currentPage": 1,
+  "totalPageNum": 30
+}

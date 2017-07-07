@@ -1,0 +1,70 @@
+{
+  "code" : 200,
+  "data" : {"totalList":[{
+    "key": "1",
+    "name": "yong1",
+    "state": "启用",
+    "tenantry": "----",
+    "role": "管理员",
+    "createTime": "2016-1-4",
+    "updateTime": "2016-1-5"
+  },{
+  "key": "2",
+  "name": "yong2",
+  "state": "启用",
+  "tenantry": "----",
+  "role": "管理员",
+  "createTime": "2016-1-4",
+  "updateTime": "2016-1-5"
+},{
+"key": "3",
+"name": "yong3",
+"state": "启用",
+"tenantry": "----",
+"role": "管理员",
+"createTime": "2016-1-4",
+"updateTime": "2016-1-5"
+}, {
+"key": "4",
+"name": "yong4",
+"state": "启用",
+"tenantry": "----",
+"role": "管理员",
+"createTime": "2016-1-4",
+"updateTime": "2016-1-5"
+}, {
+"key": "5",
+"name": "yong5",
+"state": "启用",
+"tenantry": "----",
+"role": "管理员",
+"createTime": "2016-1-4",
+"updateTime": "2016-1-5"
+}, {
+"key": "6",
+"name": "yong6",
+"state": "启用",
+"tenantry": "----",
+"role": "管理员",
+"createTime": "2016-1-4",
+"updateTime": "2016-1-5"
+}, {
+"key": "7",
+"name": "yong7",
+"state": "启用",
+"tenantry": "----",
+"role": "管理员",
+"createTime": "2016-1-4",
+"updateTime": "2016-1-5"
+}, {
+"key": "8",
+"name": "yong8",
+"state": "启用",
+"tenantry": "----",
+"role": "管理员",
+"createTime": "2016-1-4",
+"updateTime": "2016-1-5"}],
+    "currentPage" : 1,
+    "totalPageNum" : 39
+  }
+}

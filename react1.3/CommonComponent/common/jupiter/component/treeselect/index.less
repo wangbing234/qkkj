@@ -1,0 +1,57 @@
+.has-error .bdos-tree-select {
+  border-color: #cf7f7f;
+}
+
+.bdos-tree-select {
+  width: 200px;
+  background-color: #fff;
+  height: 30px;
+  position: relative;
+  border: 1px solid #ececec;
+  border-radius: 2px;
+
+  &:focus {
+    outline: 0;
+  }
+
+  .bfd-text-overflow {
+    line-height: 28px;
+    height: 28px;
+    margin-left: 10px;
+    margin-right: 24px;
+  }
+
+  .dropdown-menu {
+    right: 0;
+    padding: 0;
+    max-height: 200px;
+    overflow: auto;
+    .bfd-tree {
+      padding: 10px;
+      -webkit-user-select: none; /* Chrome all / Safari all /opera15+*/
+      -moz-user-select: none; /* Firefox all */
+      -ms-user-select: none; /* IE 10+ */
+      user-select: none;
+      .node-content {
+        cursor: pointer;
+      }
+      .bfd-text-overflow {
+        line-height: inherit;
+        height: inherit;
+      }
+    }
+  }
+
+  .icon-caret {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -7px;
+  }
+}
+
+.bdos-tree-select[disabled] .dropdown-toggle {
+  background: #eceff1;
+  cursor: default;
+  color: #999;
+}

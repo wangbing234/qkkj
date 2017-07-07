@@ -1,0 +1,187 @@
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+             xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:activiti="http://activiti.org/bpmn"
+             id="review-definitions" typeLanguage="http://www.w3.org/2001/XMLSchema"
+             expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://activiti.org/bpmn20">
+    <process id="ryantest130" name="ryantest130">
+        <serviceTask xmlns:activiti="http://activiti.org/bpmn" id="U1DD56020" name="结束节点">
+            <extensionElements>
+                <activiti:field name="type">
+                    <activiti:expression>Shell</activiti:expression>
+                </activiti:field>
+                <activiti:field name="params">
+                    <activiti:expression>
+                        {"taskId":"629","scriptType":null,"scriptTypeId":"2","scriptPara":"","resultInfo":"returnInfo","nodeErrorRepeatTimes":0,"projectId":"30616","projectName":"BI_Demo","resultName":"returnVar"}
+                    </activiti:expression>
+                </activiti:field>
+                <activiti:field name="remark">
+                    <activiti:expression/>
+                </activiti:field>
+                <activiti:field name="message">
+                    <activiti:expression>
+                        {"mailGroup":0,"messageType":"","smsGroup":0,"executionTime":0,"monitorType":""}
+                    </activiti:expression>
+                </activiti:field>
+            </extensionElements>
+        </serviceTask>
+        <serviceTask xmlns:activiti="http://activiti.org/bpmn" id="U59B600DF" name="zhongxia">
+            <extensionElements>
+                <activiti:field name="type">
+                    <activiti:expression>BusinessScript</activiti:expression>
+                </activiti:field>
+                <activiti:field name="params">
+                    <activiti:expression>
+                        {"taskId":"629","scriptType":null,"scriptTypeId":"2","scriptPara":"","resultInfo":"returnInfo","nodeErrorRepeatTimes":0,"projectId":"30616","projectName":"BI_Demo","resultName":"returnVar"}
+                    </activiti:expression>
+                </activiti:field>
+                <activiti:field name="remark">
+                    <activiti:expression/>
+                </activiti:field>
+                <activiti:field name="message">
+                    <activiti:expression>
+                        {"mailGroup":0,"messageType":"","smsGroup":0,"executionTime":0,"monitorType":""}
+                    </activiti:expression>
+                </activiti:field>
+            </extensionElements>
+        </serviceTask>
+        <serviceTask xmlns:activiti="http://activiti.org/bpmn" id="UFE28E2D5" name="系统脚本_2">
+            <extensionElements>
+                <activiti:field name="type">
+                    <activiti:expression>Shell</activiti:expression>
+                </activiti:field>
+                <activiti:field name="params">
+                    <activiti:expression>
+                        {"taskId":"629","scriptType":null,"scriptTypeId":"2","scriptPara":"","resultInfo":"returnInfo","nodeErrorRepeatTimes":0,"projectId":"30616","projectName":"BI_Demo","resultName":"returnVar"}
+                    </activiti:expression>
+                </activiti:field>
+                <activiti:field name="remark">
+                    <activiti:expression/>
+                </activiti:field>
+                <activiti:field name="message">
+                    <activiti:expression>
+                        {"mailGroup":0,"messageType":"","smsGroup":0,"executionTime":0,"monitorType":""}
+                    </activiti:expression>
+                </activiti:field>
+            </extensionElements>
+        </serviceTask>
+        <serviceTask xmlns:activiti="http://activiti.org/bpmn" id="UD769E508" name="业务脚本_2">
+            <extensionElements>
+                <activiti:field name="type">
+                    <activiti:expression>BusinessScript</activiti:expression>
+                </activiti:field>
+                <activiti:field name="params">
+                    <activiti:expression>
+                        {"taskId":"629","scriptType":null,"scriptTypeId":"2","scriptPara":"","resultInfo":"returnInfo","nodeErrorRepeatTimes":0,"projectId":"30616","projectName":"BI_Demo","resultName":"returnVar"}
+                    </activiti:expression>
+                </activiti:field>
+                <activiti:field name="remark">
+                    <activiti:expression/>
+                </activiti:field>
+                <activiti:field name="message">
+                    <activiti:expression>
+                        {"mailGroup":0,"messageType":"","smsGroup":0,"executionTime":0,"monitorType":""}
+                    </activiti:expression>
+                </activiti:field>
+            </extensionElements>
+        </serviceTask>
+        <sequenceFlow sourceRef="U4B378733" targetRef="U3B45BE82" id="U0A2D47FB" name="线段_1"/>
+        <sequenceFlow sourceRef="U86DE7663" targetRef="U59B600DF" id="U9C5CD28A" name="线段_2"/>
+        <sequenceFlow sourceRef="U0114AAC3" targetRef="U54F62AEB" id="UD0689E51" name="线段_22"/>
+        <sequenceFlow sourceRef="U4B378733" targetRef="U107A816C" id="U24386492" name="线段_9"/>
+        <sequenceFlow sourceRef="U3FDD784C" targetRef="U0114AAC3" id="UA0ACB2EA" name="线段_17"/>
+        <sequenceFlow sourceRef="U107A816C" targetRef="U0114AAC3" id="UAAE5C6D9" name="线段_15"/>
+        <sequenceFlow sourceRef="U8E3A7075" targetRef="UD769E508" id="UD1E808CA" name="线段_30"/>
+        <sequenceFlow sourceRef="U86DE7663" targetRef="U1DD56020" id="U943848C5" name="线段_4"/>
+        <sequenceFlow sourceRef="UBEC26AD9" targetRef="UB318D158" id="UA98B9E24" name="线段_13"/>
+        <sequenceFlow sourceRef="U2AE810EF" targetRef="U0114AAC3" id="U8EA404A6" name="线段_18"/>
+        <sequenceFlow sourceRef="U1DD56020" targetRef="U7DC651E3" id="UAF6E33AB" name="线段_5"/>
+        <sequenceFlow sourceRef="UF1DDF650" targetRef="U0114AAC3" id="U39FBB9BC" name="线段_21"/>
+        <sequenceFlow sourceRef="U2A2A5305" targetRef="U806604E7" id="U481CEFE6" name="线段_25"/>
+        <sequenceFlow sourceRef="U2A2A5305" targetRef="U16CE3892" id="U55C3895F" name="线段_24"/>
+        <sequenceFlow sourceRef="U54F62AEB" targetRef="U8E3A7075" id="UA7C507E0" name="线段_28"/>
+        <sequenceFlow sourceRef="U0114AAC3" targetRef="U2A2A5305" id="U3DEE93AD" name="线段_23"/>
+        <sequenceFlow sourceRef="U064F9EF7" targetRef="U0114AAC3" id="U9E24E382" name="线段_16"/>
+        <sequenceFlow sourceRef="U4B378733" targetRef="U3FDD784C" id="UA39AC6FB" name="线段_10"/>
+        <sequenceFlow sourceRef="U4B378733" targetRef="U064F9EF7" id="U84E1338C" name="线段_8"/>
+        <sequenceFlow sourceRef="U4B378733" targetRef="U2AE810EF" id="U14D39FDF" name="线段_11"/>
+        <sequenceFlow sourceRef="U16CE3892" targetRef="U8E3A7075" id="UB2A806CA" name="线段_27"/>
+        <sequenceFlow sourceRef="UFE28E2D5" targetRef="U0114AAC3" id="U89EA2150" name="线段_20"/>
+        <sequenceFlow sourceRef="U4B378733" targetRef="UBEC26AD9" id="U58B227F9" name="线段_12"/>
+        <sequenceFlow sourceRef="U4B378733" targetRef="U86DE7663" id="U073B6E35" name="线段_3"/>
+        <sequenceFlow sourceRef="UB318D158" targetRef="U0114AAC3" id="U4E2022B1" name="线段_19"/>
+        <sequenceFlow sourceRef="U4B378733" targetRef="UF1DDF650" id="UD967676F" name="线段_7"/>
+        <sequenceFlow sourceRef="U4B378733" targetRef="UFE28E2D5" id="U7528556B" name="线段_6"/>
+        <sequenceFlow sourceRef="U4B378733" targetRef="UD7143C32" id="U0CF11AEF" name="线段_14"/>
+        <sequenceFlow sourceRef="U2A2A5305" targetRef="U8E3A7075" id="UAA5F489F" name="线段_29"/>
+    </process>
+    <bpmndi:BPMNDiagram id="BPMNDiagram_ryantest130">
+        <bpmndi:BPMNPlane bpmnElement="ryantest130" id="BPMNPlane_ryantest130">
+            <BPMNShape id="BPMNShape_U4B378733" bpmnElement="U4B378733">
+                <Bounds height="60" width="60" x="633" y="110"/>
+            </BPMNShape>
+            <BPMNShape id="BPMNShape_U3B45BE82" bpmnElement="U3B45BE82">
+                <Bounds height="60" width="60" x="628" y="196"/>
+            </BPMNShape>
+            <BPMNShape id="BPMNShape_U86DE7663" bpmnElement="U86DE7663">
+                <Bounds height="60" width="60" x="233" y="219"/>
+            </BPMNShape>
+            <BPMNShape id="BPMNShape_U1DD56020" bpmnElement="U1DD56020">
+                <Bounds height="60" width="60" x="325" y="299"/>
+            </BPMNShape>
+            <BPMNShape id="BPMNShape_U59B600DF" bpmnElement="U59B600DF">
+                <Bounds height="60" width="60" x="167" y="324"/>
+            </BPMNShape>
+            <BPMNShape id="BPMNShape_U7DC651E3" bpmnElement="U7DC651E3">
+                <Bounds height="60" width="60" x="345" y="392"/>
+            </BPMNShape>
+            <BPMNShape id="BPMNShape_UFE28E2D5" bpmnElement="UFE28E2D5">
+                <Bounds height="60" width="60" x="1026" y="239"/>
+            </BPMNShape>
+            <BPMNShape id="BPMNShape_UF1DDF650" bpmnElement="UF1DDF650">
+                <Bounds height="60" width="60" x="1117" y="244"/>
+            </BPMNShape>
+            <BPMNShape id="BPMNShape_U064F9EF7" bpmnElement="U064F9EF7">
+                <Bounds height="60" width="60" x="468" y="256"/>
+            </BPMNShape>
+            <BPMNShape id="BPMNShape_U107A816C" bpmnElement="U107A816C">
+                <Bounds height="60" width="60" x="369" y="256"/>
+            </BPMNShape>
+            <BPMNShape id="BPMNShape_U3FDD784C" bpmnElement="U3FDD784C">
+                <Bounds height="60" width="60" x="557" y="256"/>
+            </BPMNShape>
+            <BPMNShape id="BPMNShape_U2AE810EF" bpmnElement="U2AE810EF">
+                <Bounds height="60" width="60" x="693" y="256"/>
+            </BPMNShape>
+            <BPMNShape id="BPMNShape_UBEC26AD9" bpmnElement="UBEC26AD9">
+                <Bounds height="60" width="60" x="879" y="125"/>
+            </BPMNShape>
+            <BPMNShape id="BPMNShape_UB318D158" bpmnElement="UB318D158">
+                <Bounds height="60" width="60" x="833" y="259"/>
+            </BPMNShape>
+            <BPMNShape id="BPMNShape_UD7143C32" bpmnElement="UD7143C32">
+                <Bounds height="60" width="60" x="916" y="255"/>
+            </BPMNShape>
+            <BPMNShape id="BPMNShape_U0114AAC3" bpmnElement="U0114AAC3">
+                <Bounds height="60" width="60" x="653" y="370"/>
+            </BPMNShape>
+            <BPMNShape id="BPMNShape_U54F62AEB" bpmnElement="U54F62AEB">
+                <Bounds height="60" width="60" x="641" y="447"/>
+            </BPMNShape>
+            <BPMNShape id="BPMNShape_U2A2A5305" bpmnElement="U2A2A5305">
+                <Bounds height="60" width="60" x="787" y="411"/>
+            </BPMNShape>
+            <BPMNShape id="BPMNShape_U16CE3892" bpmnElement="U16CE3892">
+                <Bounds height="60" width="60" x="932" y="411"/>
+            </BPMNShape>
+            <BPMNShape id="BPMNShape_U806604E7" bpmnElement="U806604E7">
+                <Bounds height="60" width="60" x="879" y="370"/>
+            </BPMNShape>
+            <BPMNShape id="BPMNShape_U8E3A7075" bpmnElement="U8E3A7075">
+                <Bounds height="60" width="60" x="647" y="527"/>
+            </BPMNShape>
+            <BPMNShape id="BPMNShape_UD769E508" bpmnElement="UD769E508">
+                <Bounds height="60" width="60" x="487" y="555"/>
+            </BPMNShape>
+        </bpmndi:BPMNPlane>
+    </bpmndi:BPMNDiagram>
+</definitions>

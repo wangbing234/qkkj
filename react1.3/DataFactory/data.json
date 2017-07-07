@@ -1,0 +1,199 @@
+{
+  "root": {
+    "nodes": [
+      {
+        "uiModel": {
+          "type": "hive",
+          "id": "328c728c-60f1-432c-a6f5-1f82fff5f200",
+          "position": {
+            "x": 134,
+            "y": 67
+          }
+        },
+        "dataModel": {
+          "tableInfo": {
+            "projectCode": "ce83f89ec2594ef79e93ab0420e2475a",
+            "hierarchyCode": "ssss",
+            "validateState": false,
+            "subjectCode": "af4b90c73b85406d92e0e01729843607",
+            "folderCode": "ccccc",
+            "name": "test_pp",
+            "dbName": "test",
+            "tableName": "eewe",
+            "cnName": "dfsdfs",
+            "lifecycle": "1",
+            "remark": "2"
+          },
+          "field": {
+            "validated": true,
+            "tableIsSuccess": true,
+            "baseColumns": [
+              {
+                "name": "sdfds",
+                "dataType": "DOUBLE",
+                "comment": "fds"
+              }
+            ],
+            "parColumns": [
+              {
+                "name": "sdf",
+                "dataType": "INT",
+                "comment": "df"
+              }
+            ],
+            "validateState": false
+          },
+          "advance": {
+            "location": "sdf",
+            "validateState": false,
+            "fileFormat": "SEQUENCEFILE",
+            "storeType": "MANAGED",
+            "field": "\\t",
+            "escape": "1",
+            "colelction": "d",
+            "mapkey": "s"
+          },
+          "tableType": "hive"
+        }
+      },
+      {
+        "uiModel": {
+          "type": "hbase",
+          "id": "1e1575fd-efde-47f2-8229-e1bce4928b71",
+          "position": {
+            "x": 403,
+            "y": 132
+          }
+        },
+        "dataModel": {
+          "tableInfo": {
+            "projectCode": "ce83f89ec2594ef79e93ab0420e2475a",
+            "hierarchyCode": "ssss",
+            "validateState": false,
+            "subjectCode": "af4b90c73b85406d92e0e01729843607",
+            "folderCode": "dddd",
+            "name": "dddd",
+            "dbName": "test",
+            "tableName": "dsfs",
+            "cnName": "sdfsdf",
+            "remark": "2",
+            "lifecycle": "11"
+          },
+          "field": {
+            "rowKey": {
+              "name": "row-keysdf",
+              "comment": "描述1sdf",
+              "id": 1
+            },
+            "cluColumns": [
+              {
+                "name": "dfs",
+                "comment": "fsdf"
+              }
+            ],
+            "validated": true,
+            "tableIsSuccess": true,
+            "validateState": false
+          },
+          "tableType": "hbase"
+        }
+      },
+      {
+        "uiModel": {
+          "type": "rdbms",
+          "id": "d1fce2cc-441a-4c33-ada7-5d32ca861bf6",
+          "position": {
+            "x": 226,
+            "y": 275
+          }
+        },
+        "dataModel": {
+          "tableInfo": {
+            "projectCode": "ce83f89ec2594ef79e93ab0420e2475a",
+            "hierarchyCode": "ssss",
+            "validateState": false,
+            "subjectCode": "af4b90c73b85406d92e0e01729843607",
+            "folderCode": "ccccc",
+            "name": "test_pp",
+            "tableType": "mysql",
+            "dbName": "test",
+            "tableName": "dsf",
+            "cnName": "sdf",
+            "lifecycle": "1",
+            "remark": "3"
+          },
+          "tableType": "mysql"
+        }
+      },
+      {
+        "uiModel": {
+          "type": "rdbms",
+          "id": "63ed1177-e7ab-49c3-8898-0dfa1f4ac44e",
+          "position": {
+            "x": 397,
+            "y": 259
+          }
+        },
+        "dataModel": {
+          "tableInfo": {
+            "projectCode": "ce83f89ec2594ef79e93ab0420e2475a",
+            "hierarchyCode": "ssss",
+            "validateState": false,
+            "subjectCode": "af4b90c73b85406d92e0e01729843607",
+            "folderCode": "ccccc",
+            "name": "test_pp",
+            "tableType": "mysql",
+            "dbName": "test",
+            "tableName": "sdf",
+            "cnName": "sdf",
+            "remark": "fdsf",
+            "lifecycle": "23"
+          },
+          "tableType": "mysql"
+        }
+      },
+      {
+        "uiModel": {
+          "type": "join",
+          "id": "877de4a2-8b8a-40f1-870f-d98a1da109e3",
+          "name": "sdfsdf",
+          "position": {
+            "x": 568,
+            "y": 285
+          }
+        },
+        "dataModel": {
+          "name": "unjghj",
+          "validateState": false,
+          "chinaName": "sdfsdf"
+        }
+      }
+    ],
+    "links": [
+      {
+        "type": "line",
+        "sourceRef": "328c728c-60f1-432c-a6f5-1f82fff5f200",
+        "targetRef": "1e1575fd-efde-47f2-8229-e1bce4928b71",
+        "id": "0a2c2cbf-c827-4e2a-b42d-d1546e22715e"
+      },
+      {
+        "type": "line",
+        "sourceRef": "1e1575fd-efde-47f2-8229-e1bce4928b71",
+        "targetRef": "d1fce2cc-441a-4c33-ada7-5d32ca861bf6",
+        "id": "6ee80a74-0f5f-4aa3-9e48-015f61f77ba0"
+      },
+      {
+        "type": "line",
+        "sourceRef": "d1fce2cc-441a-4c33-ada7-5d32ca861bf6",
+        "targetRef": "63ed1177-e7ab-49c3-8898-0dfa1f4ac44e",
+        "id": "960b8afb-a31a-41aa-8dd5-e2cd9e25c0e1"
+      },
+      {
+        "type": "line",
+        "sourceRef": "63ed1177-e7ab-49c3-8898-0dfa1f4ac44e",
+        "targetRef": "877de4a2-8b8a-40f1-870f-d98a1da109e3",
+        "id": "418bc931-2a3d-4b03-a271-9a4980915338"
+      }
+    ]
+  }
+}

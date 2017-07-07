@@ -1,0 +1,285 @@
+.VS-search div, .VS-search span, .VS-search a, .VS-search img, .VS-search ul, .VS-search li, .VS-search form, .VS-search label, .VS-interface ul, .VS-interface li, .VS-interface {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: #666;
+}
+
+.VS-search {
+  line-height: 1;
+  color: black
+}
+
+.VS-search ol, .VS-search ul {
+  list-style: none
+}
+
+.VS-search {
+  font-family: Arial, sans-serif;
+  color: #373737;
+  font-size: 12px
+}
+
+.VS-search input {
+  display: block;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 4px;
+  background: transparent;
+  font-size: 16px;
+  line-height: 20px;
+  width: 100%
+}
+
+.VS-interface, .VS-search .dialog, .VS-search input {
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, sans-serif !important;
+  line-height: 1.1em
+}
+
+.VS-search .VS-search-box {
+  cursor: text;
+  position: relative;
+  border: 2px solid #ccc;
+  background-color: #fafafa;
+  min-height: 28px;
+  border: 1px solid #ececec;
+  border-radius: 5px;
+}
+
+.VS-search.VS-readonly .VS-search-box {
+  cursor: default
+}
+
+.VS-search .VS-search-box.VS-focus {
+  border-color: #42a5f5;
+}
+
+.VS-search .VS-placeholder {
+  position: absolute;
+  top: 7px;
+  left: 4px;
+  margin: 0 20px 0 22px;
+  color: #808080;
+  font-size: 14px
+}
+
+.VS-search .VS-search-box.VS-focus .VS-placeholder, .VS-search .VS-search-box .VS-placeholder.VS-hidden {
+  display: none
+}
+
+.VS-search .VS-search-inner {
+  position: relative;
+  margin: 0 20px 0 0;
+  overflow: hidden
+}
+
+.VS-search input {
+  width: 100px
+}
+
+.VS-search input, .VS-search .VS-input-width-tester {
+  padding: 6px 0;
+  float: left;
+  color: #808080;
+  font: 13px/17px Helvetica, Arial
+}
+
+.VS-search.VS-focus input {
+  color: #606060
+}
+
+.VS-search .VS-icon-search {
+  position: absolute;
+  left: 9px;
+  top: 8px
+}
+
+.VS-search .VS-icon-cancel {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  cursor: pointer;
+}
+
+.VS-search.VS-readonly .VS-icon-cancel {
+  display: none
+}
+
+.VS-search .search_facet {
+  float: left;
+  margin: 0;
+  padding: 0 0 0 14px;
+  position: relative;
+  border: 1px solid transparent;
+  height: 23px;
+  margin: 3px 0;
+  border-radius: 2px;
+  background-color: #f3f3f3;
+}
+
+.VS-search.VS-readonly .search_facet {
+  padding-left: 0
+}
+
+.VS-search .search_facet.is_selected {
+  border-radius: 3px;
+  background-color: #d2e6fd;
+  border: 1px solid #6eadf5
+}
+
+.VS-search .search_facet .category {
+  float: left;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 10px;
+  color: #808080;
+  padding: 8px 0 5px;
+  line-height: 13px;
+  cursor: pointer;
+  padding: 4px 0 0
+}
+
+.VS-search.VS-readonly .search_facet .category {
+  cursor: default
+}
+
+.VS-search .search_facet.is_selected .category {
+  margin-left: 3px
+}
+
+.VS-search .search_facet .search_facet_input_container {
+  float: left
+}
+
+.VS-search .search_facet input {
+  margin: 0;
+  padding: 0;
+  color: #000;
+  font-size: 13px;
+  padding: 5px 0 5px 4px;
+  width: auto;
+  z-index: 100;
+  position: relative;
+  padding-top: 1px;
+  padding-bottom: 2px;
+  padding-right: 3px
+}
+
+.VS-search .search_facet.is_editing input, .VS-search .search_facet.is_selected input {
+  color: #000
+}
+
+.VS-search.VS-readonly .search_facet .search_facet_remove {
+  display: none
+}
+
+.VS-search .search_facet .search_facet_remove {
+  position: absolute;
+  left: 3px;
+  top: 3px
+}
+
+.VS-search .search_facet.is_selected .search_facet_remove {
+  left: 3px;
+  background-position: center -11px
+}
+
+.VS-search .search_facet.is_editing .category, .VS-search .search_facet.is_selected .category {
+  color: #000
+}
+
+.VS-search .search_facet.search_facet_maybe_delete .category, .VS-search .search_facet.search_facet_maybe_delete input {
+  color: darkred
+}
+
+.VS-search .search_input {
+  height: 28px;
+  float: left;
+}
+
+.VS-search .search_input input {
+  padding: 0 3px;
+  line-height: 30px;
+  height: 30px;
+  width: 10px;
+  z-index: 100;
+  min-width: 4px;
+  position: relative
+}
+
+.VS-search .search_input.is_editing input {
+  color: #202020
+}
+
+.ui-helper-hidden-accessible {
+  display: none
+}
+
+.VS-interface.ui-autocomplete {
+  position: absolute;
+  border: 1px solid #42a5f5;
+  background-color: #FFF;
+  cursor: pointer;
+  z-index: 10000;
+  padding: 0;
+  margin: 0;
+  min-width: 80px;
+  max-width: 220px;
+  max-height: 240px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-size: 13px;
+  top: 5px;
+  border-radius: 3px;
+
+}
+
+.VS-interface.ui-autocomplete .ui-autocomplete-category {
+  text-transform: capitalize;
+  font-size: 11px;
+  padding: 4px 4px 4px;
+  border-top: 1px solid #A2A2A2;
+  border-bottom: 1px solid #A2A2A2;
+  background-color: #B7B7B7;
+  text-shadow: 0 -1px 0 #999;
+  font-weight: bold;
+  color: white;
+  cursor: default
+}
+
+.VS-interface.ui-autocomplete .ui-menu-item {
+  float: none
+}
+
+.VS-interface.ui-autocomplete .ui-menu-item a {
+  color: #000;
+  display: block;
+  padding: 0 4px;
+  border-radius: 0;
+  line-height: 30px;
+  background-color: #FFF;
+}
+
+.VS-interface.ui-autocomplete .ui-menu-item a:hover {
+  background-color: #f5f5f5;
+}
+
+.VS-interface.ui-autocomplete .ui-menu-item a:active {
+  outline: none
+}
+
+.VS-interface.ui-autocomplete .ui-menu-item .ui-state-hover, .VS-interface.ui-autocomplete .ui-menu-item .ui-state-focus {
+}
+
+.VS-interface.ui-autocomplete .ui-corner-all {
+  border-radius: 0;
+  text-decoration: none;
+  line-height: 30px;
+  height: 30px;
+}
+
+.VS-interface.ui-autocomplete li {
+  list-style: none;
+  width: auto
+}

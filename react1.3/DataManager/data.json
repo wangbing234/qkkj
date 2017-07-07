@@ -1,0 +1,243 @@
+{
+  "root": {
+    "nodes": [
+      {
+        "uiModel": {
+          "type": "hive",
+          "id": "4ef1280e-59be-4a0e-b7ac-d6a4da78a1bb",
+          "name": "hive",
+          "position": {
+            "x": 134,
+            "y": 67
+          }
+        },
+        "dataModel": {
+          "baseWinData": {
+            "clusterArr": [
+              {
+                "name": "警告",
+                "id": 1
+              },
+              {
+                "name": "错误",
+                "id": 2
+              },
+              {
+                "name": "致命",
+                "id": 3
+              }
+            ],
+            "cluster": "警告",
+            "validateState": false,
+            "chinaName": "王兵",
+            "lifeCycle": "435",
+            "remark": "4545"
+          },
+          "fieldInfoData": {
+            "tempRowKeyList": [
+              {
+                "colName": "row-key",
+                "remark": "描述1",
+                "id": 1,
+                "colType": 1
+              },
+              {
+                "colName": "tyt",
+                "colType": 3,
+                "remark": "ytyt"
+              }
+            ],
+            "tempFieldList": [
+              {
+                "column": "tyt",
+                "colType": 2,
+                "remark": "tyty"
+              }
+            ],
+            "validated": true,
+            "tableIsSuccess": true,
+            "validateState": false
+          },
+          "highInfoData": {
+            "clusterArr": [
+              {
+                "name": "警告",
+                "id": 1
+              },
+              {
+                "name": "错误",
+                "id": 2
+              },
+              {
+                "name": "致命",
+                "id": 3
+              }
+            ],
+            "remark": "tytt",
+            "validateState": false,
+            "cluster": "错误",
+            "chinaName": "tyty",
+            "lifeCycle": "ty"
+          }
+        }
+      },
+      {
+        "uiModel": {
+          "type": "hbase",
+          "id": "89e63c51-9473-403f-96e8-ac786ac38db0",
+          "name": "hbase",
+          "position": {
+            "x": 403,
+            "y": 132
+          }
+        },
+        "dataModel": {
+          "baseWinData": {
+            "clusterArr": [
+              {
+                "name": "警告",
+                "id": 1
+              },
+              {
+                "name": "错误",
+                "id": 2
+              },
+              {
+                "name": "致命",
+                "id": 3
+              }
+            ],
+            "cluster": "错误",
+            "validateState": false,
+            "chinaName": "ty",
+            "lifeCycle": "ty",
+            "remark": "tyty"
+          },
+          "fieldInfoData": {
+            "tempRowKeyList": [
+              {
+                "colName": "row-key",
+                "remark": "描述1",
+                "id": 1
+              }
+            ],
+            "tempFieldList": [
+              {
+                "column": "ty",
+                "remark": "tyt"
+              }
+            ],
+            "validated": true,
+            "tableIsSuccess": true,
+            "validateState": false
+          }
+        }
+      },
+      {
+        "uiModel": {
+          "type": "mysql",
+          "id": "e8288d53-ff00-4dde-9dfa-0aed82530d4f",
+          "name": "mysql",
+          "position": {
+            "x": 226,
+            "y": 275
+          }
+        },
+        "dataModel": {
+          "clusterArr": [
+            {
+              "name": "警告",
+              "id": 1
+            },
+            {
+              "name": "错误",
+              "id": 2
+            },
+            {
+              "name": "致命",
+              "id": 3
+            }
+          ],
+          "cluster": "错误",
+          "validateState": false,
+          "chinaName": "ty",
+          "lifeCycle": "tyu",
+          "remark": "yuyu"
+        }
+      },
+      {
+        "uiModel": {
+          "type": "oracle",
+          "id": "ca547fe4-f3f7-433c-a4e7-7342fafd59cb",
+          "name": "oracle",
+          "position": {
+            "x": 397,
+            "y": 259
+          }
+        },
+        "dataModel": {
+          "clusterArr": [
+            {
+              "name": "警告",
+              "id": 1
+            },
+            {
+              "name": "错误",
+              "id": 2
+            },
+            {
+              "name": "致命",
+              "id": 3
+            }
+          ],
+          "cluster": "致命",
+          "validateState": false,
+          "lifeCycle": "yuy",
+          "chinaName": "u",
+          "remark": "yuyu"
+        }
+      },
+      {
+        "uiModel": {
+          "type": "join",
+          "id": "f8808583-a677-4a3b-b3db-9f0ea9e86953",
+          "name": "汇聚",
+          "position": {
+            "x": 568,
+            "y": 285
+          }
+        },
+        "dataModel": {
+          "name": "unjghj",
+          "validateState": false
+        }
+      }
+    ],
+    "links": [
+      {
+        "type": "line",
+        "sourceRef": "4ef1280e-59be-4a0e-b7ac-d6a4da78a1bb",
+        "targetRef": "89e63c51-9473-403f-96e8-ac786ac38db0",
+        "id": "3f627cd9-804c-409b-b30e-daadc8f42626"
+      },
+      {
+        "type": "line",
+        "sourceRef": "89e63c51-9473-403f-96e8-ac786ac38db0",
+        "targetRef": "e8288d53-ff00-4dde-9dfa-0aed82530d4f",
+        "id": "a00d6507-c0f4-4ae3-9f22-5c74b0ce3cdd"
+      },
+      {
+        "type": "line",
+        "sourceRef": "e8288d53-ff00-4dde-9dfa-0aed82530d4f",
+        "targetRef": "ca547fe4-f3f7-433c-a4e7-7342fafd59cb",
+        "id": "578da975-e007-44ce-9e98-988791103c97"
+      },
+      {
+        "type": "line",
+        "sourceRef": "ca547fe4-f3f7-433c-a4e7-7342fafd59cb",
+        "targetRef": "f8808583-a677-4a3b-b3db-9f0ea9e86953",
+        "id": "6871b0ee-6305-40ab-aaa8-74a82db89a2a"
+      }
+    ]
+  }
+}

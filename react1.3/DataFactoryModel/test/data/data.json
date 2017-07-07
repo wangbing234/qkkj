@@ -1,0 +1,186 @@
+{
+  "links": [
+    {
+      "id": "f0960816-e463-4d6e-8551-85b4c3e7664f",
+      "label": "undefined",
+      "start": "6ef25c1b-fd8d-49fb-9733-c79f82024d64",
+      "end": "fa528449-7b73-45de-87f6-b2fb99cde9ea",
+      "config": {
+        "name": "line",
+        "label": "线段",
+        "toolTip": "线段"
+      },
+      "shape": {}
+    },
+    {
+      "id": "4647dc61-7316-43cf-a6d1-2a77f5481c57",
+      "label": "undefined",
+      "start": "fa528449-7b73-45de-87f6-b2fb99cde9ea",
+      "end": "30ae5d91-294a-4f8a-acbb-9ea994914143",
+      "config": {
+        "name": "line",
+        "label": "线段",
+        "toolTip": "线段"
+      },
+      "shape": {}
+    },
+    {
+      "id": "fb046924-0b0e-4962-baba-1e7bdd14c179",
+      "label": "undefined",
+      "start": "da39397c-f14d-4e07-ba8d-c51482035a50",
+      "end": "fa528449-7b73-45de-87f6-b2fb99cde9ea",
+      "config": {
+        "name": "line",
+        "label": "线段",
+        "toolTip": "线段"
+      },
+      "shape": {}
+    },
+    {
+      "id": "8d17235e-dd87-4352-a539-1b8568a65820",
+      "label": "undefined",
+      "start": "da39397c-f14d-4e07-ba8d-c51482035a50",
+      "end": "b94f4adc-5da6-4114-b261-365cef246ec0",
+      "config": {
+        "name": "line",
+        "label": "线段",
+        "toolTip": "线段"
+      },
+      "shape": {}
+    },
+    {
+      "id": "9aa6dd20-fe00-41b9-846e-ea232abbb2b7",
+      "label": "undefined",
+      "start": "8c2f34de-e9c2-43af-bdef-ea6f328d6973",
+      "end": "da39397c-f14d-4e07-ba8d-c51482035a50",
+      "config": {
+        "name": "line",
+        "label": "线段",
+        "toolTip": "线段"
+      },
+      "shape": {}
+    }
+  ],
+  "nodes": [
+    {
+      "id": "6ef25c1b-fd8d-49fb-9733-c79f82024d64",
+      "x": 215,
+      "y": 147,
+      "src": "src/common/imgs/editor/Start.png",
+      "label": "开始10",
+      "config": {
+        "id": "1",
+        "name": "StartEvent",
+        "label": "开始",
+        "toolTip": "开始",
+        "rGroup": "demo",
+        "tImage": "src/common/imgs/editor/Start.png",
+        "image": "src/common/imgs/editor/Start.png",
+        "inLimit": "0",
+        "outLimit": "-1"
+      },
+      "shape": {},
+      "task": {}
+    },
+    {
+      "id": "fa528449-7b73-45de-87f6-b2fb99cde9ea",
+      "x": 474,
+      "y": 180,
+      "src": "src/common/imgs/editor/Decision.png",
+      "label": "结o1",
+      "config": {
+        "id": "2",
+        "name": "EndEvent",
+        "label": "结束",
+        "toolTip": "结束",
+        "rGroup": "demo",
+        "tImage": "src/common/imgs/editor/Decision.png",
+        "image": "src/common/imgs/editor/Decision.png",
+        "inLimit": "-1",
+        "outLimit": "-1"
+      },
+      "shape": {},
+      "task": {}
+    },
+    {
+      "id": "30ae5d91-294a-4f8a-acbb-9ea994914143",
+      "x": 581,
+      "y": 273,
+      "src": "src/common/imgs/editor/Decision.png",
+      "label": "结束012312",
+      "config": {
+        "id": "2",
+        "name": "EndEvent",
+        "label": "结束",
+        "toolTip": "结束",
+        "rGroup": "demo",
+        "tImage": "src/common/imgs/editor/Decision.png",
+        "image": "src/common/imgs/editor/Decision.png",
+        "inLimit": "-1",
+        "outLimit": "-1"
+      },
+      "shape": {},
+      "task": {}
+    },
+    {
+      "id": "da39397c-f14d-4e07-ba8d-c51482035a50",
+      "x": 227,
+      "y": 266,
+      "src": "src/common/imgs/editor/Decision.png",
+      "label": "结束123",
+      "config": {
+        "id": "2",
+        "name": "EndEvent",
+        "label": "结束",
+        "toolTip": "结束",
+        "rGroup": "demo",
+        "tImage": "src/common/imgs/editor/Decision.png",
+        "image": "src/common/imgs/editor/Decision.png",
+        "inLimit": "-1",
+        "outLimit": "-1"
+      },
+      "shape": {},
+      "task": {}
+    },
+    {
+      "id": "b94f4adc-5da6-4114-b261-365cef246ec0",
+      "x": 604,
+      "y": 429,
+      "src": "src/common/imgs/editor/Start.png",
+      "label": "zhognxia1",
+      "config": {
+        "id": "1",
+        "name": "StartEvent",
+        "label": "开始",
+        "toolTip": "开始",
+        "rGroup": "demo",
+        "tImage": "src/common/imgs/editor/Start.png",
+        "image": "src/common/imgs/editor/Start.png",
+        "inLimit": "0",
+        "outLimit": "-1"
+      },
+      "shape": {},
+      "task": {}
+    },
+    {
+      "id": "8c2f34de-e9c2-43af-bdef-ea6f328d6973",
+      "x": 91,
+      "y": 448,
+      "src": "src/common/imgs/editor/Start.png",
+      "label": "test",
+      "config": {
+        "id": "1",
+        "name": "StartEvent",
+        "label": "开始",
+        "toolTip": "开始",
+        "rGroup": "demo",
+        "tImage": "src/common/imgs/editor/Start.png",
+        "image": "src/common/imgs/editor/Start.png",
+        "inLimit": "0",
+        "outLimit": "-1"
+      },
+      "shape": {},
+      "task": {}
+    }
+  ]
+}

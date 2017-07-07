@@ -1,0 +1,94 @@
+.app {
+  width: 100%;
+  height: 100%;
+  min-width: 770px;
+
+  .filemanage, .udfmanage {
+    .filemanage-title {
+      border-bottom: 1px solid #d4d4d4;
+      padding: 5px;
+    }
+
+    .btn[disabled] {
+      opacity: 1;
+      background: #DDD;
+      border: 0;
+    }
+
+    /*文件上传 START*/
+    //注意 !importance 只在 webuploader 上使用, 上传插件初始化才生成下面的div,因此 无法使用JS设置,并且不设置 importance 会被覆盖
+    .webuploader-container > div[id] {
+      left: 0 !important;
+      top: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+    }
+
+    //图标按钮 文字颜色
+    .webuploader-pick {
+      background: transparent;
+      padding: 0;
+      color: #436474;
+      display: inline;
+    }
+    .btn {
+      .webuploader-pick {
+        color: #FFF; //按钮下的文件上传,文字白色
+      }
+    }
+    /*文件上传 END*/
+
+    .filemanage-nav {
+      margin-bottom: 10px;
+    }
+
+    /*搜索模块样式, 理论上应该是 module-search ,但是由于公共里面的针对特定问题,导致这里不能用*/
+    .module-search {
+      height: 30px;
+
+      //搜索
+      .filemanage-search {
+        float: right;
+      }
+
+      //新建文件夹,选择文件
+      .filemanage-btns {
+        float: left;
+      }
+
+      //文件信息,展示上传列表按钮
+      .filemanage-fileInfo {
+        float: right;
+        padding: 15px 5px 0 0;
+        display: none;
+      }
+    }
+
+    .newDir-tip {
+      margin-left: 25px;
+      margin-bottom: 15px;
+      color: #b3b3b3;
+      font-size: 14px;
+    }
+
+    @media (max-width: 991px) {
+      .newDir-tip {
+        margin-left: 0;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .modal-dialog {
+        margin: 30px auto;
+      }
+
+      .fileList {
+        .modal-dialog {
+          width: 700px;
+          margin: 30px auto;
+        }
+      }
+    }
+  }
+
+}

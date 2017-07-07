@@ -1,0 +1,52 @@
+/*
+  重写 Bootstrap 的样式
+  author : zhongxia
+  time   : 2016-06-28 17:10:22
+*/
+@import "global.less";
+
+//函数:重写 bootstrap 的样式
+.fn_OverWriteBootstrap () {
+  //按钮
+  .btn {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  //这里的 paddding:不能改为 0 20px ,会对 btn-default 存在影响,是文字不垂直居中
+  .btn-sm {
+    padding: 3px 20px;
+    height: @btnAndInputHeight;
+    font-size: @fontSize;
+  }
+  .btn-primary, .btn-default:hover, .btn-primary:hover {
+    background-color: @btnColor;
+    border-color: @btnColor;
+  }
+
+  .form-control {
+    height: @btnAndInputHeight;
+    font-size: @fontSize;
+  }
+  .popover {
+    font-size: @fontSize12;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
+    border: @bfdBorderColor;
+    border-radius: 3px;
+    .popover-content {
+      padding: 4px 10px;
+    }
+  }
+  .popover.right > .arrow {
+    left: -14px;
+    margin-top: -7px;
+    border-right-color: @borderColor;
+  }
+  .popover > .arrow {
+    border-width: 7px;
+  }
+  input[type=file]{
+    opacity: 0;
+    cursor: pointer;
+  }
+}

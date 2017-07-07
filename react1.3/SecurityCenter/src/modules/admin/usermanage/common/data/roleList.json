@@ -1,0 +1,9 @@
+{
+  "code": 200,
+  "data" :{
+    "totalList":[{"name":"test1","type": 2,"childrenNum":20, "createTime":"2016-01-12", "updateTime":"2016-02-26"},
+      {"name":"test2","type": 1,"childrenNum":40, "createTime":"2016-01-14", "updateTime":"2016-02-22"}],
+    "currentPage" : 1,
+    "totalPageNum" : 39
+  }
+}

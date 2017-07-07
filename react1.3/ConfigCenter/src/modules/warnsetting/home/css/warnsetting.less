@@ -1,0 +1,64 @@
+//函数:重写 BFD-UI的组件样式
+.fn_OverWriteBfd-ui() {
+
+}
+
+.layout-container{
+  .ws-input-margin-right{
+    margin-right: 10px;
+  }
+
+
+  /**编辑页面样式start--------------------**/
+  .warn-setting-edit {
+      .common-margin-right{
+        margin-right: 10px;
+      }
+    /**新增页面输入框、下拉框样式**/
+    .bfd-form,.bfd-form2 {
+      .bfd-select {
+        width: 405px;
+      }
+      .bfd-select2 {
+        width: 405px;
+      }
+      .bfd-error {
+        width: 405px;
+      }
+      .bfd-multiple-select {
+        width:405px;
+      }
+
+    }
+
+    @media (min-width: 992px) {
+      .col-md-6 {
+        width: auto;//否则两列中间间距太大
+      }
+    }
+
+    @media (min-width: 768px) {
+      .table {
+        .bfd-select2{
+          min-width: 115px;
+          max-width:115px;
+          /*width:auto;*/
+        }
+        .bfd-select2.open .dropdown-menu {
+          min-width: 114px;
+          max-width:114px;
+        }
+      }
+      .table-btns {
+        margin-left: 140px;
+      }
+    }
+
+  }
+  /**编辑页面样式end--------------------**/
+  //调用覆盖bfd-ui样式
+  .fn_OverWriteBfd-ui();
+}
+
+
+

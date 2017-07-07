@@ -1,0 +1,62 @@
+.validate-table {
+  .tooltip {
+    display: inline;
+    position: relative;
+    z-index: 999;
+  }
+  .tooltip-content {
+    position: absolute;
+    bottom: 100%;
+    margin-bottom: 7px;
+    left: 0;
+    z-index: 1060;
+    max-width: 276px;
+    padding: 4px 10px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ececec;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
+  }
+
+  .tooltip-content.top >.arrow{
+    bottom: -7px;
+    left: 50%;
+    margin-left: -7px;
+    border-top-color: #ececec;
+    border-bottom-width: 0;
+  }
+  .tooltip-content>.arrow {
+    border-width: 7px;
+  }
+  .tooltip-content>.arrow, .tooltip-content>.arrow:after {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+  }
+
+  .tooltip-content.top>.arrow:after {
+    bottom: 1px;
+    margin-left: -7px;
+    content: " ";
+    border-top-color: #fff;
+    border-bottom-width: 0;
+  }
+  .tooltip-content>.arrow:after {
+    content: "";
+    border-width: 7px;
+  }
+  .tooltip-content>.arrow, .tooltip-content>.arrow:after {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+  }
+
+}

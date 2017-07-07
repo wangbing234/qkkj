@@ -1,0 +1,104 @@
+@import "../../css/global.less";
+
+.rowTable {
+  .red {
+    color: #ff0000;
+    float: right;
+    margin-right: 20px;
+  }
+  .fn_bfd_table();
+}
+
+//表格样式
+.fn_bfd_table() {
+
+  //表格的父容器样式
+  //让表格的内容, 不超出表格
+  .table {
+    word-break: break-all;
+  }
+
+  //表头样式
+  .table > thead > tr > th {
+    background-color: @bdos-table-thead-backgroundColor;
+    border: 0px;
+    padding: 15px 10px;
+    font-weight: bold;
+    color: #677789;
+  }
+
+  //单元格左右间距
+  .table > tbody > tr > td {
+    padding: 10px;
+    //overflow: hidden;
+    white-space: normal;
+    text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+
+    border-top: 1px solid @bdos-table-tbody-td-borderColor;
+    border-bottom: 1px solid @bdos-table-tbody-td-borderColor;
+
+    .bfd-icon {
+      font-size: 16px;
+      cursor: pointer;
+      color: #2196f3;
+    }
+    .bfd-icon[disabled] {
+      color: @disableColor;
+      pointer-events: auto;
+    }
+  }
+  //第一行上边框 设置0
+  .table > tbody > tr:first-child > td {
+    border-top: 0px;
+  }
+  .table > tbody > tr > td:last-child > div > *:not(:first-child) {
+    margin-left: 20px;
+  }
+  //第一列 和 最后一列样式
+  .table > thead > tr > th:last-child, .table > tbody > tr > td:last-child {
+    //text-align: right;
+    padding-right: 10px;
+  }
+  .table > tbody > tr > td:last-child > div > span {
+    margin-left: 15px;
+  }
+
+  //奇数行
+  .table > tbody > tr:nth-child(odd) {
+
+  }
+  //偶数行
+  .table > tbody > tr:nth-child(even) {
+    background-color: @bdos-table-tr-even-backgroundColor;
+  }
+
+  //hover 样式
+  .table > tbody > tr:hover > td {
+    //border-top: 1px solid #99D4FC;
+    //border-bottom: 1px solid #99D4FC;
+    background-color: #D1EFFC;
+  }
+  .table > tbody > tr:hover:first-child > td {
+    border-top: 0;
+  }
+
+  //分页样式 start
+  .bfd-paging .pull-right {
+    ._active a {
+      background: @bdos-table-paging-color !important;
+      color: #fff;
+      border-top: 1px solid @bdos-table-paging-color;
+      border-bottom: 1px solid @bdos-table-paging-color;
+    }
+    ._active a:hover {
+      background: @bdos-table-paging-color !important;
+    }
+    .btn-sm, .btn {
+      padding: 5px 10px;
+      font-size: 12px;
+    }
+  }
+  //分页样式 end
+}

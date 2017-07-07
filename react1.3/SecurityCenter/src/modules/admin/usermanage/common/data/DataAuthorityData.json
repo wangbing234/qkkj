@@ -1,0 +1,26 @@
+{
+  "code": 200,
+  "data" :{
+    "totalList":[
+      {"key": 1,
+      "name": "hivedev-1-20150922110357-1",
+      "hiveSource": "hivewer",
+      "dataSource": "database1",
+      "table": "*",
+      "column": "*"},
+      {"key": 2,
+      "name": "hivedev-1-20150922110357-2",
+      "hiveSource": "hivewer",
+      "dataSource": "database2",
+      "table": "*",
+      "column": "*"},
+      {"key": 3,
+      "name": "hivedev-1-20150922110357-3",
+      "hiveSource": "hivewer",
+      "dataSource": "database3",
+      "table": "*",
+      "column": "*"}],
+    "currentPage" : 1,
+    "totalPageNum" : 39
+  }
+}

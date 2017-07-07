@@ -1,0 +1,20 @@
+{
+  "code": 200,
+  "data":{
+    "totalList":[{
+      "id": 1,
+      "projectName": "a",
+      "dataSource": "database1",
+      "databaseType":"hive",
+      "table":"table1",
+      "level":"level1",
+      "domain":"domain1",
+      "storyNum":231,
+      "creater":"jupiter",
+      "createTime":"2016-02-13",
+      "nearlyUpdateTime": "2016-02-19",
+    }],
+    "currentPage": 1,
+    "totalPageNum": 2
+  }
+}

@@ -1,0 +1,506 @@
+<definitions id="review-definitions" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://activiti.org/bpmn20" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:activiti="http://activiti.org/bpmn">
+    <process id="ryantest130" name="ryantest130">
+        <sequenceFlow sourceRef="U4B378733" targetRef="U3B45BE82" id="U0A2D47FB" name="线段_1" />
+        <sequenceFlow sourceRef="U86DE7663" targetRef="U59B600DF" id="U9C5CD28A" name="线段_2">
+            <conditionExpression xsi:type="tFormalExpression">
+                <![CDATA[1>2]]>
+            </conditionExpression>
+        </sequenceFlow>
+        <sequenceFlow sourceRef="U0114AAC3" targetRef="U54F62AEB" id="UD0689E51" name="线段_22" />
+        <sequenceFlow sourceRef="U4B378733" targetRef="U107A816C" id="U24386492" name="线段_9" />
+        <sequenceFlow sourceRef="U3FDD784C" targetRef="U0114AAC3" id="UA0ACB2EA" name="线段_17" />
+        <sequenceFlow sourceRef="U107A816C" targetRef="U0114AAC3" id="UAAE5C6D9" name="线段_15" />
+        <sequenceFlow sourceRef="U8E3A7075" targetRef="UD769E508" id="UD1E808CA" name="线段_30" />
+        <sequenceFlow sourceRef="U86DE7663" targetRef="U1DD56020" id="U943848C5" name="线段_4">
+            <conditionExpression xsi:type="tFormalExpression">
+                <![CDATA[1<2]]>
+            </conditionExpression>
+        </sequenceFlow>
+        <sequenceFlow sourceRef="UBEC26AD9" targetRef="UB318D158" id="UA98B9E24" name="线段_13" />
+        <sequenceFlow sourceRef="U2AE810EF" targetRef="U0114AAC3" id="U8EA404A6" name="线段_18" />
+        <sequenceFlow sourceRef="U1DD56020" targetRef="U7DC651E3" id="UAF6E33AB" name="线段_5" />
+        <sequenceFlow sourceRef="UF1DDF650" targetRef="U0114AAC3" id="U39FBB9BC" name="线段_21" />
+        <sequenceFlow sourceRef="U2A2A5305" targetRef="U806604E7" id="U481CEFE6" name="线段_25" />
+        <sequenceFlow sourceRef="U2A2A5305" targetRef="U16CE3892" id="U55C3895F" name="线段_24" />
+        <sequenceFlow sourceRef="U54F62AEB" targetRef="U8E3A7075" id="UA7C507E0" name="线段_28" />
+        <sequenceFlow sourceRef="U0114AAC3" targetRef="U2A2A5305" id="U3DEE93AD" name="线段_23" />
+        <sequenceFlow sourceRef="U064F9EF7" targetRef="U0114AAC3" id="U9E24E382" name="线段_16" />
+        <sequenceFlow sourceRef="U4B378733" targetRef="U3FDD784C" id="UA39AC6FB" name="线段_10" />
+        <sequenceFlow sourceRef="U4B378733" targetRef="U064F9EF7" id="U84E1338C" name="线段_8" />
+        <sequenceFlow sourceRef="U4B378733" targetRef="U2AE810EF" id="U14D39FDF" name="线段_11" />
+        <sequenceFlow sourceRef="U16CE3892" targetRef="U8E3A7075" id="UB2A806CA" name="线段_27" />
+        <sequenceFlow sourceRef="UFE28E2D5" targetRef="U0114AAC3" id="U89EA2150" name="线段_20" />
+        <sequenceFlow sourceRef="U4B378733" targetRef="UBEC26AD9" id="U58B227F9" name="线段_12" />
+        <sequenceFlow sourceRef="U4B378733" targetRef="U86DE7663" id="U073B6E35" name="线段_3" />
+        <sequenceFlow sourceRef="UB318D158" targetRef="U0114AAC3" id="U4E2022B1" name="线段_19" />
+        <sequenceFlow sourceRef="U4B378733" targetRef="UF1DDF650" id="UD967676F" name="线段_7" />
+        <sequenceFlow sourceRef="U4B378733" targetRef="UFE28E2D5" id="U7528556B" name="线段_6" />
+        <sequenceFlow sourceRef="U4B378733" targetRef="UD7143C32" id="U0CF11AEF" name="线段_14" />
+        <sequenceFlow sourceRef="U2A2A5305" targetRef="U8E3A7075" id="UAA5F489F" name="线段_29" />
+        <startEvent id="U4B378733" name="开始_1(TEST)" />
+        <callActivity id="U3B45BE82" name="流程调用_1" calledElement="ziliuc">
+            <extensionElements>
+                <activiti:field name="params">
+                    <activiti:expression>
+                        <![CDATA[{"isAsync":"0","projectId":"99","variableIn":[{"mx_internal_uid":"FF7391FB-6791-49C6-BCD2-9165462B6627","sourceVar":"aaaa","targetVar":"ryan"},{"mx_internal_uid":"76A3C7D1-7722-5112-956B-916546CF2ADD","sourceVar":"bbbb","targetVar":"ping"}],"projectName":"ryantest","variableOut":[{"mx_internal_uid":"8982B2F9-D01F-FEEB-0BFD-91657C8B3184","sourceVar":"ping","targetVar":"cccc"},{"mx_internal_uid":"DA01C073-847F-4C20-0EA8-91657D2A2020","sourceVar":"ryan","targetVar":"dddd"}]}]]>
+                    </activiti:expression>
+                </activiti:field>
+                <activiti:in source="bbbb" target="ping" />
+                <activiti:out source="ryan" target="dddd" />
+                <activiti:field name="message">
+                    <activiti:expression>{"mailGroup":0,"messageType":"","smsGroup":0,"executionTime":0,"monitorType":""}</activiti:expression>
+                </activiti:field>
+            </extensionElements>
+        </callActivity>
+        <exclusiveGateway id="U86DE7663" name="条件_1" />
+        <serviceTask id="U1DD56020" name="系统脚本_1">
+            <extensionElements>
+                <activiti:field name="type">
+                    <activiti:expression>Shell</activiti:expression>
+                </activiti:field>
+                <activiti:field name="params">
+                    <activiti:expression>{"scriptCommand":"mkdir ryan\rcd ryan\r\rfor((i=0;i&lt;10;i++))\rdo\rtouch test$i.txt\rdone","resultInfo":"returnInfo","scriptPara":"","resultName":"returnVar","nodeErrorRepeatTimes":2}</activiti:expression>
+                </activiti:field>
+                <activiti:field name="remark">
+                    <activiti:expression></activiti:expression>
+                </activiti:field>
+                <activiti:field name="message">
+                    <activiti:expression>{"mailGroup":0,"messageType":"","smsGroup":0,"executionTime":0,"monitorType":""}</activiti:expression>
+                </activiti:field>
+            </extensionElements>
+        </serviceTask>
+        <serviceTask id="U59B600DF" name="业务脚本_1">
+            <extensionElements>
+                <activiti:field name="type">
+                    <activiti:expression>BusinessScript</activiti:expression>
+                </activiti:field>
+                <activiti:field name="params">
+                    <activiti:expression>{"businessScriptContent":"int a = 1;\r$.registerVar(\"ryan\",a)"}</activiti:expression>
+                </activiti:field>
+                <activiti:field name="remark">
+                    <activiti:expression></activiti:expression>
+                </activiti:field>
+                <activiti:field name="message">
+                    <activiti:expression>{"mailGroup":0,"messageType":"","smsGroup":0,"executionTime":0,"monitorType":""}</activiti:expression>
+                </activiti:field>
+            </extensionElements>
+        </serviceTask>
+        <serviceTask id="U7DC651E3" name="延时_1">
+            <extensionElements>
+                <activiti:field name="type">
+                    <activiti:expression>Delay</activiti:expression>
+                </activiti:field>
+                <activiti:field name="params">
+                    <activiti:expression>{"delayTime":"15"}</activiti:expression>
+                </activiti:field>
+                <activiti:field name="remark">
+                    <activiti:expression></activiti:expression>
+                </activiti:field>
+            </extensionElements>
+        </serviceTask>
+        <serviceTask id="UFE28E2D5" name="系统脚本_2">
+            <extensionElements>
+                <activiti:field name="type">
+                    <activiti:expression>Shell</activiti:expression>
+                </activiti:field>
+                <activiti:field name="params">
+                    <activiti:expression>{"scriptCommand":"sh name.sh","resultInfo":"returnInfo","scriptPara":"/opt/bfd/bdos-ide-runner/bdms/task_scripts/ryantest","resultName":"returnVar","nodeErrorRepeatTimes":2}</activiti:expression>
+                </activiti:field>
+                <activiti:field name="remark">
+                    <activiti:expression></activiti:expression>
+                </activiti:field>
+                <activiti:field name="message">
+                    <activiti:expression>{"mailGroup":0,"messageType":"","smsGroup":0,"executionTime":0,"monitorType":""}</activiti:expression>
+                </activiti:field>
+            </extensionElements>
+        </serviceTask>
+        <serviceTask id="UF1DDF650" name="其它项目下的shell传参数脚本1">
+            <extensionElements>
+                <activiti:field name="type">
+                    <activiti:expression>IDEScript</activiti:expression>
+                </activiti:field>
+                <activiti:field name="params">
+                    <activiti:expression>{"taskId":"630","scriptType":null,"scriptTypeId":"1","scriptPara":"good yes victory","resultInfo":"returnInfo","nodeErrorRepeatTimes":0,"projectId":" 该资源无权限或已被移除","projectName":"BI_Demo","resultName":"returnVar"}</activiti:expression>
+                </activiti:field>
+                <activiti:field name="remark">
+                    <activiti:expression></activiti:expression>
+                </activiti:field>
+                <activiti:field name="message">
+                    <activiti:expression>{"mailGroup":0,"messageType":"","smsGroup":0,"executionTime":0,"monitorType":""}</activiti:expression>
+                </activiti:field>
+            </extensionElements>
+        </serviceTask>
+        <serviceTask id="U064F9EF7" name="选择其他项目下的python脚本">
+            <extensionElements>
+                <activiti:field name="type">
+                    <activiti:expression>IDEScript</activiti:expression>
+                </activiti:field>
+                <activiti:field name="params">
+                    <activiti:expression>{"taskId":"629","scriptType":null,"scriptTypeId":"2","scriptPara":"","resultInfo":"returnInfo","nodeErrorRepeatTimes":0,"projectId":"30616","projectName":"BI_Demo","resultName":"returnVar"}</activiti:expression>
+                </activiti:field>
+                <activiti:field name="remark">
+                    <activiti:expression></activiti:expression>
+                </activiti:field>
+                <activiti:field name="message">
+                    <activiti:expression>{"mailGroup":0,"messageType":"","smsGroup":0,"executionTime":0,"monitorType":""}</activiti:expression>
+                </activiti:field>
+            </extensionElements>
+        </serviceTask>
+        <serviceTask id="U107A816C" name="延时_2">
+            <extensionElements>
+                <activiti:field name="type">
+                    <activiti:expression>Delay</activiti:expression>
+                </activiti:field>
+                <activiti:field name="params">
+                    <activiti:expression>{"delayTime":"15"}</activiti:expression>
+                </activiti:field>
+                <activiti:field name="remark">
+                    <activiti:expression></activiti:expression>
+                </activiti:field>
+            </extensionElements>
+        </serviceTask>
+        <serviceTask id="U3FDD784C" name="选择其他项目下的hive脚本">
+            <extensionElements>
+                <activiti:field name="type">
+                    <activiti:expression>IDEScript</activiti:expression>
+                </activiti:field>
+                <activiti:field name="params">
+                    <activiti:expression>{"taskId":"628","scriptType":null,"scriptTypeId":"3","scriptPara":[],"resultInfo":"returnInfo","nodeErrorRepeatTimes":2,"projectId":"30616","projectName":"BI_Demo","resultName":"returnVar"}</activiti:expression>
+                </activiti:field>
+                <activiti:field name="remark">
+                    <activiti:expression></activiti:expression>
+                </activiti:field>
+                <activiti:field name="message">
+                    <activiti:expression>{"mailGroup":0,"messageType":"","smsGroup":0,"executionTime":0,"monitorType":""}</activiti:expression>
+                </activiti:field>
+            </extensionElements>
+        </serviceTask>
+        <serviceTask id="U2AE810EF" name="自身项目下shellfor.sh脚本">
+            <extensionElements>
+                <activiti:field name="type">
+                    <activiti:expression>IDEScript</activiti:expression>
+                </activiti:field>
+                <activiti:field name="params">
+                    <activiti:expression>{"taskId":"634","scriptType":null,"scriptTypeId":"1","scriptPara":"","resultInfo":"returnInfo","nodeErrorRepeatTimes":1,"projectId":"30660","projectName":"ruiping","resultName":"returnVar"}</activiti:expression>
+                </activiti:field>
+                <activiti:field name="remark">
+                    <activiti:expression></activiti:expression>
+                </activiti:field>
+                <activiti:field name="message">
+                    <activiti:expression>{"mailGroup":0,"messageType":"","smsGroup":0,"executionTime":0,"monitorType":""}</activiti:expression>
+                </activiti:field>
+            </extensionElements>
+        </serviceTask>
+        <callActivity id="UBEC26AD9" name="流程调用_2" calledElement="ziliuc">
+            <extensionElements>
+                <activiti:field name="params">
+                    <activiti:expression>
+                        <![CDATA[{"isAsync":"0","projectId":"30660","variableIn":[{"mx_internal_uid":"7EFD56AB-C317-68AA-8EF2-916D7C5FAE3E","sourceVar":"aaaa","targetVar":"cccc"},{"mx_internal_uid":"25D84CE3-EC34-3AB7-FFBD-916D7E31CC56","sourceVar":"bbbb","targetVar":"dddd"},{"mx_internal_uid":"9102C09F-41AC-765E-270C-916D7FD2C398","sourceVar":"a","targetVar":"e"}],"projectName":"ruiping","variableOut":[{"mx_internal_uid":"D780D9AC-DAF6-ADB4-992A-916DF5FE0997","sourceVar":"cccc","targetVar":"eeee"},{"mx_internal_uid":"2FD084FB-6FE0-1443-EDCC-916DF6AA9574","sourceVar":"dddd","targetVar":"ffff"},{"mx_internal_uid":"60522A11-3DD5-15FC-54FD-916DF79D8BB7","sourceVar":"e","targetVar":"f"}]}]]>
+                    </activiti:expression>
+                </activiti:field>
+                <activiti:in source="a" target="e" />
+                <activiti:out source="e" target="f" />
+                <activiti:field name="message">
+                    <activiti:expression>{"mailGroup":0,"messageType":"","smsGroup":0,"executionTime":0,"monitorType":""}</activiti:expression>
+                </activiti:field>
+            </extensionElements>
+        </callActivity>
+        <serviceTask id="UB318D158" name="过程_1">
+            <extensionElements>
+                <activiti:field name="type">
+                    <activiti:expression>Procedure</activiti:expression>
+                </activiti:field>
+                <activiti:field name="params">
+                    <activiti:expression>{"procedureName":"zhengruiping_stored_procedure","dataSourceId":"10","parameters":{"list":[{"argType":"Date","name":"`a`","mx_internal_uid":"57D05470-3ED6-AD77-D512-917014D2CF12","value":"r","inout":"OUT"},{"argType":"Integer","name":"`b`","mx_internal_uid":"64BA40BC-27E0-3082-258B-91701539B527","value":"${f}","inout":"IN"},{"argType":"Integer","name":"`c`","mx_internal_uid":"31E4C7B3-4734-332C-224F-91701555BD30","value":"u","inout":"OUT"},{"argType":"String","name":"`d`","mx_internal_uid":"40766918-A28D-0110-241C-9170156C1C13","value":"i","inout":"OUT"}]},"nodeErrorRepeatTimes":1}</activiti:expression>
+                </activiti:field>
+                <activiti:field name="remark">
+                    <activiti:expression></activiti:expression>
+                </activiti:field>
+                <activiti:field name="message">
+                    <activiti:expression>{"mailGroup":0,"messageType":"","smsGroup":0,"executionTime":0,"monitorType":""}</activiti:expression>
+                </activiti:field>
+            </extensionElements>
+        </serviceTask>
+        <serviceTask id="UD7143C32" name="数据稽核_1">
+            <extensionElements>
+                <activiti:field name="type">
+                    <activiti:expression>DataAudits</activiti:expression>
+                </activiti:field>
+                <activiti:field name="params">
+                    <activiti:expression>{"dataBaseName":"ryantestbak","dataSourceId":"8","tableName":"test_info","rules":[{"mx_internal_uid":"E83E9AF3-C3E3-FC27-C69C-9171482F3690","ruleType":2,"ruleName":"rui","column":"id"},{"mx_internal_uid":"DD1E088F-3792-6515-E996-9171491205BC","ruleType":3,"ruleName":" ping","column":"diploma"},{"ruleName":" ryan","mx_internal_uid":"85631F83-C10A-AC1B-7868-91714A11AFE4","start":"1","end":"8","ruleType":4}]}</activiti:expression>
+                </activiti:field>
+                <activiti:field name="remark">
+                    <activiti:expression></activiti:expression>
+                </activiti:field>
+                <activiti:field name="message">
+                    <activiti:expression>{"mailGroup":0,"messageType":"","smsGroup":0,"executionTime":0,"monitorType":""}</activiti:expression>
+                </activiti:field>
+            </extensionElements>
+        </serviceTask>
+        <parallelGateway id="U0114AAC3" name="汇聚_1" />
+        <serviceTask id="U54F62AEB" name="Sql_1" activiti:async="true" activiti:exclusive="false">
+            <extensionElements>
+                <activiti:field name="type">
+                    <activiti:expression>Sql</activiti:expression>
+                </activiti:field>
+                <activiti:field name="params">
+                    <activiti:expression>{"sqlType":"SELECT","outParamName":"","sqlString":"select * from test_info\r","maxRow":1,"dataSourceType":"1","dataSourceId":"10","parameters":{"list":[{"columnName":"name","mx_internal_uid":"523D52AF-FB44-C7E0-D811-91745C3BFBB5","value":"ryan"},{"columnName":"age","mx_internal_uid":"9ACB56E2-2D4E-A0EF-27D7-91745DD2276E","value":"ping"},{"columnName":"nation","mx_internal_uid":"E759105D-C998-B46A-B454-91745F9AB520","value":"r"},{"columnName":"sex","mx_internal_uid":"43D83896-6CE8-4DC3-F7A6-917461565E92","value":"u"}]},"nodeErrorRepeatTimes":0}</activiti:expression>
+                </activiti:field>
+                <activiti:field name="remark">
+                    <activiti:expression></activiti:expression>
+                </activiti:field>
+                <activiti:field name="message">
+                    <activiti:expression>{"mailGroup":0,"messageType":"","smsGroup":0,"executionTime":0,"monitorType":""}</activiti:expression>
+                </activiti:field>
+            </extensionElements>
+        </serviceTask>
+        <serviceTask id="U2A2A5305" name="Sqoop_1" activiti:async="true" activiti:exclusive="false">
+            <extensionElements>
+                <activiti:field name="type">
+                    <activiti:expression>Sqoop</activiti:expression>
+                </activiti:field>
+                <activiti:field name="params">
+                    <activiti:expression>{"taskId":"65","projectId":"181","projectName":"ryantestbak","scriptPara":[]}</activiti:expression>
+                </activiti:field>
+                <activiti:field name="remark">
+                    <activiti:expression></activiti:expression>
+                </activiti:field>
+                <activiti:field name="message">
+                    <activiti:expression>{"mailGroup":0,"messageType":"","smsGroup":0,"executionTime":0,"monitorType":""}</activiti:expression>
+                </activiti:field>
+            </extensionElements>
+        </serviceTask>
+        <serviceTask id="U16CE3892" name="数据稽核_2">
+            <extensionElements>
+                <activiti:field name="type">
+                    <activiti:expression>DataAudits</activiti:expression>
+                </activiti:field>
+                <activiti:field name="params">
+                    <activiti:expression>{"dataBaseName":"ryantestbak","dataSourceId":"8","tableName":"test_info","rules":[{"mx_internal_uid":"D0BA7D94-20A5-97B0-4E7B-9175B5F7603D","ruleType":2,"ruleName":"p","column":"id"},{"mx_internal_uid":"03D5F6E9-872D-10A8-4F94-9175B90CA995","ruleType":3,"ruleName":"i","column":"diploma"},{"ruleName":"g","mx_internal_uid":"18CA8B2E-3A66-4FFC-8952-9175B99D8775","start":"1","end":"8","ruleType":4}]}</activiti:expression>
+                </activiti:field>
+                <activiti:field name="remark">
+                    <activiti:expression></activiti:expression>
+                </activiti:field>
+                <activiti:field name="message">
+                    <activiti:expression>{"mailGroup":0,"messageType":"","smsGroup":0,"executionTime":0,"monitorType":""}</activiti:expression>
+                </activiti:field>
+            </extensionElements>
+        </serviceTask>
+        <serviceTask id="U806604E7" name="延时_3">
+            <extensionElements>
+                <activiti:field name="type">
+                    <activiti:expression>Delay</activiti:expression>
+                </activiti:field>
+                <activiti:field name="params">
+                    <activiti:expression>{"delayTime":"15"}</activiti:expression>
+                </activiti:field>
+                <activiti:field name="remark">
+                    <activiti:expression></activiti:expression>
+                </activiti:field>
+            </extensionElements>
+        </serviceTask>
+        <parallelGateway id="U8E3A7075" name="汇聚_2" />
+        <serviceTask id="UD769E508" name="业务脚本_2" activiti:async="true" activiti:exclusive="false">
+            <extensionElements>
+                <activiti:field name="type">
+                    <activiti:expression>BusinessScript</activiti:expression>
+                </activiti:field>
+                <activiti:field name="params">
+                    <activiti:expression>{"businessScriptContent":"int n = 1000;\r$.registerVar(\"abc\",n);"}</activiti:expression>
+                </activiti:field>
+                <activiti:field name="remark">
+                    <activiti:expression></activiti:expression>
+                </activiti:field>
+                <activiti:field name="message">
+                    <activiti:expression>{"mailGroup":0,"messageType":"","smsGroup":0,"executionTime":0,"monitorType":""}</activiti:expression>
+                </activiti:field>
+            </extensionElements>
+        </serviceTask>
+    </process>
+    <bpmndi:BPMNDiagram id="BPMNDiagram_ryantest130">
+        <bpmndi:BPMNPlane bpmnElement="ryantest130" id="BPMNPlane_ryantest130">
+            <bpmndi:BPMNEdge id="BPMNEdge_U0A2D47FB" bpmnElement="U0A2D47FB">
+                <omgdi:waypoint x="435" y="164" />
+                <omgdi:waypoint x="435" y="164" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="BPMNEdge_U9C5CD28A" bpmnElement="U9C5CD28A">
+                <omgdi:waypoint x="435" y="164" />
+                <omgdi:waypoint x="435" y="164" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="BPMNEdge_UD0689E51" bpmnElement="UD0689E51">
+                <omgdi:waypoint x="435" y="164" />
+                <omgdi:waypoint x="435" y="164" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="BPMNEdge_U24386492" bpmnElement="U24386492">
+                <omgdi:waypoint x="435" y="164" />
+                <omgdi:waypoint x="435" y="164" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="BPMNEdge_UA0ACB2EA" bpmnElement="UA0ACB2EA">
+                <omgdi:waypoint x="435" y="164" />
+                <omgdi:waypoint x="435" y="164" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="BPMNEdge_UAAE5C6D9" bpmnElement="UAAE5C6D9">
+                <omgdi:waypoint x="435" y="164" />
+                <omgdi:waypoint x="435" y="164" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="BPMNEdge_UD1E808CA" bpmnElement="UD1E808CA">
+                <omgdi:waypoint x="435" y="164" />
+                <omgdi:waypoint x="435" y="164" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="BPMNEdge_U943848C5" bpmnElement="U943848C5">
+                <omgdi:waypoint x="435" y="164" />
+                <omgdi:waypoint x="435" y="164" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="BPMNEdge_UA98B9E24" bpmnElement="UA98B9E24">
+                <omgdi:waypoint x="435" y="164" />
+                <omgdi:waypoint x="435" y="164" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="BPMNEdge_U8EA404A6" bpmnElement="U8EA404A6">
+                <omgdi:waypoint x="435" y="164" />
+                <omgdi:waypoint x="435" y="164" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="BPMNEdge_UAF6E33AB" bpmnElement="UAF6E33AB">
+                <omgdi:waypoint x="435" y="164" />
+                <omgdi:waypoint x="435" y="164" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="BPMNEdge_U39FBB9BC" bpmnElement="U39FBB9BC">
+                <omgdi:waypoint x="435" y="164" />
+                <omgdi:waypoint x="435" y="164" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="BPMNEdge_U481CEFE6" bpmnElement="U481CEFE6">
+                <omgdi:waypoint x="435" y="164" />
+                <omgdi:waypoint x="435" y="164" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="BPMNEdge_U55C3895F" bpmnElement="U55C3895F">
+                <omgdi:waypoint x="435" y="164" />
+                <omgdi:waypoint x="435" y="164" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="BPMNEdge_UA7C507E0" bpmnElement="UA7C507E0">
+                <omgdi:waypoint x="435" y="164" />
+                <omgdi:waypoint x="435" y="164" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="BPMNEdge_U3DEE93AD" bpmnElement="U3DEE93AD">
+                <omgdi:waypoint x="435" y="164" />
+                <omgdi:waypoint x="435" y="164" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="BPMNEdge_U9E24E382" bpmnElement="U9E24E382">
+                <omgdi:waypoint x="435" y="164" />
+                <omgdi:waypoint x="435" y="164" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="BPMNEdge_UA39AC6FB" bpmnElement="UA39AC6FB">
+                <omgdi:waypoint x="435" y="164" />
+                <omgdi:waypoint x="435" y="164" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="BPMNEdge_U84E1338C" bpmnElement="U84E1338C">
+                <omgdi:waypoint x="435" y="164" />
+                <omgdi:waypoint x="435" y="164" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="BPMNEdge_U14D39FDF" bpmnElement="U14D39FDF">
+                <omgdi:waypoint x="435" y="164" />
+                <omgdi:waypoint x="435" y="164" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="BPMNEdge_UB2A806CA" bpmnElement="UB2A806CA">
+                <omgdi:waypoint x="435" y="164" />
+                <omgdi:waypoint x="435" y="164" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="BPMNEdge_U89EA2150" bpmnElement="U89EA2150">
+                <omgdi:waypoint x="435" y="164" />
+                <omgdi:waypoint x="435" y="164" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="BPMNEdge_U58B227F9" bpmnElement="U58B227F9">
+                <omgdi:waypoint x="435" y="164" />
+                <omgdi:waypoint x="435" y="164" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="BPMNEdge_U073B6E35" bpmnElement="U073B6E35">
+                <omgdi:waypoint x="435" y="164" />
+                <omgdi:waypoint x="435" y="164" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="BPMNEdge_U4E2022B1" bpmnElement="U4E2022B1">
+                <omgdi:waypoint x="435" y="164" />
+                <omgdi:waypoint x="435" y="164" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="BPMNEdge_UD967676F" bpmnElement="UD967676F">
+                <omgdi:waypoint x="435" y="164" />
+                <omgdi:waypoint x="435" y="164" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="BPMNEdge_U7528556B" bpmnElement="U7528556B">
+                <omgdi:waypoint x="435" y="164" />
+                <omgdi:waypoint x="435" y="164" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="BPMNEdge_U0CF11AEF" bpmnElement="U0CF11AEF">
+                <omgdi:waypoint x="435" y="164" />
+                <omgdi:waypoint x="435" y="164" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="BPMNEdge_UAA5F489F" bpmnElement="UAA5F489F">
+                <omgdi:waypoint x="435" y="164" />
+                <omgdi:waypoint x="435" y="164" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNShape id="BPMNShape_U4B378733" bpmnElement="U4B378733">
+                <omgdc:Bounds height="30" width="30" x="633" y="110" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="BPMNShape_U3B45BE82" bpmnElement="U3B45BE82">
+                <omgdc:Bounds height="30" width="30" x="628" y="196" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="BPMNShape_U86DE7663" bpmnElement="U86DE7663">
+                <omgdc:Bounds height="30" width="30" x="233" y="219" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="BPMNShape_U1DD56020" bpmnElement="U1DD56020">
+                <omgdc:Bounds height="30" width="30" x="325" y="299" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="BPMNShape_U59B600DF" bpmnElement="U59B600DF">
+                <omgdc:Bounds height="30" width="30" x="167" y="324" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="BPMNShape_U7DC651E3" bpmnElement="U7DC651E3">
+                <omgdc:Bounds height="30" width="30" x="345" y="392" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="BPMNShape_UFE28E2D5" bpmnElement="UFE28E2D5">
+                <omgdc:Bounds height="30" width="30" x="1026" y="239" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="BPMNShape_UF1DDF650" bpmnElement="UF1DDF650">
+                <omgdc:Bounds height="30" width="30" x="1117" y="244" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="BPMNShape_U064F9EF7" bpmnElement="U064F9EF7">
+                <omgdc:Bounds height="30" width="30" x="468" y="256" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="BPMNShape_U107A816C" bpmnElement="U107A816C">
+                <omgdc:Bounds height="30" width="30" x="369" y="256" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="BPMNShape_U3FDD784C" bpmnElement="U3FDD784C">
+                <omgdc:Bounds height="30" width="30" x="557" y="256" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="BPMNShape_U2AE810EF" bpmnElement="U2AE810EF">
+                <omgdc:Bounds height="30" width="30" x="693" y="256" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="BPMNShape_UBEC26AD9" bpmnElement="UBEC26AD9">
+                <omgdc:Bounds height="30" width="30" x="879" y="125" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="BPMNShape_UB318D158" bpmnElement="UB318D158">
+                <omgdc:Bounds height="30" width="30" x="833" y="259" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="BPMNShape_UD7143C32" bpmnElement="UD7143C32">
+                <omgdc:Bounds height="30" width="30" x="916" y="255" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="BPMNShape_U0114AAC3" bpmnElement="U0114AAC3">
+                <omgdc:Bounds height="30" width="30" x="653" y="370" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="BPMNShape_U54F62AEB" bpmnElement="U54F62AEB">
+                <omgdc:Bounds height="30" width="30" x="641" y="447" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="BPMNShape_U2A2A5305" bpmnElement="U2A2A5305">
+                <omgdc:Bounds height="30" width="30" x="787" y="411" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="BPMNShape_U16CE3892" bpmnElement="U16CE3892">
+                <omgdc:Bounds height="30" width="30" x="932" y="411" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="BPMNShape_U806604E7" bpmnElement="U806604E7">
+                <omgdc:Bounds height="30" width="30" x="879" y="370" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="BPMNShape_U8E3A7075" bpmnElement="U8E3A7075">
+                <omgdc:Bounds height="30" width="30" x="647" y="527" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="BPMNShape_UD769E508" bpmnElement="UD769E508">
+                <omgdc:Bounds height="30" width="30" x="487" y="555" />
+            </bpmndi:BPMNShape>
+        </bpmndi:BPMNPlane>
+    </bpmndi:BPMNDiagram>
+</definitions>

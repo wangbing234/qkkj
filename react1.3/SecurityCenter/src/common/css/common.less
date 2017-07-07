@@ -1,0 +1,198 @@
+/**
+    * 安全中心公用样式
+    * create by lijun.feng on 2016-5-17
+    * 所有的样式都写在.layout-container样式里面
+    */
+.layout-container{
+  .security-center{
+    /******公用组件样式***********************************************************/
+
+    .common-input{
+      width: 180px;
+      margin-right: 10px;
+    }
+
+    .common-form-input{
+      width:405px;
+      display: inline-block;
+    }
+
+    .common-margin-right{
+      margin-right: 10px;
+    }
+    .common-right{
+      float:right;
+    }
+    .common-left{
+      float:left;
+    }
+    .common-textarea{
+      width:405px;
+      height: 80px;
+      display: inline-block;
+      resize: none;
+    }
+    .common-select{
+      width:405px;
+    }
+
+
+    .common-center{
+      text-align: center;
+    }
+
+    .modalWidth800 { //宽度为800的弹出框
+      .bfd-modal__modal-content {
+        width: 800px;
+      }
+    }
+
+
+    //日期范围组件样式
+    .bfd-daterange{
+      vertical-align: top;
+    }
+
+    .red-color{
+      color:red;
+    }
+
+    .green-color{
+      color:green;
+    }
+
+    /**表格显示多个数据**/
+    .list-function-span {
+      background: #F2F2F2;
+      margin-right: 10px;
+      padding: 5px;
+      border-radius: 5px
+    }
+
+    .module-eidt-select {
+      padding-left: 52px;
+      .form-group div .bfd-select2 {
+        width: 405px;
+      }
+      .form-group div  .form-control {
+        width: 405px;
+      }
+
+      .form-group div  textarea  {
+        height: 85px;
+        width: 405px;
+      }
+
+
+
+
+    }
+
+
+
+    .operatioinTable >div>.table > thead > tr > th:last-child,   .operatioinTable >div>.table > tbody > tr > td:last-child {
+      /*width: 280px;*/
+      overflow: visible;
+    }
+
+    .onlyOneColumn >div>.table > thead > tr > th:last-child,   .onlyOneColumn >div>.table > tbody > tr > td:last-child {
+      text-align: left;
+    }
+
+
+
+    .title_bar {
+      margin-left: 30px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    .title_container {
+      padding-top: 30px;
+      margin-top: 10px;
+      border-top:1px dotted #e9e9e9
+    }
+
+
+
+
+    /**用户管理样式START***/
+    .usermanage-admin{
+      .change-tenant{
+      }
+
+    }
+    /**用户管理样式END***/
+
+    /**租户管理样式START***/
+    .tenantmanage-admin{
+      .bfd-dropdown .dropdown-menu{
+        min-width:90px;
+        li{
+          text-align: center;
+          margin-top: 5px;
+        }
+      }
+      .bfd-select-option{
+        padding-left: 0;
+      }
+    }
+    /**租户管理样式END***/
+
+
+    /**权限审批START***/
+    .authoirty-sp{
+      @media (min-width: 768px){
+        .modal-dialog {
+          width: 400px;
+          margin: 30px auto;
+        }
+      }
+    }
+    /**权限审批END***/
+
+    /**权限审批列表***/
+    .authoirty-list{
+      /*.bfd-tabs .tab-panel {
+        background-color: #fff;
+      }*/
+
+      .list-function-span {
+        background: #F2F2F2;
+        margin-right: 10px;
+        padding: 5px;
+        border-radius: 5px
+      }
+    }
+    /**权限审批END***/
+    .user-audit{
+      .bfd-clearable-input input {
+        width:110px;
+      }
+      .bfd-select2 .dropdown-menu{
+        width:140px;
+      }
+    }
+
+    .functionTree{
+      .node-assist{
+      display: none;
+    }
+    }
+
+    .select_Table_Tree>.bfd-table-tree>.table>tbody>tr>td
+    {
+      padding: 2px;
+      width: 50%;
+    }
+
+    .select_Table_Tree3>.bfd-table-tree>.table>tbody>tr>td
+    {
+      width: 33%;
+    }
+
+
+
+  }
+}
+
+

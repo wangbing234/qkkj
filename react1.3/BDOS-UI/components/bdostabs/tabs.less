@@ -1,0 +1,123 @@
+@width: 10px;
+@height: 25px;
+@defaultColor: #FFF;
+@hoverColor: #FAFAF9;
+@activeColor: #FAFAF9;
+@borderColor: #EDEFF0;
+@transformSkew: 20deg;
+
+.bdos-tab2 {
+  .clearfix:after {
+    display: table;
+    clear: both;
+    content: " ";
+  }
+
+  /*Tab选项卡太多的时候,选项卡自动缩收[TODO:还未完成]*/
+  .bdos-tab2-auto-width {
+    display: flex;
+    display: -webkit-flex;;
+    flex-direction: row;
+    .bdos-tab2-tab {
+      .bdos-tab2-tab-content {
+        max-width: 115px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+      }
+    }
+
+  }
+
+  //头部导航
+  .bdos-tab2-tabs {
+    padding-left: 5px;
+
+    .bdos-tab2-tab-active {
+      z-index: 2;
+    }
+    .bdos-tab2-tab {
+      display: flex;
+      position: relative;
+      height: @height;
+      float: left;
+      font-size: 12px;
+
+      //内容
+      .bdos-tab2-tab-content {
+        cursor: default;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+        height: @height;
+        line-height: @height;
+        border: 1px solid #EDEFF0;
+        border-left: 0;
+        border-right: 0;
+        background-color: @defaultColor;
+        color: #333;
+        z-index: 1;
+        margin-left: -5px;
+        padding: 0 15px 0 10px;
+      }
+
+      //左右斜边
+      .bdos-tab2-tab-left,
+      .bdos-tab2-tab-right {
+        width: @width;
+        height: @height;
+        background-color: @defaultColor;
+        border: 1px solid @borderColor;
+      }
+
+      .bdos-tab2-tab-left {
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+        transform: skew(-@transformSkew);
+      }
+
+      .bdos-tab2-tab-right {
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        transform: skew(@transformSkew);
+        margin-left: -5px;
+      }
+
+      //关闭按钮
+      .bdos-tab2-tab-close {
+        position: absolute;
+        z-index: 2;
+        top: 3px;
+        right: 7px;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      .bdos-tab2-tab-close:hover {
+        border-radius: 50%;
+        text-shadow: 0 0 3px red;
+      }
+    }
+
+    .bdos-tab2-tab:hover .bdos-tab2-tab-content,
+    .bdos-tab2-tab:hover .bdos-tab2-tab-left,
+    .bdos-tab2-tab:hover .bdos-tab2-tab-right {
+      background-color: @hoverColor;
+    }
+  }
+
+  //tab面板
+  .bdos-tab2-tab-panel {
+    padding-top: 10px;
+    display: none;
+    height: 100%;
+    &.active {
+      display: block;
+      background-color: @activeColor;
+    }
+  }
+
+}

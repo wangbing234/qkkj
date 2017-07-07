@@ -1,0 +1,74 @@
+.bdos-header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background-color: #314562;
+
+  .bdos-header-right {
+    float: right;
+    padding-right: 40px;
+    font-size: 14px;
+    line-height: 50px;
+
+    .access-key {
+      padding-right: 30px;
+      cursor: pointer;
+      color: #FFF;
+    }
+
+    .bfd-dropdown {
+      vertical-align: inherit;
+    }
+
+    .dropdown-toggle {
+      color: #FFF;
+    }
+
+    .dropdown-menu {
+      right: 0;
+      left: inherit;
+      min-width: 120px;
+      text-align: center;
+
+      li {
+        color: #000;
+        list-style: none;
+        cursor: pointer;
+        height: 30px;
+        line-height: 30px;
+      }
+    }
+  }
+
+  //弹框的大小
+  .bdos-header-accesskey {
+    .bfd-modal__modal-dialog, .modal-dialog {
+      width: 900px;
+    }
+
+    .bdos-header-waring {
+      border: 1px solid #FFC500;
+      border-radius: 3px;
+      background-color: #FFFFB4;
+      text-align: center;
+      line-height: 30px;
+      margin-bottom: 20px;
+    }
+
+    .fa > span {
+      font-family: "Helvetica Neue", Helvetica, Microsoft Yahei;
+    }
+  }
+
+  //弹框的大小
+  .bdos-header-userinfo .bfd-modal__modal-dialog {
+    width: 500px;
+  }
+
+  //弹框的大小
+  .bdos-header-changepsw .bfd-modal__modal-dialog {
+    width: 500px;
+  }
+
+}

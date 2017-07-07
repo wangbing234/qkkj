@@ -1,0 +1,17 @@
+@fontSize: 14px;
+.bfd-collapse {
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  font-size: @fontSize;
+  line-height: 100%;
+  .arrow {
+    float: left;
+    transform: rotate(270deg);
+    margin: (@fontSize/2-2) 5px 0 0;
+    border-width: 5px 5px 0;
+    border-style: solid dashed dashed dashed;
+    border-left-color: transparent;
+    border-right-color: transparent;
+  }
+}

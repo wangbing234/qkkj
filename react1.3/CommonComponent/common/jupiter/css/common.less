@@ -1,0 +1,247 @@
+/*
+  BDOS项目之间公共的一些样式
+  布局, 表单样式, 列表页样式
+  author : zhongxia
+  time   : 2016-06-28 17:10:22
+*/
+@import "global.less";
+@import "bfdui.less";
+@import "overBootStrap.less";
+@import "base.less";
+
+.fn_moduleBorder () {
+  border: @bfdBorderColor;
+  padding: 15px 20px;
+  border-radius: 2px;
+  margin-top: 15px;
+}
+
+.fn_module () {
+  .module-border {
+    .fn_moduleBorder();
+  }
+}
+
+/*=====================Layout T型布局 START=================*/
+//布局最外层容器
+.layout-container {
+  height: 100%;
+  width: 100%;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  position: relative;
+
+  //头部
+  .layout-header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 50px;
+    line-height: 50px;
+    background: @headerAndSideBarColor;
+    color: #fff;
+  }
+
+  //左侧导航栏+右侧主体内容的容器
+  .layout-main {
+    flex: 1;
+    display: -webkit-flex;
+    display: flex;
+    min-height: 500px; //这个高度根据不同项目,做不同的设置,因此不在这里设置
+    height: 100%;
+    margin-top: 50px;
+    position: relative;
+
+    //左侧导航栏
+    .layout-sidebar {
+      height: 100%;
+      background-color: @headerAndSideBarColor;
+      overflow: auto;
+      .fn_bfd_nav();
+    }
+
+    //右侧主体内容
+    .layout-content {
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      position: relative;
+      border-left: 1px solid #e9e9e9;
+      background-color: @moduleContainerBgColor;
+    }
+
+    .error-popover {
+      border-color: @errorColor;
+      color: @errorColor;
+    }
+    .tip-popover {
+      border-color: @borderColor;
+      color: rgb(102, 102, 102);
+    }
+    .table-column-max-width {
+      max-width: 200px;
+      padding: 0;
+    }
+
+  }
+
+  //覆盖 bootstrap ,bfd-ui 的默认样式
+  .fn_OverWriteBootstrap();
+  .fn_OverWriteBfd-ui();
+  .fn_module();
+}
+
+/*=====================Layout 布局 END===================*/
+
+/*=====================列表页面 START===================*/
+.module-container {
+  padding: 0 20px;
+  margin-top: 15px;
+  //路径导航
+  .module-nav {
+
+  }
+
+  //搜索样式
+  .module-search {
+    padding-left: 2px;
+    margin-bottom: 15px;
+    height: 30px;
+    line-height: 30px;
+    .module-search-left {
+      float: left;
+    }
+    .module-search-right {
+      float: right;
+    }
+    .form-control {
+      width: 200px;
+    }
+  }
+
+  //按钮样式
+  .module-btns {
+    margin: 10px 0;
+    .btn {
+      margin-right: 10px;
+    }
+  }
+
+  .module-table {
+    margin-top: 15px;
+    .fn_bfd_table()
+  }
+}
+
+/*=====================列表页面 END===================*/
+
+/*=====================编辑页面 START===================*/
+.bdos-edit {
+  margin: 15px 25px 25px 25px;
+  border: 1px solid #D7DBDF;
+  background: #FFF;
+  border-radius: 3px;
+
+  //编辑页面 导航
+  .bdos-edit-nav {
+    padding-left: 10px;
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+    background-color: #F9F9F9;
+    border-bottom: 1px solid #E7E7E7;
+  }
+
+  //编辑页面 内容
+  .bdos-edit-main {
+    .form-category {
+      .form-category-type {
+        padding-top: 30px;
+      }
+      .form-category-content {
+        padding: 0 120px;
+      }
+    }
+
+    padding-bottom: 25px;
+  }
+}
+
+/*------选项卡 tab 样式 ------*/
+#bfd-tab-style1 {
+  position: absolute;
+  top: 0px;
+  bottom: 50px;
+  width: 100%;
+  > .bfd-tabs.dynamic {
+    height: 100%;
+    .fn_bfd_tab_style1();
+  }
+}
+
+#bfd-tab-style2 {
+  > .bfd-tabs {
+    .fn_bfd_tab_style2();
+  }
+}
+
+#bfd-tab-style3 {
+  > .bfd-tabs {
+    .fn_bfd_tab_style3();
+  }
+}
+
+/*Tab选项卡太多的时候,选项卡自动缩收*/
+.tab-auto-width {
+  & > .bfd-tabs.dynamic {
+    & > .nav-tabs {
+      display: flex;
+      flex-direction: row;
+      li {
+        max-width: 115px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+        & > a {
+          padding: 8px 5px 8px 10px;
+          & > button {
+            position: absolute;
+            top: 7px;
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*------表格 DataTable 样式 ------*/
+
+.bdos-table {
+  .fn_bfd_table();
+}
+
+/*------表单 FORM 样式 ------*/
+.bdos-form {
+  .fn_bfd_form();
+}
+
+/*------下拉搜索框-------*/
+.bfd-select2 {
+  .dropdown-menu {
+    .bfd-clearable-input .form-control {
+      width: 100%;
+    }
+  }
+}
+
+/*------Dropdown组件下拉选项样式---------*/
+.dropdown-menu-container {
+  .bfd-dropdown > .dropdown-menu {
+    padding: 5px 0;
+    border-color: #42a5f5;
+  }
+}

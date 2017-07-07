@@ -1,0 +1,250 @@
+/***************************************************
+ * 时间: 16/6/7 11:35
+ * 作者: zhongxia
+ * 说明: 仿bdos 表格的tab 组件样式
+ ***************************************************/
+
+@defaultColor: #E9E9E9; //默认 Tab 头颜色
+@activeColor: #FFFFFF; //选中的 Tab 头颜色
+
+.bdos-tabs {
+  *zoom: 1;
+  position: relative;
+  width: 99999px;
+  padding-top: 1px;
+}
+
+.bdos-tabs:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.bdos-tabs * {
+  -webkit-user-select: none;
+  cursor: default;
+  font-size: 12px;
+  line-height: 13px;
+}
+
+.bdos-tabs .bdos-tab {
+  float: left;
+  position: relative;
+  height: 25px;
+  width: 120px;
+  border: 0px;
+  margin: 0px;
+  z-index: 1;
+  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.4), 0 -1px rgba(0, 0, 0, 0.2), -1px 0 rgba(0, 0, 0, 0.2), 1px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0 1px rgba(255, 255, 255, 0.4), 0 -1px rgba(0, 0, 0, 0.2), -1px 0 rgba(0, 0, 0, 0.2), 1px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.4), 0 -1px rgba(0, 0, 0, 0.2), -1px 0 rgba(0, 0, 0, 0.2), 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.bdos-tabs .bdos-tab, .bdos-tabs .bdos-tab .bdos-tab-curves-left, .bdos-tabs .bdos-tab .bdos-tab-curves-right {
+  background-color: #F9F9F9;
+}
+
+.cssmasks .bdos-tabs .bdos-tab {
+  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), 0 -1px rgba(0, 0, 0, 0.24);
+  -moz-box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), 0 -1px rgba(0, 0, 0, 0.24);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), 0 -1px rgba(0, 0, 0, 0.24);
+  margin: 0 3px 0 20px;
+}
+
+.bdos-tabs .bdos-tab .bdos-tab-curves {
+  display: none;
+}
+
+.cssmasks .bdos-tabs .bdos-tab .bdos-tab-curves {
+  display: block;
+}
+
+.bdos-tabs .bdos-tab .bdos-tab-curves * {
+  position: absolute;
+  width: 20px;
+  height: 24px;
+  -webkit-mask-size: 100%;
+}
+
+.bdos-tabs .bdos-tab .bdos-tab-curves-left, .bdos-tabs .bdos-tab .bdos-tab-curves-left-highlight, .bdos-tabs .bdos-tab .bdos-tab-curves-left-shadow {
+  -webkit-mask-image: url("./svg/tab-left.svg");
+}
+
+.bdos-tabs .bdos-tab .bdos-tab-curves-right, .bdos-tabs .bdos-tab .bdos-tab-curves-right-highlight, .bdos-tabs .bdos-tab .bdos-tab-curves-right-shadow {
+  -webkit-mask-image: url("./svg/tab-right.svg");
+}
+
+.bdos-tabs .bdos-tab .bdos-tab-curves-left, .bdos-tabs .bdos-tab .bdos-tab-curves-right {
+  top: 1px;
+  z-index: 1;
+}
+
+.bdos-tabs .bdos-tab .bdos-tab-curves-left {
+  left: -20px;
+}
+
+.bdos-tabs .bdos-tab .bdos-tab-curves-right {
+  right: -20px;
+}
+
+.bdos-tabs .bdos-tab .bdos-tab-curves-left-highlight, .bdos-tabs .bdos-tab .bdos-tab-curves-right-highlight {
+  top: 0px;
+  width: 21px;
+  height: 25px;
+  background-color: #ececec;
+}
+
+.bdos-tabs .bdos-tab .bdos-tab-curves-left-highlight {
+  left: -21px;
+}
+
+.bdos-tabs .bdos-tab .bdos-tab-curves-right-highlight {
+  right: -21px;
+}
+
+.bdos-tabs .bdos-tab .bdos-tab-curves-left-shadow, .bdos-tabs .bdos-tab .bdos-tab-curves-right-shadow {
+  top: -1px;
+  width: 22px;
+  height: 26px;
+  background: rgba(0, 0, 0, 0.29);
+}
+
+.bdos-tabs .bdos-tab .bdos-tab-curves-left-shadow {
+  left: -22px;
+}
+
+.bdos-tabs .bdos-tab .bdos-tab-curves-right-shadow {
+  right: -22px;
+}
+
+.bdos-tabs .bdos-tab.bdos-tab-current {
+  z-index: 999;
+}
+
+.cssmasks .bdos-tabs .bdos-tab.bdos-tab-current {
+  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.6), 0 -1px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: inset 0 1px rgba(255, 255, 255, 0.6), 0 -1px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.6), 0 -1px rgba(0, 0, 0, 0.25);
+}
+
+.bdos-tabs .bdos-tab.bdos-tab-current, .bdos-tabs .bdos-tab.bdos-tab-current .bdos-tab-curves-left, .bdos-tabs .bdos-tab.bdos-tab-current .bdos-tab-curves-right {
+  background-color: @activeColor;
+}
+
+.bdos-tabs .bdos-tab.bdos-tab-current .bdos-tab-curves-left-shadow, .bdos-tabs .bdos-tab.bdos-tab-current .bdos-tab-curves-right-shadow {
+  background: rgba(0, 0, 0, 0.34);
+}
+
+.bdos-tabs .bdos-tab.bdos-tab-current .bdos-tab-curves-left-highlight, .bdos-tabs .bdos-tab.bdos-tab-current .bdos-tab-curves-right-highlight, .bdos-tabs .bdos-tab.bdos-tab-current .bdos-tab-curves-left-shadow, .bdos-tabs .bdos-tab.bdos-tab-current .bdos-tab-curves-right-shadow {
+  height: 25px;
+}
+
+.bdos-tabs .bdos-tab.bdos-tab-current .bdos-tab-curves-left-highlight, .bdos-tabs .bdos-tab.bdos-tab-current .bdos-tab-curves-right-highlight {
+  background-color: @defaultColor;
+}
+
+.cssmasks .bdos-tabs .bdos-tab:not(.bdos-tab-current):after {
+  pointer-events: none;
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 2px;
+  left: -16px;
+  right: -16px;
+  background: rgba(0, 0, 0, 0.04);
+  height: 1px;
+  z-index: 1;
+}
+
+.bdos-tabs .bdos-tab .bdos-tab-favicon {
+  height: 16px;
+  width: 16px;
+  background-size: 16px;
+  position: absolute;
+  left: 9px;
+  top: 5px;
+  z-index: 3;
+}
+
+.cssmasks .bdos-tabs .bdos-tab .bdos-tab-favicon {
+  left: 0;
+  top: 5px;
+}
+
+.bdos-tabs .bdos-tab .bdos-tab-title {
+  color: #222222;
+  padding: 5px 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cssmasks .bdos-tabs .bdos-tab .bdos-tab-title {
+  padding: 5px 5px 5px 18px;
+}
+
+.bdos-tabs .bdos-tab .bdos-tab-close {
+  position: absolute;
+  top: 6px;
+  right: 7px;
+  width: 14px;
+  height: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.cssmasks .bdos-tabs .bdos-tab .bdos-tab-close {
+  right: -5px;
+  top: 6px;
+}
+
+.bdos-tabs .bdos-tab .bdos-tab-close:before {
+  content: "\00D7";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 14px;
+  width: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 11px;
+  line-height: 12px;
+  color: #777777;
+  text-shadow: 0 1px rgba(255, 255, 255, 0.3);
+}
+
+.bdos-tabs .bdos-tab .bdos-tab-close:hover:before, .bdos-tabs .bdos-tab .bdos-tab-close:active:before {
+  color: white;
+  text-shadow: 0 1px #b9554c;
+}
+
+.bdos-tabs .bdos-tab .bdos-tab-close:hover, .bdos-tabs .bdos-tab .bdos-tab-close:active {
+  -webkit-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1), inset 0 1px 2px #b9554c;
+  -moz-box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1), inset 0 1px 2px #b9554c;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1), inset 0 1px 2px #b9554c;
+  background: #dd837b;
+}
+
+.bdos-tabs .bdos-tab .bdos-tab-close:active:before {
+  -webkit-box-shadow: inset 0 0 0 1px #b9554c, inset 0 1px 3px #b9554c, inset 0 0 20px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 0 0 1px #b9554c, inset 0 1px 3px #b9554c, inset 0 0 20px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 0 0 1px #b9554c, inset 0 1px 3px #b9554c, inset 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.bdos-tab-panel {
+  padding-top: 10px;
+  display: none;
+  height: 100%;
+  &.active {
+    display: block;
+    background-color: @activeColor;
+  }
+}

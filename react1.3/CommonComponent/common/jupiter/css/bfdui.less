@@ -1,0 +1,411 @@
+/*
+  覆盖一些公司组件库的样式
+  author : zhongxia
+  time   : 2016-06-28 17:10:22
+*/
+@import "global.less";
+//函数:重写 BFD-UI的组件样式
+.fn_OverWriteBfd-ui() {
+  .has-error {
+    .bfd-select2 .dropdown-toggle, .bfd-multiple-select .dropdown-toggle {
+      border-color: @errorColor;
+    }
+  }
+  .bfd-auto-complete {
+    .dropdown-menu {
+      max-height: 300px;
+      overflow: auto;
+    }
+  }
+  //select下拉框
+  .bfd-select2 {
+    font-size: @fontSize;
+    height: @btnAndInputHeight;
+    line-height: @btnAndInputHeight;
+
+    .dropdown-menu {
+      ul {
+        padding: 10px 0;
+        li {
+          line-height: @btnAndInputHeight;
+          font-size: @fontSize !important;
+        }
+      }
+    }
+    .dropdown-toggle {
+      height: @btnAndInputHeight;
+      line-height: @btnAndInputHeight;
+
+      div {
+        font-size: @fontSize;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        -ms-text-overflow: ellipsis;
+        /* IE/Safari */
+        -o-text-overflow: ellipsis;
+        padding-right: 20px;
+      }
+    }
+
+  }
+
+  .bfd-select2.open .dropdown-toggle {
+    border-bottom: 1px solid #ececec;
+  }
+
+  //.bfd-select2 .dropdown-menu > ul > li.active {
+  //  background-color: @btnColor;
+  //}
+
+  .bfd-select {
+    height: @btnAndInputHeight;
+  }
+
+  //时间范围选择框
+  .bfd-daterange {
+    .seperator {
+      height: @btnAndInputHeight;
+    }
+  }
+
+  //表单的label文件大小
+  .bfd-form {
+    .bfd-form-label {
+      font-size: @fontSize;
+      padding-top: 4px;
+    }
+    .form-control {
+      border: @bfdBorderColor;
+    }
+    .form-control:focus {
+      border-color: @btnColor;
+    }
+    .has-error .form-control, .has-error .bfd-dropdown {
+      height: 30px;
+    }
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .bfd-form-item2 .tip {
+    margin-left: 5px;
+  }
+
+  .form-content {
+    position: relative;
+  }
+}
+
+/*
+重写导航栏菜单样式 [最新版本的BFD-UI 样式]
+*/
+.fn_bfd_nav() {
+  .bfd-nav {
+    background-color: #314562;
+  }
+  .bfd-nav a {
+    color: @navFontColor;
+    height: @navItemHeight;
+  }
+  //设置 二级菜单, 没有 边框
+  .bfd-nav .open > .nav > li > a {
+    border: 0;
+  }
+
+  //设置 border的样的
+  .bfd-nav .open > .bfd-nav {
+    border-bottom: 1px solid @navBorderColor;
+  }
+
+  .bfd-nav > li > a, .bfd-nav > li:first-child > a {
+    border-color: @navBorderColor;
+  }
+  //导航栏左侧边框去掉
+  .bfd-nav > li {
+    border-left: 0;
+    border-right: 0;
+  }
+
+  //active 效果
+  .bfd-nav > li.active > a, .bfd-nav > li.active > a:focus, .bfd-nav > li.active > a:hover {
+    background-color: @navActiveColor;
+    color: #FFF;
+  }
+
+  //hover效果
+  .bfd-nav > li > a:hover {
+    background-color: @navHoverColor;
+  }
+
+  .bfd-nav > li > ul > li:last-child > a:before {
+    height: 50%;
+  }
+  .bfd-nav > li > ul > li > a:before {
+    background-color: @navBorderColor;
+  }
+  .bfd-nav > li > ul > li > a:after {
+    background-color: @headerAndSideBarColor;
+    border-color: @navBorderColor;
+  }
+
+  //获取焦点之后的状态,及打开一级菜单, 显示二级菜单
+  .bfd-nav > li > a:focus {
+    background-color: transparent;
+  }
+}
+
+//模块Tab, 最外层的Tab, 只有该Tab 允许嵌套其他样式的Tab
+.fn_bfd_tab_style1() {
+  & > .nav-tabs {
+    & > li > a > button {
+      margin-left: 25px;
+      outline: none;
+    }
+    & > li.active > a, li > a:focus, li.active > a:focus, li.active > a:hover {
+      border-top-color: transparent;
+      border-bottom-color: transparent;
+      background-color: #EDF1F5;
+    }
+    & > li > a {
+      margin-right: 0;
+      background-color: #FFF;
+      border-bottom: 1px solid #C9CACB;
+      border-right: 1px solid #C9CACB;
+    }
+    & > li > a:hover {
+      background-color: transparent;
+      color: #333;
+    }
+  }
+
+  & > .tab-panel {
+    background-color: #EDF1F5;
+    height: 100%;
+    overflow: auto;
+    & > div {
+      position: relative;
+      width: 100%;
+    }
+  }
+}
+
+.fn_bfd_tab_style2() {
+  & > .nav-tabs {
+    border-bottom: 0;
+
+    & > li.active > a,
+    & > li.active > a:focus,
+    & > li.active > a:hover {
+      border-top: 3px solid #54A4F3;
+      background-color: #FFFFFF;
+      color: #6EB1F5;
+      border-bottom: 0;
+    }
+    & > li > a {
+      border-top: 3px solid transparent;
+    }
+  }
+  .tab-panel {
+    background-color: #FFFFFF;
+  }
+
+}
+
+.fn_bfd_tab_style3() {
+  & > .nav-tabs {
+    border-bottom: 1px solid #E0E4E6;
+    & > li.active > a,
+    & > li.active > a:focus,
+    & > li > a:hover {
+      border-bottom: 3px solid #54A4F3;
+      background-color: transparent;
+      color: #6EB1F5;
+      border-top-color: transparent;
+    }
+    & > li > a {
+      padding-bottom: 3px;
+    }
+  }
+}
+
+//表格样式
+.fn_bfd_table() {
+  padding: 15px;
+  border: 1px solid #E7E7E7;
+  border-radius: 2px;
+  background: #FFF;
+
+  //表格的父容器样式
+  //让表格的内容, 不超出表格
+  .table {
+    word-break: break-all;
+    //table-layout: fixed;  //设置了之后单元格宽度由行列决定, 不由内容决定
+  }
+
+  //表头样式
+  .table > thead > tr > th {
+    background-color: @bdos-table-thead-backgroundColor;
+    border: 0px;
+    padding: 15px 10px;
+    font-weight: bold;
+    color: #677789;
+  }
+
+  //单元格左右间距
+  .table > tbody > tr > td {
+    padding: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+
+    border-top: 1px solid @bdos-table-tbody-td-borderColor;
+    border-bottom: 1px solid @bdos-table-tbody-td-borderColor;
+
+    .bfd-icon {
+      font-size: 16px;
+      cursor: pointer;
+      color: #2196f3;
+    }
+    .bfd-icon[disabled] {
+      color: @disableColor;
+      //pointer-events: auto;//如果设置为none，鼠标移上去的提示会没有，所以在设置为disabled的时候，请在事件中自行判断
+    }
+  }
+  //第一行上边框 设置0
+  .table > tbody > tr:first-child > td {
+    border-top: 0px;
+  }
+  .table > tbody > tr > td:last-child > div > *:not(:first-child) {
+    margin-left: 10px;
+  }
+  //第一列 和 最后一列样式
+  .table > thead > tr > th:last-child, .table > tbody > tr > td:last-child {
+    //text-align: right;
+    padding-right: 10px;
+  }
+  .table > tbody > tr > td:last-child > div > span {
+    margin-left: 15px;
+  }
+
+  //奇数行
+  .table > tbody > tr:nth-child(odd) {
+
+  }
+  //偶数行
+  .table > tbody > tr:nth-child(even) {
+    background-color: @bdos-table-tr-even-backgroundColor;
+  }
+
+  //hover 样式
+  .table > tbody > tr:hover > td {
+    //border-top: 1px solid #99D4FC;
+    //border-bottom: 1px solid #99D4FC;
+    background-color: #D1EFFC;
+  }
+  .table > tbody > tr:hover:first-child > td {
+    border-top: 0;
+  }
+
+  //分页样式 start
+  .bfd-paging .pull-right {
+    ._active a {
+      background: @bdos-table-paging-color !important;
+      color: #fff;
+      border-top: 1px solid @bdos-table-paging-color;
+      border-bottom: 1px solid @bdos-table-paging-color;
+    }
+    ._active a:hover {
+      background: @bdos-table-paging-color !important;
+    }
+    .btn-sm, .btn {
+      padding: 5px 10px;
+      font-size: 12px;
+    }
+  }
+  //分页样式 end
+}
+
+//分页问题修改,如果bootstrap样式在 分页组件后引用,会有BUG , 分页文本框,长度太大
+//跳转页的文本框宽度,收到 bootstrap的影响,width:auto, 会变的很大
+.bfd-paging {
+  .form-inline {
+    .number {
+      width: 40px;
+    }
+  }
+}
+
+//表单输入提示, 错误提示, 浮动框
+.fn_bfd_form() {
+  .bfd-form-item2 .form-content {
+    position: relative;
+    & > *:focus + .tip {
+      display: block;
+    }
+    //表单项组件提示
+    .tip {
+      > .glyphicon {
+        display: none;
+      }
+      line-height: 20px;
+      max-width: 300px;
+      display: none;
+      padding: 0.4em 0.6em;
+      background-color: #fff;
+      border: solid 1px #ccc;
+      position: absolute;
+      bottom: 100%;
+      border-radius: 5px;
+      left: 0px;
+      margin: 0 20px 5px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      box-sizing: border-box;
+      z-index: 999999;
+    }
+    .tip:before, .tip:after, .error:before, .error:after {
+      top: 100%;
+      left: 20px;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+    }
+
+    //小三角形
+    .tip:before {
+      border-color: rgba(204, 204, 204, 0);
+      border-top-color: #ccc;
+      border-width: 5px;
+      margin-left: -10px;
+    }
+    .tip:after {
+      border-color: rgba(255, 255, 255, 0);
+      border-top-color: #ffffff;
+      border-width: 4px;
+      margin-left: -9px;
+    }
+
+    /*
+      提示方式可以使用获取焦点,则显示错误信息
+      验证错误的时候提示
+    */
+    .error.tip:focus {
+      display: block;
+    }
+
+    .error.tip {
+      border-color: @bdos-form-error-color;
+      color: @bdos-form-error-color;
+    }
+    .error.tip:before {
+      border-top-color: @bdos-form-error-color;
+    }
+  }
+}

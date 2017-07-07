@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--  
+<link rel="stylesheet" href="css/joint.css" />  
+<script src="js/joint.js"></script>  
+-->
+    <link rel="stylesheet" type="text/css" href="css/joint.css"></link>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/lodash.min.js"></script>
+    <script src="js/backbone-min.js"></script>
+    <script src="js/joint.js"></script>
+    <script src="js/joint.shapes.erd.js"></script>
+    <script src="js/joint.commandmanager.js"></script>
+</head>
+<title>Test</title>
+
+<body>
+    <div id="myholder"> </div>
+    <button onclick="commandManager.undo()">undo</button>
+    <button onclick="commandManager.redo()">redo</button>
+</body>
+<script>
+var graph = new joint.dia.Graph;
+
+var commandManager = new joint.dia.CommandManager({
+    graph: graph
+});
+
+console.log('commandManager', commandManager)
+
+var paper = new joint.dia.Paper({
+    el: $('#myholder'),
+    width: 600,
+    height: 200,
+    model: graph
+});
+
+var rect = new joint.shapes.basic.Rect({
+    position: {
+        x: 100,
+        y: 30
+    },
+    size: {
+        width: 100,
+        height: 30
+    },
+    attrs: {
+        rect: {
+            fill: 'blue'
+        },
+        text: {
+            text: 'my box',
+            fill: 'white'
+        }
+    }
+});
+
+var rect2 = rect.clone();
+rect2.translate(300);
+
+var link = new joint.dia.Link({
+    source: {
+        id: rect.id
+    },
+    target: {
+        id: rect2.id
+    }
+});
+
+graph.addCells([rect, rect2, link]);
+</script>
+
+</html>

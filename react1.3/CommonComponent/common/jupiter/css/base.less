@@ -1,0 +1,43 @@
+/*
+  编写一些常用的样式功能
+  author : zhongxia
+  time   : 2016-06-28 17:10:22
+*/
+
+html, body, .app {
+  width: 100%;
+  height: 100%;
+  font-family: Microsoft Yahei, "Helvetica Neue", Helvetica !important;
+}
+
+//禁用的样式
+*[disabled], *[readonly].bfd-icon[disabled] {
+  color: #ccc;
+  cursor: not-allowed;
+  pointer-events: none;
+  input,textarea, span, p, button {
+    color: #ccc;
+  }
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+textarea {
+  resize: none;
+}
+
+//表格没有操作列,样式修改
+.notOperatorCol, .not-operator-col {
+  .table > thead > tr > th:last-child, .table > tbody > tr > td:last-child {
+    text-align: left !important;
+    padding-right: 0 !important;
+  }
+}
+
+.checkbox-table {
+  .table > thead > tr > th:first-child, .table > tbody > tr > td:first-child {
+    width: 30px;
+  }
+}

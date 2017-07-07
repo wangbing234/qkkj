@@ -1,0 +1,71 @@
+@circleSize: 12px;
+@cicleBgColor: #1578CC;
+@cicleMinBgColoe: #FFF;
+
+.form-category {
+  padding: 30px;
+  background-color: #FFF;
+  border-radius: 5px;
+
+  .form-control {
+    width: 200px;
+    margin-bottom: 5px;
+  }
+
+  .form-category-type:last-child {
+    //padding: 0;
+  }
+  .form-category-type {
+    padding: 20px;
+    position: relative;
+    border-left: 1px solid #1992FA;
+
+    .form-category-type-title {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+
+      //同心圆
+      .circle, .circle_min {
+        position: absolute;
+        border-radius: 100%;
+        border: 0;
+      }
+      .circle {
+        top: -1px;
+        left: -@circleSize/2;
+        width: @circleSize;
+        height: @circleSize;
+        background: @cicleBgColor;
+      }
+      .circle_min {
+        top: 50%;
+        left: 50%;
+        width: @circleSize/2;
+        height: @circleSize/2;
+        margin: -(@circleSize/2/2) 0 0 -(@circleSize/2/2);
+        background: @cicleMinBgColoe;
+      }
+
+      //类别名称
+      .type-name {
+        margin-left: 15px;
+        margin-top: -5px;
+        font-weight: bolder;
+        font-size: 14px;
+      }
+
+      .hr {
+        border-bottom: 1px dotted #D4DDE5;
+        margin-left: 80px;
+        margin-top: -10px;
+      }
+    }
+  }
+
+  .form-category-content {
+    padding-left: 100px;
+  }
+
+}

@@ -1,0 +1,214 @@
+/**
+    * 数据管理公用样式
+    * create by lijun.feng on 2016-5-17
+    * 所有的样式都写在.layout-container样式里面
+    */
+
+body {
+  margin: 0;
+  font-family: Microsoft Yahei;
+}
+
+.layout-container {
+  .data-manager {
+    /******公用组件样式***********************************************************/
+    .layout-header {
+      overflow: visible; //覆盖公用样式
+      //position: relative;
+      color: #000; //覆盖公用样式
+    }
+    .common-input {
+      width: 180px;
+      margin-right: 10px;
+    }
+
+    .common-form-input {
+      width: 405px;
+      display: inline-block;
+    }
+
+    .common-margin-right {
+      margin-right: 10px;
+    }
+    .common-right {
+      float: right;
+    }
+    .common-left {
+      float: left;
+    }
+    .common-textarea {
+      width: 405px;
+      height: 80px;
+      display: inline-block;
+    }
+    .common-select {
+      width: 405px;
+    }
+
+    .common-center {
+      text-align: center;
+    }
+    .module-eidt-select {
+      padding-left: 52px;
+      .form-group div .bfd-select2 {
+        width: 405px;
+      }
+      .form-group div .form-control {
+        width: 405px;
+      }
+
+      .form-group div textarea {
+        height: 85px;
+        width: 405px;
+      }
+
+    }
+
+    .operatioinTable > div > .table > thead > tr > th:last-child, .operatioinTable > div > .table > tbody > tr > td:last-child {
+      width: 280px;
+      overflow: visible;
+    }
+
+    .onlyOneColumn > div > .table > thead > tr > th:last-child, .onlyOneColumn > div > .table > tbody > tr > td:last-child {
+      text-align: left;
+    }
+
+    .title_bar {
+      margin-left: 30px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    .title_container {
+      padding-top: 30px;
+      margin-top: 10px;
+      border-top: 1px dotted #e9e9e9
+    }
+
+    /**查找数据START***/
+    .search-data {
+      .tree-border {
+        border: 1px solid #E7E7E7;
+        background: #f6f8fa;
+        border-radius: 2px;
+        max-height: 627px;
+        overflow: auto;
+        padding: 15px;
+        margin-right: 20px;
+      }
+      .panel {
+        border: 1px solid #BEE8F1;
+        background-color: #D9EDF6;
+        border-radius: 2px;
+        height: 50px;
+        line-height: 50px;
+        padding: 0 30px 0 0;
+
+        ul {
+          padding-left: 20px;
+          li:not(:last-child) {
+            display: inline-block;
+            margin-right: 20px;
+            margin-left: 0;
+          }
+          li:last-child {
+            display: inline-block;
+            float: right;
+          }
+        }
+      }
+    }
+
+    /**数据共享START**/
+    .data-share {
+      .modalWidth800 { //宽度为800的弹出框
+        .bfd-modal__modal-content {
+          width: 800px;
+        }
+      }
+    }
+    /**数据共享END**/
+
+    /**查找数据END***/
+
+    /**数据全景START***/
+    .fullviewPage {
+      .col-md-6 {
+        padding-right: 0px;
+      }
+      .table > tbody > tr > td {
+        text-align: left;
+        margin-left: 12px;
+      }
+    }
+    /**数据全景END***/
+
+  }
+
+  .normoalScreenStyle {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: #ffffff;
+    min-height: 730px
+  }
+
+  /**查找表项目级查看血缘关系**/
+  .paperStyle {
+    background: #E9E9E9;
+  }
+  .width1000 .bfd-modal__modal-dialog {
+    width: 1000px;
+    overflow:hidden;
+  }
+  .width680 .bfd-modal__modal-dialog {
+    width: 680px;
+  }
+
+}
+
+.search-tableInfo-ddl-table{
+  background-color: #ffffff;
+  padding: 10px;
+  .consanguinity_table_div{
+    height: 600px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+  }
+
+  border: 1px solid #ccc;
+}
+
+.consanguinity_table_border{
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    .consanguinity_table{
+      height: 80px;
+      width: 100%;
+      margin-top: 10px;
+      border-top: 3px solid #AED5FC;
+      font-size: 15px;
+      tbody{
+        tr{
+          td
+          {
+            border: 1px solid #E4ECF3;
+          }
+        }
+      }
+      .table_label{
+        width: 25%;
+        padding: 10px;
+        //border-left: 0px solid #64b5f6;
+        background: #F9F9F9;
+      }
+      .table_value{
+        width: 25%;
+        text-align: center;
+        background-color: #FFFFFF;
+        //border-right: 0px solid #64b5f6;
+      }
+    }
+}
+
+

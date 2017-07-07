@@ -1,0 +1,23 @@
+@borderColor: #EAEDF1;
+@theadColor: #F6F7FA;
+@tdHeight: 25px;
+@paddingSize: 5px 20px;
+
+.bdos-component-table {
+  width: 100%;
+  border: 1px solid @borderColor;
+  thead > tr > th {
+    padding: @paddingSize;
+    height: @tdHeight;
+    line-height: @tdHeight;
+    background-color: @theadColor;
+  }
+
+  tbody > tr > td {
+    padding: @paddingSize;
+    height: @tdHeight;
+    line-height: @tdHeight;
+    border-bottom: 1px solid @borderColor;
+  }
+
+}

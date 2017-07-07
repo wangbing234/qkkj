@@ -1,0 +1,64 @@
+@hidePaneBorderColor: #E2E3E6; //隐藏面板的颜色
+@iconColor: #546F7D;
+
+.bdos-hsp {
+  width: 100%;
+  height: 100%;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.bdos-hsp__left-main {
+  height: 100%;
+  width: 100%;
+}
+
+.bdos-hsp__left, .bdos-hsp__right {
+  //overflow: auto;
+  position: relative;
+}
+
+.bdos-hsp__left {
+}
+
+.bdos-hsp__right {
+  margin-left: 10px;
+  flex: 1;
+}
+
+.bdos-hsp__hidePane {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 3px;
+  border: 1px solid @hidePaneBorderColor;
+}
+
+.bdos-hsp__icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 1;
+  color: @iconColor;
+}
+
+.bdos-hsp__resizer {
+  width: 11px;
+  margin: 0 -5px;
+  border-left: 5px solid rgba(255, 255, 255, 0);
+  border-right: 5px solid rgba(255, 255, 255, 0);
+}
+
+.bdos-hsp__resizer:after {
+  content: ' ';
+  width: 5px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  margin-top: -10px;
+  background: #DDD;
+}

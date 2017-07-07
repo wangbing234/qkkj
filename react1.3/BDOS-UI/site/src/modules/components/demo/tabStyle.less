@@ -1,0 +1,20 @@
+.tab-auto-width {
+  & > .bfd-tabs.dynamic {
+    & > .nav-tabs {
+      display: flex;
+      flex-direction: row;
+      li {
+        max-width: 150px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+        & > a > button {
+          position: absolute;
+          top: 7px;
+          right: 0;
+        }
+      }
+    }
+  }
+}

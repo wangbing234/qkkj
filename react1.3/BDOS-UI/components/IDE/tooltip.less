@@ -1,0 +1,81 @@
+.bdos-ide-tooltip {
+  /* Menu */
+  .menu {
+    position: absolute;
+    min-width: 100px;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #DAE2E8;
+    background: #F4F4F4;
+    z-index: 999;
+    border-radius: 3px;
+    pointer-events: none;
+    color: #6A7377;
+  }
+
+  menu:focus {
+    outline: 0;
+  }
+
+  .menu-item {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+  }
+
+  .menu-btn {
+    background: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    display: block;
+    width: 100%;
+    color: #444;
+    font-size: 13px;
+    text-align: left;
+    cursor: pointer;
+    white-space: nowrap;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 3px;
+  }
+
+  .menu-text {
+    margin-left: 10px;
+  }
+
+  .menu-item:hover > .menu-btn {
+    background-color: #E7EBEE;
+  }
+
+  .show-menu,
+  .menu-item:hover > .menu {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .menu-item:focus > .menu {
+    border-top: 1px solid #7FC9FB;
+    border-bottom: 1px solid #7FC9FB;
+    background-color: #D1EFFC;
+  }
+
+  //禁用事件
+  .menu-item[disabled] {
+    opacity: .5;
+    -webkit-pointer-events: none;
+    -moz-pointer-events: none;
+    pointer-events: none;
+  }
+
+  .menu-item[disabled] .menu-btn {
+    cursor: default;
+  }
+
+  .active {
+    background-color: #E7EBEE;
+  }
+
+}

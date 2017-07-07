@@ -1,0 +1,237 @@
+/***************************************************
+ * 时间: 16/6/7 11:35
+ * 作者: zhongxia
+ * 说明: 仿bdos 表格的tab 组件样式
+ ***************************************************/
+
+@defaultColor: #F7F7F7; //默认 Tab 头颜色
+@activeColor: #FFFFFF; //选中的 Tab 头颜色
+@tabBorderTopColor: #D3D3D3; //tab头部样式
+
+.bdos-tabs {
+  *zoom: 1;
+  position: relative;
+  width: 100%;
+  padding-top: 1px;
+}
+
+.bdos-tabs:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.bdos-tabs * {
+  -webkit-user-select: none;
+  cursor: default;
+  font-size: 11px;
+  line-height: 13px;
+}
+
+.bdos-tabs .bdos-tab {
+  float: left;
+  position: relative;
+  height: 20px;
+  width: 120px;
+  border: 0px;
+  margin: 0px;
+  z-index: 1;
+}
+
+.bdos-tabs .bdos-tab,
+.bdos-tabs .bdos-tab .bdos-tab-curves-left,
+.bdos-tabs .bdos-tab .bdos-tab-curves-right {
+  background-color: @defaultColor;
+}
+
+.cssmasks .bdos-tabs .bdos-tab {
+  border-top: 1px solid @tabBorderTopColor;
+  margin: 0 3px 0 20px;
+  cursor: pointer;
+}
+
+.bdos-tabs .bdos-tab .bdos-tab-curves {
+  display: none;
+}
+
+.cssmasks .bdos-tabs .bdos-tab .bdos-tab-curves {
+  display: block;
+}
+
+.bdos-tabs .bdos-tab .bdos-tab-curves * {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  -webkit-mask-size: 100%;
+}
+
+.bdos-tabs .bdos-tab .bdos-tab-curves-left,
+.bdos-tabs .bdos-tab .bdos-tab-curves-left-highlight,
+.bdos-tabs .bdos-tab .bdos-tab-curves-left-shadow {
+  -webkit-mask-image: url("./svg/tab-left.svg");
+}
+
+.bdos-tabs .bdos-tab .bdos-tab-curves-right,
+.bdos-tabs .bdos-tab .bdos-tab-curves-right-highlight,
+.bdos-tabs .bdos-tab .bdos-tab-curves-right-shadow {
+  -webkit-mask-image: url("./svg/tab-right.svg");
+}
+
+.bdos-tabs .bdos-tab .bdos-tab-curves-left,
+.bdos-tabs .bdos-tab .bdos-tab-curves-right {
+  top: 0px;
+  z-index: 1;
+}
+
+.bdos-tabs .bdos-tab .bdos-tab-curves-left {
+  left: -20px;
+}
+
+.bdos-tabs .bdos-tab .bdos-tab-curves-right {
+  right: -20px;
+}
+
+.bdos-tabs .bdos-tab .bdos-tab-curves-left-highlight,
+.bdos-tabs .bdos-tab .bdos-tab-curves-right-highlight {
+  top: 0px;
+  width: 21px;
+  height: 20px;
+  background-color: #ececec;
+}
+
+.bdos-tabs .bdos-tab .bdos-tab-curves-left-highlight {
+  left: -21px;
+}
+
+.bdos-tabs .bdos-tab .bdos-tab-curves-right-highlight {
+  right: -21px;
+}
+
+.bdos-tabs .bdos-tab .bdos-tab-curves-left-shadow,
+.bdos-tabs .bdos-tab .bdos-tab-curves-right-shadow {
+  top: -1px;
+  width: 22px;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.29);
+}
+
+.bdos-tabs .bdos-tab .bdos-tab-curves-left-shadow {
+  left: -22px;
+}
+
+.bdos-tabs .bdos-tab .bdos-tab-curves-right-shadow {
+  right: -22px;
+}
+
+.bdos-tabs .bdos-tab.bdos-tab-current {
+  z-index: 999;
+}
+
+.bdos-tabs .bdos-tab.bdos-tab-current,
+.bdos-tabs .bdos-tab.bdos-tab-current .bdos-tab-curves-left,
+.bdos-tabs .bdos-tab.bdos-tab-current .bdos-tab-curves-right {
+  background-color: @activeColor;
+}
+
+.bdos-tabs .bdos-tab.bdos-tab-current .bdos-tab-curves-left-highlight,
+.bdos-tabs .bdos-tab.bdos-tab-current .bdos-tab-curves-right-highlight,
+.bdos-tabs .bdos-tab.bdos-tab-current .bdos-tab-curves-left-shadow,
+.bdos-tabs .bdos-tab.bdos-tab-current .bdos-tab-curves-right-shadow {
+  height: 20px;
+}
+
+.bdos-tabs .bdos-tab.bdos-tab-current .bdos-tab-curves-left-highlight,
+.bdos-tabs .bdos-tab.bdos-tab-current .bdos-tab-curves-right-highlight {
+  background-color: @defaultColor;
+}
+
+.bdos-tabs .bdos-tab .bdos-tab-title {
+  color: #222222;
+  padding: 5px 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cssmasks .bdos-tabs .bdos-tab .bdos-tab-title {
+  padding: 5px 5px 5px 0px;
+}
+
+.bdos-tabs .bdos-tab .bdos-tab-close {
+  position: absolute;
+  top: 6px;
+  right: 7px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.cssmasks .bdos-tabs .bdos-tab .bdos-tab-close {
+  right: -2px;
+  top: 2px;
+}
+
+.bdos-tabs .bdos-tab .bdos-tab-close:before {
+  content: "\00D7";
+  position: absolute;
+  top: -1px;
+  right: 0px;
+  height: 14px;
+  line-height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 11px;
+}
+
+.bdos-tabs .bdos-tab .bdos-tab-close:hover, .bdos-tabs .bdos-tab .bdos-tab-close:active {
+  background: #dd837b;
+  color: #FFF;
+}
+
+.bdos-tabs {
+  .bdos-tool {
+    float: left;
+    margin-left: 5px;
+    width: 15px;
+    height: 15px;
+    font-size: 16px;
+    text-align: center;
+
+    &:hover {
+      background: #D9DADE;
+      border-radius: 2px;
+    }
+    .dropdown {
+      width: 100%;
+    }
+
+    .dropdown-menu {
+      padding: 0;
+      min-width: 120px;
+    }
+    .bdos-close-all {
+      height: 25px;
+      line-height: 25px;
+      color: #3CA1F9;
+      text-align: center;
+      cursor: pointer;
+      display: block;
+      border-top: 1px solid #E2E4E5;
+    }
+  }
+}
+
+.bdos-tab-panel {
+  display: none;
+  height: 100%;
+  overflow: auto;
+  padding-top: 5px;
+  padding-bottom: 30px;
+
+  &.active {
+    display: block;
+    background-color: @activeColor;
+  }
+}

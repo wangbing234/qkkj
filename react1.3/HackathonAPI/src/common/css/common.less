@@ -1,0 +1,95 @@
+.layout-container .layout-main {
+  min-height: auto;
+
+  .layout-content {
+    overflow: auto;
+    position: relative;
+    min-width: 800px;
+
+    @import "module.less";
+  }
+}
+
+//表格 全选列的 宽度
+.table-checkbox {
+  .table > thead > tr > th:first-child {
+    width: 35px;
+  }
+}
+
+//API服务列表
+.api-service-list {
+  ul, li {
+    list-style: none;
+  }
+}
+
+//统计 的 报图没有数据, 展示水平垂直居中
+.no-data {
+  text-align: center;
+  line-height: 250px;
+  background: #F2F2F2;
+  margin: 0 20px;
+  border-radius: 5px;
+}
+
+//API服务, 没有输入参数
+.no-param {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.42857143;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+//标准API 参数
+.standard-api {
+  border-bottom: 1px solid #F2F2F2;
+  margin-bottom: 20px;
+}
+
+//API服务列表
+.api-service-alias {
+  margin-bottom: 20px;
+  .api-service-alias-item {
+    background-color: #54A4F3;
+    border-radius: 3px;
+    color: #FFF;
+    display: inline-block;
+    padding: 5px 10px;
+    margin-right: 10px;
+  }
+}
+
+//API服务列表的 接口表格
+.api-service-table {
+  .aliasName {
+    padding: 5px 10px;
+    line-height: 30px;
+    background-color: #F6F7FA;
+    font-weight: bold;
+    border: 1px solid #ECEEEC;
+    border-bottom: 0;
+    border-radius: 2px;
+  }
+  .bdos-component-table {
+    margin-bottom: 20px;
+    thead {
+      display: none;
+    }
+  }
+}
+
+.logout {
+  padding-right: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  user-select: none;
+}

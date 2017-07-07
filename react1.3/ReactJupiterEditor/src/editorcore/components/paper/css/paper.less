@@ -1,0 +1,151 @@
+.bdos-paper {
+  .notSelect {
+    moz-user-select: -moz-none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .onlyRead {
+    -moz-pointer-events: none;
+    -o-pointer-events: none;
+    -khtml-pointer-events: none;
+    -webkit-pointer-events: none;
+    -ms-pointer-events: none;
+    pointer-events: none;
+  }
+
+  .container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .paper {
+    position: absolute;
+    background: transparent;
+    overflow: hidden;
+    width: 99%;
+    height: 99%;
+    top: 0;
+    left: 0;
+    background-image: url('../imgs/bg.png');
+  }
+
+  .paper svg {
+    background: transparent;
+  }
+
+  .paper svg .link {
+    z-index: 2;
+  }
+
+  .html-element {
+    font-size: 12px;
+    position: absolute;
+    text-align: center;
+    /*background: #3498DB;*/
+    /* Make sure events are propagated to the JointJS element so, e.g. dragging works.*/
+    pointer-events: none;
+    -webkit-user-select: none;
+    border-radius: 4px;
+    padding: 5px;
+    box-sizing: border-box;
+    z-index: 2;
+  }
+
+  .html-element button {
+    /* Enable interacting with inputs only. */
+    pointer-events: auto;
+  }
+
+  .html-element button.addLine {
+    color: white;
+    border: none;
+    background-color: #C0392B;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    text-align: center;
+    position: absolute;
+    right: -3px;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+    cursor: crosshair;
+    z-index: 999;
+    top: 0;
+    display: none;
+  }
+
+  //.html-element button.addLine {
+  //  color: white;
+  //  border-radius: 50%;
+  //  border: none;
+  //  background-color: #4ED0D2;
+  //  width: 15px;
+  //  height: 15px;
+  //  line-height: 15px;
+  //  text-align: center;
+  //  position: absolute;
+  //  right: 20px;
+  //  top: -7px;
+  //  padding: 0;
+  //  margin: 0;
+  //  font-weight: bold;
+  //  cursor: move;
+  //  z-index: 999;
+  //  display: none;
+  //}
+
+  .html-element addLine.delete:hover {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    z-index: 999;
+    top: 0;
+  }
+
+  .html-element .text {
+    width: 100%;
+    height: 20px;
+    text-align: center;
+  }
+
+  .html-element label {
+    color: #333;
+    font-weight: bold;
+  }
+
+  .html-element span {
+    position: absolute;
+    top: 2px;
+    right: 9px;
+    color: white;
+    font-size: 10px;
+  }
+
+  /*图元选中状态样式*/
+
+  .border {
+    border: 1px solid #898989;
+    -webkit-box-shadow: 1px 1px 10px #292929;
+    -moz-box-shadow: 1px 1px 10px #292929;
+    box-shadow: 1px 1px 10px #292929;
+  }
+
+  .text-overflow {
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    /* IE/Safari */
+    -o-text-overflow: ellipsis;
+    /* Opera */
+  }
+}

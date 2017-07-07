@@ -1,0 +1,55 @@
+.bfd-message {
+	position: fixed;
+	z-index: 9999;
+	min-width: 600px;
+	max-width: 400px;
+	left: 50%;
+	transform: translate(-50%, 0);
+	top: 30px;
+	padding: 10px 20px;
+	border-radius: 2px;
+	border: 1px solid transparent;
+	word-wrap: break-word;
+	font-size: 14px;
+	> .remove {
+		position: absolute;
+		padding: 5px;
+		top: 8px;
+		right: 15px;
+		cursor: pointer;
+		opacity: .5;
+		transition: opacity .1s ease-out;
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	&.success {
+		background-color: #e0f0d9;
+		border-color: #d6e8c7;
+		color: #48874a;
+	}
+
+	&.danger {
+		background-color: #fff8f8;
+		border-color: #edd3d7;
+		color: #cf7f7f;
+		padding-right: 40px;
+	}
+
+	&.in-enter {
+		opacity: 0;
+    transform: translate(-50%, -25%);
+    &.in-enter-active {
+    	opacity: 1;
+      transform: translate(-50%, 0);
+      transition: all .2s ease-out;
+    }
+	}
+
+	&.in-leave.in-leave-active {
+		opacity: 0;
+    transform: translate(-50%, -25%);
+    transition: all .15s ease-out;
+	}
+}

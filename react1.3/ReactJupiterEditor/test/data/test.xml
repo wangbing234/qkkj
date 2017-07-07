@@ -1,0 +1,154 @@
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+             xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:activiti="http://activiti.org/bpmn"
+             id="review-definitions" typeLanguage="http://www.w3.org/2001/XMLSchema"
+             expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://activiti.org/bpmn20">
+  <process id="ryantest130" name="ryantest130">
+    <serviceTask xmlns:activiti="http://activiti.org/bpmn" id="6ef25c1b-fd8d-49fb-9733-c79f82024d64" name="开始10">
+      <extensionElements>
+        <activiti:field name="type">
+          <activiti:expression>Shell</activiti:expression>
+        </activiti:field>
+        <activiti:field name="params">
+          <activiti:expression>
+            {"taskId":"629","scriptType":null,"scriptTypeId":"2","scriptPara":"","resultInfo":"returnInfo","nodeErrorRepeatTimes":0,"projectId":"30616","projectName":"BI_Demo","resultName":"returnVar"}
+          </activiti:expression>
+        </activiti:field>
+        <activiti:field name="remark">
+          <activiti:expression/>
+        </activiti:field>
+        <activiti:field name="message">
+          <activiti:expression>{"mailGroup":0,"messageType":"","smsGroup":0,"executionTime":0,"monitorType":""}
+          </activiti:expression>
+        </activiti:field>
+      </extensionElements>
+    </serviceTask>
+    <serviceTask xmlns:activiti="http://activiti.org/bpmn" id="fa528449-7b73-45de-87f6-b2fb99cde9ea" name="结o1">
+      <extensionElements>
+        <activiti:field name="type">
+          <activiti:expression>BusinessScript</activiti:expression>
+        </activiti:field>
+        <activiti:field name="params">
+          <activiti:expression>
+            {"taskId":"629","scriptType":null,"scriptTypeId":"2","scriptPara":"","resultInfo":"returnInfo","nodeErrorRepeatTimes":0,"projectId":"30616","projectName":"BI_Demo","resultName":"returnVar"}
+          </activiti:expression>
+        </activiti:field>
+        <activiti:field name="remark">
+          <activiti:expression/>
+        </activiti:field>
+        <activiti:field name="message">
+          <activiti:expression>{"mailGroup":0,"messageType":"","smsGroup":0,"executionTime":0,"monitorType":""}
+          </activiti:expression>
+        </activiti:field>
+      </extensionElements>
+    </serviceTask>
+    <serviceTask xmlns:activiti="http://activiti.org/bpmn" id="30ae5d91-294a-4f8a-acbb-9ea994914143" name="结束012312">
+      <extensionElements>
+        <activiti:field name="type">
+          <activiti:expression>BusinessScript</activiti:expression>
+        </activiti:field>
+        <activiti:field name="params">
+          <activiti:expression>
+            {"taskId":"629","scriptType":null,"scriptTypeId":"2","scriptPara":"","resultInfo":"returnInfo","nodeErrorRepeatTimes":0,"projectId":"30616","projectName":"BI_Demo","resultName":"returnVar"}
+          </activiti:expression>
+        </activiti:field>
+        <activiti:field name="remark">
+          <activiti:expression/>
+        </activiti:field>
+        <activiti:field name="message">
+          <activiti:expression>{"mailGroup":0,"messageType":"","smsGroup":0,"executionTime":0,"monitorType":""}
+          </activiti:expression>
+        </activiti:field>
+      </extensionElements>
+    </serviceTask>
+    <serviceTask xmlns:activiti="http://activiti.org/bpmn" id="da39397c-f14d-4e07-ba8d-c51482035a50" name="结束123">
+      <extensionElements>
+        <activiti:field name="type">
+          <activiti:expression>BusinessScript</activiti:expression>
+        </activiti:field>
+        <activiti:field name="params">
+          <activiti:expression>
+            {"taskId":"629","scriptType":null,"scriptTypeId":"2","scriptPara":"","resultInfo":"returnInfo","nodeErrorRepeatTimes":0,"projectId":"30616","projectName":"BI_Demo","resultName":"returnVar"}
+          </activiti:expression>
+        </activiti:field>
+        <activiti:field name="remark">
+          <activiti:expression/>
+        </activiti:field>
+        <activiti:field name="message">
+          <activiti:expression>{"mailGroup":0,"messageType":"","smsGroup":0,"executionTime":0,"monitorType":""}
+          </activiti:expression>
+        </activiti:field>
+      </extensionElements>
+    </serviceTask>
+    <serviceTask xmlns:activiti="http://activiti.org/bpmn" id="b94f4adc-5da6-4114-b261-365cef246ec0" name="zhognxia1">
+      <extensionElements>
+        <activiti:field name="type">
+          <activiti:expression>Shell</activiti:expression>
+        </activiti:field>
+        <activiti:field name="params">
+          <activiti:expression>
+            {"taskId":"629","scriptType":null,"scriptTypeId":"2","scriptPara":"","resultInfo":"returnInfo","nodeErrorRepeatTimes":0,"projectId":"30616","projectName":"BI_Demo","resultName":"returnVar"}
+          </activiti:expression>
+        </activiti:field>
+        <activiti:field name="remark">
+          <activiti:expression/>
+        </activiti:field>
+        <activiti:field name="message">
+          <activiti:expression>{"mailGroup":0,"messageType":"","smsGroup":0,"executionTime":0,"monitorType":""}
+          </activiti:expression>
+        </activiti:field>
+      </extensionElements>
+    </serviceTask>
+    <sequenceFlow sourceRef="6ef25c1b-fd8d-49fb-9733-c79f82024d64" targetRef="fa528449-7b73-45de-87f6-b2fb99cde9ea"
+                  id="f0960816-e463-4d6e-8551-85b4c3e7664f" name="undefined"/>
+    <sequenceFlow sourceRef="fa528449-7b73-45de-87f6-b2fb99cde9ea" targetRef="30ae5d91-294a-4f8a-acbb-9ea994914143"
+                  id="4647dc61-7316-43cf-a6d1-2a77f5481c57" name="undefined"/>
+    <sequenceFlow sourceRef="da39397c-f14d-4e07-ba8d-c51482035a50" targetRef="fa528449-7b73-45de-87f6-b2fb99cde9ea"
+                  id="fb046924-0b0e-4962-baba-1e7bdd14c179" name="undefined"/>
+    <sequenceFlow sourceRef="da39397c-f14d-4e07-ba8d-c51482035a50" targetRef="b94f4adc-5da6-4114-b261-365cef246ec0"
+                  id="8d17235e-dd87-4352-a539-1b8568a65820" name="undefined"/>
+    <serviceTask xmlns:activiti="http://activiti.org/bpmn" id="8c2f34de-e9c2-43af-bdef-ea6f328d6973" name="test">
+      <extensionElements>
+        <activiti:field name="type">
+          <activiti:expression>Shell</activiti:expression>
+        </activiti:field>
+        <activiti:field name="params">
+          <activiti:expression>
+            {"taskId":"629","scriptType":null,"scriptTypeId":"2","scriptPara":"","resultInfo":"returnInfo","nodeErrorRepeatTimes":0,"projectId":"30616","projectName":"BI_Demo","resultName":"returnVar"}
+          </activiti:expression>
+        </activiti:field>
+        <activiti:field name="remark">
+          <activiti:expression/>
+        </activiti:field>
+        <activiti:field name="message">
+          <activiti:expression>{"mailGroup":0,"messageType":"","smsGroup":0,"executionTime":0,"monitorType":""}
+          </activiti:expression>
+        </activiti:field>
+      </extensionElements>
+    </serviceTask>
+    <sequenceFlow sourceRef="8c2f34de-e9c2-43af-bdef-ea6f328d6973" targetRef="da39397c-f14d-4e07-ba8d-c51482035a50"
+                  id="9aa6dd20-fe00-41b9-846e-ea232abbb2b7" name="undefined"/>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_ryantest130">
+    <bpmndi:BPMNPlane bpmnElement="ryantest130" id="BPMNPlane_ryantest130">
+      <BPMNShape id="BPMNShape_6ef25c1b-fd8d-49fb-9733-c79f82024d64" bpmnElement="6ef25c1b-fd8d-49fb-9733-c79f82024d64">
+        <Bounds height="60" width="60" x="215" y="147"/>
+      </BPMNShape>
+      <BPMNShape id="BPMNShape_fa528449-7b73-45de-87f6-b2fb99cde9ea" bpmnElement="fa528449-7b73-45de-87f6-b2fb99cde9ea">
+        <Bounds height="60" width="60" x="474" y="180"/>
+      </BPMNShape>
+      <BPMNShape id="BPMNShape_30ae5d91-294a-4f8a-acbb-9ea994914143" bpmnElement="30ae5d91-294a-4f8a-acbb-9ea994914143">
+        <Bounds height="60" width="60" x="581" y="273"/>
+      </BPMNShape>
+      <BPMNShape id="BPMNShape_da39397c-f14d-4e07-ba8d-c51482035a50" bpmnElement="da39397c-f14d-4e07-ba8d-c51482035a50">
+        <Bounds height="60" width="60" x="227" y="266"/>
+      </BPMNShape>
+      <BPMNShape id="BPMNShape_b94f4adc-5da6-4114-b261-365cef246ec0" bpmnElement="b94f4adc-5da6-4114-b261-365cef246ec0">
+        <Bounds height="60" width="60" x="604" y="429"/>
+      </BPMNShape>
+      <BPMNShape id="BPMNShape_8c2f34de-e9c2-43af-bdef-ea6f328d6973" bpmnElement="8c2f34de-e9c2-43af-bdef-ea6f328d6973">
+        <Bounds height="60" width="60" x="91" y="448"/>
+      </BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

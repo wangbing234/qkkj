@@ -1,0 +1,43 @@
+{
+  "code": "000000",
+  "data": [
+    {
+      "name": "name",
+      "label": "label",
+      "data": [
+        {
+          "value": "1",
+          "label": "zhongxia"
+        },
+        {
+          "value": "11",
+          "label": "zhongxia1"
+        },
+        {
+          "value": "12",
+          "label": "zhongxia2"
+        },
+        {
+          "value": "13",
+          "label": "zhongxia3"
+        },
+        {
+          "value": "14",
+          "label": "zhongxia4"
+        }
+      ]
+    },
+    {
+      "name": "age"
+    },
+    {
+      "name": "type",
+      "data": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    }
+  ]
+}

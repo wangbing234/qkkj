@@ -1,0 +1,90 @@
+{
+  "style": [
+    {
+      "name": "TabStyleDemo",
+      "cn": "Tab样式支持"
+    },
+    {
+      "name": "TableDemoStyle",
+      "cn": "表格样式"
+    },
+    {
+      "name": "FormCategory",
+      "cn": "表单分类"
+    }
+  ],
+  "components": [
+    {
+      "name": "HSplitPane",
+      "cn": "左右分割组件"
+    },
+    {
+      "name": "SplitPane",
+      "cn": "分割组件"
+    },
+    {
+      "name": "BDOSTab2",
+      "cn": "选项卡"
+    },
+    {
+      "name": "Input",
+      "cn": "文本框"
+    },
+    {
+      "name": "Tabs",
+      "cn": "选项卡2"
+    },
+    {
+      "name": "IDE",
+      "cn": "IDE"
+    },
+    {
+      "name": "RightMenu",
+      "cn": "右键菜单"
+    },
+    {
+      "name": "List",
+      "cn": "列表组件"
+    },
+    {
+      "name": "TreeSelect",
+      "cn": "下拉树"
+    },
+    {
+      "name": "Tree",
+      "cn": "树"
+    },
+    {
+      "name": "SearchInputDEMO",
+      "cn": "搜索框组件"
+    },
+    {
+      "name": "AuthButtonDemo",
+      "cn": "权限控制组件"
+    },
+    {
+      "name": "VisualSearchDemo",
+      "cn": "搜索查询组件"
+    },
+    {
+      "name": "FormDEMO",
+      "cn": "表单组件"
+    },
+    {
+      "name": "TablePage",
+      "cn": "自动生成的列表页面"
+    },
+    {
+      "name": "FormPage",
+      "cn": "自动生成的表单页面"
+    },
+    {
+      "name": "FormGenerator",
+      "cn": "表单生成器"
+    },
+    {
+      "name": "RegInput",
+      "cn": "验证文本框"
+    }
+  ]
+}

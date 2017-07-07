@@ -1,0 +1,23 @@
+.labelSelect{
+    display: inline-block;
+    width:340px;
+}
+
+.select-label{
+    width:80px;
+    height: 30px;
+    line-height: 30px;
+    font-weight:normal;
+    text-align: right;
+    display: inline-block;
+    float:left;
+    margin-right: 10px;
+}
+.labelSelect-select{
+    display: inline-block;
+    float: left;
+    width: 250px;
+}
+.bfd-select{
+    height:30px;
+}

@@ -1,0 +1,171 @@
+@width: 20px; //选项卡小三角宽度
+@transformSkew: 20deg; //选项卡小三角偏移度
+
+@height: 25px; //选项卡高度
+@fontSize: 12px; //字体大小
+
+//@defaultColor: #F5F5F5; //选项卡 tab 默认颜色
+//@hoverColor: #FFF; //选项卡 hover 颜色
+//@activeColor: #FFF ; //选项卡 选中颜色
+
+@defaultColor: #FFF; //选项卡 tab 默认颜色
+@hoverColor: #EAEAEA; //选项卡 hover 颜色
+@activeColor: #EAEAEA; //选项卡 选中颜色
+
+@tabPanelColor: #FFF; //选项卡面板的颜色
+@borderColor: #EDEFF0; //选项卡边框颜色
+
+.bdos-tab2 {
+  .clearfix:after {
+    display: table;
+    clear: both;
+    content: " ";
+  }
+
+  //头部导航
+  .bdos-tab2-tabs {
+    padding-left: 5px;
+
+    //工具栏
+    .bdos-tool {
+      float: left;
+      margin: 5px;
+      width: 15px;
+      height: 15px;
+      line-height: 15px;
+      font-size: @fontSize;
+      text-align: center;
+
+      &:hover {
+        background: #D9DADE;
+        border-radius: 2px;
+      }
+      .dropdown {
+        width: 100%;
+      }
+
+      .dropdown-menu {
+        padding: 0;
+        min-width: 120px;
+      }
+      .bdos-close-all {
+        height: 25px;
+        line-height: 25px;
+        color: #3CA1F9;
+        text-align: center;
+        cursor: pointer;
+        display: block;
+        border-top: 1px solid #E2E4E5;
+      }
+    }
+
+    .bdos-tab2-tab {
+      display: flex;
+      position: relative;
+      height: @height;
+      float: left;
+      font-size: @fontSize;
+
+      //内容
+      .bdos-tab2-tab-content {
+        min-width: 50px;
+        cursor: default;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+        height: @height;
+        line-height: @height;
+        border: 1px solid #EDEFF0;
+        border-left: 0;
+        border-right: 0;
+        background-color: @defaultColor;
+        color: #333;
+        z-index: 1;
+        margin-left: -5px;
+        padding: 0 15px 0 10px;
+      }
+
+      //左右斜边
+      .bdos-tab2-tab-left,
+      .bdos-tab2-tab-right {
+        width: @width;
+        height: @height;
+        background-color: @defaultColor;
+        border: 1px solid @borderColor;
+      }
+
+      .bdos-tab2-tab-left {
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+        transform: skew(-@transformSkew);
+      }
+
+      .bdos-tab2-tab-right {
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+        transform: skew(@transformSkew);
+        margin-left: -5px;
+      }
+
+      //关闭按钮
+      .bdos-tab2-tab-close {
+        position: absolute;
+        z-index: 2;
+        top: 3px;
+        right: 7px;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      .bdos-tab2-tab-close:hover {
+        border-radius: 50%;
+        text-shadow: 0 0 3px red;
+      }
+    }
+
+    .bdos-tab2-tab-active {
+      z-index: 2;
+      .bdos-tab2-tab-content,
+      .bdos-tab2-tab-left,
+      .bdos-tab2-tab-right {
+        background: @activeColor;
+        border-bottom: 0;
+      }
+    }
+
+    .bdos-tab2-tab:hover .bdos-tab2-tab-content,
+    .bdos-tab2-tab:hover .bdos-tab2-tab-left,
+    .bdos-tab2-tab:hover .bdos-tab2-tab-right {
+      background-color: @hoverColor;
+    }
+  }
+
+  //tab面板
+  .bdos-tab2-tab-panel {
+    display: none;
+    //height: 100%;
+    &.active {
+      display: block;
+      background-color: @tabPanelColor;
+    }
+  }
+}
+
+/*Tab选项卡太多的时候,选项卡自动缩收*/
+.bdos-tab2-auto-width {
+  .bdos-tab2-tabs {
+    display: flex;
+    display: -webkit-flex;;
+    flex-direction: row;
+    //overflow: hidden;
+
+    .bdos-tab2-tab {
+      overflow: hidden;
+      .bdos-tab2-tab-content {
+        padding: 0;
+      }
+    }
+  }
+}
